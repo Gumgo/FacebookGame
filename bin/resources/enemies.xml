@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<enemies>
+	<enemy
+		name="TestEnemy"
+		sprite="enemy1"
+		deathSprite="enemy1"
+		deathSound="none"
+		health="100"
+		damage="5"
+		color="0xFFFFFFFF"
+		deathOnPlayerCollision="true">
+		<item name="TestItem" dropRate="0.1" strength="20"/>
+	</enemy>
+</enemies>

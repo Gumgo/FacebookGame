@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fleets>
+	<fleet name="TestFleet">
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+			<behaviorProperty name="offset" value="32"/>
+		</enemy>
+		
+		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+			<behaviorProperty name="offset" value="576"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
+			<behaviorProperty name="offset" value="96"/>
+		</enemy>
+		
+		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
+			<behaviorProperty name="offset" value="512"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
+			<behaviorProperty name="offset" value="160"/>
+		</enemy>
+		
+		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
+			<behaviorProperty name="offset" value="448"/>
+		</enemy>
+
+	</fleet>
+
+	<fleet name="TestFleet2">
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+			<behaviorProperty name="offset" value="320"/>
+		</enemy>
+		
+		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+			<behaviorProperty name="offset" value="288"/>
+		</enemy>
+
+	</fleet>
+</fleets>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<waves>
+	<wave name="TestWave">
+		<fleet name="TestFleet" time="0"/>
+	</wave>
+
+	<wave name="TestWave2">
+		<fleet name="TestFleet2" time="0"/>
+	</wave>
+
+	<wave name="TestWave3">
+		<fleet name="TestFleet2" time="0"/>
+		<fleet name="TestFleet" time="20"/>
+		<fleet name="TestFleet2" time="40"/>
+	</wave>
+
+</waves>

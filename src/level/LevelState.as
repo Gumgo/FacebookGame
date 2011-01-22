@@ -11,14 +11,12 @@ package level
 	import org.flixel.FlxState;
 	import org.flixel.FlxU;
 
-	/**
-	 * ...
-	 * @author Ben
-	 */
 	public class LevelState extends FlxState 
 	{
 		
 		private var player:Player;
+		private var healthBar:HealthBar;
+		private var levelText:LevelText;
 		private var levelGenerator:LevelGenerator;
 
 		private var enemyGroup:FlxGroup;
@@ -60,9 +58,13 @@ package level
 		public function startLevel():void
 		{
 			player = new Player();
+			healthBar = new HealthBar();
+			levelText = new LevelText();
+			defaultGroup.add(player);
+			defaultGroup.add(healthBar);
+			defaultGroup.add(levelText);
 			levelGenerator = new LevelGenerator(0);
 			levelGenerator.start();
-			defaultGroup.add(player);
 		}
 
 		public function getEnemyGroup():FlxGroup
@@ -83,6 +85,16 @@ package level
 		public function getPlayer():Player
 		{
 			return player;
+		}
+
+		public function getHealthBar():HealthBar
+		{
+			return healthBar;
+		}
+
+		public function getLevelText():LevelText
+		{
+			return levelText;
 		}
 
 	}

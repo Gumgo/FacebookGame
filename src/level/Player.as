@@ -101,6 +101,8 @@ package level
 				currentHealth = maxHealth;
 			}
 
+			(FlxG.state as LevelState).getHealthBar().updateHealth(currentHealth / maxHealth);
+
 			if (currentHealth <= 0) {
 				currentHealth = 0;
 				onDie();
@@ -115,7 +117,7 @@ package level
 			dead = true;
 		}
 
-		public function setSecondaryWeapon(weapon:Weapon)
+		public function setSecondaryWeapon(weapon:Weapon):void
 		{
 			secondaryWeapon = weapon;
 		}

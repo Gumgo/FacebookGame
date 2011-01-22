@@ -12,6 +12,8 @@ package
 		[Embed(source = "../bin/resources/default_bullet.png")] private var defaultBullet:Class;
 		[Embed(source = "../bin/resources/test_item.png")] private var testItem:Class;
 
+		[Embed(source = "../bin/resources/health.png")] private var healthBar:Class;
+
 		public function Resources()
 		{
 			sprites = new Dictionary();
@@ -20,6 +22,7 @@ package
 			sprites["explosion"] = explosion;
 			sprites["defaultBullet"] = defaultBullet;
 			sprites["testItem"] = testItem;
+			sprites["healthBar"] = healthBar;
 		}
 
 		public function getSprite(name:String):Class

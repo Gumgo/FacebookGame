@@ -15,6 +15,7 @@ package level.items
 		override public function collect():void
 		{
 			(FlxG.state as LevelState).getPlayer().adjustHealth(strength as int);
+			(FlxG.state as LevelState).getLevelText().setText("health +" + strength, 0x00FF00);
 			removeSelf();
 		}
 		

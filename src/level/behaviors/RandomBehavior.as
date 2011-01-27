@@ -4,7 +4,7 @@ package level.behaviors
 	import flash.utils.Dictionary;
 	import level.enemies.Behavior;
 	import level.enemies.Enemy;
-	import org.flixel.FlxU;
+	import org.flixel.FlxU;	
 	/**
 	 * ...
 	 * @author Jennifer Yang

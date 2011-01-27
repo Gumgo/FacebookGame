@@ -1,5 +1,6 @@
 package level.behaviors 
 {
+	import flash.display.TriangleCulling;
 	import flash.utils.Dictionary;
 	import level.enemies.Behavior;
 	import level.enemies.Enemy;
@@ -26,27 +27,32 @@ package level.behaviors
 
 		override public function update(enemy:Enemy):void
 		{
-			if ( direction % 2 == 0 ) {
-				zigRight();
+			if ( direction <= 15 ) {
+				zigRight(enemy);
+				direction++;
+			} else if ( direction > 15 && direction <= 30) {
+				zigLeft(enemy);
 				direction++;
 			} else {
-				zigLeft();
-				direction++;
+				direction = 0;
 			}
 			if (enemy.y > 0 && !enemy.onScreen()) {
 				enemy.enemyFinished();
 			}
 		}
 		
-		private function zigRight(enemy:Enemy) {
-			enemy.x += 12;
-			enemy.y += 12;
+		
+		// move to diagonally right
+		private function zigRight(enemy:Enemy): void {
+			enemy.x += 8;
+			enemy.y += 8;
 
 		}
 		
-		private function zigLeft(enemy:Enemy) {
-			enemy.x -= 12;
-			enemy.y += 12;	
+		// move to diagonally left
+		private function zigLeft(enemy:Enemy): void {
+			enemy.x -= 8;
+			enemy.y += 8;	
 		}
 		
 		

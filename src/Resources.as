@@ -1,5 +1,6 @@
 package  
 {
+	import flash.display.MovieClip;
 	import flash.utils.Dictionary;
 
 	public class Resources 
@@ -11,6 +12,10 @@ package
 		[Embed(source = "../bin/resources/explosion_placeholder.png")] private var explosion:Class;
 		[Embed(source = "../bin/resources/default_bullet.png")] private var defaultBullet:Class;
 		[Embed(source = "../bin/resources/test_item.png")] private var testItem:Class;
+		[Embed(source = "../bin/resources/table_entry.png")] private var tableEntry:Class;
+		[Embed(source = "../bin/resources/banner.png")] private var banner1x128:Class;
+
+		[Embed(source = "../bin/resources/background1.swf")] private var background1Anim:Class;
 
 		[Embed(source = "../bin/resources/health.png")] private var healthBar:Class;
 
@@ -23,6 +28,10 @@ package
 			sprites["defaultBullet"] = defaultBullet;
 			sprites["testItem"] = testItem;
 			sprites["healthBar"] = healthBar;
+			sprites["tableEntry"] = tableEntry;
+			sprites["banner1x128"] = banner1x128;
+			sprites["background1"] = background1Anim;
+			sprites["background1Anim"] = background1Anim;
 		}
 
 		public function getSprite(name:String):Class

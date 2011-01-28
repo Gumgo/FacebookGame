@@ -1,13 +1,10 @@
 package  
 {
+	import inventory.InventoryState;
 	import level.LevelState;
 	import org.flixel.FlxState;
 	import org.flixel.FlxG;
-	
-	/**
-	 * ...
-	 * @author Ben
-	 */
+
 	public class InitState extends FlxState 
 	{
 
@@ -18,7 +15,7 @@ package
 
 		private function doneLoading():void
 		{
-			FlxG.state = new LevelState();
+			FlxG.state = new InventoryState();
 		}
 
 	}

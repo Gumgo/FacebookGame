@@ -10,6 +10,7 @@ package level
 	import org.flixel.FlxObject;
 	import org.flixel.FlxState;
 	import org.flixel.FlxU;
+	import flash.display.MovieClip;
 
 	public class LevelState extends FlxState 
 	{
@@ -25,6 +26,13 @@ package level
 
 		override public function create():void
 		{
+			var BackgroundDef:Class = Context.getResources().getSprite("background1Anim");
+			var background:MovieClip = new BackgroundDef() as MovieClip;
+			background.scaleX = 2.0;
+			background.scaleY = 2.0;
+			parent.addChildAt(background, 0);
+			bgColor = 0;
+
 			enemyGroup = new FlxGroup();
 			bulletGroup = new FlxGroup();
 			itemGroup = new FlxGroup();

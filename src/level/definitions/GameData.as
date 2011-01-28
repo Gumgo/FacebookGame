@@ -17,8 +17,11 @@ package level.definitions
 		private var wavesMap:Dictionary;
 		private var levels:Vector.<LevelDefinition>;
 
+		private var elements:Vector.<ElementDefinition>;
+
 		private var callback:Function;
 		private var loaded:int;
+		private static const filesToLoad:int = 5;
 
 		// dummy variables: these must be here for each behavior
 		private var lineDummy:LineBehavior;
@@ -32,13 +35,14 @@ package level.definitions
 			fleetsMap = new Dictionary();
 			wavesMap = new Dictionary();
 			levels = new Vector.<LevelDefinition>();
+			elements = new Vector.<ElementDefinition>();
 			loaded = 0;
 		}
 
 		private function testCallback():void
 		{
 			++loaded;
-			if (loaded == 4) {
+			if (loaded == filesToLoad) {
 				callback();
 			}
 		}
@@ -238,6 +242,32 @@ package level.definitions
 				testCallback();
 			}
 
+			var elementsLoader:URLLoader = new URLLoader();
+			elementsLoader.addEventListener(Event.COMPLETE, processElements);
+			elementsLoader.load(new URLRequest("resources/elements.xml"));
+			function processElements(e:Event):void
+			{
+				var xml:XML = new XML(e.target.data);
+
+				var xmlElements:XMLList = xml.children();
+				for each (var xmlElement:XML in xmlElements) {
+					if (xmlElement.name() != "element") {
+						throw new Error("Unknown property " + xmlElement.name());
+					}
+
+					var number:int = elements.length + 1;
+					var symbol:String = xmlElement.attribute("symbol").toString();
+					var name:String = xmlElement.attribute("name").toString();
+					var group:String = xmlElement.attribute("group").toString();
+					var description:String = xmlElement.attribute("description").toString();
+
+					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, description);
+					elements.push(newElement);
+				}
+
+				testCallback();
+			}
+
 		}
 
 		public function getEnemyDefinition(name:String):EnemyDefinition
@@ -274,6 +304,14 @@ package level.definitions
 			}
 			return levels[level];
 		}
-	}
 
+		public function getElementDefinition(number:int):ElementDefinition
+		{
+			if (number < 1 || number >= elements.length+1) {
+				trace("Invalid element " + number);
+			}
+			return elements[number-1];
+		}
+
+	}
 }

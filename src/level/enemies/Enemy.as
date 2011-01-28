@@ -51,26 +51,48 @@ package level.enemies
 
 		override public function update():void
 		{
-			behavior.update(this);
+			if (enemyHealth > 0) {
+				behavior.update(this);
+			} else if (finished) {
+				(FlxG.state as LevelState).getEnemyGroup().remove(this);
+				FlxG.state.defaultGroup.remove(this);
+			}
+			super.update();
 		}
 
 		public function damagePlayer(player:Player):void
 		{
-			player.adjustHealth(-damage);
+			if (enemyHealth > 0) {
+				player.adjustHealth( -damage);
+			}
 		}
 
 		public function onHit(bullet:PlayerBullet):void
 		{
-			enemyHealth -= bullet.getDamage();
-			if (enemyHealth <= 0) {
-				onDie();
+			if (enemyHealth > 0) {
+				enemyHealth -= bullet.getDamage();
+				if (enemyHealth <= 0) {
+					onDie();
+				}
+				bullet.hit();
 			}
-			bullet.hit();
 		}
 
 		public function onDie():void
 		{
-			// TODO: should switch to deathsprite here (or spawn a temporary object with deathsprite)
+			x += width / 2;
+			y += height / 2;
+
+			loadGraphic(deathSprite, true);
+			var frames:Array = new Array();
+			for (var f:uint = 0; f < _pixels.width / _pixels.height; ++f) {
+				frames[f] = f;
+			}
+			addAnimation("die", frames, 12, false);
+			play("die");
+
+			x -= width / 2;
+			y -= height / 2;
 
 			var drop:Number = Math.random();
 			var sum:Number = 0.0;
@@ -92,9 +114,14 @@ package level.enemies
 		 */
 		public function enemyFinished():void
 		{
-			parent.enemyFinished();
-			(FlxG.state as LevelState).getEnemyGroup().remove(this);
-			FlxG.state.defaultGroup.remove(this);
+			if (parent != null) {
+				parent.enemyFinished();
+			}
+
+			if (enemyHealth > 0) {
+				(FlxG.state as LevelState).getEnemyGroup().remove(this);
+				FlxG.state.defaultGroup.remove(this);
+			}
 		}
 
 	}

@@ -3,7 +3,7 @@
 	<enemy
 		name="TestEnemy"
 		sprite="enemy1"
-		deathSprite="enemy1"
+		deathSprite="explosion"
 		deathSound="none"
 		health="100"
 		damage="5"

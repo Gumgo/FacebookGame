@@ -37,6 +37,8 @@ package inventory
 		private var descriptionText:FlxText;
 		private var descriptionTextRight:FlxText;
 
+		private var currentDescription:int;
+
 		override public function create():void 
 		{
 			var BackgroundDef:Class = Context.getResources().getSprite("background1Anim");
@@ -71,6 +73,8 @@ package inventory
 					++collectedCount;
 				}
 			}
+
+			currentDescription = -1;
 
 			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0);
 			var colPercent:Number = Math.round(100.0 * collectedCount / 118.0);
@@ -148,12 +152,19 @@ package inventory
 			}
 			descriptionTextRight.color = finalColor;
 			descriptionTextRight.visible = true;
+
+			currentDescription = number;
 		}
 
 		override public function update():void
 		{
+			var lastDescription:int = currentDescription;
 			describe( -1, false); // clear the description
 			super.update();
+
+			if (currentDescription != lastDescription && currentDescription != -1) {
+				FlxG.play(Context.getResources().getSound("beep"));
+			}
 		}
 		
 	}

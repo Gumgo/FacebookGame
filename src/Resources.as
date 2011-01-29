@@ -5,8 +5,8 @@ package
 
 	public class Resources 
 	{
+		// SPRITES:
 		private var sprites:Dictionary;
-
 		[Embed(source = "../bin/resources/ship_placeholder.png")] private var player:Class;
 		[Embed(source = "../bin/resources/enemy1.png")] private var enemy1:Class;
 		[Embed(source = "../bin/resources/explosion_placeholder.png")] private var explosion:Class;
@@ -18,6 +18,10 @@ package
 		[Embed(source = "../bin/resources/background1.swf")] private var background1Anim:Class;
 
 		[Embed(source = "../bin/resources/health.png")] private var healthBar:Class;
+
+		// SOUNDS:
+		private var sounds:Dictionary;
+		[Embed(source = "../bin/resources/beep.mp3")] private var beep:Class;
 
 		public function Resources()
 		{
@@ -32,6 +36,9 @@ package
 			sprites["banner1x128"] = banner1x128;
 			sprites["background1"] = background1Anim;
 			sprites["background1Anim"] = background1Anim;
+
+			sounds = new Dictionary();
+			sounds["beep"] = beep;
 		}
 
 		public function getSprite(name:String):Class
@@ -41,6 +48,15 @@ package
 				trace("Invalid sprite " + name);
 			}
 			return sprite;
+		}
+
+		public function getSound(name:String):Class
+		{
+			var sound:Class = sounds[name];
+			if (sound == null) {
+				trace("Invalid sound " + name);
+			}
+			return sound;
 		}
 	}
 

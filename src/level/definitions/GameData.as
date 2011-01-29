@@ -71,7 +71,8 @@ package level.definitions
 					var health:int = int(xmlEnemy.attribute("health").toString());
 					var color:uint = uint(xmlEnemy.attribute("color").toString());
 					var damage:int = int(xmlEnemy.attribute("damage").toString());
-					var deathOnPlayerCollision:Boolean = Boolean(xmlEnemy.attribute("deathOnPlayerCollision").toString());
+					var deathOnPlayerCollision:Boolean = xmlEnemy.attribute("deathOnPlayerCollision").toString() == "true" ? true : false;
+					var invincible:Boolean = xmlEnemy.attribute("invincible").toString() == "true" ? true : false;
 					var items:Vector.<String> = new Vector.<String>();
 					var dropRates:Vector.<Number> = new Vector.<Number>();
 					var strengths:Vector.<Number> = new Vector.<Number>();
@@ -100,6 +101,7 @@ package level.definitions
 						color,
 						damage,
 						deathOnPlayerCollision,
+						invincible,
 						items,
 						dropRates,
 						strengths);

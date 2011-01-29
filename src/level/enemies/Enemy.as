@@ -21,6 +21,7 @@ package level.enemies
 		private var enemyHealth:int;
 		private var damage:int;
 		private var deathOnPlayerCollision:Boolean;
+		private var invincible:Boolean;
 
 		private var items:Vector.<String>;
 		private var dropRates:Vector.<Number>;
@@ -38,6 +39,7 @@ package level.enemies
 			color = definition.getColor();
 			damage = definition.getDamage();
 			deathOnPlayerCollision = definition.getDeathOnPlayerCollision();
+			invincible = definition.getInvincible();
 
 			items = definition.getItems();
 			dropRates = definition.getDropRates();
@@ -67,14 +69,24 @@ package level.enemies
 			}
 		}
 
+		public function onHitPlayer():void
+		{
+			if (deathOnPlayerCollision && enemyHealth > 0) {
+				enemyHealth = 0;
+				onDie();
+			}
+		}
+
 		public function onHit(bullet:PlayerBullet):void
 		{
-			if (enemyHealth > 0) {
-				enemyHealth -= bullet.getDamage();
-				if (enemyHealth <= 0) {
-					onDie();
+			if (!invincible) {
+				if (enemyHealth > 0) {
+					enemyHealth -= bullet.getDamage();
+					if (enemyHealth <= 0) {
+						onDie();
+					}
+					bullet.hit();
 				}
-				bullet.hit();
 			}
 		}
 

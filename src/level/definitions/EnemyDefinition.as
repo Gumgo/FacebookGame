@@ -11,12 +11,13 @@ package level.definitions
 		private var color:uint;
 		private var damage:int;
 		private var deathOnPlayerCollision:Boolean;
+		private var invincible:Boolean;
 
 		private var items:Vector.<String>;
 		private var dropRates:Vector.<Number>;
 		private var strengths:Vector.<Number>;
 
-		public function EnemyDefinition(name:String, sprite:String, deathSprite:String, deathSound:String, health:int, color:uint, damage:int, deathOnPlayerCollision:Boolean, items:Vector.<String>, dropRates:Vector.<Number>, strengths:Vector.<Number>)
+		public function EnemyDefinition(name:String, sprite:String, deathSprite:String, deathSound:String, health:int, color:uint, damage:int, deathOnPlayerCollision:Boolean, invincible:Boolean, items:Vector.<String>, dropRates:Vector.<Number>, strengths:Vector.<Number>)
 		{
 			this.name = name;
 			this.sprite = sprite;
@@ -26,6 +27,7 @@ package level.definitions
 			this.color = color;
 			this.damage = damage;
 			this.deathOnPlayerCollision = deathOnPlayerCollision;
+			this.invincible = invincible;
 
 			this.items = items;
 			this.dropRates = dropRates;
@@ -70,6 +72,11 @@ package level.definitions
 		public function getDeathOnPlayerCollision():Boolean
 		{
 			return deathOnPlayerCollision;
+		}
+
+		public function getInvincible():Boolean
+		{
+			return invincible;
 		}
 
 		public function getItems():Vector.<String>

@@ -8,7 +8,18 @@
 		health="100"
 		damage="5"
 		color="0xFFFFFFFF"
-		deathOnPlayerCollision="true">
+		deathOnPlayerCollision="true"
+		invincible="false">
 		<item name="TestItem" dropRate="0.1" strength="20"/>
 	</enemy>
+	<enemy
+		name="BulletEnemy"
+		sprite="defaultBullet"
+		deathSprite="explosion"
+		deathSound="none"
+		health="100"
+		damage="5"
+		color="0xFFFFFFFF"
+		deathOnPlayerCollision="true"
+		invincible="true"/>
 </enemies>

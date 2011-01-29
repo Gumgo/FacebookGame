@@ -48,6 +48,7 @@ package level
 			function playerEnemyOverlap(player:FlxObject, enemy:FlxObject):void
 			{
 				(player as Player).onHit(enemy as Enemy);
+				(enemy as Enemy).onHitPlayer();
 			}
 
 			FlxU.overlap(player, itemGroup, playerItemOverlap);

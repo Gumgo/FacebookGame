@@ -1,16 +1,16 @@
 package level.weapons 
 {
+	import level.LevelState;
 	import level.PlayerBullet;
+	import org.flixel.FlxG;
 
 	public class DefaultBullet extends PlayerBullet
 	{
 		
 		public function DefaultBullet(x:int, y:int) 
 		{
-			super("default", 200, x, y, null);
-			loadGraphic(Context.getResources().getSprite("defaultBullet"), true);
-			addAnimation("anim", [0, 1], 12, true);
-			play("anim");
+			super("default", 200, x, y, Context.getResources().getSprite("defaultBullet"));
+			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;
 		}

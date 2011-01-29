@@ -10,16 +10,16 @@ package level
 
 		private var maxHealth:int;
 		private var currentHealth:int;
-		private var damageTimer:int;
 
 		private var primaryWeapon:Weapon;
 		private var secondaryWeapon:Weapon;
+
+		private var endTimer:int;
 
 		public function Player() 
 		{
 			maxHealth = 100;
 			currentHealth = 100;
-			damageTimer = 0;
 
 			super(FlxG.width / 2, FlxG.height / 2, Context.getResources().getSprite("player"));
 			x -= width / 2;
@@ -70,9 +70,12 @@ package level
 				if (y > FlxG.height - height) {
 					y = FlxG.height - height;
 				}
-
-				if (damageTimer > 0) {
-					--damageTimer;
+			} else {
+				if (endTimer > 0) {
+					--endTimer;
+				} else if (endTimer == 0) {
+					(FlxG.state as LevelState).levelFailed();
+					endTimer = -1;
 				}
 			}
 
@@ -81,30 +84,40 @@ package level
 
 		public function onHit(enemy:Enemy):void
 		{
-			if (damageTimer == 0) {
-				enemy.damagePlayer(this);
-				damageTimer = 20;
-			}
+			enemy.damagePlayer(this);
 		}
 
 		public function adjustHealth(amount:int):void
 		{
+			if (dead) {
+				return;
+			}
+
+			var prevHealth:int = currentHealth;
 			currentHealth += amount;
 
 			if (amount > 0) {
 				// green screen flash
 			} else if (amount < 0) {
 				// red screen flash
+				var ratio1:Number = Number(prevHealth) / Number(maxHealth);
+				var ratio2:Number = Number(currentHealth) / Number(maxHealth);
+				if (ratio1 > 0.15 && ratio2 <= 0.15) {
+					(FlxG.state as LevelState).getLevelText().setText("Warning: health is low", 0xFF0000, 30);
+				}
 			}
 
 			if (currentHealth > maxHealth) {
 				currentHealth = maxHealth;
 			}
 
+			if (currentHealth < 0) {
+				currentHealth = 0;
+			}
+
 			(FlxG.state as LevelState).getHealthBar().updateHealth(currentHealth / maxHealth);
 
-			if (currentHealth <= 0) {
-				currentHealth = 0;
+			if (currentHealth == 0) {
 				onDie();
 			}
 		}
@@ -115,6 +128,8 @@ package level
 			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 12, false);
 			play("die");
 			dead = true;
+
+			endTimer = 120;
 		}
 
 		public function setSecondaryWeapon(weapon:Weapon):void

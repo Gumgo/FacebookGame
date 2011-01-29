@@ -16,7 +16,6 @@ package level
 			this.strength = strength;
 
 			(FlxG.state as LevelState).getItemGroup().add(this);
-			FlxG.state.defaultGroup.add(this);
 		}
 
 		override public function update():void
@@ -30,7 +29,6 @@ package level
 		protected function removeSelf():void
 		{
 			(FlxG.state as LevelState).getItemGroup().remove(this);
-			FlxG.state.defaultGroup.remove(this);
 		}
 
 		/**

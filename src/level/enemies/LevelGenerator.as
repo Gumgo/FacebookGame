@@ -1,6 +1,8 @@
 package level.enemies 
 {
 	import level.definitions.LevelDefinition;
+	import level.LevelState;
+	import org.flixel.FlxG;
 
 	public class LevelGenerator 
 	{
@@ -18,6 +20,8 @@ package level.enemies
 		private var prevWave2:int;	// the wave before the previous wave
 
 		private var currentWave:Wave;	// the currently active wave
+
+		private var endTimer:int;	// counts down once the level is beaten
 
 		public function LevelGenerator(level:int)
 		{
@@ -46,13 +50,12 @@ package level.enemies
 
 		/**
 		 * Starts the next wave.
-		 * @todo Make it so that after the last wave, something happens.
 		 */
 		public function waveFinished():void
 		{
 			currentWave = getNextWave();
 			if (currentWave == null) {
-				// do something
+				endTimer = 120;
 			} else {
 				currentWave.start();
 			}
@@ -65,6 +68,13 @@ package level.enemies
 		{
 			if (currentWave != null) {
 				currentWave.update();
+			} else {
+				if (endTimer > 0) {
+					--endTimer;
+				} else if (endTimer == 0) {
+					(FlxG.state as LevelState).levelFinished();
+					endTimer = -1;
+				}
 			}
 		}
 		

@@ -8,6 +8,7 @@ package inventory
 	import org.flixel.FlxState;
 	import org.flixel.FlxG;
 	import org.flixel.FlxText;
+	import org.flixel.data.FlxFade;
 	import level.definitions.ElementDefinition;
 	
 	public class InventoryState extends FlxState 
@@ -39,14 +40,20 @@ package inventory
 
 		private var currentDescription:int;
 
+		private var fade:FlxFade;
+
+		private var background:MovieClip;
+
 		override public function create():void 
 		{
-			var BackgroundDef:Class = Context.getResources().getSprite("background1Anim");
-			var background:MovieClip = new BackgroundDef() as MovieClip;
+			var bgNum:int = Math.floor(Math.random() * 2.0) + 1;
+			var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "Anim");
+			background = new BackgroundDef() as MovieClip;
 			background.scaleX = 2.0;
 			background.scaleY = 2.0;
 			parent.addChildAt(background, 0);
 			bgColor = 0;
+			// parent.removeChild(background);!!! NEED TO DO THIS WHEN LEAVING THE STATE
 
 			FlxG.mouse.show();
 			colors = new Dictionary();
@@ -95,17 +102,28 @@ package inventory
 			descriptionBanner = new FlxSprite(0, 0, Context.getResources().getSprite("banner1x128"));
 			descriptionBanner.scale.x = FlxG.width * 2;
 			descriptionBanner.alpha = 0.9;
+			descriptionBanner.visible = false;
 			descriptionText = new FlxText(32, 0, FlxG.width - 64);
 			descriptionText.size = 16;
 			descriptionText.color = 0;
+			descriptionText.visible = false;
 			descriptionTextRight = new FlxText(32, 0, FlxG.width - 64);
 			descriptionTextRight.size = 16;
 			descriptionTextRight.alignment = "right";
-			descriptionText.color = 0;
+			descriptionTextRight.color = 0;
+			descriptionTextRight.visible = false;
 
 			defaultGroup.add(descriptionBanner);
 			defaultGroup.add(descriptionText);
 			defaultGroup.add(descriptionTextRight);
+
+			fade = new FlxFade();
+			fade.start(0xFF000000, 1);
+			fade.stop();
+			fade.alpha = 1.0;
+			fade.exists = true;
+			fade.fill(0xFF000000);
+			defaultGroup.add(fade);
 		}
 
 		public function groupColor(group:String):uint
@@ -160,10 +178,21 @@ package inventory
 		{
 			var lastDescription:int = currentDescription;
 			describe( -1, false); // clear the description
+
+			var tempAlpha:Number = fade.alpha;
 			super.update();
+			fade.alpha = tempAlpha;
 
 			if (currentDescription != lastDescription && currentDescription != -1) {
 				FlxG.play(Context.getResources().getSound("beep"));
+			}
+
+			if (fade.alpha > 0.0) {
+				fade.alpha -= 1.0 / 60.0;
+				if (fade.alpha <= 0.0) {
+					fade.alpha = 0.0;
+					fade.exists = false;
+				}
 			}
 		}
 		

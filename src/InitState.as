@@ -15,7 +15,7 @@ package
 
 		private function doneLoading():void
 		{
-			FlxG.state = new InventoryState();
+			FlxG.state = new LevelState();
 		}
 
 	}

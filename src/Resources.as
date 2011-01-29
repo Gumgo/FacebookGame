@@ -16,6 +16,7 @@ package
 		[Embed(source = "../bin/resources/banner.png")] private var banner1x128:Class;
 
 		[Embed(source = "../bin/resources/background1.swf")] private var background1Anim:Class;
+		[Embed(source = "../bin/resources/background2.swf")] private var background2Anim:Class;
 
 		[Embed(source = "../bin/resources/health.png")] private var healthBar:Class;
 
@@ -36,6 +37,7 @@ package
 			sprites["banner1x128"] = banner1x128;
 			sprites["background1"] = background1Anim;
 			sprites["background1Anim"] = background1Anim;
+			sprites["background2Anim"] = background2Anim;
 
 			sounds = new Dictionary();
 			sounds["beep"] = beep;

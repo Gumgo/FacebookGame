@@ -27,6 +27,8 @@ package level.enemies
 		private var dropRates:Vector.<Number>;
 		private var strengths:Vector.<Number>;
 
+		private var damageTimer:int;
+
 		public function Enemy(parent:Fleet, definition:EnemyDefinition, behavior:Behavior)
 		{
 			this.parent = parent;
@@ -47,25 +49,31 @@ package level.enemies
 
 			behavior.init(this);
 
+			damageTimer = 0;
+
 			(FlxG.state as LevelState).getEnemyGroup().add(this);
-			FlxG.state.defaultGroup.add(this);
 		}
 
 		override public function update():void
 		{
+			if (damageTimer > 0) {
+				--damageTimer;
+			}
 			if (enemyHealth > 0) {
 				behavior.update(this);
 			} else if (finished) {
 				(FlxG.state as LevelState).getEnemyGroup().remove(this);
-				FlxG.state.defaultGroup.remove(this);
 			}
 			super.update();
 		}
 
 		public function damagePlayer(player:Player):void
 		{
-			if (enemyHealth > 0) {
-				player.adjustHealth( -damage);
+			if (damageTimer == 0) {
+				if (enemyHealth > 0) {
+					player.adjustHealth( -damage);
+				}
+				damageTimer = 10;
 			}
 		}
 
@@ -132,7 +140,6 @@ package level.enemies
 
 			if (enemyHealth > 0) {
 				(FlxG.state as LevelState).getEnemyGroup().remove(this);
-				FlxG.state.defaultGroup.remove(this);
 			}
 		}
 

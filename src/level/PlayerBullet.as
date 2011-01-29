@@ -15,14 +15,12 @@ package level
 			this.damage = damage;
 			super(X, Y, SimpleGraphic);
 			(FlxG.state as LevelState).getBulletGroup().add(this);
-			FlxG.state.defaultGroup.add(this);
 		}
 
 		override public function update():void
 		{
 			if (!onScreen()) {
 				(FlxG.state as LevelState).getBulletGroup().remove(this);
-				FlxG.state.defaultGroup.remove(this);
 			}
 		}
 
@@ -39,7 +37,6 @@ package level
 		public function hit():void
 		{
 			(FlxG.state as LevelState).getBulletGroup().remove(this);
-			FlxG.state.defaultGroup.remove(this);
 		}
 		
 	}

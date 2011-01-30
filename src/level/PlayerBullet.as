@@ -7,7 +7,7 @@ package level
 	{
 
 		private var name:String;
-		private var damage:int;
+		protected var damage:int;
 		
 		public function PlayerBullet(name:String, damage:int, X:Number = 0, Y:Number = 0, SimpleGraphic:Class = null) 
 		{
@@ -22,6 +22,8 @@ package level
 			if (!onScreen()) {
 				(FlxG.state as LevelState).getBulletGroup().remove(this);
 			}
+
+			super.update();
 		}
 
 		public function getName():String

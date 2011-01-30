@@ -29,7 +29,7 @@ package level.behaviors
 				var dict:Dictionary = new Dictionary();
 				dict["x"] = String(enemy.x + enemy.width / 2);
 				dict["y"] = String(enemy.y + enemy.height);
-				new Enemy(null, Context.getGameData().getEnemyDefinition("BulletEnemy"), new BulletBehavior(dict));
+				new Enemy(null, Context.getGameData().getEnemyDefinition("BulletEnemy"), new BulletBehavior(dict), true);
 			}
 			if (enemy.y > 0 && !enemy.onScreen()) {
 				enemy.enemyFinished();

@@ -29,11 +29,16 @@ package level.enemies
 
 		private var damageTimer:int;
 
-		public function Enemy(parent:Fleet, definition:EnemyDefinition, behavior:Behavior)
+		private var done:Boolean;
+		private var bullet:Boolean;
+
+		public function Enemy(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false)
 		{
 			this.parent = parent;
 			this.behavior = behavior;
 			super(0, 0, Context.getResources().getSprite(definition.getSprite()));
+
+			this.bullet = bullet;
 
 			deathSprite = Context.getResources().getSprite(definition.getDeathSprite());
 			deathSound = null;//Context.getResources().getSound(definition.getDeathSound());
@@ -51,7 +56,13 @@ package level.enemies
 
 			damageTimer = 0;
 
-			(FlxG.state as LevelState).getEnemyGroup().add(this);
+			done = false;
+
+			if (bullet) {
+				(FlxG.state as LevelState).getEnemyBulletGroup().add(this);
+			} else {
+				(FlxG.state as LevelState).getEnemyGroup().add(this);
+			}
 		}
 
 		override public function update():void
@@ -62,7 +73,11 @@ package level.enemies
 			if (enemyHealth > 0) {
 				behavior.update(this);
 			} else if (finished) {
-				(FlxG.state as LevelState).getEnemyGroup().remove(this);
+				if (bullet) {
+					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
+				} else {
+					(FlxG.state as LevelState).getEnemyGroup().remove(this);
+				}
 			}
 			super.update();
 		}
@@ -108,7 +123,7 @@ package level.enemies
 			for (var f:uint = 0; f < _pixels.width / _pixels.height; ++f) {
 				frames[f] = f;
 			}
-			addAnimation("die", frames, 12, false);
+			addAnimation("die", frames, 30, false);
 			play("die");
 
 			x -= width / 2;
@@ -138,9 +153,20 @@ package level.enemies
 				parent.enemyFinished();
 			}
 
+			done = true;
+
 			if (enemyHealth > 0) {
-				(FlxG.state as LevelState).getEnemyGroup().remove(this);
+				if (bullet) {
+					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
+				} else {
+					(FlxG.state as LevelState).getEnemyGroup().remove(this);
+				}
 			}
+		}
+
+		public function isFinished():Boolean
+		{
+			return done;
 		}
 
 	}

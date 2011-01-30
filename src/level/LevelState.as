@@ -1,5 +1,10 @@
 package level
 {
+	import flash.display.BitmapData;
+	import flash.display.BitmapDataChannel;
+	import flash.geom.ColorTransform;
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
 	import inventory.InventoryState;
 	import level.enemies.Enemy;
 	import level.enemies.LevelGenerator;
@@ -10,6 +15,7 @@ package level
 	import org.flixel.FlxG;
 	import org.flixel.FlxGroup;
 	import org.flixel.FlxObject;
+	import org.flixel.FlxSprite;
 	import org.flixel.FlxState;
 	import org.flixel.FlxText;
 	import org.flixel.FlxU;
@@ -24,6 +30,7 @@ package level
 		private var levelGenerator:LevelGenerator;
 
 		private var enemyGroup:FlxGroup;
+		private var enemyBulletGroup:FlxGroup;
 		private var bulletGroup:FlxGroup;
 		private var itemGroup:FlxGroup;
 		private var overlayGroup:FlxGroup;
@@ -32,6 +39,8 @@ package level
 		private var fade:FlxFade;
 
 		private var background:MovieClip;
+
+		private var effectsSprite:FlxSprite;
 
 		override public function create():void
 		{
@@ -44,20 +53,29 @@ package level
 			bgColor = 0;
 
 			enemyGroup = new FlxGroup();
+			enemyBulletGroup = new FlxGroup();
 			bulletGroup = new FlxGroup();
 			itemGroup = new FlxGroup();
 			overlayGroup = new FlxGroup();
+
+			effectsSprite = new FlxSprite(0, 0, null);
+			effectsSprite.pixels = new BitmapData(FlxG.width, FlxG.height, true, 0);
 
 			startLevel();
 		}
 
 		override public function update():void
 		{
+			var px:BitmapData = effectsSprite.pixels;
+			px.colorTransform(effectsSprite.pixels.rect, new ColorTransform(0, 0, 0, 0));
+			effectsSprite.pixels = px;
+
 			levelGenerator.update();
 			super.update();
 
 			if (!player.dead) {
 				FlxU.overlap(player, enemyGroup, playerEnemyOverlap);
+				FlxU.overlap(player, enemyBulletGroup, playerEnemyOverlap);
 				function playerEnemyOverlap(player:FlxObject, enemy:FlxObject):void
 				{
 					(player as Player).onHit(enemy as Enemy);
@@ -92,6 +110,12 @@ package level
 			}
 		}
 
+		override public function render():void
+		{
+			effectsSprite.pixels = effectsSprite.pixels;
+			super.render();
+		}
+
 		public function startLevel():void
 		{
 			player = new Player();
@@ -100,8 +124,10 @@ package level
 
 			defaultGroup.add(itemGroup);
 			defaultGroup.add(enemyGroup);
+			defaultGroup.add(enemyBulletGroup);
 			defaultGroup.add(player);
 			defaultGroup.add(bulletGroup);
+			defaultGroup.add(effectsSprite);
 			defaultGroup.add(overlayGroup);
 
 			overlayGroup.add(healthBar);
@@ -140,6 +166,11 @@ package level
 			return enemyGroup;
 		}
 
+		public function getEnemyBulletGroup():FlxGroup
+		{
+			return enemyBulletGroup;
+		}
+
 		public function getBulletGroup():FlxGroup
 		{
 			return bulletGroup;
@@ -168,6 +199,11 @@ package level
 		public function getLevelText():LevelText
 		{
 			return levelText;
+		}
+
+		public function getEffects():BitmapData
+		{
+			return effectsSprite.pixels;
 		}
 
 	}

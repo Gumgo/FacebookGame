@@ -9,8 +9,12 @@ package
 		private var sprites:Dictionary;
 		[Embed(source = "../bin/resources/ship_placeholder.png")] private var player:Class;
 		[Embed(source = "../bin/resources/enemy1.png")] private var enemy1:Class;
-		[Embed(source = "../bin/resources/explosion_placeholder.png")] private var explosion:Class;
+		[Embed(source = "../bin/resources/explosion.png")] private var explosion:Class;
 		[Embed(source = "../bin/resources/default_bullet.png")] private var defaultBullet:Class;
+		[Embed(source = "../bin/resources/blob.png")] private var blob:Class;
+		[Embed(source = "../bin/resources/laser_bullet.png")] private var laserBullet:Class;
+		[Embed(source = "../bin/resources/bomb.png")] private var bombBullet:Class;
+		[Embed(source = "../bin/resources/missile.png")] private var missileBullet:Class;
 		[Embed(source = "../bin/resources/test_item.png")] private var testItem:Class;
 		[Embed(source = "../bin/resources/table_entry.png")] private var tableEntry:Class;
 		[Embed(source = "../bin/resources/banner.png")] private var banner1x128:Class;
@@ -31,6 +35,10 @@ package
 			sprites["enemy1"] = enemy1;
 			sprites["explosion"] = explosion;
 			sprites["defaultBullet"] = defaultBullet;
+			sprites["blob"] = blob;
+			sprites["laserBullet"] = laserBullet;
+			sprites["bombBullet"] = bombBullet;
+			sprites["missileBullet"] = missileBullet;
 			sprites["testItem"] = testItem;
 			sprites["healthBar"] = healthBar;
 			sprites["tableEntry"] = tableEntry;

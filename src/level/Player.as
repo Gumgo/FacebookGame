@@ -1,6 +1,7 @@
 package level
 {
 	import level.weapons.DefaultWeapon;
+	import level.weapons.SpreadWeapon; // TEMP FOR TESTING
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxG;
 	import level.enemies.Enemy;
@@ -26,6 +27,9 @@ package level
 			y -= height / 2;
 
 			primaryWeapon = new DefaultWeapon();
+
+			// TEMP
+			secondaryWeapon = new SpreadWeapon();
 		}
 
 		override public function update():void
@@ -125,7 +129,7 @@ package level
 		public function onDie():void
 		{
 			loadGraphic(Context.getResources().getSprite("explosion"), true);
-			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 12, false);
+			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 			play("die");
 			dead = true;
 

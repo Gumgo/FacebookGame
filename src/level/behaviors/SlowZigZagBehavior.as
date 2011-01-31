@@ -9,11 +9,11 @@ package level.behaviors
 	 * ...
 	 * @author Jennifer Yang
 	 */
-	public class ZigZagBehavior extends Behavior 
+	public class SlowZigZagBehavior extends Behavior 
 	{
 		
 		private var direction: int = 0;
-		public function ZigZagBehavior(properties:Dictionary) 
+		public function SlowZigZagBehavior(properties:Dictionary) 
 		{
 			super(properties);
 		}
@@ -27,10 +27,10 @@ package level.behaviors
 
 		override public function update(enemy:Enemy):void
 		{
-			if ( direction <= 15 ) {
+			if ( direction <= 20 ) {
 				zigRight(enemy);
 				direction++;
-			} else if ( direction > 15 && direction <= 30) {
+			} else if ( direction > 20 && direction <= 40) {
 				zigLeft(enemy);
 				direction++;
 			} else {
@@ -44,15 +44,15 @@ package level.behaviors
 		
 		// move to diagonally right
 		private function zigRight(enemy:Enemy): void {
-			enemy.x += 8;
-			enemy.y += 8;
+			enemy.x += 5;
+			enemy.y += 5;
 
 		}
 		
 		// move to diagonally left
 		private function zigLeft(enemy:Enemy): void {
-			enemy.x -= 8;
-			enemy.y += 8;	
+			enemy.x -= 5;
+			enemy.y += 5;	
 		}
 		
 		

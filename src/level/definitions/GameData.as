@@ -29,6 +29,7 @@ package level.definitions
 		private var zigZagDummy:ZigZagBehavior;
 		private var magneticDummy:MagneticBehavior;
 		private var randomDummy:RandomBehavior;
+		private var slowZigZagDummy:SlowZigZagBehavior;
 
 		// dummy variables: these must be here for each item
 		private var testDummy:TestItem;

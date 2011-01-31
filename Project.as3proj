@@ -15,6 +15,7 @@
   <classpaths>
     <class path="src" />
     <class path="..\..\..\..\Flixel\flixel" />
+    <class path="C:\Program Files (no install)\AdamAtomic-flixel-b9fe564" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -52,7 +53,7 @@
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="" />
   </externalLibraryPaths>
   <!-- Runtime Shared Libraries -->
   <rslPaths>

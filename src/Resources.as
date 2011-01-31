@@ -18,6 +18,7 @@ package
 		[Embed(source = "../bin/resources/test_item.png")] private var testItem:Class;
 		[Embed(source = "../bin/resources/table_entry.png")] private var tableEntry:Class;
 		[Embed(source = "../bin/resources/banner.png")] private var banner1x128:Class;
+		[Embed(source = "../bin/resources/border.png")] private var border:Class;
 
 		[Embed(source = "../bin/resources/background1.swf")] private var background1Anim:Class;
 		[Embed(source = "../bin/resources/background2.swf")] private var background2Anim:Class;
@@ -43,6 +44,7 @@ package
 			sprites["healthBar"] = healthBar;
 			sprites["tableEntry"] = tableEntry;
 			sprites["banner1x128"] = banner1x128;
+			sprites["border"] = border;
 			sprites["background1"] = background1Anim;
 			sprites["background1Anim"] = background1Anim;
 			sprites["background2Anim"] = background2Anim;

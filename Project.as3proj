@@ -52,7 +52,7 @@
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="" />
   </externalLibraryPaths>
   <!-- Runtime Shared Libraries -->
   <rslPaths>

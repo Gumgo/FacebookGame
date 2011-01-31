@@ -5,6 +5,7 @@ package level.behaviors
 	import level.enemies.Behavior;
 	import level.enemies.Enemy;
 	import org.flixel.FlxU;	
+	import org.flixel.FlxG;
 	/**
 	 * ...
 	 * @author Jennifer Yang
@@ -51,7 +52,7 @@ package level.behaviors
 				generateNewDirection = 0;
 			}
 			
-			if (enemy.y > 0 && !enemy.onScreen()) {
+			if (enemy.y > 0 && enemy.y > FlxG.height ) {
 				enemy.enemyFinished();
 			}
 		}

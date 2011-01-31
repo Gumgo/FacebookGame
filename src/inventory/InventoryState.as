@@ -223,12 +223,13 @@ package inventory
 			effectsSprite.pixels = px;
 
 			var lastDescription:int = currentDescription;
+			currentDescription = -1;
 			describe( -1, false); // clear the description
 
 			super.update();
 
 			// draw the groups
-			if (currentDescription > -1) {
+			if (currentDescription > 0) {
 				var lineArray:Array = borderLines[Context.getGameData().getElementDefinition(currentDescription).getGroup()];
 				for (var i:int = 0; i < lineArray.length / 4; ++i) {
 					matrix.identity();

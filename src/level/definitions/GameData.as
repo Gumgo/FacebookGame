@@ -5,7 +5,7 @@ package level.definitions
 	import flash.net.URLRequest;
 	import flash.utils.Dictionary;
 	import flash.utils.Endian;
-	import level.behaviors.LineBehavior;
+	import level.behaviors.*;
 	import level.enemies.Enemy;
 	import level.enemies.Wave;
 	import level.items.TestItem;
@@ -25,6 +25,10 @@ package level.definitions
 
 		// dummy variables: these must be here for each behavior
 		private var lineDummy:LineBehavior;
+		private var slowLineDummy:SlowLineBehavior;
+		private var zigZagDummy:ZigZagBehavior;
+		private var magneticDummy:MagneticBehavior;
+		private var randomDummy:RandomBehavior;
 
 		// dummy variables: these must be here for each item
 		private var testDummy:TestItem;

@@ -2,11 +2,24 @@ package
 {
 	import level.LevelState;
 	import org.flixel.*;
+	import flash.display.MovieClip;
  
 	public class MenuState extends FlxState
 	{
+		private var background:MovieClip;
+		
 		override public function create():void
 		{
+					
+			// set the background image for the menustate
+			var bgNum:int = Math.floor(Math.random() * 2.0) + 1;
+			var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "Anim");
+			background = new BackgroundDef() as MovieClip;
+			background.scaleX = 2.0;
+			background.scaleY = 2.0;
+			parent.addChildAt(background, 0);
+			bgColor = 0;
+			
 			var title:FlxText;
 			title = new FlxText(0, 16, FlxG.width, "NUCLEOS");
 			title.setFormat (null, 24, 0xFFFFFFFF, "center");
@@ -39,6 +52,7 @@ package
 		{
 			if (FlxG.keys.justPressed("SPACE"))
 			{
+				parent.removeChild(background);
 				FlxG.state = new LevelState();
 			}  /*else if ( FlxG.keys.justPressed("x")) {
 				//FlxG.state = new FlxState();

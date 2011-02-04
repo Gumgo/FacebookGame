@@ -12,8 +12,8 @@ package level.weapons
 		{
 			if (timer == 0) {
 				timer = 10;
-				new SpreadBullet(player.x + 8, player.y + 16, 100.0);
-				new SpreadBullet(player.x - 8 + player.width, player.y + 16, 80.0);
+				(Context.getRecycler().getNew(SpreadBullet) as SpreadBullet).resetMe(player.x + 8, player.y + 16, 100.0);
+				(Context.getRecycler().getNew(SpreadBullet) as SpreadBullet).resetMe(player.x - 8 + player.width, player.y + 16, 80.0);
 			}
 		}
 

@@ -7,9 +7,14 @@ package level.enemies
 
 		private var properties:Dictionary;
 
-		public function Behavior(properties:Dictionary)
+		public function Behavior()
+		{
+		}
+
+		protected function resetMeSuper(properties:Dictionary):Behavior
 		{
 			this.properties = properties;
+			return this;
 		}
 
 		public function init(enemy:Enemy):void

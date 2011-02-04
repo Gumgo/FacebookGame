@@ -18,9 +18,14 @@ package level.weapons
 
 		private var points:Vector.<Number>;
 
-		public function SpreadBullet(x:int, y:int, dir:Number) 
+		public function SpreadBullet()
 		{
-			super("spread", 50, x, y, Context.getResources().getSprite("blob"));
+			super();
+		}
+
+		public function resetMe(x:int, y:int, dir:Number):SpreadBullet
+		{
+			super.resetMeSuper("spread", 50, x, y, Context.getResources().getSprite("blob"));
 			this.x -= width / 2;
 			this.y -= height / 2;
 			turnDir = Math.random() >= 0.5;
@@ -28,6 +33,7 @@ package level.weapons
 			blend = BlendMode.ADD;
 
 			points = new Vector.<Number>();
+			return this;
 		}
 
 		override public function update():void

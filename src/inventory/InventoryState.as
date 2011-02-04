@@ -1,12 +1,14 @@
 package inventory 
 {
-	import adobe.utils.CustomActions;
 	import flash.display.BitmapData;
+	import flash.display.Shape;
+	import flash.geom.Rectangle;
 	import flash.display.MovieClip;
 	import flash.geom.Matrix;
 	import flash.display.BlendMode;
 	import flash.geom.ColorTransform;
 	import flash.utils.Dictionary;
+	import level.LevelState;
 	import org.flixel.FlxGroup;
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxState;
@@ -43,8 +45,10 @@ package inventory
 		private var descriptionTextRight:FlxText;
 
 		private var currentDescription:int;
+		private var currentHover:int;
 
 		private var fade:FlxFadeIn;
+		private var flash:FlxFadeIn;
 
 		private var background:MovieClip;
 
@@ -53,6 +57,15 @@ package inventory
 		private var borderPixels:BitmapData;
 		private var matrix:Matrix;
 		private var borderLines:Dictionary;
+
+		private var groupMode:Boolean;
+		private var group:String;
+		private var descRect:Rectangle;
+		private var descriptions:Dictionary;
+		private var groupText:FlxText;
+		private var descText:FlxText;
+		private var play:FlxText;
+		private var back:FlxText;
 
 		override public function create():void 
 		{
@@ -63,7 +76,6 @@ package inventory
 			background.scaleY = 2.0;
 			parent.addChildAt(background, 0);
 			bgColor = 0;
-			// parent.removeChild(background);!!! NEED TO DO THIS WHEN LEAVING THE STATE
 
 			FlxG.mouse.show();
 			colors = new Dictionary();
@@ -92,6 +104,7 @@ package inventory
 			}
 
 			currentDescription = -1;
+			currentHover = -1;
 
 			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0);
 			var colPercent:Number = Math.round(100.0 * collectedCount / 118.0);
@@ -166,6 +179,40 @@ package inventory
 			2, 9, 0, 14,    2, 9, 1, 1,     2, 10, 0, 14,   16, 9, 1, 1);
 			borderLines["Unknown"]				= new Array(
 			12, 6, 0, 6,    12, 6, 1, 1,    12, 7, 0, 6,    18, 6, 1, 1);
+
+			flash = new FlxFadeIn();
+			defaultGroup.add(flash);
+			groupMode = false;
+			descRect = new Rectangle(0, 0, FlxG.width, FlxG.height);
+
+			descriptions = new Dictionary();
+			descriptions["Non-Metal"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Other Non-Metal"]		= "Filler description filler description filler description filler description filler description.";
+			descriptions["Alkali Metal"]		= "Filler description filler description filler description filler description filler description.";
+			descriptions["Alkali Earth Metal"]	= "Filler description filler description filler description filler description filler description.";
+			descriptions["Transition Metal"]	= "Filler description filler description filler description filler description filler description.";
+			descriptions["Noble Gas"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Halogen"]				= "Filler description filler description filler description filler description filler description.";
+			descriptions["Lanthanide"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Actinide"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Unknown"]				= "Filler description filler description filler description filler description filler description.";
+			groupText = new FlxText(0, FlxG.height / 4, FlxG.width);
+			groupText.visible = false;
+			groupText.size = 32;
+			groupText.alignment = "center";
+			defaultGroup.add(groupText);
+			descText = new FlxText( 32, FlxG.height / 2, FlxG.width);
+			descText.size = 16;
+			defaultGroup.add(descText);
+			play = new FlxText(FlxG.width - 64 - 80, FlxG.height - 96, 80, "Play");
+			play.size = 24;
+			play.alignment = "right";
+			back = new FlxText(64, FlxG.height - 96, 80, "Back");
+			back.size = 24;
+			play.visible = false;
+			back.visible = false;
+			defaultGroup.add(play);
+			defaultGroup.add(back);
 		}
 
 		public function groupColor(group:String):uint
@@ -173,7 +220,7 @@ package inventory
 			return colors[group];
 		}
 
-		public function describe(number:int, bottomScreen:Boolean):void
+		public function describe(number:int, bottomScreen:Boolean, collected:Boolean):void
 		{
 			if (number <= 0) {
 				descriptionBanner.visible = false;
@@ -182,38 +229,42 @@ package inventory
 				return;
 			}
 
-			descriptionBanner.y = FlxG.height / 4;
-			if (bottomScreen) {
-				descriptionBanner.y = FlxG.height - descriptionBanner.y;
+			if (collected) {
+
+				descriptionBanner.y = FlxG.height / 4;
+				if (bottomScreen) {
+					descriptionBanner.y = FlxG.height - descriptionBanner.y;
+				}
+				descriptionBanner.y -= descriptionBanner.height / 2;
+				descriptionBanner.visible = true;
+
+				var elem:ElementDefinition = Context.getGameData().getElementDefinition(number);
+				descriptionText.text =
+				elem.getNumber() + ": " + elem.getName() + " (" + elem.getSymbol() + ")\n" + elem.getDescription();
+				descriptionText.y = descriptionBanner.y + descriptionBanner.height / 2;
+				descriptionText.y -= descriptionText.height / 2;
+				descriptionText.visible = true;
+
+				descriptionTextRight.text = elem.getGroup();
+				descriptionTextRight.y = descriptionText.y;
+				descriptionTextRight.color = groupColor(elem.getGroup());
+				// make the text color lighter
+				var currentColor:uint = descriptionTextRight.color;
+				var finalColor:uint = 0;
+				for (var i:int = 0; i < 3; ++i) {
+					finalColor <<= 8;
+					var c:uint = currentColor & 0xff0000;
+					currentColor <<= 8;
+					c = c >>> (8 * 2);
+					c /= 2;
+					finalColor |= c;
+				}
+				descriptionTextRight.color = finalColor;
+				descriptionTextRight.visible = true;
+
+				currentDescription = number;
 			}
-			descriptionBanner.y -= descriptionBanner.height / 2;
-			descriptionBanner.visible = true;
-
-			var elem:ElementDefinition = Context.getGameData().getElementDefinition(number);
-			descriptionText.text =
-			elem.getNumber() + ": " + elem.getName() + " (" + elem.getSymbol() + ")\n" + elem.getDescription();
-			descriptionText.y = descriptionBanner.y + descriptionBanner.height / 2;
-			descriptionText.y -= descriptionText.height / 2;
-			descriptionText.visible = true;
-
-			descriptionTextRight.text = elem.getGroup();
-			descriptionTextRight.y = descriptionText.y;
-			descriptionTextRight.color = groupColor(elem.getGroup());
-			// make the text color lighter
-			var currentColor:uint = descriptionTextRight.color;
-			var finalColor:uint = 0;
-			for (var i:int = 0; i < 3; ++i) {
-				finalColor <<= 8;
-				var c:uint = currentColor & 0xff0000;
-				currentColor <<= 8;
-				c = c >>> (8 * 2);
-				c /= 2;
-				finalColor |= c;
-			}
-			descriptionTextRight.color = finalColor;
-			descriptionTextRight.visible = true;
-
-			currentDescription = number;
+			currentHover = number;
 		}
 
 		override public function update():void
@@ -224,13 +275,25 @@ package inventory
 
 			var lastDescription:int = currentDescription;
 			currentDescription = -1;
-			describe( -1, false); // clear the description
+			currentHover = -1;
+			describe( -1, false, false); // clear the description
 
 			super.update();
 
+			if (groupMode) {
+				describe( -1, false, false);
+			}
+
+			var clicked:Boolean = false;
+
 			// draw the groups
-			if (currentDescription > 0) {
-				var lineArray:Array = borderLines[Context.getGameData().getElementDefinition(currentDescription).getGroup()];
+			if (currentHover > 0 || groupMode) {
+				var lineArray:Array;
+				if (groupMode) {
+					lineArray = borderLines[group];
+				} else {
+					lineArray = borderLines[Context.getGameData().getElementDefinition(currentHover).getGroup()];
+				}
 				for (var i:int = 0; i < lineArray.length / 4; ++i) {
 					matrix.identity();
 					matrix.translate(0, -3); // center vertically
@@ -246,13 +309,74 @@ package inventory
 					matrix.translate(x, y);
 					effectsSprite.pixels.draw(borderPixels, matrix, new ColorTransform(1, .875, 0), BlendMode.ADD);
 				}
+
+				if (!groupMode) {
+					if (FlxG.mouse.justPressed()) {
+						flash.start(0x80FFFFFF, 0.25, null, true);
+						groupMode = true;
+						group = Context.getGameData().getElementDefinition(currentHover).getGroup();
+						descText.text = descriptions[group];
+						groupText.text = group;
+						descText.visible = true;
+						groupText.visible = true;
+						play.visible = true;
+						back.visible = true;
+						clicked = true;
+					}
+				} else {
+					var shape:Shape = new Shape();
+					shape.graphics.beginFill(0, 0.8);
+					shape.graphics.drawRect(0, 0, FlxG.width, FlxG.height);
+					effectsSprite.pixels.draw(shape);
+				}
 			}
 
 			effectsSprite.pixels = effectsSprite.pixels;
 
 
-			if (currentDescription != lastDescription && currentDescription != -1) {
+			if (!groupMode && currentDescription != lastDescription && currentDescription != -1) {
 				FlxG.play(Context.getResources().getSound("beep"), 0.1);
+			}
+
+			if (groupMode) {
+				if (play.visible && play.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
+					play.color = 0x00FF00;
+					if (FlxG.mouse.justPressed() && !clicked) {
+						play.visible = false;
+						back.visible = false;
+						var fadeOut:FlxFade = new FlxFade()
+						fadeOut.start(0xFF000000, 1, startLevel);
+						defaultGroup.add(fadeOut);
+						function startLevel():void
+						{
+							parent.removeChild(background);
+
+							var elemVec:Vector.<int> = Context.getLevelElements();
+							elemVec.length = 0;
+							for (var i:int = 1; i <= 118; ++i) {
+								if (Context.getGameData().getElementDefinition(i).getGroup() == group) {
+									elemVec.push(i);
+								}
+							}
+
+							FlxG.state = new LevelState();
+						}
+					}
+				} else {
+					play.color = 0xFFFFFF;
+				}
+				if (back.visible && back.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
+					back.color = 0x00FF00;
+					if (FlxG.mouse.justPressed() && !clicked) {
+						descText.visible = false;
+						groupText.visible = false;
+						play.visible = false;
+						back.visible = false;
+						groupMode = false;
+					}
+				} else {
+					back.color = 0xFFFFFF;
+				}
 			}
 		}
 

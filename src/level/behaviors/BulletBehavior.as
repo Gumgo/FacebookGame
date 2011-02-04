@@ -10,10 +10,16 @@ package level.behaviors
 	 */
 	public class BulletBehavior extends Behavior 
 	{
-		
-		public function BulletBehavior(properties:Dictionary)
+
+		public function BulletBehavior()
 		{
-			super(properties);
+			super();
+		}
+
+		public function resetMe(properties:Dictionary):BulletBehavior
+		{
+			super.resetMeSuper(properties);
+			return this;
 		}
 
 		override public function init(enemy:Enemy):void

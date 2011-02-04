@@ -94,12 +94,12 @@ package level.enemies
 				if (!half) {
 					half = true;
 					if (miniBoss != null) {
-						return new Wave(this, Context.getGameData().getWaveDefinition(miniBoss));
+						return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(miniBoss));
 					} // else continue on
 				} else {
 					last = true;
 					if (boss != null) {
-						return new Wave(this, Context.getGameData().getWaveDefinition(boss));
+						return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(boss));
 					} // else continue on
 				}
 			}
@@ -124,9 +124,9 @@ package level.enemies
 			prevWave1 = index;
 
 			if (!half) {
-				return new Wave(this, Context.getGameData().getWaveDefinition(half1Waves[index]));
+				return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(half1Waves[index]));
 			} else {
-				return new Wave(this, Context.getGameData().getWaveDefinition(half2Waves[index]));
+				return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(half2Waves[index]));
 			}
 		}
 	}

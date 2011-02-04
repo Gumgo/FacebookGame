@@ -5,17 +5,21 @@ package level
 
 	public class Item extends FlxSprite
 	{
-		protected var strength:Number;
-
-		public function Item(x:int, y:int, image:String, strength:Number) 
+		public function Item()
 		{
-			super(x, y, Context.getResources().getSprite(image));
+			super();
+		}
+
+		protected function resetMeSuper(x:int, y:int, image:String):Item
+		{
+			this.x = x;
+			this.y = y;
+			loadGraphic(Context.getResources().getSprite(image));
 			x -= width / 2;
 			y -= height / 2;
 
-			this.strength = strength;
-
 			(FlxG.state as LevelState).getItemGroup().add(this);
+			return this;
 		}
 
 		override public function update():void
@@ -29,6 +33,7 @@ package level
 		protected function removeSelf():void
 		{
 			(FlxG.state as LevelState).getItemGroup().remove(this);
+			Context.getRecycler().recycle(this);
 		}
 
 		/**

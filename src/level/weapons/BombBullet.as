@@ -9,16 +9,22 @@ package level.weapons
 		private var direction:Number;
 		private var speed:Number;
 		private var exploding:Boolean;
-		
-		public function BombBullet(x:int, y:int) 
+
+		public function BombBullet()
 		{
-			super("bomb", 0, x, y, Context.getResources().getSprite("bombBullet"));
+			super();
+		}
+
+		public function resetMe(x:int, y:int):BombBullet
+		{
+			super.resetMeSuper("bomb", 0, x, y, Context.getResources().getSprite("bombBullet"));
 			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;
 			direction = Math.random() * Math.PI * 2.0;
 			speed = 12.0;
 			exploding = false;
+			return this;
 		}
 
 		override public function update():void

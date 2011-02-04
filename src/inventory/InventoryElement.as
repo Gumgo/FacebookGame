@@ -37,10 +37,9 @@ package inventory
 
 		override public function update():void
 		{
-			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_COLLECTED) {
-				if (FlxG.mouse.x >= x && FlxG.mouse.y >= y && FlxG.mouse.x < x + width && FlxG.mouse.y < y + height) {
-					(FlxG.state as InventoryState).describe(number, (y + height / 2) < FlxG.height / 2);
-				}
+			if (FlxG.mouse.x >= x && FlxG.mouse.y >= y && FlxG.mouse.x < x + width && FlxG.mouse.y < y + height) {
+				(FlxG.state as InventoryState).describe(number, (y + height / 2) < FlxG.height / 2,
+					Context.getPersistentState().getElementState(number) == PersistentState.ELEM_COLLECTED);
 			}
 		}
 

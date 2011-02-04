@@ -13,18 +13,23 @@ package level.enemies
 
 		private var activeFleets:Vector.<Fleet>;	// the active fleets
 
+		public function Wave()
+		{
+		}
+
 		/**
 		 * @param	parent the parent wave.
 		 * @param	fleets a list of fleets.
 		 * @param	times a list of times for these fleets.
 		 */
-		public function Wave(parent:LevelGenerator, definition:WaveDefinition)
+		public function resetMe(parent:LevelGenerator, definition:WaveDefinition):Wave
 		{
 			this.parent = parent;
 			this.fleets = definition.getFleets();
 			this.times = definition.getTimes();
 
 			activeFleets = new Vector.<Fleet>();
+			return this;
 		}
 
 		/**
@@ -43,7 +48,7 @@ package level.enemies
 		{
 			for (var i:int = 0; i < times.length; ++i) {
 				if (times[i] == tick) {
-					var newFleet:Fleet = new Fleet(this, Context.getGameData().getFleetDefinition(fleets[i]));
+					var newFleet:Fleet = (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(fleets[i]));
 					activeFleets.push(newFleet);
 				}
 			}
@@ -70,6 +75,7 @@ package level.enemies
 
 			--remaining;
 			if (remaining == 0) {
+				Context.getRecycler().recycle(this);
 				parent.waveFinished();
 			}
 		}

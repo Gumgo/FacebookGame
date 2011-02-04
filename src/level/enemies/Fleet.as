@@ -16,7 +16,11 @@ package level.enemies
 		private var remaining:int;
 		private var tick:int;
 
-		public function Fleet(parent:Wave, definition:FleetDefinition)
+		public function Fleet()
+		{
+		}
+
+		public function resetMe(parent:Wave, definition:FleetDefinition):Fleet
 		{
 			this.parent = parent;
 			this.enemies = definition.getEnemies();
@@ -25,6 +29,7 @@ package level.enemies
 			this.times = definition.getTimes();
 			remaining = enemies.length;
 			tick = 0;
+			return this;
 		}
 
 		public function update():void
@@ -32,10 +37,10 @@ package level.enemies
 			for (var i:int = 0; i < times.length; ++i) {
 				if (times[i] == tick) {
 					var Definition:Class = getDefinitionByName("level.behaviors." + behaviors[i]) as Class;
-					new Enemy(
+					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						this,
 						Context.getGameData().getEnemyDefinition(enemies[i]),
-						new Definition(behaviorProperties[i]) as Behavior);
+						(Context.getRecycler().getNew(Definition) as Definition).resetMe(behaviorProperties[i]));
 				}
 			}
 
@@ -49,6 +54,7 @@ package level.enemies
 		{
 			--remaining;
 			if (remaining == 0) {
+				Context.getRecycler().recycle(this);
 				parent.fleetFinished(this);
 			}
 		}

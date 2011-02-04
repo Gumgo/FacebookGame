@@ -15,14 +15,16 @@ package level.behaviors
 	 */
 	public class MagneticBehavior extends Behavior
 	{
-		/*
-		 * (FlxG.state as LevelState).getPlayer() 
-		 * 
-		 */
-		
-		public function MagneticBehavior(properties:Dictionary) 
+
+		public function MagneticBehavior()
 		{
-			super(properties);
+			super();
+		}
+
+		public function resetMe(properties:Dictionary):MagneticBehavior
+		{
+			super.resetMeSuper(properties);
+			return this;
 		}
 		
 		override public function init(enemy:Enemy):void

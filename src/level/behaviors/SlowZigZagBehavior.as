@@ -13,9 +13,16 @@ package level.behaviors
 	{
 		
 		private var direction: int = 0;
-		public function SlowZigZagBehavior(properties:Dictionary) 
+
+		public function SlowZigZagBehavior()
 		{
-			super(properties);
+			super();
+		}
+
+		public function resetMe(properties:Dictionary):SlowZigZagBehavior
+		{
+			super.resetMeSuper(properties);
+			return this;
 		}
 		
 

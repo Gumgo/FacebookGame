@@ -8,7 +8,6 @@ package level.definitions
 	import level.behaviors.*;
 	import level.enemies.Enemy;
 	import level.enemies.Wave;
-	import level.items.TestItem;
 
 	public class GameData
 	{
@@ -30,9 +29,6 @@ package level.definitions
 		private var magneticDummy:MagneticBehavior;
 		private var randomDummy:RandomBehavior;
 		private var slowZigZagDummy:SlowZigZagBehavior;
-
-		// dummy variables: these must be here for each item
-		private var testDummy:TestItem;
 
 		public function GameData()
 		{
@@ -78,24 +74,6 @@ package level.definitions
 					var damage:int = int(xmlEnemy.attribute("damage").toString());
 					var deathOnPlayerCollision:Boolean = xmlEnemy.attribute("deathOnPlayerCollision").toString() == "true" ? true : false;
 					var invincible:Boolean = xmlEnemy.attribute("invincible").toString() == "true" ? true : false;
-					var items:Vector.<String> = new Vector.<String>();
-					var dropRates:Vector.<Number> = new Vector.<Number>();
-					var strengths:Vector.<Number> = new Vector.<Number>();
-
-					var xmlItems:XMLList = xmlEnemy.children();
-					for each (var xmlItem:XML in xmlItems) {
-						if (xmlItem.name() != "item") {
-							throw new Error("Unknown property " + xmlItem.name());
-						}
-
-						var item:String = xmlItem.attribute("name").toString();
-						var dropRate:Number = Number(xmlItem.attribute("dropRate").toString());
-						var strength:Number = Number(xmlItem.attribute("strength").toString());
-
-						items.push(item);
-						dropRates.push(dropRate);
-						strengths.push(strength);
-					}
 
 					var newEnemy:EnemyDefinition = new EnemyDefinition(
 						name,
@@ -106,10 +84,7 @@ package level.definitions
 						color,
 						damage,
 						deathOnPlayerCollision,
-						invincible,
-						items,
-						dropRates,
-						strengths);
+						invincible);
 					enemiesMap[name] = newEnemy;
 				}
 

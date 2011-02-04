@@ -18,9 +18,14 @@ package level.weapons
 		private var target:Enemy;
 		private var exploding:Boolean;
 
-		public function MissileBullet(x:int, y:int) 
+		public function MissileBullet()
 		{
-			super("missile", 0, x, y, null);
+			super();
+		}
+
+		public function resetMe(x:int, y:int):MissileBullet
+		{
+			super.resetMeSuper("missile", 0, x, y, null);
 			loadRotatedGraphic(Context.getResources().getSprite("missileBullet"));
 			this.origin.x = width / 2;
 			this.origin.y = height / 2;
@@ -29,6 +34,7 @@ package level.weapons
 			direction = 270;
 			selectTarget();
 			exploding = false;
+			return this;
 		}
 
 		private function selectTarget():void

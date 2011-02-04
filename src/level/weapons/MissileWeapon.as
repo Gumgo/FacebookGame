@@ -12,7 +12,7 @@ package level.weapons
 		{
 			if (timer == 0) {
 				timer = 40;
-				new MissileBullet(player.x + player.width / 2, player.y + 16);
+				(Context.getRecycler().getNew(MissileBullet) as MissileBullet).resetMe(player.x + player.width / 2, player.y + 16);
 			}
 		}
 

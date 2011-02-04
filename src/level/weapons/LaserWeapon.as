@@ -12,7 +12,7 @@ package level.weapons
 		{
 			if (timer == 0) {
 				timer = 5;
-				new LaserBullet(player.x + player.width / 2, player.y + 16);
+				(Context.getRecycler().getNew(LaserBullet) as LaserBullet).resetMe(player.x + player.width / 2, player.y + 16);
 			}
 		}
 

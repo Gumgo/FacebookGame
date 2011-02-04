@@ -13,9 +13,9 @@ package level.weapons
 		{
 			if (timer == 0) {
 				if (side == false) {
-					new DefaultBullet(player.x + 12, player.y);
+					(Context.getRecycler().getNew(DefaultBullet) as DefaultBullet).resetMe(player.x + 12, player.y);
 				} else {
-					new DefaultBullet(player.x + player.width - 12, player.y);
+					(Context.getRecycler().getNew(DefaultBullet) as DefaultBullet).resetMe(player.x + player.width - 12, player.y);
 				}
 				side = !side;
 				timer = 5;

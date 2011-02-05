@@ -54,13 +54,10 @@ package
 			{
 				parent.removeChild(background);
 				FlxG.state = new LevelState();
-			}  /*else if ( FlxG.keys.justPressed("x")) {
-				//FlxG.state = new FlxState();
-			}  else {
-				//FlxG.state = new FlxState();
-			}
-		*/
-		} // end function update
+			}  
+		
+		
+		} 
  
  
 		public function MenuState()

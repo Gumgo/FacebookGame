@@ -10,6 +10,8 @@ package level.behaviors
 	 */
 	public class LineBehavior extends Behavior 
 	{
+		
+		
 		public function LineBehavior(properties:Dictionary)
 		{
 			super(properties);
@@ -17,12 +19,14 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
+			
 			enemy.y = -32;
 			enemy.x = Number(getProperty("offset"));
 		}
 
 		override public function update(enemy:Enemy):void
 		{
+			
 			enemy.y += 12;
 
 			if (Math.random() < 0.02) {

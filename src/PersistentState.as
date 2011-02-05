@@ -17,8 +17,7 @@ package
 		public function reset():void
 		{
 			for (var i:int = 0; i < 118; ++i) {
-				//elements[i] = ELEM_UNENCOUNTERED;
-				elements[i] = ELEM_COLLECTED;
+				elements[i] = ELEM_UNENCOUNTERED;
 			}
 		}
 

@@ -7,20 +7,22 @@ package level.items
 	
 	public class TestItem extends Item
 	{
-		
-		public function TestItem(x:int, y:int, strength:Number)
+
+		public function TestItem()
 		{
-			super(x, y, "testItem", strength);
-			if (Context.getPersistentState().getElementState(1) == PersistentState.ELEM_UNENCOUNTERED) {
-				Context.getPersistentState().setElementState(1, PersistentState.ELEM_ENCOUNTERED);
-			}
+			super();
+		}
+
+		public function resetMe(x:int, y:int):TestItem
+		{
+			super.resetMeSuper(x, y, "testItem");
+			return this;
 		}
 
 		override public function collect():void
 		{
-			(FlxG.state as LevelState).getPlayer().adjustHealth(strength as int);
-			(FlxG.state as LevelState).getLevelText().setText("health +" + strength, 0x00FF00);
-			Context.getPersistentState().setElementState(1, PersistentState.ELEM_COLLECTED);
+			(FlxG.state as LevelState).getPlayer().adjustHealth(20);
+			(FlxG.state as LevelState).getLevelText().setText("health +20", 0x00FF00);
 			//(FlxG.state as LevelState).getPlayer().setSecondaryWeapon("name_of_weapon_class");
 			removeSelf();
 		}

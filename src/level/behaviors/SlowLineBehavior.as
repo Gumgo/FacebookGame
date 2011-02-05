@@ -10,9 +10,16 @@ package level.behaviors
 	 */
 	public class SlowLineBehavior extends Behavior 
 	{
-		public function SlowLineBehavior(properties:Dictionary)
+
+		public function SlowLineBehavior()
 		{
-			super(properties);
+			super();
+		}
+
+		public function resetMe(properties:Dictionary):SlowLineBehavior
+		{
+			super.resetMeSuper(properties);
+			return this;
 		}
 
 		override public function init(enemy:Enemy):void
@@ -29,7 +36,10 @@ package level.behaviors
 				var dict:Dictionary = new Dictionary();
 				dict["x"] = String(enemy.x + enemy.width / 2);
 				dict["y"] = String(enemy.y + enemy.height);
-				new Enemy(null, Context.getGameData().getEnemyDefinition("BulletEnemy"), new BulletBehavior(dict), true);
+				(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
+					null,
+					Context.getGameData().getEnemyDefinition("BulletEnemy"),
+					(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 			}
 			if (enemy.y > 0 && !enemy.onScreen()) {
 				enemy.enemyFinished();

@@ -28,6 +28,7 @@ package level
 		private var healthBar:HealthBar;
 		private var levelText:LevelText;
 		private var levelGenerator:LevelGenerator;
+		private var itemGenerator:ItemGenerator;
 
 		private var enemyGroup:FlxGroup;
 		private var enemyBulletGroup:FlxGroup;
@@ -44,6 +45,7 @@ package level
 
 		override public function create():void
 		{
+			FlxG.mouse.hide();
 			var bgNum:int = Math.floor(Math.random() * 2.0) + 1;
 			var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "Anim");
 			background = new BackgroundDef() as MovieClip;
@@ -134,6 +136,7 @@ package level
 			overlayGroup.add(levelText);
 
 			levelGenerator = new LevelGenerator(0);
+			itemGenerator = new ItemGenerator();
 			levelGenerator.start();
 
 			fadeTimer = -1;
@@ -204,6 +207,11 @@ package level
 		public function getEffects():BitmapData
 		{
 			return effectsSprite.pixels;
+		}
+
+		public function getItemGenerator():ItemGenerator
+		{
+			return itemGenerator;
 		}
 
 	}

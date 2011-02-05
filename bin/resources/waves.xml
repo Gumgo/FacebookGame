@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <waves>
+<<<<<<< HEAD
 	<wave name="E_1">
 		<fleet name="SlowLine_Fleet_1" time="0"/>
 	
@@ -15,6 +16,20 @@
 		<fleet name="Line_Fleet_4" time="0"/>
 		<fleet name="Line_Fleet_5" time="30"/>
 		<fleet name="Line_Fleet_3" time="60"/>
+=======
+	<wave name="TestWave">
+		<fleet name="LineFleet1" time="0"/>
+	</wave>
+
+	<wave name="TestWave2">
+		<fleet name="LineFleet1" time="0"/>
+	</wave>
+
+	<wave name="TestWave3">
+		<fleet name="LineFleet1" time="0"/>
+		<fleet name="LineFleet1" time="20"/>
+		<fleet name="LineFleet1" time="40"/>
+>>>>>>> 97e2903762105748771294be786cc927a816fcb6
 	</wave>
 
 </waves>

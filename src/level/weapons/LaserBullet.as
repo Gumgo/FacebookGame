@@ -6,14 +6,20 @@ package level.weapons
 
 	public class LaserBullet extends PlayerBullet
 	{
-		
-		public function LaserBullet(x:int, y:int) 
+
+		public function LaserBullet()
 		{
-			super("laser", 200, x, y, Context.getResources().getSprite("laserBullet"));
+			super();
+		}
+
+		public function resetMe(x:int, y:int):LaserBullet
+		{
+			super.resetMeSuper("laser", 200, x, y, Context.getResources().getSprite("laserBullet"));
 			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;
 			color = 0xFFFF00;
+			return this;
 		}
 
 		override public function update():void

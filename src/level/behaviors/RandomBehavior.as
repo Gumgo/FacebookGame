@@ -18,10 +18,15 @@ package level.behaviors
 		private var randomX:Number = FlxU.random() * 10;
 		private var randomY:Number = FlxU.random() * 10;
 
-
-		public function RandomBehavior(properties:Dictionary) 
+		public function RandomBehavior()
 		{
-			super(properties);
+			super();
+		}
+
+		public function resetMe(properties:Dictionary):RandomBehavior
+		{
+			super.resetMeSuper(properties);
+			return this;
 		}
 		
 		override public function init(enemy:Enemy):void

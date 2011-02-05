@@ -23,20 +23,25 @@ package level.enemies
 		private var deathOnPlayerCollision:Boolean;
 		private var invincible:Boolean;
 
-		private var items:Vector.<String>;
-		private var dropRates:Vector.<Number>;
-		private var strengths:Vector.<Number>;
-
 		private var damageTimer:int;
 
 		private var done:Boolean;
 		private var bullet:Boolean;
 
-		public function Enemy(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false)
+		public function Enemy()
+		{
+			super();
+		}
+
+		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false):Enemy
 		{
 			this.parent = parent;
 			this.behavior = behavior;
-			super(0, 0, Context.getResources().getSprite(definition.getSprite()));
+			x = 0;
+			y = 0;
+			alpha = 1;
+			_animations.length = 0;
+			loadGraphic(Context.getResources().getSprite(definition.getSprite()));
 
 			this.bullet = bullet;
 
@@ -47,10 +52,6 @@ package level.enemies
 			damage = definition.getDamage();
 			deathOnPlayerCollision = definition.getDeathOnPlayerCollision();
 			invincible = definition.getInvincible();
-
-			items = definition.getItems();
-			dropRates = definition.getDropRates();
-			strengths = definition.getStrengths();
 
 			behavior.init(this);
 
@@ -63,6 +64,8 @@ package level.enemies
 			} else {
 				(FlxG.state as LevelState).getEnemyGroup().add(this);
 			}
+
+			return this;
 		}
 
 		override public function update():void
@@ -75,8 +78,12 @@ package level.enemies
 			} else if (finished) {
 				if (bullet) {
 					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
+					Context.getRecycler().recycle(this);
+					Context.getRecycler().recycle(behavior);
 				} else {
 					(FlxG.state as LevelState).getEnemyGroup().remove(this);
+					Context.getRecycler().recycle(this);
+					Context.getRecycler().recycle(behavior);
 				}
 			}
 			super.update();
@@ -129,17 +136,7 @@ package level.enemies
 			x -= width / 2;
 			y -= height / 2;
 
-			var drop:Number = Math.random();
-			var sum:Number = 0.0;
-			for (var i:int = 0; i < items.length; ++i) {
-				// go through all the possible drops
-				sum += dropRates[i];
-				if (drop < sum) {
-					var Definition:Class = getDefinitionByName("level.items." + items[i]) as Class;
-					new Definition(x + width / 2, y + width / 2, strengths[i]);
-					break;
-				}
-			}
+			(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width / 2, y + height / 2);
 
 			enemyFinished();
 		}
@@ -158,8 +155,12 @@ package level.enemies
 			if (enemyHealth > 0) {
 				if (bullet) {
 					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
+					Context.getRecycler().recycle(this);
+					Context.getRecycler().recycle(behavior);
 				} else {
 					(FlxG.state as LevelState).getEnemyGroup().remove(this);
+					Context.getRecycler().recycle(this);
+					Context.getRecycler().recycle(behavior);
 				}
 			}
 		}

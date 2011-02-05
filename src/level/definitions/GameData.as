@@ -30,6 +30,10 @@ package level.definitions
 		private var randomDummy:RandomBehavior;
 		private var slowZigZagDummy:SlowZigZagBehavior;
 
+		private var linearDummy:LinearBehavior;
+		private var dipFireDummy:DipFireBehavior;
+		private var bombDummy:BombBehavior;
+
 		public function GameData()
 		{
 			enemiesMap = new Dictionary();
@@ -241,9 +245,11 @@ package level.definitions
 					var symbol:String = xmlElement.attribute("symbol").toString();
 					var name:String = xmlElement.attribute("name").toString();
 					var group:String = xmlElement.attribute("group").toString();
+					var sprite:String = xmlElement.attribute("sprite").toString();
+					var color:uint = uint(xmlElement.attribute("color").toString());
 					var description:String = xmlElement.attribute("description").toString();
 
-					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, description);
+					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, sprite, color, description);
 					elements.push(newElement);
 				}
 

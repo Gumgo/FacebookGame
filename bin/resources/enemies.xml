@@ -7,7 +7,7 @@
 		deathSound="none"
 		health="100"
 		damage="5"
-		color="0xFFFFFFFF"
+		color="0xFFFFFF"
 		deathOnPlayerCollision="true"
 		invincible="false"/>
 	<enemy
@@ -17,7 +17,7 @@
 		deathSound="none"
 		health="100"
 		damage="5"
-		color="0xFFFFFFFF"
+		color="0xFFFFFF"
 		deathOnPlayerCollision="true"
 		invincible="true"/>
 </enemies>

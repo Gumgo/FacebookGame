@@ -131,7 +131,7 @@ package level.enemies
 				frames[f] = f;
 			}
 			addAnimation("die", frames, 30, false);
-			play("die");
+			play("die", true);
 
 			x -= width / 2;
 			y -= height / 2;

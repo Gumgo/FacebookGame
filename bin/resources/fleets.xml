@@ -1,5 +1,101 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <fleets>
+	<fleet name="Bomb">
+		<enemy name="TestEnemy" behavior="BombBehavior" time="0"/>
+	</fleet>
+
+	<fleet name="SingleDipFire">
+		<enemy name="TestEnemy" behavior="DipFireBehavior" time="0"><behaviorProperty name="speed" value="0.1"/></enemy>
+	</fleet>
+
+	<fleet name="DoubleArc">
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="0"><behaviorProperty name="direction" value="0"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="20"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="-20"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="40"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="-40"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="60"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="-60"/><behaviorProperty name="speed" value="10"/></enemy>
+	</fleet>
+
+	<fleet name="SlowCircle">
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="90"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="80"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="70"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="40"><behaviorProperty name="direction" value="60"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="50"><behaviorProperty name="direction" value="50"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="60"><behaviorProperty name="direction" value="40"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="70"><behaviorProperty name="direction" value="30"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="80"><behaviorProperty name="direction" value="20"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="90"><behaviorProperty name="direction" value="10"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="100"><behaviorProperty name="direction" value="0"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="110"><behaviorProperty name="direction" value="350"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="120"><behaviorProperty name="direction" value="340"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="130"><behaviorProperty name="direction" value="330"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="140"><behaviorProperty name="direction" value="320"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="150"><behaviorProperty name="direction" value="310"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="160"><behaviorProperty name="direction" value="300"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="170"><behaviorProperty name="direction" value="290"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="180"><behaviorProperty name="direction" value="280"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="190"><behaviorProperty name="direction" value="270"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="200"><behaviorProperty name="direction" value="260"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="210"><behaviorProperty name="direction" value="250"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="220"><behaviorProperty name="direction" value="240"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="230"><behaviorProperty name="direction" value="230"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="240"><behaviorProperty name="direction" value="220"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="250"><behaviorProperty name="direction" value="210"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="260"><behaviorProperty name="direction" value="200"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="270"><behaviorProperty name="direction" value="190"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="280"><behaviorProperty name="direction" value="180"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="290"><behaviorProperty name="direction" value="170"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="300"><behaviorProperty name="direction" value="160"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="310"><behaviorProperty name="direction" value="150"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="320"><behaviorProperty name="direction" value="140"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="330"><behaviorProperty name="direction" value="130"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="340"><behaviorProperty name="direction" value="120"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="350"><behaviorProperty name="direction" value="110"/><behaviorProperty name="speed" value="10"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="360"><behaviorProperty name="direction" value="100"/><behaviorProperty name="speed" value="10"/></enemy>
+	</fleet>
+
+	<fleet name="FastCircle">
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="05"><behaviorProperty name="direction" value="90"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="80"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="15"><behaviorProperty name="direction" value="70"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="60"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="25"><behaviorProperty name="direction" value="50"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="40"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="35"><behaviorProperty name="direction" value="30"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="40"><behaviorProperty name="direction" value="20"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="45"><behaviorProperty name="direction" value="10"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="50"><behaviorProperty name="direction" value="0"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="55"><behaviorProperty name="direction" value="350"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="60"><behaviorProperty name="direction" value="340"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="65"><behaviorProperty name="direction" value="330"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="70"><behaviorProperty name="direction" value="320"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="75"><behaviorProperty name="direction" value="310"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="80"><behaviorProperty name="direction" value="300"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="85"><behaviorProperty name="direction" value="290"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="90"><behaviorProperty name="direction" value="280"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="95"><behaviorProperty name="direction" value="270"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="100"><behaviorProperty name="direction" value="260"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="105"><behaviorProperty name="direction" value="250"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="110"><behaviorProperty name="direction" value="240"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="115"><behaviorProperty name="direction" value="230"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="120"><behaviorProperty name="direction" value="220"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="125"><behaviorProperty name="direction" value="210"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="130"><behaviorProperty name="direction" value="200"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="135"><behaviorProperty name="direction" value="190"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="140"><behaviorProperty name="direction" value="180"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="145"><behaviorProperty name="direction" value="170"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="150"><behaviorProperty name="direction" value="160"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="155"><behaviorProperty name="direction" value="150"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="160"><behaviorProperty name="direction" value="140"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="165"><behaviorProperty name="direction" value="130"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="170"><behaviorProperty name="direction" value="120"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="175"><behaviorProperty name="direction" value="110"/><behaviorProperty name="speed" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="LinearBehavior" time="180"><behaviorProperty name="direction" value="100"/><behaviorProperty name="speed" value="15"/></enemy>
+	</fleet>
+
 	<fleet name="LineFleet1">
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0">

@@ -30,7 +30,7 @@ package level.weapons
 			this.y -= height / 2;
 			turnDir = Math.random() >= 0.5;
 			direction = dir;
-			blend = BlendMode.ADD;
+			blend = BlendMode.DARKEN;
 
 			points = new Vector.<Number>();
 			return this;

@@ -24,7 +24,7 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
-			enemy.y = -32;
+			enemy.y = -enemy.height;
 			enemy.x = Number(getProperty("offset"));
 		}
 

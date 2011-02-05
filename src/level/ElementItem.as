@@ -1,5 +1,6 @@
 package level 
 {
+	import level.definitions.ElementDefinition;
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxG;
 
@@ -15,9 +16,9 @@ package level
 
 		public function resetMe(x:int, y:int, number:int):ElementItem
 		{
-			this.resetMeSuper(x, y, "blob"); // TEMPORARY!!!!!
-			// TODO: load graphic based on element!!!! read from an XML file of elements
-			// color = LOOK_UP_COLOR_BASED_ON_ELEMENT_NUMBER
+			var def:ElementDefinition = Context.getGameData().getElementDefinition(number);
+			this.resetMeSuper(x, y, def.getSprite());
+			color = def.getColor();
 			this.number = number;
 
 			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {

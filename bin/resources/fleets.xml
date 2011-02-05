@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <fleets>
-	<fleet name="LineFleet1">
+	<fleet name="Line_Fleet_1">
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
 		<behaviorProperty name="offset" value="32"/>
@@ -40,19 +40,19 @@
 
 	</fleet>
 
-	<!-- Left mini V formation-->
+	<!-- Left mini side V formation-->
 	<fleet name="Line_Fleet_3">
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+		<behaviorProperty name="offset" value="80"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
 		<behaviorProperty name="offset" value="40"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-		<behaviorProperty name="offset" value="0"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-		<behaviorProperty name="offset" value="80"/>
+		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
+		<behaviorProperty name="offset" value="120"/>
 		</enemy>
 
 	</fleet>
@@ -78,15 +78,15 @@
 	<fleet name="Line_Fleet_5">
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<behaviorProperty name="offset" value="500"/>
+	</enemy>
+
+	<enemy name="TestEnemy" behavior="LineBehavior" time="20">
 	<behaviorProperty name="offset" value="540"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-	<behaviorProperty name="offset" value="580"/>
-	</enemy>
-
-	<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-	<behaviorProperty name="offset" value="500"/>
+	<enemy name="TestEnemy" behavior="LineBehavior" time="40">
+	<behaviorProperty name="offset" value="480"/>
 	</enemy>
 
 	</fleet>
@@ -95,39 +95,39 @@
 	<fleet name="Line_Fleet_6">
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="40">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="60">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="80">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="100">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="120">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="140">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="160">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	</fleet>
@@ -138,39 +138,39 @@
 	<fleet name="Line_Fleet_7">
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="60">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="80">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="100">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="120">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="140">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="160">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 	</fleet>
@@ -182,11 +182,7 @@
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-		<behaviorProperty name="offset" value="300"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
+		<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
@@ -194,11 +190,7 @@
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80">
-		<behaviorProperty name="offset" value="300"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100">
+		<enemy name="TestEnemy" behavior="LineBehavior" time="90">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
@@ -206,11 +198,19 @@
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140">
+		<enemy name="TestEnemy" behavior="LineBehavior" time="150">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160">
+		<enemy name="TestEnemy" behavior="LineBehavior" time="180">
+		<behaviorProperty name="offset" value="300"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="210">
+		<behaviorProperty name="offset" value="300"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="LineBehavior" time="240">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
@@ -370,14 +370,14 @@
 
 	</fleet>
 
-	<!--// lots of enemies horizontal fleet-->
+	<!--// lots of enemies horizontal zig fleet-->
 	<fleet name="Line_Fleet_12">
 
 	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
 	<behaviorProperty name="offset" value="600"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="560"/>
 	</enemy>
 
@@ -385,7 +385,7 @@
 	<behaviorProperty name="offset" value="540"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="500"/>
 	</enemy>
 
@@ -393,7 +393,7 @@
 	<behaviorProperty name="offset" value="460"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="420"/>
 	</enemy>
 
@@ -401,7 +401,7 @@
 	<behaviorProperty name="offset" value="380"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="340"/>
 	</enemy>
 
@@ -409,7 +409,7 @@
 	<behaviorProperty name="offset" value="300"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="260"/>
 	</enemy>
 
@@ -417,7 +417,7 @@
 	<behaviorProperty name="offset" value="220"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="180"/>
 	</enemy>
 
@@ -425,7 +425,7 @@
 	<behaviorProperty name="offset" value="140"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="100"/>
 	</enemy>
 
@@ -433,7 +433,7 @@
 	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="LineBehavior" time="0">
+	<enemy name="TestEnemy" behavior="LineBehavior" time="30">
 	<behaviorProperty name="offset" value="20"/>
 	</enemy>
 
@@ -487,23 +487,23 @@
 	<fleet name="Line_Fleet_14">
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="400"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="400"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="400"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="60">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="400"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="80">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="400"/>
 		</enemy>
 	</fleet>
 
@@ -535,23 +535,23 @@
 	<fleet name="Line_Fleet_16">
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="100"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="100"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="100"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="60">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="100"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="LineBehavior" time="80">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="100"/>
 		</enemy>
 
 	</fleet>
@@ -601,15 +601,15 @@
 	<fleet name="ZigZag_Fleet_3">
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
-		<behaviorProperty name="offset" value="40"/>
+		<behaviorProperty name="offset" value="60"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-		<behaviorProperty name="offset" value="0"/>
+		<behaviorProperty name="offset" value="20"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-		<behaviorProperty name="offset" value="80"/>
+		<behaviorProperty name="offset" value="100"/>
 		</enemy>
 
 	</fleet>
@@ -635,15 +635,15 @@
 	<fleet name="ZigZag_Fleet_5">
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<behaviorProperty name="offset" value="500"/>
+	</enemy>
+
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="25">
 	<behaviorProperty name="offset" value="540"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-	<behaviorProperty name="offset" value="580"/>
-	</enemy>
-
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-	<behaviorProperty name="offset" value="500"/>
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="50">
+	<behaviorProperty name="offset" value="460"/>
 	</enemy>
 
 	</fleet>
@@ -652,39 +652,39 @@
 	<fleet name="ZigZag_Fleet_6">
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="10">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="50">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="70">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	</fleet>
@@ -695,39 +695,39 @@
 	<fleet name="ZigZag_Fleet_7">
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="10">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="50">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="70">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80">
-		<behaviorProperty name="offset" value="500"/>
+		<behaviorProperty name="offset" value="460"/>
 		</enemy>
 
 	</fleet>
@@ -973,7 +973,7 @@
 
 	</fleet>
 
-	<!--// lots of enemies horizontal fleet-->
+	<!--// lots of enemies horizontal spread fleet-->
 	<fleet name="ZigZag_Fleet_12">
 
 
@@ -981,7 +981,7 @@
 	<behaviorProperty name="offset" value="560"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="540"/>
 	</enemy>
 
@@ -989,7 +989,7 @@
 	<behaviorProperty name="offset" value="500"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="460"/>
 	</enemy>
 
@@ -997,7 +997,7 @@
 	<behaviorProperty name="offset" value="420"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="380"/>
 	</enemy>
 
@@ -1005,7 +1005,7 @@
 	<behaviorProperty name="offset" value="340"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="300"/>
 	</enemy>
 
@@ -1013,7 +1013,7 @@
 	<behaviorProperty name="offset" value="260"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="220"/>
 	</enemy>
 
@@ -1021,7 +1021,7 @@
 	<behaviorProperty name="offset" value="180"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="140"/>
 	</enemy>
 
@@ -1029,7 +1029,7 @@
 	<behaviorProperty name="offset" value="100"/>
 	</enemy>
 
-	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
+	<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
 	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
@@ -1131,23 +1131,23 @@
 	<fleet name="ZigZag_Fleet_16">
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="60"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="10">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="60"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="60"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="60"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40">
-		<behaviorProperty name="offset" value="32"/>
+		<behaviorProperty name="offset" value="60"/>
 		</enemy>
 	</fleet>
 
@@ -1784,58 +1784,58 @@
 		<!-- Right mini V formation-->
 	<fleet name="Random_Fleet_5">
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="0">
-	<behaviorProperty name="offset" value="540"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="0">
+		<behaviorProperty name="offset" value="540"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="20">
-	<behaviorProperty name="offset" value="580"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="20">
+		<behaviorProperty name="offset" value="580"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="20">
-	<behaviorProperty name="offset" value="500"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="20">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
 
 	</fleet>
 
 	<!-- left side line formation-->
 	<fleet name="Random_Fleet_6">
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="0">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="0">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="30">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="30">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="60">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="60">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="90">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="90">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="120">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="120">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="150">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="150">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="180">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="180">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="210">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="210">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
-	<enemy name="TestEnemy" behavior="RandomBehavior" time="240">
-	<behaviorProperty name="offset" value="32"/>
-	</enemy>
+		<enemy name="TestEnemy" behavior="RandomBehavior" time="240">
+		<behaviorProperty name="offset" value="32"/>
+		</enemy>
 
 	</fleet>
 
@@ -1845,39 +1845,39 @@
 	<fleet name="Random_Fleet_7">
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="0">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="10">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="20">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="30">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="40">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="50">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="60">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="70">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="80">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 	</fleet>
@@ -2357,39 +2357,39 @@
 	<fleet name="Magnetic_Fleet_6">
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="0">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="30">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="60">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="90">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="120">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="150">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="180">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="210">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	<enemy name="TestEnemy" behavior="MagneticBehavior" time="240">
-	<behaviorProperty name="offset" value="32"/>
+	<behaviorProperty name="offset" value="60"/>
 	</enemy>
 
 	</fleet>
@@ -2400,39 +2400,39 @@
 	<fleet name="Magnetic_Fleet_7">
 
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="10">
-		<behaviorProperty name="offset" value="580"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20">
-		<behaviorProperty name="offset" value="580"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30">
-		<behaviorProperty name="offset" value="580"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40">
-		<behaviorProperty name="offset" value="580"/>
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="25">
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="50">
-		<behaviorProperty name="offset" value="580"/>
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60">
-		<behaviorProperty name="offset" value="580"/>
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="75">
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="70">
-		<behaviorProperty name="offset" value="580"/>
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="100">
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80">
-		<behaviorProperty name="offset" value="580"/>
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="125">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="150">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="175">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="MagneticBehavior" time="200">
+		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
 	</fleet>
@@ -2959,19 +2959,7 @@
 		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="10">
-		<behaviorProperty name="offset" value="500"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="20">
-		<behaviorProperty name="offset" value="500"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="30">
-		<behaviorProperty name="offset" value="500"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="40">
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="25">
 		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
@@ -2979,15 +2967,27 @@
 		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="60">
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="75">
 		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="70">
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="100">
 		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="80">
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="125">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="150">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="175">
+		<behaviorProperty name="offset" value="500"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="200">
 		<behaviorProperty name="offset" value="500"/>
 		</enemy>
 
@@ -3000,15 +3000,7 @@
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="10">
-		<behaviorProperty name="offset" value="300"/>
-		</enemy>
-
 		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="20">
-		<behaviorProperty name="offset" value="300"/>
-		</enemy>
-
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="30">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
@@ -3016,19 +3008,27 @@
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="50">
-		<behaviorProperty name="offset" value="300"/>
-		</enemy>
-
 		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="60">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="70">
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="80">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 
-		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="80">
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="100">
+		<behaviorProperty name="offset" value="300"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="120">
+		<behaviorProperty name="offset" value="300"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="140">
+		<behaviorProperty name="offset" value="300"/>
+		</enemy>
+
+		<enemy name="TestEnemy" behavior="SlowZigZagBehavior" time="160">
 		<behaviorProperty name="offset" value="300"/>
 		</enemy>
 

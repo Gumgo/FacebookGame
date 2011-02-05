@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
 	<level waveCount="10">
-		<firstHalf miniBoss="TestWave">
-			<wave name="TestWave"/>
+		<firstHalf miniBoss="E_1">
+			<wave name="E_1"/>
 		</firstHalf>
-		<secondHalf boss="TestWave">
-			<wave name="TestWave"/>
-			<wave name="TestWave2"/>
-			<wave name="TestWave3"/>
+		<secondHalf boss="E_1">
+			<wave name="E_1"/>
+			<wave name="E_2"/>
+			<wave name="E_3"/>
 		</secondHalf>
 	</level>
 </levels>

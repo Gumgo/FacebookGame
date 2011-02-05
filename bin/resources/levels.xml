@@ -14,6 +14,16 @@
 			<wave name="TestWave3"/>
 			<wave name="TestWave4"/>
 			<wave name="TestWave5"/>
+	</level>
+
+	<level waveCount="10">
+		<firstHalf miniBoss="E_1">
+			<wave name="E_1"/>
+		</firstHalf>
+		<secondHalf boss="E_1">
+			<wave name="E_1"/>
+			<wave name="E_2"/>
+			<wave name="E_3"/>
 		</secondHalf>
 	</level>
 </levels>

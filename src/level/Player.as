@@ -1,6 +1,9 @@
 package level
 {
+	import level.weapons.BombWeapon;
 	import level.weapons.DefaultWeapon;
+	import level.weapons.LaserWeapon;
+	import level.weapons.MissileWeapon;
 	import level.weapons.SpreadWeapon; // TEMP FOR TESTING
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxG;
@@ -31,7 +34,7 @@ package level
 			xPrev = x;
 			yPrev = y;
 
-			primaryWeapon = new DefaultWeapon();
+			primaryWeapon = new MissileWeapon();
 
 			// TEMP
 			secondaryWeapon = new SpreadWeapon();

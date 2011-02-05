@@ -30,6 +30,7 @@ package level.behaviors
 
 		override public function update(enemy:Enemy):void
 		{
+			
 			enemy.y += 12;
 
 			if (Math.random() < 0.02) {

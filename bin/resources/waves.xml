@@ -20,4 +20,20 @@
 		<fleet name="FastCircle" time="0"/>
 	</wave>
 
+	<wave name="E_1">
+		<fleet name="SlowLine_Fleet_1" time="0"/>
+	</wave>
+ 
+	<wave name="E_2">
+		<fleet name="SlowLine_Fleet_2" time="0"/>
+		<fleet name="Line_Fleet_1" time="0"/>
+		<fleet name="Line_Fleet_1" time="50"/>
+	</wave>
+
+	<wave name="E_3">
+		<fleet name="Line_Fleet_4" time="0"/>
+		<fleet name="Line_Fleet_5" time="30"/>
+		<fleet name="Line_Fleet_3" time="60"/>
+	</wave>
+
 </waves>

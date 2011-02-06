@@ -52,17 +52,12 @@ package level.weapons
 					var xVec:Number = target.x + target.width / 2 - x - width / 2;
 					var yVec:Number = target.y + target.height / 2 - y - height / 2;
 					if (xVec != 0 && yVec != 0) {
-						var dirTo:Number = Math.atan2(xVec, yVec) * 180.0 / Math.PI;
+						var dirTo:Number = Math.atan2(yVec, xVec) * 180.0 / Math.PI;
 						if (dirTo < 0.0) {
 							dirTo += 360.0;
 						}
 
-						var mul:Number = ((((direction - dirTo) % 360.0) + 540.0) % 360.0) - 180.0;
-						if (mul > 0) {
-							mul = 1.0;
-						} else if (mul < 0) {
-							mul = -1.0;
-						}
+						var mul:Number = MathExt.sign(((((dirTo - direction) % 360.0) + 540.0) % 360.0) - 180.0);
 						direction += 3.0 * mul;
 
 						if (direction >= 360.0) {
@@ -84,8 +79,11 @@ package level.weapons
 
 			super.update();
 
-			if (exploding && finished) {
-				super.hit();
+			if (exploding) {
+				damage = 0;
+				if (finished) {
+					super.hit();
+				}
 			}
 		}
 
@@ -94,10 +92,10 @@ package level.weapons
 			if (!exploding) {
 				x += width / 2;
 				y += height / 2;
-				damage = 100;
+				damage = 200;
 				loadGraphic(Context.getResources().getSprite("explosion"), true);
 				addAnimation("ex", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
-				play("ex");
+				play("ex", true);
 				exploding = true;
 				x -= width / 2;
 				y -= height / 2;

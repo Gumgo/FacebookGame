@@ -72,8 +72,12 @@ package level.enemies
 				if (endTimer > 0) {
 					--endTimer;
 				} else if (endTimer == 0) {
-					(FlxG.state as LevelState).levelFinished();
-					endTimer = -1;
+					// don't end until ALL enemies are gone - we don't want you dying but completing the level
+					if ((FlxG.state as LevelState).getEnemyBulletGroup().countLiving() <= 0 &&
+						(FlxG.state as LevelState).getEnemyGroup().countLiving() <= 0) {
+						(FlxG.state as LevelState).levelFinished();
+						endTimer = -1;
+					}
 				}
 			}
 		}

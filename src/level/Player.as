@@ -34,7 +34,7 @@ package level
 			xPrev = x;
 			yPrev = y;
 
-			primaryWeapon = new MissileWeapon();
+			primaryWeapon = new DefaultWeapon();
 
 			// TEMP
 			secondaryWeapon = new SpreadWeapon();

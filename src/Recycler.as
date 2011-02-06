@@ -3,6 +3,8 @@ package
 	import flash.utils.Dictionary;
 	import flash.utils.getQualifiedClassName;
 	import flash.utils.getDefinitionByName;
+	import org.flixel.FlxGroup;
+	import org.flixel.FlxObject;
 
 	public class Recycler 
 	{
@@ -36,6 +38,16 @@ package
 				listDict[classType] = vec;
 			}
 			vec.push(o);
+		}
+
+		public static function addToGroup(group:FlxGroup, object:FlxObject):void
+		{
+			var firstNull:int = group.getFirstNull();
+			if (firstNull == -1) {
+				group.add(object);
+			} else {
+				group.members[firstNull] = object;
+			}
 		}
 
 	}

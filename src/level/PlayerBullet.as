@@ -16,12 +16,15 @@ package level
 
 		protected function resetMeSuper(name:String, damage:int, X:Number = 0, Y:Number = 0, SimpleGraphic:Class = null):PlayerBullet
 		{
+			_animations.length = 0;
 			this.name = name;
 			this.damage = damage;
 			this.x = X;
 			this.y = Y;
-			loadGraphic(SimpleGraphic);
-			(FlxG.state as LevelState).getBulletGroup().add(this);
+			if (SimpleGraphic != null) {
+				loadGraphic(SimpleGraphic);
+			}
+			Recycler.addToGroup((FlxG.state as LevelState).getBulletGroup(), this);
 			return this;
 		}
 

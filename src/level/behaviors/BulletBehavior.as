@@ -13,6 +13,7 @@ package level.behaviors
 
 		private var xInc:Number;
 		private var yInc:Number;
+		private var speed:Number;
 
 		public function BulletBehavior()
 		{
@@ -32,13 +33,18 @@ package level.behaviors
 			enemy.x -= enemy.width / 2;
 			enemy.y -= enemy.height / 2;
 
+			if (getProperty("speed") == null) {
+				speed = 6;
+			} else {
+				speed = Number(getProperty("speed"));
+			}
 			if (getProperty("dir") == null) {
 				xInc = 0;
-				yInc = 12;
+				yInc = speed;
 			} else {
 				var direction:Number = Number(getProperty("dir"));
-				xInc = Math.cos(direction * Math.PI / 180.0) * 12.0;
-				yInc = -Math.sin(direction * Math.PI / 180.0) * 12.0;
+				xInc = Math.cos(direction * Math.PI / 180.0) * speed;
+				yInc = -Math.sin(direction * Math.PI / 180.0) * speed;
 			}
 		}
 

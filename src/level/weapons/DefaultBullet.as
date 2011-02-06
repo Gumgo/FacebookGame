@@ -14,7 +14,7 @@ package level.weapons
 
 		public function resetMe(x:int, y:int):DefaultBullet
 		{
-			super.resetMeSuper("default", 200, x, y, Context.getResources().getSprite("defaultBullet"));
+			super.resetMeSuper("default", 50, x, y, Context.getResources().getSprite("defaultBullet"));
 			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;

@@ -65,6 +65,7 @@ package level.behaviors
 						dict1["x"] = String(enemy.x + enemy.width / 2);
 						dict1["y"] = String(enemy.y + enemy.height / 2);
 						dict1["dir"] = String(rot);
+						dict1["speed"] = "12";
 						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 							null,
 							Context.getGameData().getEnemyDefinition("BulletEnemy"),
@@ -78,6 +79,7 @@ package level.behaviors
 						dict["x"] = String(enemy.x + enemy.width / 2);
 						dict["y"] = String(enemy.y + enemy.height / 2);
 						dict["dir"] = String(360.0 * i / 16.0);
+						dict["speed"] = "12";
 						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 							null,
 							Context.getGameData().getEnemyDefinition("BulletEnemy"),

@@ -18,7 +18,7 @@ package level
 			x -= width / 2;
 			y -= height / 2;
 
-			(FlxG.state as LevelState).getItemGroup().add(this);
+			Recycler.addToGroup((FlxG.state as LevelState).getItemGroup(), this);
 			return this;
 		}
 

@@ -11,6 +11,7 @@ package
 		[Embed(source = "../bin/resources/enemy1.png")] private var enemy1:Class;
 		[Embed(source = "../bin/resources/explosion.png")] private var explosion:Class;
 		[Embed(source = "../bin/resources/default_bullet.png")] private var defaultBullet:Class;
+		[Embed(source = "../bin/resources/enemy_bullet.png")] private var enemyBullet:Class;
 		[Embed(source = "../bin/resources/blob.png")] private var blob:Class;
 		[Embed(source = "../bin/resources/laser_bullet.png")] private var laserBullet:Class;
 		[Embed(source = "../bin/resources/bomb.png")] private var bombBullet:Class;
@@ -23,12 +24,15 @@ package
 
 		[Embed(source = "../bin/resources/background1.swf")] private var background1Anim:Class;
 		[Embed(source = "../bin/resources/background2.swf")] private var background2Anim:Class;
+		[Embed(source = "../bin/resources/background2moving.swf")] private var background2AnimMove:Class;
 
 		[Embed(source = "../bin/resources/health.png")] private var healthBar:Class;
 
 		// SOUNDS:
 		private var sounds:Dictionary;
 		[Embed(source = "../bin/resources/beep.mp3")] private var beep:Class;
+
+		public static var BACKGROUND_COUNT:int = 2;
 
 		public function Resources()
 		{
@@ -37,6 +41,7 @@ package
 			sprites["enemy1"] = enemy1;
 			sprites["explosion"] = explosion;
 			sprites["defaultBullet"] = defaultBullet;
+			sprites["enemyBullet"] = enemyBullet;
 			sprites["blob"] = blob;
 			sprites["laserBullet"] = laserBullet;
 			sprites["bombBullet"] = bombBullet;
@@ -49,6 +54,7 @@ package
 			sprites["background1"] = background1Anim;
 			sprites["background1Anim"] = background1Anim;
 			sprites["background2Anim"] = background2Anim;
+			sprites["background2AnimMove"] = background2AnimMove;
 			sprites["logo"] = logo;
 
 			sounds = new Dictionary();

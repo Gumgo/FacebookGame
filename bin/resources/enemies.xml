@@ -5,19 +5,32 @@
 		sprite="enemy1"
 		deathSprite="explosion"
 		deathSound="none"
-		health="100"
+		health="75"
 		damage="5"
-		color="0xFFFFFFFF"
+		color="0xFFFFFF"
+		deathColor="0xFFFFFF"
 		deathOnPlayerCollision="true"
 		invincible="false"/>
 	<enemy
+		name="HardEnemy"
+		sprite="enemy1"
+		deathSprite="explosion"
+		deathSound="none"
+		health="500"
+		damage="10"
+		color="0xFF0000"
+		deathColor="0xFFFFFF"
+		deathOnPlayerCollision="false"
+		invincible="false"/>
+	<enemy
 		name="BulletEnemy"
-		sprite="defaultBullet"
+		sprite="enemyBullet"
 		deathSprite="explosion"
 		deathSound="none"
 		health="100"
 		damage="5"
-		color="0xFFFFFFFF"
+		color="0xFFFFFF"
+		deathColor="0xFFFFFF"
 		deathOnPlayerCollision="true"
 		invincible="true"/>
 </enemies>

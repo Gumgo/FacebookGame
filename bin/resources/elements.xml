@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-	<element symbol="H"		name="Hydrogen"			group="Non-Metal"			desc=""/>
-	<element symbol="He"	name="Helium"			group="Noble Gas"			desc=""/>
-	<element symbol="Li"	name="Lithium"			group="Alkali Metal"		desc=""/>
-	<element symbol="Be"	name="Beryllium"		group="Alkali Earth Metal"	desc=""/>
-	<element symbol="B"		name="Boron"			group="Non-Metal"			desc=""/>
-	<element symbol="C"		name="Carbon"			group="Non-Metal"			desc=""/>
-	<element symbol="N"		name="Nitrogen"			group="Non-Metal"			desc=""/>
-	<element symbol="O"		name="Oxygen"			group="Non-Metal"			desc=""/>
-	<element symbol="F"		name="Fluorine"			group="Halogen"				desc=""/>
-	<element symbol="Ne"	name="Neon"				group="Noble Gas"			desc=""/>
-	<element symbol="Na"	name="Sodium"			group="Alkali Metal"		desc=""/>
-	<element symbol="Mg"	name="Magnesium"		group="Alkali Earth Metal"	desc=""/>
-	<element symbol="Al"	name="Aluminum"			group="Other Non-Metal"		desc=""/>
-	<element symbol="Si"	name="Silicon"			group="Non-Metal"			desc=""/>
-	<element symbol="P"		name="Phosphorus"		group="Non-Metal"			desc=""/>
-	<element symbol="S"		name="Sulfur"			group="Non-Metal"			desc=""/>
-	<element symbol="Cl"	name="Chlorine"			group="Halogen"				desc=""/>
-	<element symbol="Ar"	name="Argon"			group="Noble Gas"			desc=""/>
-	<element symbol="K"		name="Potassium"		group="Alkali Metal"		desc=""/>
-	<element symbol="Ca"	name="Calcium"			group="Alkali Earth Metal"	desc=""/>
-	<element symbol="Sc"	name="Scandium"			group="Transition Metal"	desc=""/>
-	<element symbol="Ti"	name="Titanium"			group="Transition Metal"	desc=""/>
-	<element symbol="V"		name="Vanadium"			group="Transition Metal"	desc=""/>
-	<element symbol="Cr"	name="Chromium"			group="Transition Metal"	desc=""/>
-	<element symbol="Mn"	name="Manganese"		group="Transition Metal"	desc=""/>
-	<element symbol="Fe"	name="Iron"				group="Transition Metal"	desc=""/>
-	<element symbol="Co"	name="Cobalt"			group="Transition Metal"	desc=""/>
-	<element symbol="Ni"	name="Nickel"			group="Transition Metal"	desc=""/>
-	<element symbol="Cu"	name="Copper"			group="Transition Metal"	desc=""/>
-	<element symbol="Zn"	name="Zinc"				group="Transition Metal"	desc=""/>
-	<element symbol="Ga"	name="Gallium"			group="Other Non-Metal"		desc=""/>
-	<element symbol="Ge"	name="Germanium"		group="Other Non-Metal"		desc=""/>
-	<element symbol="As"	name="Arsenic"			group="Non-Metal"			desc=""/>
-	<element symbol="Se"	name="Selenium"			group="Non-Metal"			desc=""/>
-	<element symbol="Br"	name="Bromine"			group="Halogen"				desc=""/>
-	<element symbol="Kr"	name="Krypton"			group="Noble Gas"			desc=""/>
-	<element symbol="Rb"	name="Rubidium"			group="Alkali Metal"		desc=""/>
-	<element symbol="Sr"	name="Strontium"		group="Alkali Earth Metal"	desc=""/>
-	<element symbol="Y"		name="Yttrium"			group="Transition Metal"	desc=""/>
-	<element symbol="Zr"	name="Zirconium"		group="Transition Metal"	desc=""/>
-	<element symbol="Nb"	name="Niobium"			group="Transition Metal"	desc=""/>
-	<element symbol="Mo"	name="Molybdenum"		group="Transition Metal"	desc=""/>
-	<element symbol="Tc"	name="Technetium"		group="Transition Metal"	desc=""/>
-	<element symbol="Ru"	name="Ruthenium"		group="Transition Metal"	desc=""/>
-	<element symbol="Rh"	name="Rhodium"			group="Transition Metal"	desc=""/>
-	<element symbol="Pd"	name="Palladium"		group="Transition Metal"	desc=""/>
-	<element symbol="Ag"	name="Silver"			group="Transition Metal"	desc=""/>
-	<element symbol="Cd"	name="Cadmium"			group="Transition Metal"	desc=""/>
-	<element symbol="In"	name="Indium"			group="Other Non-Metal"		desc=""/>
-	<element symbol="Sn"	name="Tin"				group="Other Non-Metal"		desc=""/>
-	<element symbol="Sb"	name="Antimony"			group="Other Non-Metal"		desc=""/>
-	<element symbol="Te"	name="Tellurium"		group="Non-Metal"			desc=""/>
-	<element symbol="I"		name="Iodine"			group="Halogen"				desc=""/>
-	<element symbol="Xe"	name="Xenon"			group="Noble Gas"			desc=""/>
-	<element symbol="Cs"	name="Cesium"			group="Alkali Metal"		desc=""/>
-	<element symbol="Ba"	name="Barium"			group="Alkali Earth Metal"	desc=""/>
-	<element symbol="La"	name="Lanthanum"		group="Lanthanide"			desc=""/>
-	<element symbol="Ce"	name="Cerium"			group="Lanthanide"			desc=""/>
-	<element symbol="Pr"	name="Praseodymium"		group="Lanthanide"			desc=""/>
-	<element symbol="Nd"	name="Neodymium"		group="Lanthanide"			desc=""/>
-	<element symbol="Pm"	name="Promethium"		group="Lanthanide"			desc=""/>
-	<element symbol="Sm"	name="Samarium"			group="Lanthanide"			desc=""/>
-	<element symbol="Eu"	name="Europium"			group="Lanthanide"			desc=""/>
-	<element symbol="Gd"	name="Gadolinium"		group="Lanthanide"			desc=""/>
-	<element symbol="Tb"	name="Terbium"			group="Lanthanide"			desc=""/>
-	<element symbol="Dy"	name="Dysprosium"		group="Lanthanide"			desc=""/>
-	<element symbol="Ho"	name="Holmium"			group="Lanthanide"			desc=""/>
-	<element symbol="Er"	name="Erbium"			group="Lanthanide"			desc=""/>
-	<element symbol="Tm"	name="Thulium"			group="Lanthanide"			desc=""/>
-	<element symbol="Yb"	name="Ytterbium"		group="Lanthanide"			desc=""/>
-	<element symbol="Lu"	name="Lutetium"			group="Lanthanide"			desc=""/>
-	<element symbol="Hf"	name="Hafnium"			group="Transition Metal"	desc=""/>
-	<element symbol="Ta"	name="Tantalum"			group="Transition Metal"	desc=""/>
-	<element symbol="W"		name="Tungsten"			group="Transition Metal"	desc=""/>
-	<element symbol="Re"	name="Rhenium"			group="Transition Metal"	desc=""/>
-	<element symbol="Os"	name="Osmium"			group="Transition Metal"	desc=""/>
-	<element symbol="Ir"	name="Iridium"			group="Transition Metal"	desc=""/>
-	<element symbol="Pt"	name="Platinum"			group="Transition Metal"	desc=""/>
-	<element symbol="Au"	name="Gold"				group="Transition Metal"	desc=""/>
-	<element symbol="Hg"	name="Mercury"			group="Transition Metal"	desc=""/>
-	<element symbol="Tl"	name="Thallium"			group="Other Non-Metal"		desc=""/>
-	<element symbol="Pb"	name="Lead"				group="Other Non-Metal"		desc=""/>
-	<element symbol="Bi"	name="Bismuth"			group="Other Non-Metal"		desc=""/>
-	<element symbol="Po"	name="Polonium"			group="Other Non-Metal"		desc=""/>
-	<element symbol="At"	name="Astatine"			group="Halogen"				desc=""/>
-	<element symbol="Rn"	name="Radon"			group="Noble Gas"			desc=""/>
-	<element symbol="Fr"	name="Francium"			group="Alkali Metal"		desc=""/>
-	<element symbol="Ra"	name="Radium"			group="Alkali Earth Metal"	desc=""/>
-	<element symbol="Ac"	name="Actinium"			group="Actinide"			desc=""/>
-	<element symbol="Th"	name="Thorium"			group="Actinide"			desc=""/>
-	<element symbol="Pa"	name="Protactinium"		group="Actinide"			desc=""/>
-	<element symbol="U"		name="Uranium"			group="Actinide"			desc=""/>
-	<element symbol="Np"	name="Neptunium"		group="Actinide"			desc=""/>
-	<element symbol="Pu"	name="Plutonium"		group="Actinide"			desc=""/>
-	<element symbol="Am"	name="Americium"		group="Actinide"			desc=""/>
-	<element symbol="Cm"	name="Curium"			group="Actinide"			desc=""/>
-	<element symbol="Bk"	name="Berkelium"		group="Actinide"			desc=""/>
-	<element symbol="Cf"	name="Californium"		group="Actinide"			desc=""/>
-	<element symbol="Es"	name="Einsteinium"		group="Actinide"			desc=""/>
-	<element symbol="Fm"	name="Fermium"			group="Actinide"			desc=""/>
-	<element symbol="Md"	name="Mendelevium"		group="Actinide"			desc=""/>
-	<element symbol="No"	name="Nobelium"			group="Actinide"			desc=""/>
-	<element symbol="Lr"	name="Lawrencium"		group="Actinide"			desc=""/>
-	<element symbol="Rf"	name="Rutherfordium"	group="Transition Metal"	desc=""/>
-	<element symbol="Db"	name="Dubnium"			group="Transition Metal"	desc=""/>
-	<element symbol="Sg"	name="Seaborgium"		group="Transition Metal"	desc=""/>
-	<element symbol="Bh"	name="Bohrium"			group="Transition Metal"	desc=""/>
-	<element symbol="Hs"	name="Hassium"			group="Transition Metal"	desc=""/>
-	<element symbol="Mt"	name="Meitnerium"		group="Transition Metal"	desc=""/>
-	<element symbol="Ds"	name="Darmstadtium"		group="Transition Metal"	desc=""/>
-	<element symbol="Rg"	name="Roentgenium"		group="Transition Metal"	desc=""/>
-	<element symbol="Cn"	name="Ununbium"			group="Transition Metal"	desc=""/>
-	<element symbol="Uut"	name="Ununtrium"		group="Unknown"				desc=""/>
-	<element symbol="Uuq"	name="Ununquadium"		group="Unknown"				desc=""/>
-	<element symbol="Uup"	name="Ununpentium"		group="Unknown"				desc=""/>
-	<element symbol="Uuh"	name="Ununhexium"		group="Unknown"				desc=""/>
-	<element symbol="Uus"	name="Ununseptium"		group="Unknown"				desc=""/>
-	<element symbol="Uuo"	name="Ununoctium"		group="Unknown"				desc=""/>
+	<element symbol="H"		name="Hydrogen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="He"	name="Helium"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Li"	name="Lithium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Be"	name="Beryllium"		group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="B"		name="Boron"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="C"		name="Carbon"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="N"		name="Nitrogen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="O"		name="Oxygen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="F"		name="Fluorine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ne"	name="Neon"				group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Na"	name="Sodium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Mg"	name="Magnesium"		group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Al"	name="Aluminum"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Si"	name="Silicon"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="P"		name="Phosphorus"		group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="S"		name="Sulfur"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cl"	name="Chlorine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ar"	name="Argon"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="K"		name="Potassium"		group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ca"	name="Calcium"			group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sc"	name="Scandium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ti"	name="Titanium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="V"		name="Vanadium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cr"	name="Chromium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Mn"	name="Manganese"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Fe"	name="Iron"				group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Co"	name="Cobalt"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ni"	name="Nickel"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cu"	name="Copper"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Zn"	name="Zinc"				group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ga"	name="Gallium"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ge"	name="Germanium"		group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="As"	name="Arsenic"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Se"	name="Selenium"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Br"	name="Bromine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Kr"	name="Krypton"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Rb"	name="Rubidium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sr"	name="Strontium"		group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Y"		name="Yttrium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Zr"	name="Zirconium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Nb"	name="Niobium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Mo"	name="Molybdenum"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Tc"	name="Technetium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ru"	name="Ruthenium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Rh"	name="Rhodium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pd"	name="Palladium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ag"	name="Silver"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cd"	name="Cadmium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="In"	name="Indium"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sn"	name="Tin"				group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sb"	name="Antimony"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Te"	name="Tellurium"		group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="I"		name="Iodine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Xe"	name="Xenon"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cs"	name="Cesium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ba"	name="Barium"			group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="La"	name="Lanthanum"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ce"	name="Cerium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pr"	name="Praseodymium"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Nd"	name="Neodymium"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pm"	name="Promethium"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sm"	name="Samarium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Eu"	name="Europium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Gd"	name="Gadolinium"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Tb"	name="Terbium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Dy"	name="Dysprosium"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ho"	name="Holmium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Er"	name="Erbium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Tm"	name="Thulium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Yb"	name="Ytterbium"		group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Lu"	name="Lutetium"			group="Lanthanide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Hf"	name="Hafnium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ta"	name="Tantalum"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="W"		name="Tungsten"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Re"	name="Rhenium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Os"	name="Osmium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ir"	name="Iridium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pt"	name="Platinum"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Au"	name="Gold"				group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Hg"	name="Mercury"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Tl"	name="Thallium"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pb"	name="Lead"				group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Bi"	name="Bismuth"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Po"	name="Polonium"			group="Other Non-Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="At"	name="Astatine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Rn"	name="Radon"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Fr"	name="Francium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ra"	name="Radium"			group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ac"	name="Actinium"			group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Th"	name="Thorium"			group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pa"	name="Protactinium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="U"		name="Uranium"			group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Np"	name="Neptunium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Pu"	name="Plutonium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Am"	name="Americium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cm"	name="Curium"			group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Bk"	name="Berkelium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cf"	name="Californium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Es"	name="Einsteinium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Fm"	name="Fermium"			group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Md"	name="Mendelevium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="No"	name="Nobelium"			group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Lr"	name="Lawrencium"		group="Actinide"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Rf"	name="Rutherfordium"	group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Db"	name="Dubnium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sg"	name="Seaborgium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Bh"	name="Bohrium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Hs"	name="Hassium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Mt"	name="Meitnerium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ds"	name="Darmstadtium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Rg"	name="Roentgenium"		group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Cn"	name="Ununbium"			group="Transition Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Uut"	name="Ununtrium"		group="Unknown"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Uuq"	name="Ununquadium"		group="Unknown"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Uup"	name="Ununpentium"		group="Unknown"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Uuh"	name="Ununhexium"		group="Unknown"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Uus"	name="Ununseptium"		group="Unknown"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Uuo"	name="Ununoctium"		group="Unknown"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 </elements>

@@ -20,6 +20,9 @@ package level
 
 		private var endTimer:int;
 
+		private var xPrev:Number;
+		private var yPrev:Number;
+
 		public function Player() 
 		{
 			maxHealth = 100;
@@ -28,15 +31,20 @@ package level
 			super(FlxG.width / 2, FlxG.height / 2, Context.getResources().getSprite("player"));
 			x -= width / 2;
 			y -= height / 2;
+			xPrev = x;
+			yPrev = y;
 
-			primaryWeapon = new MissileWeapon();
+			primaryWeapon = new DefaultWeapon();
 
-			// TEMP
+			// TEMPORARY
 			secondaryWeapon = new SpreadWeapon();
 		}
 
 		override public function update():void
 		{
+			xPrev = x;
+			yPrev = y;
+
 			if (!dead) {
 				primaryWeapon.update();
 				if (secondaryWeapon != null) {
@@ -142,6 +150,16 @@ package level
 		public function setSecondaryWeapon(weapon:Weapon):void
 		{
 			secondaryWeapon = weapon;
+		}
+
+		public function getXPrev():Number
+		{
+			return xPrev;
+		}
+
+		public function getYPrev():Number
+		{
+			return yPrev;
 		}
 
 	}

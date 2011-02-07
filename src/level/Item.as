@@ -12,13 +12,14 @@ package level
 
 		protected function resetMeSuper(x:int, y:int, image:String):Item
 		{
+			exists = true;
 			this.x = x;
 			this.y = y;
 			loadGraphic(Context.getResources().getSprite(image));
 			x -= width / 2;
 			y -= height / 2;
 
-			(FlxG.state as LevelState).getItemGroup().add(this);
+			Recycler.addToGroup((FlxG.state as LevelState).getItemGroup(), this);
 			return this;
 		}
 
@@ -34,6 +35,7 @@ package level
 		{
 			(FlxG.state as LevelState).getItemGroup().remove(this);
 			Context.getRecycler().recycle(this);
+			exists = false;
 		}
 
 		/**

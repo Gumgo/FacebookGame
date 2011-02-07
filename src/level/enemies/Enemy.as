@@ -18,6 +18,7 @@ package level.enemies
 
 		private var deathSprite:Class;
 		private var deathSound:Class;
+		private var deathColor:uint;
 		private var enemyHealth:int;
 		private var damage:int;
 		private var deathOnPlayerCollision:Boolean;
@@ -35,11 +36,13 @@ package level.enemies
 
 		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false):Enemy
 		{
+			exists = true;
 			this.parent = parent;
 			this.behavior = behavior;
 			x = 0;
 			y = 0;
 			alpha = 1;
+			color = 0xFFFFFF;
 			_animations.length = 0;
 			loadGraphic(Context.getResources().getSprite(definition.getSprite()));
 
@@ -47,6 +50,7 @@ package level.enemies
 
 			deathSprite = Context.getResources().getSprite(definition.getDeathSprite());
 			deathSound = null;//Context.getResources().getSound(definition.getDeathSound());
+			deathColor = definition.getDeathColor();
 			enemyHealth = definition.getHealth();
 			color = definition.getColor();
 			damage = definition.getDamage();
@@ -60,9 +64,9 @@ package level.enemies
 			done = false;
 
 			if (bullet) {
-				(FlxG.state as LevelState).getEnemyBulletGroup().add(this);
+				Recycler.addToGroup((FlxG.state as LevelState).getEnemyBulletGroup(), this);
 			} else {
-				(FlxG.state as LevelState).getEnemyGroup().add(this);
+				Recycler.addToGroup((FlxG.state as LevelState).getEnemyGroup(), this);
 			}
 
 			return this;
@@ -80,10 +84,12 @@ package level.enemies
 					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				} else {
 					(FlxG.state as LevelState).getEnemyGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				}
 			}
 			super.update();
@@ -111,11 +117,11 @@ package level.enemies
 		{
 			if (!invincible) {
 				if (enemyHealth > 0) {
+					bullet.hit();
 					enemyHealth -= bullet.getDamage();
 					if (enemyHealth <= 0) {
 						onDie();
 					}
-					bullet.hit();
 				}
 			}
 		}
@@ -131,12 +137,15 @@ package level.enemies
 				frames[f] = f;
 			}
 			addAnimation("die", frames, 30, false);
-			play("die");
+			play("die", true);
+			color = deathColor;
 
 			x -= width / 2;
 			y -= height / 2;
 
-			(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width / 2, y + height / 2);
+			if (!bullet) {
+				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width / 2, y + height / 2);
+			}
 
 			enemyFinished();
 		}
@@ -157,10 +166,12 @@ package level.enemies
 					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				} else {
 					(FlxG.state as LevelState).getEnemyGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				}
 			}
 		}

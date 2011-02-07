@@ -69,7 +69,7 @@ package inventory
 
 		override public function create():void 
 		{
-			var bgNum:int = Math.floor(Math.random() * 2.0) + 1;
+			var bgNum:int = Math.floor(Math.random() * Resources.BACKGROUND_COUNT) + 1;
 			var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "Anim");
 			background = new BackgroundDef() as MovieClip;
 			background.scaleX = 2.0;

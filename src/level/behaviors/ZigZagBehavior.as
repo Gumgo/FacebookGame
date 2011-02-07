@@ -1,18 +1,19 @@
 package level.behaviors 
 {
-	import flash.display.TriangleCulling;
 	import flash.utils.Dictionary;
 	import level.enemies.Behavior;
 	import level.enemies.Enemy;
-	import org.flixel.FlxG;
+	
 	/**
 	 * ...
-	 * @author Jennifer Yang
+	 * @author Ben
 	 */
 	public class ZigZagBehavior extends Behavior 
 	{
-		
-		private var direction: int = 0;
+
+		private var speed:Number;
+		private var offset:Number;
+		private var time:int;
 
 		public function ZigZagBehavior()
 		{
@@ -24,45 +25,41 @@ package level.behaviors
 			super.resetMeSuper(properties);
 			return this;
 		}
-		
 
 		override public function init(enemy:Enemy):void
 		{
-			enemy.y = -32;
-			enemy.x = Number(getProperty("offset"));
+			enemy.y = -enemy.height;
+			offset = Number(getProperty("offset")) - enemy.width * 0.5;
+			time = 0;
+			if (getProperty("speed") == null) {
+				speed = 12;
+			} else {
+				speed = Number(getProperty("speed"));
+			}
 		}
 
 		override public function update(enemy:Enemy):void
 		{
-			if ( direction <= 15 ) {
-				zigRight(enemy);
-				direction++;
-			} else if ( direction > 15 && direction <= 30) {
-				zigLeft(enemy);
-				direction++;
-			} else {
-				direction = 0;
+			
+			enemy.y += speed;
+			enemy.x = offset + Math.cos( 2.0 * Math.PI * ((time % 40) / 40.0) ) * 32.0;
+
+			++time;
+
+			if (Math.random() < 0.02) {
+				var dict:Dictionary = new Dictionary();
+				dict["x"] = String(enemy.x + enemy.width / 2);
+				dict["y"] = String(enemy.y + enemy.height);
+				dict["speed"] = String(speed + 2);
+				(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
+					null,
+					Context.getGameData().getEnemyDefinition("BulletEnemy"),
+					(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 			}
-			if (enemy.y > 0 && enemy.y > FlxG.height) {
+			if (enemy.y > 0 && !enemy.onScreen()) {
 				enemy.enemyFinished();
 			}
 		}
-		
-		
-		// move to diagonally right
-		private function zigRight(enemy:Enemy): void {
-			enemy.x += 8;
-			enemy.y += 8;
-
-		}
-		
-		// move to diagonally left
-		private function zigLeft(enemy:Enemy): void {
-			enemy.x -= 8;
-			enemy.y += 8;	
-		}
-		
-		
 	}
 
 }

@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <waves>
+	<wave name="TestWave0">
+		<fleet name="TopSeeker" time="0"/>
+	</wave>
+
+	<wave name="TestWave1">
+		<fleet name="Bomb" time="0"/>
+	</wave>
+
+	<wave name="TestWave2">
+		<fleet name="SingleDipFire" time="0"/>
+	</wave>
+
+	<wave name="TestWave3">
+		<fleet name="DoubleArc" time="0"/>
+	</wave>
+
+	<wave name="TestWave4">
+		<fleet name="SlowCircle" time="0"/>
+	</wave>
+
+	<wave name="TestWave5">
+		<fleet name="FastCircle" time="0"/>
+	</wave>
+
+	<wave name="TestWave6">
+		<fleet name="Avoid" time="0"/>
+	</wave>
+
+	<wave name="TestWave7">
+		<fleet name="MoveDartCenter" time="0"/>
+		<fleet name="MoveDartLeft" time="60"/>
+		<fleet name="MoveDartRight" time="120"/>
+	</wave>
+
 	<wave name="E_1">
 		<fleet name="SlowLine_Fleet_1" time="0"/>
 	</wave>
@@ -15,7 +49,5 @@
 		<fleet name="Line_Fleet_5" time="30"/>
 		<fleet name="Line_Fleet_3" time="60"/>
 	</wave>
-
-
 
 </waves>

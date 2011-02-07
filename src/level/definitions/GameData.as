@@ -24,11 +24,16 @@ package level.definitions
 
 		// dummy variables: these must be here for each behavior
 		private var lineDummy:LineBehavior;
-		private var slowLineDummy:SlowLineBehavior;
 		private var zigZagDummy:ZigZagBehavior;
 		private var magneticDummy:MagneticBehavior;
 		private var randomDummy:RandomBehavior;
-		private var slowZigZagDummy:SlowZigZagBehavior;
+
+		private var linearDummy:LinearBehavior;
+		private var dipFireDummy:DipFireBehavior;
+		private var bombDummy:BombBehavior;
+		private var topSeekerDummy:TopSeekerBehavior;
+		private var avoidDummy:AvoidBehavior;
+		private var moveDartDummy:MoveDartBehavior;
 
 		public function GameData()
 		{
@@ -71,6 +76,7 @@ package level.definitions
 					var deathSound:String = xmlEnemy.attribute("deathSound").toString();
 					var health:int = int(xmlEnemy.attribute("health").toString());
 					var color:uint = uint(xmlEnemy.attribute("color").toString());
+					var deathColor:uint = uint(xmlEnemy.attribute("deathColor").toString());
 					var damage:int = int(xmlEnemy.attribute("damage").toString());
 					var deathOnPlayerCollision:Boolean = xmlEnemy.attribute("deathOnPlayerCollision").toString() == "true" ? true : false;
 					var invincible:Boolean = xmlEnemy.attribute("invincible").toString() == "true" ? true : false;
@@ -82,6 +88,7 @@ package level.definitions
 						deathSound,
 						health,
 						color,
+						deathColor,
 						damage,
 						deathOnPlayerCollision,
 						invincible);
@@ -241,9 +248,11 @@ package level.definitions
 					var symbol:String = xmlElement.attribute("symbol").toString();
 					var name:String = xmlElement.attribute("name").toString();
 					var group:String = xmlElement.attribute("group").toString();
+					var sprite:String = xmlElement.attribute("sprite").toString();
+					var color:uint = uint(xmlElement.attribute("color").toString());
 					var description:String = xmlElement.attribute("description").toString();
 
-					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, description);
+					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, sprite, color, description);
 					elements.push(newElement);
 				}
 

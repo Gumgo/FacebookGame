@@ -25,12 +25,12 @@ package level.weapons
 
 		public function resetMe(x:int, y:int, dir:Number):SpreadBullet
 		{
-			super.resetMeSuper("spread", 50, x, y, Context.getResources().getSprite("blob"));
+			super.resetMeSuper("spread", 25, x, y, Context.getResources().getSprite("blob"));
 			this.x -= width / 2;
 			this.y -= height / 2;
 			turnDir = Math.random() >= 0.5;
 			direction = dir;
-			blend = BlendMode.ADD;
+			blend = BlendMode.DARKEN;
 
 			points = new Vector.<Number>();
 			return this;

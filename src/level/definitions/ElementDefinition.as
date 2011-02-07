@@ -6,14 +6,18 @@ package level.definitions
 		private var symbol:String;
 		private var name:String;
 		private var group:String;
+		private var sprite:String;
+		private var color:uint;
 		private var description:String;
 		
-		public function ElementDefinition(number:int, symbol:String, name:String, group:String, description:String)
+		public function ElementDefinition(number:int, symbol:String, name:String, group:String, sprite:String, color:uint, description:String)
 		{
 			this.number = number;
 			this.symbol = symbol;
 			this.name = name;
 			this.group = group;
+			this.sprite = sprite;
+			this.color = color;
 			this.description = description;
 		}
 
@@ -35,6 +39,16 @@ package level.definitions
 		public function getGroup():String
 		{
 			return group;
+		}
+
+		public function getSprite():String
+		{
+			return sprite;
+		}
+
+		public function getColor():uint
+		{
+			return color;
 		}
 
 		public function getDescription():String

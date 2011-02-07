@@ -35,64 +35,234 @@
 	</wave>
 
 	<wave name="E_1">
-		<fleet name="LinesStaggeredSmall" time="0"/>
-		<fleet name="SlowLinesCenter" time="30"/>
-		<fleet name="SlowLinesVLeft" time="50"/>
-		<fleet name="SlowLinesVCenter" time="70"/>
-		<fleet name="SlowLinesVRight" time="100"/>
+		<fleet name="SlowLinesCenter" time="0"/>
+		<fleet name="SlowLinesVLeft" time="90"/>
+		<fleet name="SlowLinesVCenter" time="50"/>
+		<fleet name="SlowLinesVRight" time="120"/>
 	</wave>
  
 	<wave name="E_2">
 		<fleet name="LinesStaggered" time="0"/>
-		<fleet name="SlowLinesCenter" time="0"/>
 	</wave>
 
 	<wave name="E_3">
-		<fleet name="SlowLinesMiddle" time="0"/>
-		<fleet name="SlowLinesSides" time="30"/>
-		<fleet name="SlowLinesLeft" time="100"/>
+		<fleet name="SlowLinesMiddle" time="0"/>	
+		<fleet name="SlowLinesLeft" time="50"/>
 		<fleet name="SlowLinesRight" time="100"/>
 	</wave>
 
 	<wave name="E_4">
-		<fleet name="SlowLinesV" time="0"/>
-		<fleet name="SlowLinesRightDiag" time="50"/>
-		<fleet name="SlowLinesLeftDiag" time="110"/>
-		<fleet name="SlowLinesStaggered" time="160"/>		
+		<fleet name="SlowLinesRightDiag" time="0"/>
+		<fleet name="SlowLinesLeftDiag" time="50"/>	
 	</wave>
 	
-	
-	<wave name="E_4">
-		<fleet name="SlowLinesStaggeredSmall" time="0"/>
-		<fleet name="ZigZagSides" time="50"/>
-		<fleet name="ZigZagCenter" time="50"/>
-	</wave>
 	
 	<wave name="E_5">
+		<fleet name="ZigZagSides" time="0"/>
+		<fleet name="ZigZagCenter" time="30"/>
+	</wave>
+	
+	<wave name="E_6">
 		<fleet name="ZigZagVCenter" time="0"/>
 		<fleet name="ZigZagVLeft" time="50"/>
 		<fleet name="ZigZagVRight" time="50"/>
 	</wave>
 	
 	
-	<wave name="E_6">
+	<wave name="E_7">
 		<fleet name="ZigZagMiddle" time="0"/>
 		<fleet name="ZigZagLeft" time="100"/>
 		<fleet name="ZigZagRight" time="100"/>
 	</wave>
 	
 
-	<wave name="E_7">
+	<wave name="E_8">
 		<fleet name="ZigZagV" time="0"/>
 		<fleet name="ZigZagRightDiag" time="100"/>
 		<fleet name="ZigZagLeftDiag" time="150"/>
 	</wave>
 	
-	<wave name="E_8">
+	<wave name="E_9">
 		<fleet name="ZigZagStaggered" time="0"/>
-		<fleet name="SlowZigZagSides" time="50"/>
-		<fleet name="SlowZigZagCenter" time="100"/>
+		<fleet name="SlowZigZagSides" time="60"/>
+		<fleet name="SlowZigZagCenter" time="120"/>
+	</wave>
+	
+	<wave name="E_10">
+		<fleet name="LinesVCenter" time="0"/>
+		<fleet name="LinesVRight" time="50"/>
+		<fleet name="LinesVleft" time="100"/>
+	</wave>
+	
+	<wave name="E_11">
+		<fleet name="LinesMiddle" time="0"/>
+		<fleet name="LinesLeft" time="70"/>
+		<fleet name="LinesRight" time="140"/>
+	</wave>
+	
+	<wave name="E_12">
+		<fleet name="LinesV" time="0"/>
+		<fleet name="LinesV" time="60"/>
+	</wave>
+	
+	<wave name="E_13">
+		<fleet name="LinesRightDiag" time="0"/>
+		<fleet name="LinesLeftDiag" time="70"/>
+	</wave>
+	
+	<wave name="E_14">
+		<fleet name="LinesStaggered" time="0"/>
+		<fleet name="LinesStaggeredSmall" time="70"/>
+		<fleet name="LinesStaggered" time="140"/>
+	</wave>
+	
+	<wave name="E_15">
+		<fleet name="SlowLinesSides" time="0"/>
+		<fleet name="SlowLinesCenter" time="70"/>
+		<fleet name="SlowLinesCenter" time="100"/>
+	</wave>
+	
+	<wave name="E_15">
+		<fleet name="SlowLinesLeft" time="0"/>
+		<fleet name="SlowLinesRight" time="60"/>
+		<fleet name="SlowLinesMiddle" time="120"/>
+	</wave>
+	
+	<wave name="E_16">
+		<fleet name="SlowLinesV" time="0"/>
+		<fleet name="SlowLinesRightDiag" time="60"/>
+		<fleet name="SlowLinesLeftDiag" time="120"/>
+	</wave>
+	
+	<wave name="E_17">
+		<fleet name="SlowLinesV" time="0"/>
+		<fleet name="SlowLinesRightDiag" time="60"/>
+		<fleet name="SlowLinesLeftDiag" time="120"/>
+	</wave>
+	
+	<wave name="E_18">
+		<fleet name="SlowZigZagVCenter" time="0"/>
+		<fleet name="SlowZigZagCenter" time="30"/>
+		<fleet name="SlowZigZagVRight" time="70"/>
+		<fleet name="SlowZigZagVLeft" time="120"/>
+	</wave>
+	
+	<wave name="E_19">
+		<fleet name="SlowZigZagRight" time="0"/>
+		<fleet name="SlowZigZagLeft" time="50"/>
+		<fleet name="SlowZigZagMiddle" time="100"/>
+	</wave>
+	
+	<wave name="E_20">
+		<fleet name="SlowZigZagRightDiag" time="0"/>
+		<fleet name="SlowZigZagV" time="60"/>
+		<fleet name="SlowZigZagLeftDiag" time="120"/>
+	</wave>
+	
+	<wave name="E_20">
+		<fleet name="SlowZigZagStaggered" time="0"/>
+		<fleet name="SlowZigZagStaggered" time="100"/>
+		<fleet name="SlowZigZagStaggered" time="200"/>
+	</wave>
+	
+	<wave name="E_21">
+		<fleet name="SlowZigZagStaggeredSmall" time="0"/>
+		<fleet name="SlowZigZagStaggeredSmall" time="50"/>
+	</wave>
+	
+	<wave name="E_22">
+		<fleet name="RandomSides" time="0"/>
+		<fleet name="RandomSides" time="50"/>
+	</wave>
+	
+	<wave name="E_23">
+		<fleet name="RandomCenter" time="0"/>
+		<fleet name="RandomVLeft" time="50"/>
+		<fleet name="RandomVRight" time="50"/>
+	</wave>
+	
+	<wave name="E_24">
+		<fleet name="RandomVCenter" time="0"/>
+		<fleet name="RandomVLeft" time="50"/>
+		<fleet name="RandomVRight" time="100"/>
+	</wave>
+	
+	<wave name="E_25">
+		<fleet name="RandomLeft" time="0"/>
+		<fleet name="RandomRight" time="60"/>
+		<fleet name="RandomMiddle" time="120"/>
+	</wave>
+	
+	<wave name="E_26">
+		<fleet name="RandomLeft" time="0"/>
+		<fleet name="RandomRight" time="60"/>
+		<fleet name="RandomMiddle" time="120"/>
+	</wave>
+	
+	<wave name="E_27">
+		<fleet name="RandomV" time="0"/>
+		<fleet name="RandomV" time="80"/>
+		<fleet name="RandomV" time="160"/>
+	</wave>
+	
+	<wave name="E_28">
+		<fleet name="RandomStaggered" time="0"/>
+		<fleet name="RandomStaggered" time="100"/>
+	</wave>
+	
+	<wave name="E_29">
+		<fleet name="RandomStaggered" time="0"/>
+		<fleet name="RandomStaggered" time="100"/>
+	</wave>
+	
+	<wave name="E_30">
+		<fleet name="RandomStaggeredSmall" time="0"/>
+		<fleet name="RandomStaggeredSmall" time="100"/>
+	</wave>
+	
+	<wave name="E_31">
+		<fleet name="MagneticCenter" time="0"/>
+		<fleet name="MagneticCenter" time="50"/>
+		<fleet name="MagneticCenter" time="100"/>
+		<fleet name="MagneticCenter" time="150"/>
+	</wave>
+	
+	<wave name="E_32">
+		<fleet name="MagneticSides" time="0"/>
+		<fleet name="MagneticSides" time="75"/>
+		<fleet name="MagneticSides" time="150"/>
+	</wave>
+	
+	<wave name="E_33">
+		<fleet name="MagneticVLeft" time="0"/>
+		<fleet name="MagneticVCenter" time="50"/>
+		<fleet name="MagneticVRight" time="100"/>
 	</wave>
 	
 	
+	<wave name="E_34">
+		<fleet name="MagneticRight" time="0"/>
+		<fleet name="MagneticMiddle" time="50"/>
+		<fleet name="MagneticLeft" time="100"/>
+	</wave>
+	
+	<wave name="E_35">
+		<fleet name="MagneticV" time="0"/>
+	</wave>
+	
+	<wave name="E_36">
+		<fleet name="MagneticRightDiag" time="0"/>
+		<fleet name="MagneticLeftDiag" time="150"/>
+	</wave>
+	
+	<wave name="E_36">
+		<fleet name="MagneticStaggered" time="0"/>
+		<fleet name="MagneticStaggered" time="150"/>
+	</wave>
+	
+	<wave name="E_36">
+		<fleet name="MagneticStaggeredSmall" time="0"/>
+		<fleet name="MagneticStaggeredSmall" time="130"/>
+	</wave>
+		
 </waves>

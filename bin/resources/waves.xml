@@ -52,7 +52,47 @@
 		<fleet name="SlowLinesSides" time="30"/>
 		<fleet name="SlowLinesLeft" time="100"/>
 		<fleet name="SlowLinesRight" time="100"/>
-		<fleet name="SlowLinesVRight" time="100"/>
 	</wave>
 
+	<wave name="E_4">
+		<fleet name="SlowLinesV" time="0"/>
+		<fleet name="SlowLinesRightDiag" time="50"/>
+		<fleet name="SlowLinesLeftDiag" time="110"/>
+		<fleet name="SlowLinesStaggered" time="160"/>		
+	</wave>
+	
+	
+	<wave name="E_4">
+		<fleet name="SlowLinesStaggeredSmall" time="0"/>
+		<fleet name="ZigZagSides" time="50"/>
+		<fleet name="ZigZagCenter" time="50"/>
+	</wave>
+	
+	<wave name="E_5">
+		<fleet name="ZigZagVCenter" time="0"/>
+		<fleet name="ZigZagVLeft" time="50"/>
+		<fleet name="ZigZagVRight" time="50"/>
+	</wave>
+	
+	
+	<wave name="E_6">
+		<fleet name="ZigZagMiddle" time="0"/>
+		<fleet name="ZigZagLeft" time="100"/>
+		<fleet name="ZigZagRight" time="100"/>
+	</wave>
+	
+
+	<wave name="E_7">
+		<fleet name="ZigZagV" time="0"/>
+		<fleet name="ZigZagRightDiag" time="100"/>
+		<fleet name="ZigZagLeftDiag" time="150"/>
+	</wave>
+	
+	<wave name="E_8">
+		<fleet name="ZigZagStaggered" time="0"/>
+		<fleet name="SlowZigZagSides" time="50"/>
+		<fleet name="SlowZigZagCenter" time="100"/>
+	</wave>
+	
+	
 </waves>

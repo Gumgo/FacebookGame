@@ -1,6 +1,5 @@
 package  
 {
-	import menu.MenuState
 	import org.flixel.FlxState;
 	import org.flixel.FlxG;
 

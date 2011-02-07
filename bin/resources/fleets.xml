@@ -150,8 +150,8 @@
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
 	</fleet>
 
-	<!-- Left mini side V formation-->
-	<fleet name="LinesVLeft">
+	<!-- Right mini side V formation-->
+	<fleet name="LinesVRight">
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
@@ -171,7 +171,7 @@
 	</fleet>
 
 	<!--8 right side line formation-->
-	<fleet name="LinesLeft">
+	<fleet name="LinesRight">
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
@@ -299,8 +299,8 @@
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
 	</fleet>
 
-	<!-- Left mini side V formation-->
-	<fleet name="SlowLinesVLeft">
+	<!-- Right mini side V formation-->
+	<fleet name="SlowLinesVRight">
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="544"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="496"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="448"/><behaviorProperty name="speed" value="5"/></enemy>
@@ -320,7 +320,7 @@
 	</fleet>
 
 	<!--8 right side line formation-->
-	<fleet name="SlowLinesLeft">
+	<fleet name="SlowLinesRight">
 		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
@@ -448,8 +448,8 @@
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
 	</fleet>
 
-	<!-- Left mini side V formation-->
-	<fleet name="ZigZagVLeft">
+	<!-- Right mini side V formation-->
+	<fleet name="ZigZagVRight">
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
@@ -469,7 +469,7 @@
 	</fleet>
 
 	<!--8 right side line formation-->
-	<fleet name="ZigZagLeft">
+	<fleet name="ZigZagRight">
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
@@ -597,8 +597,8 @@
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
 	</fleet>
 
-	<!-- Left mini side V formation-->
-	<fleet name="SlowZigZagVLeft">
+	<!-- Right mini side V formation-->
+	<fleet name="SlowZigZagVRight">
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="544"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="496"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="448"/><behaviorProperty name="speed" value="5"/></enemy>
@@ -618,7 +618,7 @@
 	</fleet>
 
 	<!--8 right side line formation-->
-	<fleet name="SlowZigZagLeft">
+	<fleet name="SlowZigZagRight">
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
 		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
@@ -746,8 +746,8 @@
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
 	</fleet>
 
-	<!-- Left mini side V formation-->
-	<fleet name="RandomVLeft">
+	<!-- Right mini side V formation-->
+	<fleet name="RandomVRight">
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
@@ -767,7 +767,7 @@
 	</fleet>
 
 	<!--8 right side line formation-->
-	<fleet name="RandomLeft">
+	<fleet name="RandomRight">
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
 		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
@@ -895,8 +895,8 @@
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
 	</fleet>
 
-	<!-- Left mini side V formation-->
-	<fleet name="MagneticVLeft">
+	<!-- Right mini side V formation-->
+	<fleet name="MagneticVRight">
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
@@ -916,7 +916,7 @@
 	</fleet>
 
 	<!--8 right side line formation-->
-	<fleet name="MagneticLeft">
+	<fleet name="MagneticRight">
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
 		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>

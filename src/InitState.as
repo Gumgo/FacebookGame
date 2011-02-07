@@ -1,9 +1,7 @@
 package  
 {
-<<<<<<< HEAD
-=======
+
 	import menu.MenuState;
->>>>>>> a2eb891da20f355be7b2820a98d7f1dd0b137faf
 	import org.flixel.FlxState;
 	import org.flixel.FlxG;
 

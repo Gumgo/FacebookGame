@@ -33,6 +33,7 @@ package level.definitions
 		private var bombDummy:BombBehavior;
 		private var topSeekerDummy:TopSeekerBehavior;
 		private var avoidDummy:AvoidBehavior;
+		private var moveDartDummy:MoveDartBehavior;
 
 		public function GameData()
 		{

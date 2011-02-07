@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <fleets>
+	<fleet name="MoveDartCenter">
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="15"/></enemy>
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="0"/></enemy>
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-15"/></enemy>
+	</fleet>
+
+	<fleet name="MoveDartLeft">
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="45"/></enemy>
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="60"/></enemy>
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="75"/></enemy>
+	</fleet>
+
+	<fleet name="MoveDartRight">
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-45"/></enemy>
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-60"/></enemy>
+		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-75"/></enemy>
+	</fleet>
+
 	<fleet name="Avoid">
 		<enemy name="HardEnemy" behavior="AvoidBehavior" time="0"/>
 	</fleet>

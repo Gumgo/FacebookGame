@@ -28,6 +28,12 @@
 		<fleet name="Avoid" time="0"/>
 	</wave>
 
+	<wave name="TestWave7">
+		<fleet name="MoveDartCenter" time="0"/>
+		<fleet name="MoveDartLeft" time="60"/>
+		<fleet name="MoveDartRight" time="120"/>
+	</wave>
+
 	<wave name="E_1">
 		<fleet name="SlowLine_Fleet_1" time="0"/>
 	</wave>

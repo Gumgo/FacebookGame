@@ -14,7 +14,7 @@ package level.weapons
 
 		public function resetMe(x:int, y:int):LaserBullet
 		{
-			super.resetMeSuper("laser", 200, x, y, Context.getResources().getSprite("laserBullet"));
+			super.resetMeSuper("laser", 100, x, y, Context.getResources().getSprite("laserBullet"));
 			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;

@@ -36,6 +36,7 @@ package level.enemies
 
 		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false):Enemy
 		{
+			exists = true;
 			this.parent = parent;
 			this.behavior = behavior;
 			x = 0;
@@ -83,10 +84,12 @@ package level.enemies
 					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				} else {
 					(FlxG.state as LevelState).getEnemyGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				}
 			}
 			super.update();
@@ -163,10 +166,12 @@ package level.enemies
 					(FlxG.state as LevelState).getEnemyBulletGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				} else {
 					(FlxG.state as LevelState).getEnemyGroup().remove(this);
 					Context.getRecycler().recycle(this);
 					Context.getRecycler().recycle(behavior);
+					exists = false;
 				}
 			}
 		}

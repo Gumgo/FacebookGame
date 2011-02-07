@@ -37,11 +37,27 @@ package
 				vec = new Vector.<Object>();
 				listDict[classType] = vec;
 			}
+
+			/*
+// TEMPORARY - FOR CATCHING BUGS ONLY!!!!! REMOVE IN FINAL BUILD!
+for (var i:int = 0; i < vec.length; ++i) {
+	if (vec[i] == o) {
+		var a:int;
+		a = 0;
+	}
+}*/
+
 			vec.push(o);
 		}
 
 		public static function addToGroup(group:FlxGroup, object:FlxObject):void
 		{
+			for (var i:int = 0; i < group.members.length; ++i) {
+				if (group.members[i] == object) {
+					var a:int = 3;
+					a = 3;
+				}
+			}
 			var firstNull:int = group.getFirstNull();
 			if (firstNull == -1) {
 				group.add(object);

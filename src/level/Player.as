@@ -36,7 +36,7 @@ package level
 
 			primaryWeapon = new DefaultWeapon();
 
-			// TEMP
+			// TEMPORARY
 			secondaryWeapon = new SpreadWeapon();
 		}
 

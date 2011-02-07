@@ -29,7 +29,7 @@ package level.behaviors
 			enemy.y = -enemy.height;
 			enemy.x = Number(getProperty("offset")) - enemy.width * 0.5;
 			if (getProperty("speed") == null) {
-				speed = 5;
+				speed = 12;
 			} else {
 				speed = Number(getProperty("speed"));
 			}

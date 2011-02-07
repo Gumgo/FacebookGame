@@ -18,9 +18,6 @@ package level.weapons
 
 		private var points:Vector.<Number>;
 
-		private var XP:Number;
-		private var YP:Number;
-
 		public function SpreadBullet()
 		{
 			super();
@@ -36,10 +33,6 @@ package level.weapons
 			blend = BlendMode.DARKEN;
 
 			points = new Vector.<Number>();
-
-			
-			XP = this.x;
-			YP = this.y;
 			return this;
 		}
 
@@ -91,16 +84,6 @@ package level.weapons
 			if (x + width / 2 < -PADDING || x + width / 2 > FlxG.width + PADDING || y + height / 2 < -PADDING || y + height / 2 > FlxG.height + PADDING) {
 				(FlxG.state as LevelState).getBulletGroup().remove(this);
 			}
-
-
-
-			var D:Number = Math.sqrt((x - XP) * (x - XP) + (y - YP) * (y - YP));
-			if (D > 12) {
-				var a:int;
-				a = 3;
-			}
-			XP = x;
-			YP = y;
 		}
 	}
 

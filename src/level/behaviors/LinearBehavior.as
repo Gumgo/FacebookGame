@@ -83,8 +83,8 @@ package level.behaviors
 			if (!shot) {
 				var player:Player = (FlxG.state as LevelState).getPlayer();
 				var pxPrev:Number = player.getXPrev();
-				var before:Number = (xPrev + enemy.width * 0.5) - (pxPrev - player.width * 0.5);
-				var after:Number = (enemy.x + enemy.width * 0.5) - (player.x - player.width * 0.5);
+				var before:Number = (xPrev + enemy.width * 0.5) - (pxPrev + player.width * 0.5);
+				var after:Number = (enemy.x + enemy.width * 0.5) - (player.x + player.width * 0.5);
 				var beforeSign:int = MathExt.sign(before);
 				var afterSign:int = MathExt.sign(after);
 

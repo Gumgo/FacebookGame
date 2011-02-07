@@ -16,6 +16,7 @@ package level
 
 		protected function resetMeSuper(name:String, damage:int, X:Number = 0, Y:Number = 0, SimpleGraphic:Class = null):PlayerBullet
 		{
+			exists = true;
 			_animations.length = 0;
 			this.name = name;
 			this.damage = damage;
@@ -33,6 +34,7 @@ package level
 			if (!onScreen()) {
 				(FlxG.state as LevelState).getBulletGroup().remove(this);
 				Context.getRecycler().recycle(this);
+				exists = false;
 			}
 
 			super.update();
@@ -52,6 +54,7 @@ package level
 		{
 			(FlxG.state as LevelState).getBulletGroup().remove(this);
 			Context.getRecycler().recycle(this);
+			exists = false;
 		}
 		
 	}

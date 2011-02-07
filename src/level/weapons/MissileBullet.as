@@ -79,7 +79,7 @@ package level.weapons
 
 			super.update();
 
-			if (exploding) {
+			if (exploding && exists) {
 				damage = 0;
 				if (finished) {
 					super.hit();

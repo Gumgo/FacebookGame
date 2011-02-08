@@ -5,6 +5,7 @@ package level.definitions
 	{
 		private var name:String;
 		private var sprite:String;
+		private var rotate:Boolean;
 		private var deathSprite:String;
 		private var deathSound:String;
 		private var health:int;
@@ -14,10 +15,11 @@ package level.definitions
 		private var deathOnPlayerCollision:Boolean;
 		private var invincible:Boolean;
 
-		public function EnemyDefinition(name:String, sprite:String, deathSprite:String, deathSound:String, health:int, color:uint, deathColor:uint, damage:int, deathOnPlayerCollision:Boolean, invincible:Boolean)
+		public function EnemyDefinition(name:String, sprite:String, rotate:Boolean, deathSprite:String, deathSound:String, health:int, color:uint, deathColor:uint, damage:int, deathOnPlayerCollision:Boolean, invincible:Boolean)
 		{
 			this.name = name;
 			this.sprite = sprite;
+			this.rotate = rotate;
 			this.deathSprite = deathSprite;
 			this.deathSound = deathSound;
 			this.health = health;
@@ -36,6 +38,11 @@ package level.definitions
 		public function getSprite():String
 		{
 			return sprite;
+		}
+
+		public function getRotate():Boolean
+		{
+			return rotate;
 		}
 
 		public function getDeathSprite():String

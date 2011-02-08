@@ -2,7 +2,8 @@
 <enemies>
 	<enemy
 		name="TestEnemy"
-		sprite="enemy1"
+		sprite="enemy4"
+		rotate="true"
 		deathSprite="explosion"
 		deathSound="none"
 		health="75"
@@ -13,18 +14,20 @@
 		invincible="false"/>
 	<enemy
 		name="HardEnemy"
-		sprite="enemy1"
+		sprite="enemy2"
+		rotate="true"
 		deathSprite="explosion"
 		deathSound="none"
 		health="500"
 		damage="10"
-		color="0xFF0000"
+		color="0xFFFFFF"
 		deathColor="0xFFFFFF"
 		deathOnPlayerCollision="false"
 		invincible="false"/>
 	<enemy
 		name="BulletEnemy"
 		sprite="enemyBullet"
+		rotate="false"
 		deathSprite="explosion"
 		deathSound="none"
 		health="100"

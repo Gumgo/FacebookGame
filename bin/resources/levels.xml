@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
 	<level waveCount="10">
-		<firstHalf miniBoss="E_8">
-			<wave name="E_7"/>
+		<firstHalf>
+			<wave name="TestWave1"/>
+			<wave name="TestWave2"/>
+			<wave name="TestWave3"/>
+			<wave name="TestWave4"/>
+			<wave name="TestWave5"/>
+			<wave name="TestWave6"/>
+			<wave name="TestWave7"/>
 		</firstHalf>
-		<secondHalf boss="E_6">
-			<wave name="E_5"/>
-			<wave name="E_4"/>
-			<wave name="E_3"/>
+		<secondHalf boss="TestWave6">
+			<wave name="TestWave1"/>
+			<wave name="TestWave2"/>
+			<wave name="TestWave3"/>
+			<wave name="TestWave4"/>
+			<wave name="TestWave5"/>
+			<wave name="TestWave6"/>
+			<wave name="TestWave7"/>
 		</secondHalf>
 	</level>
 </levels>

@@ -42,8 +42,8 @@ package level.behaviors
 				}
 			} else {
 				var player:Player = (FlxG.state as LevelState).getPlayer();
-				enemy.x = MathExt.lerp(enemy.x + enemy.width * 0.5, player.x + player.width * 0.5, 0.05) - enemy.width * 0.5;
-				if (Math.abs(enemy.x + enemy.width * 0.5 - player.x - player.width * 0.5) < 12) {
+				enemy.x = MathExt.lerp(enemy.x + enemy.width * 0.5, player.x + player.frameWidth * 0.5, 0.05) - enemy.width * 0.5;
+				if (Math.abs(enemy.x + enemy.width * 0.5 - player.x - player.frameWidth * 0.5) < 12) {
 					if (shotTimer == 0) {
 						shotTimer = 10;
 						var dict:Dictionary = new Dictionary();

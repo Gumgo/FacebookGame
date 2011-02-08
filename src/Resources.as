@@ -8,7 +8,11 @@ package
 		// SPRITES:
 		private var sprites:Dictionary;
 		[Embed(source = "../bin/resources/ship_placeholder.png")] private var player:Class;
-		[Embed(source = "../bin/resources/enemy1.png")] private var enemy1:Class;
+		[Embed(source = "../bin/resources/enemy_1.png")] private var enemy1:Class;
+		[Embed(source = "../bin/resources/enemy_2.png")] private var enemy2:Class;
+		[Embed(source = "../bin/resources/enemy_3.png")] private var enemy3:Class;
+		[Embed(source = "../bin/resources/enemy_4.png")] private var enemy4:Class;
+		[Embed(source = "../bin/resources/enemy_5.png")] private var enemy5:Class;
 		[Embed(source = "../bin/resources/explosion.png")] private var explosion:Class;
 		[Embed(source = "../bin/resources/default_bullet.png")] private var defaultBullet:Class;
 		[Embed(source = "../bin/resources/enemy_bullet.png")] private var enemyBullet:Class;
@@ -39,6 +43,10 @@ package
 			sprites = new Dictionary();
 			sprites["player"] = player;
 			sprites["enemy1"] = enemy1;
+			sprites["enemy2"] = enemy2;
+			sprites["enemy3"] = enemy3;
+			sprites["enemy4"] = enemy4;
+			sprites["enemy5"] = enemy5;
 			sprites["explosion"] = explosion;
 			sprites["defaultBullet"] = defaultBullet;
 			sprites["enemyBullet"] = enemyBullet;

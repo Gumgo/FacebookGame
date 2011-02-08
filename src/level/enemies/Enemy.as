@@ -39,12 +39,19 @@ package level.enemies
 			exists = true;
 			this.parent = parent;
 			this.behavior = behavior;
-			x = 0;
-			y = 0;
+			offset.x = offset.y = 0;
+			x = y = 0;
 			alpha = 1;
 			color = 0xFFFFFF;
 			_animations.length = 0;
-			loadGraphic(Context.getResources().getSprite(definition.getSprite()));
+			angle = 0;
+			if (definition.getRotate()) {
+				loadRotatedGraphic(Context.getResources().getSprite(definition.getSprite()), 16, -1, false, true);
+				offset.x = offset.y = (width - (width / 1.5)) * 0.5;
+				width = height = width / 1.5;
+			} else {
+				loadGraphic(Context.getResources().getSprite(definition.getSprite()));
+			}
 
 			this.bullet = bullet;
 
@@ -144,7 +151,7 @@ package level.enemies
 			y -= height / 2;
 
 			if (!bullet) {
-				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width / 2, y + height / 2);
+				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + frameWidth / 2, y + frameHeight / 2);
 			}
 
 			enemyFinished();

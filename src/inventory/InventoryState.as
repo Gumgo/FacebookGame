@@ -122,8 +122,8 @@ package inventory
 			defaultGroup.add(title);
 			defaultGroup.add(stats);
 
-			descriptionBanner = new FlxSprite(0, 0, Context.getResources().getSprite("banner1x128"));
-			descriptionBanner.scale.x = FlxG.width * 2;
+			descriptionBanner = new FlxSprite(FlxG.width * 0.5, 0, Context.getResources().getSprite("banner1x128"));
+			descriptionBanner.scale.x = FlxG.width;
 			descriptionBanner.alpha = 0.9;
 			descriptionBanner.visible = false;
 			descriptionText = new FlxText(32, 0, FlxG.width - 64);

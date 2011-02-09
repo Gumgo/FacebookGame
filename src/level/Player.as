@@ -1,10 +1,16 @@
 package level
 {
+	import flash.display.BitmapData;
+	import flash.geom.ColorTransform;
+	import flash.geom.Matrix;
+	import flash.display.BlendMode;
+	import flash.geom.Point;
 	import level.weapons.BombWeapon;
 	import level.weapons.DefaultWeapon;
 	import level.weapons.LaserWeapon;
 	import level.weapons.MissileWeapon;
 	import level.weapons.SpreadWeapon; // TEMP FOR TESTING
+	import org.flixel.FlxPoint;
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxG;
 	import level.enemies.Enemy;
@@ -26,8 +32,19 @@ package level
 		private var xPrev:Number;
 		private var yPrev:Number;
 
+		private var outline:BitmapData;
+		private var point:FlxPoint;
+		private var matrix:Matrix;
+		private var colorTf:ColorTransform;
+		private var time:int;
+
 		public function Player() 
 		{
+			outline = FlxG.addBitmap(Context.getResources().getSprite("playerOutline"));
+			point = new FlxPoint();
+			matrix = new Matrix();
+			colorTf = new ColorTransform();
+
 			maxHealth = Context.getPersistentState().getCurrentHealth();
 			currentHealth = maxHealth;
 
@@ -41,16 +58,40 @@ package level
 			xPrev = x;
 			yPrev = y;
 
+			time = 0;
+
 			primaryWeapon = new DefaultWeapon();
 
 			// TEMPORARY
 			secondaryWeapon = new SpreadWeapon();
 		}
 
+		override public function render():void
+		{
+			getScreenXY(point);
+			point.x -= (outline.width - width) * 0.5;
+			point.y -= (outline.height - height) * 0.5;
+			matrix.identity();
+			matrix.translate(point.x, point.y);
+			colorTf.alphaMultiplier =
+				(Context.getPersistentState().getCurrentShields() - PersistentState.SHIELDS_MIN) /
+				(PersistentState.SHIELDS_MAX - PersistentState.SHIELDS_MIN);
+			colorTf.redMultiplier = colorTf.greenMultiplier = 0;
+			colorTf.blueMultiplier = 1;
+			colorTf.alphaMultiplier *= 1 - 0.75 * ((Math.cos((time / 120.0) * 2.0 * Math.PI) + 1) * 0.5);
+			FlxG.buffer.draw(outline, matrix, colorTf, BlendMode.NORMAL);
+			super.render();
+		}
+
 		override public function update():void
 		{
 			xPrev = x;
 			yPrev = y;
+
+			++time;
+			if (time >= 120) {
+				time = 0;
+			}
 
 			if (!dead) {
 				primaryWeapon.update();

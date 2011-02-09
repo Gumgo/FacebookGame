@@ -206,12 +206,16 @@ package level
 				if (endTimer > 0) {
 					--endTimer;
 				} else {
-					if (collectedElements.length == 0 || statString.length == 0) {
+					if (collectedElements.length == 0) {
 						completeList1.text = "None\n\nBetter luck next time!";
 						endPhase = 10;
 						endTimer = 120;
 					} else if (elemCounter == collectedElements.length) {
-						endPhase = 2;
+						if (statString.length == 0) {
+							endPhase = 10;
+						} else {
+							endPhase = 2;
+						}
 						endTimer = 120;
 					} else {
 						// PLAY SOUND HERE
@@ -423,15 +427,19 @@ package level
 
 		public function seeElement(number:int):void
 		{
-			if (seenElements.indexOf(number, 0) < 0) {
-				seenElements.push(number);
+			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
+				if (seenElements.indexOf(number, 0) < 0) {
+					seenElements.push(number);
+				}
 			}
 		}
 
 		public function collectElement(number:int):void
 		{
-			if (collectedElements.indexOf(number, 0) < 0) {
-				collectedElements.push(number);
+			if (Context.getPersistentState().getElementState(number) != PersistentState.ELEM_COLLECTED) {
+				if (collectedElements.indexOf(number, 0) < 0) {
+					collectedElements.push(number);
+				}
 			}
 		}
 

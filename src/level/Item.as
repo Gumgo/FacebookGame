@@ -5,6 +5,8 @@ package level
 
 	public class Item extends FlxSprite
 	{
+		protected var speed:int;
+
 		public function Item()
 		{
 			super();
@@ -18,6 +20,7 @@ package level
 			loadGraphic(Context.getResources().getSprite(image));
 			x -= width / 2;
 			y -= height / 2;
+			speed = 3;
 
 			Recycler.addToGroup((FlxG.state as LevelState).getItemGroup(), this);
 			return this;
@@ -25,7 +28,7 @@ package level
 
 		override public function update():void
 		{
-			y += 4;
+			y += speed;
 			if (!onScreen()) {
 				removeSelf();
 			}

@@ -20,6 +20,7 @@ package level
 			this.resetMeSuper(x, y, def.getSprite());
 			color = def.getColor();
 			this.number = number;
+			speed = 2;
 
 			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
 				(FlxG.state as LevelState).seeElement(number);

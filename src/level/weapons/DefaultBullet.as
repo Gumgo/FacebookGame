@@ -6,6 +6,7 @@ package level.weapons
 
 	public class DefaultBullet extends PlayerBullet
 	{
+		private static const DAMAGE:int = 50;
 
 		public function DefaultBullet()
 		{
@@ -14,7 +15,8 @@ package level.weapons
 
 		public function resetMe(x:int, y:int):DefaultBullet
 		{
-			super.resetMeSuper("default", 50, x, y, Context.getResources().getSprite("defaultBullet"));
+			super.resetMeSuper("default", DAMAGE * (FlxG.state as LevelState).getPlayer().getDamageMultiplier(),
+				x, y, Context.getResources().getSprite("defaultBullet"));
 			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;

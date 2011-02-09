@@ -80,7 +80,7 @@ package inventory
 			FlxG.mouse.show();
 			colors = new Dictionary();
 			colors["Non-Metal"]				= 0x80ff80;
-			colors["Other Non-Metal"]		= 0x8080ff;
+			colors["Other Metal"]			= 0x8080ff;
 			colors["Alkali Metal"]			= 0xff8080;
 			colors["Alkali Earth Metal"]	= 0xffff80;
 			colors["Transition Metal"]		= 0xff80ff;
@@ -156,7 +156,7 @@ package inventory
 			12, 1, 0, 4,    12, 1, 1, 1,    12, 2, 0, 1,    13, 2, 1, 1,
 			13, 3, 0, 1,    14, 3, 1, 1,    14, 4, 0, 1,    15, 4, 1, 1,
 			15, 5, 0, 1,    16, 1, 1, 4);
-			borderLines["Other Non-Metal"]		= new Array(
+			borderLines["Other Metal"]			= new Array(
 			12, 2, 0, 1,    13, 2, 1, 1,    13, 3, 0, 1,    14, 3, 1, 1,
 			14, 4, 0, 1,    15, 4, 1, 1,    15, 5, 0, 1,    16, 5, 1, 1,
 			12, 2, 1, 4,    12, 6, 0, 4);
@@ -187,7 +187,7 @@ package inventory
 
 			descriptions = new Dictionary();
 			descriptions["Non-Metal"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Other Non-Metal"]		= "Filler description filler description filler description filler description filler description.";
+			descriptions["Other Metal"]			= "Filler description filler description filler description filler description filler description.";
 			descriptions["Alkali Metal"]		= "Filler description filler description filler description filler description filler description.";
 			descriptions["Alkali Earth Metal"]	= "Filler description filler description filler description filler description filler description.";
 			descriptions["Transition Metal"]	= "Filler description filler description filler description filler description filler description.";

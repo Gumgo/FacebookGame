@@ -9,7 +9,6 @@ package level.enemies
 		private var half1Waves:Vector.<String>;	// the waves to appear before the miniboss
 		private var half2Waves:Vector.<String>;	// the waves to appear after the miniboss
 		private var waveCount:int;				// the number of waves to appear before/after miniboss
-		private var miniBoss:String;			// the miniboss wave
 		private var boss:String;				// the boss wave
 
 		private var currentWaveCount:int;	// the current number of waves that have appeared
@@ -30,7 +29,6 @@ package level.enemies
 			half1Waves = levelDefinition.getFirstHalfWaves();
 			half2Waves = levelDefinition.getSecondHalfWaves();
 			waveCount = levelDefinition.getWaveCount();
-			miniBoss = levelDefinition.getMiniBoss();
 			boss = levelDefinition.getBoss();
 
 			currentWaveCount = 0;
@@ -72,9 +70,10 @@ package level.enemies
 				if (endTimer > 0) {
 					--endTimer;
 				} else if (endTimer == 0) {
-					// don't end until ALL enemies are gone - we don't want you dying but completing the level
+					// don't end until ALL enemies and items are gone - we don't want you dying but completing the level
 					if ((FlxG.state as LevelState).getEnemyBulletGroup().countLiving() <= 0 &&
-						(FlxG.state as LevelState).getEnemyGroup().countLiving() <= 0) {
+						(FlxG.state as LevelState).getEnemyGroup().countLiving() <= 0 &&
+						(FlxG.state as LevelState).getItemGroup().countLiving() <= 0) {
 						(FlxG.state as LevelState).levelFinished();
 						endTimer = -1;
 					}
@@ -97,9 +96,6 @@ package level.enemies
 				prevWave2 = -1;
 				if (!half) {
 					half = true;
-					if (miniBoss != null) {
-						return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(miniBoss));
-					} // else continue on
 				} else {
 					last = true;
 					if (boss != null) {

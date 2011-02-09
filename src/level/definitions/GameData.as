@@ -72,6 +72,7 @@ package level.definitions
 
 					var name:String = xmlEnemy.attribute("name").toString();
 					var sprite:String = xmlEnemy.attribute("sprite").toString();
+					var rotate:Boolean = xmlEnemy.attribute("rotate").toString() == "true" ? true : false;
 					var deathSprite:String = xmlEnemy.attribute("deathSprite").toString();
 					var deathSound:String = xmlEnemy.attribute("deathSound").toString();
 					var health:int = int(xmlEnemy.attribute("health").toString());
@@ -84,6 +85,7 @@ package level.definitions
 					var newEnemy:EnemyDefinition = new EnemyDefinition(
 						name,
 						sprite,
+						rotate,
 						deathSprite,
 						deathSound,
 						health,
@@ -199,7 +201,6 @@ package level.definitions
 					var wave:String;
 
 					var xmlFirstHalf:XML = xmlLevel.firstHalf[0];
-					var miniBoss:String = xmlFirstHalf.attribute("miniBoss").toString();
 					var xmlFirstHalfWaves:XMLList = xmlFirstHalf.children();
 					var firstHalfWaves:Vector.<String> = new Vector.<String>();
 					for each (xmlWave in xmlFirstHalfWaves) {
@@ -224,7 +225,7 @@ package level.definitions
 						secondHalfWaves.push(wave);
 					}
 
-					var newLevel:LevelDefinition = new LevelDefinition(waveCount, firstHalfWaves, miniBoss, secondHalfWaves, boss);
+					var newLevel:LevelDefinition = new LevelDefinition(waveCount, firstHalfWaves, secondHalfWaves, boss);
 					levels.push(newLevel);
 				}
 

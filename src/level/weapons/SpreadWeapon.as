@@ -11,7 +11,7 @@ package level.weapons
 		override public function shoot(player:Player):void
 		{
 			if (timer == 0) {
-				timer = 10;
+				timer = int(Math.ceil( 10.0 / player.getShotRateMultiplier()));
 				(Context.getRecycler().getNew(SpreadBullet) as SpreadBullet).resetMe(player.x + 8, player.y + 16, 100.0);
 				(Context.getRecycler().getNew(SpreadBullet) as SpreadBullet).resetMe(player.x - 8 + player.width, player.y + 16, 80.0);
 			}

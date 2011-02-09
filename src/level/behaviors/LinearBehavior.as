@@ -31,6 +31,7 @@ package level.behaviors
 			// direction relative to top center of screen
 			var direction:Number = Number(getProperty("direction"));
 			direction += 90;
+			enemy.angle = -direction + 90;
 			// find the x, y speed the enemy will be moving
 			xInc = -Math.cos(direction * Math.PI / 180.0);
 			yInc = Math.sin(direction * Math.PI / 180.0);

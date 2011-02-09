@@ -38,14 +38,14 @@ package
 				listDict[classType] = vec;
 			}
 
-			/*
-// TEMPORARY - FOR CATCHING BUGS ONLY!!!!! REMOVE IN FINAL BUILD!
+
+// TODO TEMPORARY - FOR CATCHING BUGS ONLY!!!!! REMOVE IN FINAL BUILD!
 for (var i:int = 0; i < vec.length; ++i) {
 	if (vec[i] == o) {
 		var a:int;
 		a = 0;
 	}
-}*/
+}
 
 			vec.push(o);
 		}

@@ -2,7 +2,7 @@
 <enemies>
 	<enemy
 		name="TestEnemy"
-		sprite="enemy1"
+		sprite="enemy_2"
 		deathSprite="explosion"
 		deathSound="none"
 		health="75"
@@ -13,7 +13,7 @@
 		invincible="false"/>
 	<enemy
 		name="HardEnemy"
-		sprite="enemy1"
+		sprite="enemy_1"
 		deathSprite="explosion"
 		deathSound="none"
 		health="500"

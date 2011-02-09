@@ -55,6 +55,11 @@ package level
 		private var completeList1:FlxText;
 		private var completeList2:FlxText;
 		private var elemCounter:int;
+		private var currentHealth:int;
+		private var currentShields:Number;
+		private var currentDamage:Number;
+		private var currentShotRate:Number;
+		private var statString:String;
 
 		override public function create():void
 		{
@@ -68,6 +73,12 @@ package level
 			background.scaleY = 2.0;
 			parent.addChildAt(background, 0);
 			bgColor = 0;
+
+			Context.getPersistentState().computeStats();
+			currentHealth = Context.getPersistentState().getCurrentHealth();
+			currentShields = Context.getPersistentState().getCurrentShields();
+			currentDamage = Context.getPersistentState().getCurrentDamage();
+			currentShotRate = Context.getPersistentState().getCurrentShotRate();
 
 			enemyGroup = new FlxGroup();
 			enemyBulletGroup = new FlxGroup();
@@ -128,6 +139,23 @@ package level
 						Context.getPersistentState().setElementState(collectedElements[c], PersistentState.ELEM_COLLECTED);
 					}
 
+					Context.getPersistentState().computeStats();
+					var newHealth:int = Context.getPersistentState().getCurrentHealth();
+					var newShields:Number = Context.getPersistentState().getCurrentShields();
+					var newDamage:Number = Context.getPersistentState().getCurrentDamage();
+					var newShotRate:Number = Context.getPersistentState().getCurrentShotRate();
+					if (newHealth > currentHealth) {
+						statString = "Health increased by " + (newHealth - currentHealth);
+					} else if (newShields > currentShields) {
+						statString = "Shields increased by " + Number((newShields - currentShields) * 100.0).toFixed(0) + "%";
+					} else if (newDamage > currentDamage) {
+						statString = "Damage increased by " + Number((newDamage - currentDamage) * 100.0).toFixed(0) + "%";
+					} else if (newShotRate > currentShotRate) {
+						statString = "Shot rate increased by " + Number((newShotRate - currentShotRate) * 100.0).toFixed(0) + "%";
+					} else {
+						statString = "";
+					}
+
 					endPhase = 1;
 					completeText.text = "New Elements Collected:";
 					completeText.size = 20;
@@ -178,14 +206,13 @@ package level
 				if (endTimer > 0) {
 					--endTimer;
 				} else {
-					if (collectedElements.length == 0) {
+					if (collectedElements.length == 0 || statString.length == 0) {
 						completeList1.text = "None\n\nBetter luck next time!";
 						endPhase = 10;
 						endTimer = 120;
 					} else if (elemCounter == collectedElements.length) {
-						endPhase = 10;
+						endPhase = 2;
 						endTimer = 120;
-						// CHANGE THIS TO REPORT STATS
 					} else {
 						// PLAY SOUND HERE
 						if (collectedElements.length <= 15) {
@@ -200,6 +227,23 @@ package level
 						++elemCounter;
 						endTimer = 10;
 					}
+				}
+			} else if (endPhase == 2) {
+				if (endTimer > 0) {
+					--endTimer;
+				} else {
+					endPhase = 10;
+					endTimer = 120;
+					completeList1.visible = false;
+					if (completeList2 != null) {
+						completeList2.visible = false;
+					}
+					completeText.visible = false;
+					var statsText:FlxText = new FlxText(FlxG.width * 0.25, 0, FlxG.width * 0.5, statString);
+					statsText.alignment = "center";
+					statsText.size = 16;
+					statsText.y = FlxG.height * 0.5 - statsText.y * 0.5;
+					defaultGroup.add(statsText);
 				}
 			} else if (endPhase == 10) {
 				if (endTimer > 0) {

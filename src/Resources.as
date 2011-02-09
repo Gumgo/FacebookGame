@@ -7,7 +7,7 @@ package
 	{
 		// SPRITES:
 		private var sprites:Dictionary;
-		[Embed(source = "../bin/resources/ship_placeholder.png")] private var player:Class;
+		[Embed(source = "../bin/resources/player.png")] private var player:Class;
 		[Embed(source = "../bin/resources/enemy_1.png")] private var enemy1:Class;
 		[Embed(source = "../bin/resources/enemy_2.png")] private var enemy2:Class;
 		[Embed(source = "../bin/resources/enemy_3.png")] private var enemy3:Class;

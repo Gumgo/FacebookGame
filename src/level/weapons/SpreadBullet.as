@@ -18,6 +18,8 @@ package level.weapons
 
 		private var points:Vector.<Number>;
 
+		private static const DAMAGE:int = 25;
+
 		public function SpreadBullet()
 		{
 			super();
@@ -25,7 +27,8 @@ package level.weapons
 
 		public function resetMe(x:int, y:int, dir:Number):SpreadBullet
 		{
-			super.resetMeSuper("spread", 25, x, y, Context.getResources().getSprite("blob"));
+			super.resetMeSuper("spread", DAMAGE * (FlxG.state as LevelState).getPlayer().getDamageMultiplier(),
+				x, y, Context.getResources().getSprite("blob"));
 			this.x -= width / 2;
 			this.y -= height / 2;
 			turnDir = Math.random() >= 0.5;

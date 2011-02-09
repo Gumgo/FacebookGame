@@ -17,6 +17,9 @@ package level
 
 		private var primaryWeapon:Weapon;
 		private var secondaryWeapon:Weapon;
+		private var damageMultiplier:Number;
+		private var shotRateMultiplier:Number;
+		private var shields:Number;
 
 		private var endTimer:int;
 
@@ -25,8 +28,12 @@ package level
 
 		public function Player() 
 		{
-			maxHealth = 100;
-			currentHealth = 100;
+			maxHealth = Context.getPersistentState().getCurrentHealth();
+			currentHealth = maxHealth;
+
+			damageMultiplier = Context.getPersistentState().getCurrentDamage();
+			shotRateMultiplier = Context.getPersistentState().getCurrentShotRate();
+			shields = Context.getPersistentState().getCurrentShields();
 
 			super(FlxG.width / 2, FlxG.height / 2, Context.getResources().getSprite("player"));
 			x -= width / 2;
@@ -109,12 +116,13 @@ package level
 			}
 
 			var prevHealth:int = currentHealth;
-			currentHealth += amount;
 
 			if (amount > 0) {
+				currentHealth += amount;
 				// green screen flash
 			} else if (amount < 0) {
 				// red screen flash
+				currentHealth -= int(Math.ceil( -amount / shields));
 				var ratio1:Number = Number(prevHealth) / Number(maxHealth);
 				var ratio2:Number = Number(currentHealth) / Number(maxHealth);
 				if (ratio1 > 0.15 && ratio2 <= 0.15) {
@@ -160,6 +168,21 @@ package level
 		public function getYPrev():Number
 		{
 			return yPrev;
+		}
+
+		public function getDamageMultiplier():Number
+		{
+			return damageMultiplier;
+		}
+
+		public function getShotRateMultiplier():Number
+		{
+			return shotRateMultiplier;
+		}
+
+		public function getShields():Number
+		{
+			return shields;
 		}
 
 	}

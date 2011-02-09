@@ -10,6 +10,8 @@ package level.weapons
 		private var speed:Number;
 		private var exploding:Boolean;
 
+		private static const DAMAGE:int = 300;
+
 		public function BombBullet()
 		{
 			super();
@@ -52,7 +54,7 @@ package level.weapons
 			if (!exploding) {
 				x += width / 2;
 				y += height / 2;
-				damage = 300;
+				damage = DAMAGE * (FlxG.state as LevelState).getPlayer().getDamageMultiplier();
 				loadGraphic(Context.getResources().getSprite("explosion"), true);
 				addAnimation("ex", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 				play("ex", true);

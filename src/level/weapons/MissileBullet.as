@@ -8,15 +8,13 @@ package level.weapons
 	import level.LevelState;
 	import org.flixel.FlxG;
 
-	/**
-	 * ...
-	 * @author Ben
-	 */
 	public class MissileBullet extends PlayerBullet
 	{
 		private var direction:Number;
 		private var target:Enemy;
 		private var exploding:Boolean;
+
+		private static const DAMAGE:int = 200;
 
 		public function MissileBullet()
 		{
@@ -92,7 +90,7 @@ package level.weapons
 			if (!exploding) {
 				x += width / 2;
 				y += height / 2;
-				damage = 200;
+				damage = DAMAGE * (FlxG.state as LevelState).getPlayer().getDamageMultiplier();
 				loadGraphic(Context.getResources().getSprite("explosion"), true);
 				addAnimation("ex", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 				play("ex", true);

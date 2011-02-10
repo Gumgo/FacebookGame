@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <waves>
+	<wave name="Test">
+		<fleet name="Test" time="0"/>
+	</wave>
+
 	<wave name="TestWave0">
 		<fleet name="TopSeeker" time="0"/>
 	</wave>

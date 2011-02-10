@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <fleets>
+	<fleet name="Test">
+		<enemy name="TestEnemy" behavior="LoopBehavior" time="0"><behaviorProperty name="side" value="left"/><behaviorProperty name="y" value="200"/></enemy>
+		<enemy name="TestEnemy" behavior="LoopBehavior" time="6"><behaviorProperty name="side" value="left"/><behaviorProperty name="y" value="200"/></enemy>
+		<enemy name="TestEnemy" behavior="LoopBehavior" time="12"><behaviorProperty name="side" value="left"/><behaviorProperty name="y" value="200"/></enemy>
+	</fleet>
+
 	<fleet name="MoveDartCenter">
 		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="15"/></enemy>
 		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="0"/></enemy>

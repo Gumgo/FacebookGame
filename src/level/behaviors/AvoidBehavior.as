@@ -74,7 +74,7 @@ package level.behaviors
 				yVel += yDir * ACCEL;
 			} else {
 				var xTar:Number = player.x + player.width * 0.5;
-				var yTar:Number = Math.max(enemy.height * 0.5, player.y - enemy.height * 0.5 - 96);
+				var yTar:Number = Math.max(enemy.height * 0.5, player.y - enemy.height * 0.5 - 144);
 
 				var xVec:Number = xTar - xCtr;
 				var yVec:Number = yTar - yCtr;

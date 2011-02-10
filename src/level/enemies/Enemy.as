@@ -56,7 +56,7 @@ package level.enemies
 			this.bullet = bullet;
 
 			deathSprite = Context.getResources().getSprite(definition.getDeathSprite());
-			deathSound = null;//Context.getResources().getSound(definition.getDeathSound());
+			deathSound = Context.getResources().getSound(definition.getDeathSound());
 			deathColor = definition.getDeathColor();
 			enemyHealth = definition.getHealth();
 			color = definition.getColor();
@@ -153,6 +153,8 @@ package level.enemies
 			if (!bullet) {
 				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + frameWidth / 2, y + frameHeight / 2);
 			}
+
+			FlxG.play(deathSound);
 
 			enemyFinished();
 		}

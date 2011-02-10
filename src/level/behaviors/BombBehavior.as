@@ -27,14 +27,14 @@ package level.behaviors
 		override public function init(enemy:Enemy):void
 		{
 			// speed ranging from 0 to 1
-			moveMode = Math.floor(Math.random() * 2.0);
+			moveMode = Math.floor(Math.random() * 3.0) < 2 ? 0 : 1;
 			if (moveMode == 0) {
 				enemy.x = Math.random() < 0.5 ? FlxG.width : -enemy.width;
 				enemy.y = FlxG.height * 0.25 + Math.random() * FlxG.height * 0.5 - enemy.height * 0.5;
 				target = FlxG.width * 0.25 + Math.random() * FlxG.width * 0.5 - enemy.width * 0.5;
 			} else {
 				enemy.x = FlxG.width * 0.25 + Math.random() * FlxG.width * 0.5 - enemy.width * 0.5;
-				enemy.y = Math.random() < 0.5 ? FlxG.height : -enemy.height;
+				enemy.y = -enemy.height;
 				target = FlxG.height * 0.25 + Math.random() * FlxG.height * 0.5 - enemy.height * 0.5;
 			}
 			rot = -1;

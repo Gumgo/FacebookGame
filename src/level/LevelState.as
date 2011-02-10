@@ -58,7 +58,6 @@ package level
 		private var currentHealth:int;
 		private var currentShields:Number;
 		private var currentDamage:Number;
-		private var currentShotRate:Number;
 		private var statString:String;
 
 		override public function create():void
@@ -78,7 +77,6 @@ package level
 			currentHealth = Context.getPersistentState().getCurrentHealth();
 			currentShields = Context.getPersistentState().getCurrentShields();
 			currentDamage = Context.getPersistentState().getCurrentDamage();
-			currentShotRate = Context.getPersistentState().getCurrentShotRate();
 
 			enemyGroup = new FlxGroup();
 			enemyBulletGroup = new FlxGroup();
@@ -143,15 +141,12 @@ package level
 					var newHealth:int = Context.getPersistentState().getCurrentHealth();
 					var newShields:Number = Context.getPersistentState().getCurrentShields();
 					var newDamage:Number = Context.getPersistentState().getCurrentDamage();
-					var newShotRate:Number = Context.getPersistentState().getCurrentShotRate();
 					if (newHealth > currentHealth) {
-						statString = "Health increased by " + (newHealth - currentHealth);
+						statString = "Energy increased by " + Number(100.0 * (newHealth - currentHealth) / PersistentState.HEALTH_MIN).toFixed(0) + "%";
 					} else if (newShields > currentShields) {
-						statString = "Shields increased by " + Number((newShields - currentShields) * 100.0).toFixed(0) + "%";
+						statString = "Shields increased by " + Number(100.0 * (newShields - currentShields) / PersistentState.SHIELDS_MIN).toFixed(0) + "%";
 					} else if (newDamage > currentDamage) {
-						statString = "Damage increased by " + Number((newDamage - currentDamage) * 100.0).toFixed(0) + "%";
-					} else if (newShotRate > currentShotRate) {
-						statString = "Shot rate increased by " + Number((newShotRate - currentShotRate) * 100.0).toFixed(0) + "%";
+						statString = "Damage increased by " + Number(100.0 * (newDamage - currentDamage) / PersistentState.DAMAGE_MIN).toFixed(0) + "%";
 					} else {
 						statString = "";
 					}
@@ -206,12 +201,16 @@ package level
 				if (endTimer > 0) {
 					--endTimer;
 				} else {
-					if (collectedElements.length == 0 || statString.length == 0) {
+					if (collectedElements.length == 0) {
 						completeList1.text = "None\n\nBetter luck next time!";
 						endPhase = 10;
 						endTimer = 120;
 					} else if (elemCounter == collectedElements.length) {
-						endPhase = 2;
+						if (statString.length == 0) {
+							endPhase = 10;
+						} else {
+							endPhase = 2;
+						}
 						endTimer = 120;
 					} else {
 						// PLAY SOUND HERE
@@ -423,15 +422,19 @@ package level
 
 		public function seeElement(number:int):void
 		{
-			if (seenElements.indexOf(number, 0) < 0) {
-				seenElements.push(number);
+			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
+				if (seenElements.indexOf(number, 0) < 0) {
+					seenElements.push(number);
+				}
 			}
 		}
 
 		public function collectElement(number:int):void
 		{
-			if (collectedElements.indexOf(number, 0) < 0) {
-				collectedElements.push(number);
+			if (Context.getPersistentState().getElementState(number) != PersistentState.ELEM_COLLECTED) {
+				if (collectedElements.indexOf(number, 0) < 0) {
+					collectedElements.push(number);
+				}
 			}
 		}
 

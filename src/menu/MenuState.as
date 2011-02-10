@@ -60,6 +60,8 @@ package menu
 				fadeIn.stop();
 			});
 			defaultGroup.add(fadeIn);
+
+			FlxG.playMusic(Context.getResources().getSound("menu"));
 		}
 		
 		override public function update():void
@@ -69,7 +71,7 @@ package menu
 				{
 					timer = -1;
 					var fadeOut:FlxFade = new FlxFade();
-					fadeOut.start(0xFF000000, 2, function():void
+					fadeOut.start(0xFF000000, 1, function():void
 					{
 						parent.removeChild(background);
 						FlxG.state = new InventoryState();

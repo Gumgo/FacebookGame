@@ -12,13 +12,10 @@ package
 		public static const SHIELDS_MAX:Number = 2.0;
 		public static const DAMAGE_MIN:Number = 1.0;
 		public static const DAMAGE_MAX:Number = 3.0;
-		public static const SHOTRATE_MIN:Number = 1.0;
-		public static const SHOTRATE_MAX:Number = 2.0;
 
 		private static var currentHealth:int;
 		private static var currentShields:Number;
 		private static var currentDamage:Number;
-		private static var currentShotRate:Number;
 
 		private var elements:Array;
 
@@ -53,29 +50,26 @@ package
 			var maxShieldsElements:int = 0;
 			var currentDamageElements:int = 0;
 			var maxDamageElements:int = 0;
-			var currentShotRateElements:int = 0;
-			var maxShotRateElements:int = 0;
 			for (var i:int = 0; i < 118; ++i) {
 				var inc:int = elements[i] == ELEM_COLLECTED ? 1 : 0;
 				var group:String = Context.getGameData().getElementDefinition(i + 1).getGroup();
-				if (		group == "Non-Metal" ||
-							group == "Noble Gas") {
+				if (		group == "Non-Metals" ||
+							group == "Noble Gases" ||
+							group == "Lanthanides" ||
+							group == "Metalloids") {
 					++maxHealthElements;
 					currentHealthElements += inc;
-				} else if (	group == "Alkali Metal" ||
-							group == "Alkali Earth Metal" ||
-							group == "Halogen" ||
-							group == "Actinide") {
+				} else if (	group == "Alkali Metals" ||
+							group == "Alkaline Earth Metals" ||
+							group == "Halogens" ||
+							group == "Actinides") {
 					++maxDamageElements;
 					currentDamageElements += inc;
-				} else if (	group == "Other Metal" ||
-							group == "Transition Metal") {
+				} else if (	group == "Other Metals" ||
+							group == "Transition Metals") {
 					++maxShieldsElements;
 					currentShieldsElements += inc;
-				} else if (	group == "Lanthanide") {
-					++maxShotRateElements;
-					currentShotRateElements += inc;
-				} else if (	group == "Unknown") {
+				} else if (	group == "Unknowns") {
 					// secret bonus
 				} else {
 					throw new Error("Unknown element group");
@@ -85,7 +79,6 @@ package
 			currentHealth = int(MathExt.lerp(HEALTH_MIN, HEALTH_MAX, Number(currentHealthElements) / Number(maxHealthElements)));
 			currentShields = MathExt.lerp(SHIELDS_MIN, SHIELDS_MAX, Number(currentShieldsElements) / Number(maxShieldsElements));
 			currentDamage = MathExt.lerp(DAMAGE_MIN, DAMAGE_MAX, Number(currentDamageElements) / Number(maxDamageElements));
-			currentShotRate = MathExt.lerp(SHOTRATE_MIN, SHOTRATE_MAX, Number(currentShotRateElements) / Number(maxShotRateElements));
 		}
 
 		public function getCurrentHealth():int
@@ -101,11 +94,6 @@ package
 		public function getCurrentDamage():Number
 		{
 			return currentDamage;
-		}
-
-		public function getCurrentShotRate():Number
-		{
-			return currentShotRate;
 		}
 
 	}

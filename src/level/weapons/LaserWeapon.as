@@ -11,7 +11,7 @@ package level.weapons
 		override public function shoot(player:Player):void
 		{
 			if (timer == 0) {
-				timer = int(Math.ceil( 5.0 / player.getShotRateMultiplier()));
+				timer = 5;
 				(Context.getRecycler().getNew(LaserBullet) as LaserBullet).resetMe(player.x + player.width / 2, player.y + 16);
 			}
 		}

@@ -13,6 +13,8 @@ package menu
 		private var menu_options:FlxText;
 		private var help:FlxText;
 		private var fadeIn:FlxFadeIn;
+		private var testButton:FlxButton;
+		private var testSprite:FlxSprite;
 
 		override public function create():void
 		{
@@ -50,7 +52,7 @@ package menu
 			help.setFormat (null, 14, 0xFFFFFFFF, "center");
 			help.alpha = 0.0;
 			add(help);
-
+			
 			timer = -20;
 			fadeIn = new FlxFadeIn();
 			fadeIn.start(0xFF000000, 3, function():void
@@ -69,14 +71,7 @@ package menu
 			if (instructions.alpha == 1.0) {
 				if (FlxG.keys.justPressed("SPACE") && timer == 0)
 				{
-					timer = -1;
-					var fadeOut:FlxFade = new FlxFade();
-					fadeOut.start(0xFF000000, 1, function():void
-					{
-						parent.removeChild(background);
-						FlxG.state = new InventoryState();
-					});
-					defaultGroup.add(fadeOut);
+					xToInventoryState();
 				}  /*else if ( FlxG.keys.justPressed("x")) {
 					//FlxG.state = new FlxState();
 				}  else {
@@ -101,7 +96,17 @@ package menu
 
 			super.update();
 		}
- 
+
+		private function xToInventoryState():void {
+			timer = -1;
+			var fadeOut:FlxFade = new FlxFade();
+			fadeOut.start(0xFF000000, 1, function():void
+			{
+				parent.removeChild(background);
+				FlxG.state = new InventoryState();
+			});
+			defaultGroup.add(fadeOut);
+		}
  
 		public function MenuState()
 		{

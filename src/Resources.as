@@ -41,7 +41,7 @@ package
 		[Embed(source = "../bin/resources/backgrounds/background2.swf")] private var background2Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background3.swf")] private var background3Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background2moving.swf")] private var background2AnimMove:Class;
-
+		
 		[Embed(source = "../bin/resources/sprites/healthbar.png")] private var healthBar:Class;
 		[Embed(source = "../bin/resources/sprites/healthbar_left.png")] private var healthBarLeft:Class;
 		[Embed(source = "../bin/resources/sprites/healthbar_right.png")] private var healthBarRight:Class;

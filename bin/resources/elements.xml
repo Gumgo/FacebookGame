@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-	<element symbol="H"		name="Hydrogen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="He"	name="Helium"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Li"	name="Lithium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Be"	name="Beryllium"		group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="B"		name="Boron"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="C"		name="Carbon"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="N"		name="Nitrogen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="O"		name="Oxygen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="F"		name="Fluorine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="H"		name="Hydrogen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc="Hydrogen is the lightest and most abundant chemical element."/>
+	<element symbol="He"	name="Helium"			group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc="Helium is a colorless, odorless, tasteless, non-toxic, inert monatomic gas that heads the noble gas group."/>
+	<element symbol="Li"	name="Lithium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc="Like all alkali metals, lithium is highly reactive and flammable."/>
+	<element symbol="Be"	name="Beryllium"		group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc="Beryllium's very low density and high melting point make it an ideal aerospace material"/>
+	<element symbol="B"		name="Boron"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc="Boron is a metalloid, and crystalline boron is extremely hard."/>
+	<element symbol="C"		name="Carbon"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc="Carbon is chemical basis of all known life."/>
+	<element symbol="N"		name="Nitrogen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc="Nitrogen constitutes 78.08% of the Earth's atmosphere."/>
+	<element symbol="O"		name="Oxygen"			group="Non-Metal"			sprite="blob"	color="0xFFFFFF"	desc="Oxygen comprises about 87% of the weight of Earth's oceans, in the form of water molecules."/>
+	<element symbol="F"		name="Fluorine"			group="Halogen"				sprite="blob"	color="0xFFFFFF"	desc="Fluorine is the lightest halogen element, and is highly reactive due to its affinity for electrons."/>
 	<element symbol="Ne"	name="Neon"				group="Noble Gas"			sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Na"	name="Sodium"			group="Alkali Metal"		sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Mg"	name="Magnesium"		group="Alkali Earth Metal"	sprite="blob"	color="0xFFFFFF"	desc=""/>

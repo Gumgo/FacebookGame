@@ -6,7 +6,7 @@ package
 		public static const ELEM_ENCOUNTERED:int = 1;
 		public static const ELEM_COLLECTED:int = 2;
 
-		public static const HEALTH_MIN:int = 100;
+		public static const HEALTH_MIN:int = 1000;
 		public static const HEALTH_MAX:int = 300;
 		public static const SHIELDS_MIN:Number = 1.0;
 		public static const SHIELDS_MAX:Number = 2.0;

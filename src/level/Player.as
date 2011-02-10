@@ -102,6 +102,7 @@ package level
 				if (FlxG.keys.LEFT) {
 					x -= 8;
 				}
+				
 				if (FlxG.keys.RIGHT) {
 					x += 8;
 				}

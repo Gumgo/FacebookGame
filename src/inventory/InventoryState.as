@@ -79,16 +79,16 @@ package inventory
 
 			FlxG.mouse.show();
 			colors = new Dictionary();
-			colors["Non-Metal"]				= 0x80ff80;
-			colors["Other Metal"]			= 0x8080ff;
-			colors["Alkali Metal"]			= 0xff8080;
-			colors["Alkali Earth Metal"]	= 0xffff80;
-			colors["Transition Metal"]		= 0xff80ff;
-			colors["Noble Gas"]				= 0x80ff00;
-			colors["Halogen"]				= 0x80ffff;
-			colors["Lanthanide"]			= 0x0080ff;
-			colors["Actinide"]				= 0xff8000;
-			colors["Unknown"]				= 0xffffff;
+			colors["Non-Metals"]			= 0x80ff80;
+			colors["Other Metals"]			= 0x8080ff;
+			colors["Alkali Metals"]			= 0xff8080;
+			colors["Alkaline Earth Metals"]	= 0xffff80;
+			colors["Transition Metals"]		= 0xff80ff;
+			colors["Noble Gases"]			= 0x80ff00;
+			colors["Halogens"]				= 0x80ffff;
+			colors["Lanthanides"]			= 0x0080ff;
+			colors["Actinides"]				= 0xff8000;
+			colors["Unknowns"]				= 0xffffff;
 
 			var encounteredCount:int = 0;
 			var collectedCount:int = 0;
@@ -151,33 +151,33 @@ package inventory
 			fade.start();
 
 			borderLines = new Dictionary();
-			borderLines["Non-Metal"]			= new Array(
+			borderLines["Non-Metals"]			= new Array(
 			0, 0, 0, 1,     0, 0, 1, 1,     0, 1, 0, 1,     1, 0, 1, 1,
 			12, 1, 0, 4,    12, 1, 1, 1,    12, 2, 0, 1,    13, 2, 1, 1,
 			13, 3, 0, 1,    14, 3, 1, 1,    14, 4, 0, 1,    15, 4, 1, 1,
 			15, 5, 0, 1,    16, 1, 1, 4);
-			borderLines["Other Metal"]			= new Array(
+			borderLines["Other Metals"]			= new Array(
 			12, 2, 0, 1,    13, 2, 1, 1,    13, 3, 0, 1,    14, 3, 1, 1,
 			14, 4, 0, 1,    15, 4, 1, 1,    15, 5, 0, 1,    16, 5, 1, 1,
 			12, 2, 1, 4,    12, 6, 0, 4);
-			borderLines["Alkali Metal"]			= new Array(
+			borderLines["Alkaline Metals"]		= new Array(
 			0, 1, 0, 1,     0, 1, 1, 6,     1, 1, 1, 6,     0, 7, 0, 1);
-			borderLines["Alkali Earth Metal"]	= new Array(
+			borderLines["Alkali Earth Metals"]	= new Array(
 			1, 1, 0, 1,     1, 1, 1, 6,     2, 1, 1, 6,     1, 7, 0, 1);
-			borderLines["Transition Metal"]		= new Array(
+			borderLines["Transition Metals"]	= new Array(
 			2, 3, 0, 10,    2, 3, 1, 2,     2, 5, 0, 1,     3, 5, 1, 2,
 			3, 7, 0, 9,     12, 3, 1, 4);
-			borderLines["Noble Gas"]			= new Array(
+			borderLines["Noble Gases"]			= new Array(
 			17, 0, 0, 1,    17, 0, 1, 6,    17, 6, 0, 1,    18, 0, 1, 6);
-			borderLines["Halogen"]				= new Array(
+			borderLines["Halogens"]				= new Array(
 			16, 1, 0, 1,    16, 1, 1, 5,    16, 6, 0, 1,    17, 1, 1, 5);
-			borderLines["Lanthanide"]			= new Array(
+			borderLines["Lanthanides"]			= new Array(
 			2, 5, 0, 1,     2, 5, 1, 1,     2, 6, 0, 1,     3, 5, 1, 1,
 			2, 8, 0, 14,    2, 8, 1, 1,     2, 9, 0, 14,    16, 8, 1, 1);
-			borderLines["Actinide"]				= new Array(
+			borderLines["Actinides"]			= new Array(
 			2, 6, 0, 1,     2, 6, 1, 1,     2, 7, 0, 1,     3, 6, 1, 1,
 			2, 9, 0, 14,    2, 9, 1, 1,     2, 10, 0, 14,   16, 9, 1, 1);
-			borderLines["Unknown"]				= new Array(
+			borderLines["Unknowns"]				= new Array(
 			12, 6, 0, 6,    12, 6, 1, 1,    12, 7, 0, 6,    18, 6, 1, 1);
 
 			flash = new FlxFadeIn();
@@ -186,16 +186,16 @@ package inventory
 			descRect = new Rectangle(0, 0, FlxG.width, FlxG.height);
 
 			descriptions = new Dictionary();
-			descriptions["Non-Metal"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Other Metal"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Alkali Metal"]		= "Filler description filler description filler description filler description filler description.";
-			descriptions["Alkali Earth Metal"]	= "Filler description filler description filler description filler description filler description.";
-			descriptions["Transition Metal"]	= "Filler description filler description filler description filler description filler description.";
-			descriptions["Noble Gas"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Halogen"]				= "Filler description filler description filler description filler description filler description.";
-			descriptions["Lanthanide"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Actinide"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Unknown"]				= "Filler description filler description filler description filler description filler description.";
+			descriptions["Non-Metals"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Other Metals"]		= "Filler description filler description filler description filler description filler description.";
+			descriptions["Alkaline Metals"]		= "Filler description filler description filler description filler description filler description.";
+			descriptions["Alkali Earth Metals"]	= "Filler description filler description filler description filler description filler description.";
+			descriptions["Transition Metals"]	= "Filler description filler description filler description filler description filler description.";
+			descriptions["Noble Gases"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Halogens"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Lanthanides"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Actinides"]			= "Filler description filler description filler description filler description filler description.";
+			descriptions["Unknowns"]			= "Filler description filler description filler description filler description filler description.";
 			groupText = new FlxText(0, FlxG.height / 4, FlxG.width);
 			groupText.visible = false;
 			groupText.size = 32;

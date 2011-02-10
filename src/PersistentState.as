@@ -58,24 +58,24 @@ package
 			for (var i:int = 0; i < 118; ++i) {
 				var inc:int = elements[i] == ELEM_COLLECTED ? 1 : 0;
 				var group:String = Context.getGameData().getElementDefinition(i + 1).getGroup();
-				if (		group == "Non-Metal" ||
-							group == "Noble Gas") {
+				if (		group == "Non-Metals" ||
+							group == "Noble Gases") {
 					++maxHealthElements;
 					currentHealthElements += inc;
-				} else if (	group == "Alkali Metal" ||
-							group == "Alkali Earth Metal" ||
-							group == "Halogen" ||
-							group == "Actinide") {
+				} else if (	group == "Alkali Metals" ||
+							group == "Alkaline Earth Metals" ||
+							group == "Halogens" ||
+							group == "Actinides") {
 					++maxDamageElements;
 					currentDamageElements += inc;
-				} else if (	group == "Other Metal" ||
-							group == "Transition Metal") {
+				} else if (	group == "Other Metals" ||
+							group == "Transition Metals") {
 					++maxShieldsElements;
 					currentShieldsElements += inc;
-				} else if (	group == "Lanthanide") {
+				} else if (	group == "Lanthanides") {
 					++maxShotRateElements;
 					currentShotRateElements += inc;
-				} else if (	group == "Unknown") {
+				} else if (	group == "Unknowns") {
 					// secret bonus
 				} else {
 					throw new Error("Unknown element group");

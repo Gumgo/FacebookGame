@@ -11,6 +11,7 @@ package level.behaviors
 	public class AvoidBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var shotTimer:int;
 		private var xVel:Number;
 		private var yVel:Number;
@@ -30,6 +31,7 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
+			bullet = getProperty("bullet");
 			enemy.y = -enemy.width;
 			enemy.x = Math.random() * (FlxG.width - enemy.width);
 			shotTimer = 0;
@@ -49,11 +51,11 @@ package level.behaviors
 			var bullets:Array = (FlxG.state as LevelState).getBulletGroup().members;
 			var bc:int = 0;
 			for (var i:int = 0; i < bullets.length; ++i) {
-				var bullet:PlayerBullet = bullets[i];
-				if (bullet != null) {
-					if ((bullet.x - xCtr) * (bullet.x - xCtr) + (bullet.y - yCtr) * (bullet.y - yCtr) < 96 * 96) {
-						avgX += bullet.x + bullet.width * 0.5;
-						avgY += bullet.y + bullet.height * 0.5;
+				var pBullet:PlayerBullet = bullets[i];
+				if (pBullet != null) {
+					if ((pBullet.x - xCtr) * (pBullet.x - xCtr) + (pBullet.y - yCtr) * (pBullet.y - yCtr) < 96 * 96) {
+						avgX += pBullet.x + pBullet.width * 0.5;
+						avgY += pBullet.y + pBullet.height * 0.5;
 						++bc;
 					}
 				}
@@ -104,7 +106,7 @@ package level.behaviors
 				dict["y"] = String(enemy.y + enemy.height);
 				(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 					null,
-					Context.getGameData().getEnemyDefinition("BulletEnemy"),
+					Context.getGameData().getEnemyDefinition(bullet),
 					(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 				shotTimer = 10;
 			}

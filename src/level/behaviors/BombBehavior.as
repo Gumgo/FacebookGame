@@ -9,6 +9,7 @@ package level.behaviors
 	public class BombBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var target:Number;
 		private var moveMode:int; // 0 = x, 1 = y
 		private var rot:int;
@@ -26,6 +27,7 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
+			bullet = getProperty("bullet");
 			// speed ranging from 0 to 1
 			moveMode = Math.floor(Math.random() * 3.0) < 2 ? 0 : 1;
 			if (moveMode == 0) {
@@ -68,7 +70,7 @@ package level.behaviors
 						dict1["speed"] = "12";
 						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 							null,
-							Context.getGameData().getEnemyDefinition("BulletEnemy"),
+							Context.getGameData().getEnemyDefinition(bullet),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict1), true);
 					}
 					rot += 5;

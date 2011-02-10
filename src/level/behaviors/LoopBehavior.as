@@ -14,6 +14,7 @@ package level.behaviors
 	public class LoopBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var mirror:Boolean;
 		private var dir:Number;
 		private var shoot:int;
@@ -32,6 +33,8 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
+			bullet = getProperty("bullet");
+
 			shoot = -1;
 			dir = 5;
 
@@ -91,7 +94,7 @@ package level.behaviors
 					dict["y"] = String(enemy.y + enemy.height);
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("BulletEnemy"),
+						Context.getGameData().getEnemyDefinition(bullet),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					shootTimer = 10;
 					--shoot;

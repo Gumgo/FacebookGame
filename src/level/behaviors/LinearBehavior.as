@@ -10,6 +10,7 @@ package level.behaviors
 	public class LinearBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var xInc:Number;
 		private var yInc:Number;
 		private var speed:Number;
@@ -28,6 +29,7 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
+			bullet = getProperty("bullet");
 			// direction relative to top center of screen
 			var direction:Number = Number(getProperty("direction"));
 			direction += 90;
@@ -97,7 +99,7 @@ package level.behaviors
 					dict["y"] = String(enemy.y + enemy.height);
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("BulletEnemy"),
+						Context.getGameData().getEnemyDefinition(bullet),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					shot = true;
 				}

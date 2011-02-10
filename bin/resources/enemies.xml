@@ -1,133 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <enemies>
-	<!-- FORMAT: h{h}_d{d}_[c_][i_]{#}
-		h = health, d = damage, c = death on collision, i = invincible -->
+	<!-- FORMAT: h{h}_d{d}[_c]
+		h = health, d = damage, c = death on collision -->
 
 	<!-- h50 d5 -->
-	<enemy	name="h50_d5_1"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h50_d5"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h50_d5_2"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h50_d5_3"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h50_d5_4"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h50_d5_5"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-
-	<enemy	name="h50_d5_c_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h50_d5_c_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h50_d5_c_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h50_d5_c_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h50_d5_c_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h50_d5_c"		sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="50"			damage="5"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 
 	<!-- h100 d10 -->
-	<enemy	name="h100_d10_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h100_d10"		sprite="enemy2"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h100_d10_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h100_d10_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h100_d10_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h100_d10_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-
-	<enemy	name="h100_d10_c_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h100_d10_c_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h100_d10_c_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h100_d10_c_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h100_d10_c_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h100_d10_c"	sprite="enemy2"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="100"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 
 	<!-- h150 d10 -->
-	<enemy	name="h150_d10_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h150_d10"		sprite="enemy3"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h150_d10_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h150_d10_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h150_d10_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h150_d10_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-
-	<enemy	name="h150_d10_c_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h150_d10_c_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h150_d10_c_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h150_d10_c_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h150_d10_c_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h150_d10_c"	sprite="enemy3"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="150"		damage="10"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 
 	<!-- h200 d20 -->
-	<enemy	name="h200_d20_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h200_d20"		sprite="enemy4"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h200_d20_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h200_d20_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h200_d20_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h200_d20_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-
-	<enemy	name="h200_d20_c_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h200_d20_c_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h200_d20_c_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h200_d20_c_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h200_d20_c_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h200_d20_c"	sprite="enemy4"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="200"		damage="20"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 
 	<!-- h400 d40 -->
-	<enemy	name="h400_d40_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h400_d40"		sprite="enemy5"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h400_d40_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h400_d40_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h400_d40_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy	name="h400_d40_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-
-	<enemy	name="h400_d40_c_1"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h400_d40_c_2"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h400_d40_c_3"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h400_d40_c_4"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
-			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
-	<enemy	name="h400_d40_c_5"	sprite="enemy1"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
+	<enemy	name="h400_d40_c"	sprite="enemy5"		rotate="true"		deathSprite="explosion"	deathSound="exp#8"
 			health="400"		damage="40"			color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 
 	<!-- bullets -->
 	<enemy	name="bullet_d5"	sprite="enemyBullet"	rotate="false"		deathSprite="explosion"	deathSound="exp#8"
 			health="1"			damage="5"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
-
 	<enemy	name="bullet_d10"	sprite="enemyBullet"	rotate="false"		deathSprite="explosion"	deathSound="exp#8"
-			health="1"			damage="5"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
-
+			health="1"			damage="10"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 	<enemy	name="bullet_d20"	sprite="enemyBullet"	rotate="false"		deathSprite="explosion"	deathSound="exp#8"
-			health="1"			damage="5"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
-
+			health="1"			damage="20"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 	<enemy	name="bullet_d40"	sprite="enemyBullet"	rotate="false"		deathSprite="explosion"	deathSound="exp#8"
-			health="1"			damage="5"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
+			health="1"			damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 </enemies>

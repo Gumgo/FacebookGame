@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
-	<level waveCount="10">
+	<level waveCount="25">
 		<firstHalf>
-			<wave name="Test"/>
+			<wave name="EasyLines1"/>
+			<wave name="EasyLines2"/>
+			<wave name="EasyDipFire1"/>
+			<wave name="EasyDipFire2"/>
+			<wave name="EasyDoubleLinearL"/>
+			<wave name="EasyDoubleLinearR"/>
 		</firstHalf>
 		<secondHalf boss="Test">
-			<wave name="Test"/>
+			<wave name="EasyLines3"/>
+			<wave name="EasyLines4"/>
+			<wave name="EasyDipFire2"/>
+			<wave name="EasyZigZag1"/>
+			<wave name="EasyZigZag2"/>
+			<wave name="EasyDoubleLinearL"/>
+			<wave name="EasyDoubleLinearR"/>
+			<wave name="EasyDoubleLinearLR"/>
 		</secondHalf>
 	</level>
+
 	<level waveCount="10">
 		<firstHalf>
 			<wave name="TestWave1"/>

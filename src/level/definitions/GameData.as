@@ -130,14 +130,16 @@ package level.definitions
 
 						var index:int = newFleet.addEnemy(enemy, behavior, time);
 
-						var xmlProperties:XMLList = xmlEnemy.children();
+						var xmlProperties:XMLList = xmlEnemy.attributes();
 						for each (var xmlProperty:XML in xmlProperties) {
-							if (xmlProperty.name() != "behaviorProperty") {
-								throw new Error("Unknown property " + xmlProperty.name());
+							if (xmlProperty.name() == "name" ||
+								xmlProperty.name() == "behavior" ||
+								xmlProperty.name() == "time") {
+								continue;
 							}
 
-							var key:String = xmlProperty.attribute("name").toString();
-							var value:String = xmlProperty.attribute("value").toString();
+							var key:String = xmlProperty.name();
+							var value:String = xmlProperty.toString();
 
 							newFleet.addBehaviorProperty(index, key, value);
 						}

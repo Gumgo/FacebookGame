@@ -60,8 +60,8 @@ package level
 
 			primaryWeapon = new DefaultWeapon();
 
-			// TEMPORARY
-			secondaryWeapon = new SpreadWeapon();
+			// FOR TESTING:
+			//secondaryWeapon = new SpreadWeapon();
 		}
 
 		override public function render():void

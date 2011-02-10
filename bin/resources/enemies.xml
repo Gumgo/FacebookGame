@@ -1,43 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <enemies>
-<<<<<<< HEAD
-	<enemy
-		name="TestEnemy"
-		sprite="enemy4"
-		rotate="true"
-		deathSprite="explosion"
-		deathSound="none"
-		health="75"
-		damage="5"
-		color="0xFFFFFF"
-		deathColor="0xFFFFFF"
-		deathOnPlayerCollision="true"
-		invincible="false"/>
-	<enemy
-		name="HardEnemy"
-		sprite="enemy2"
-		rotate="true"
-		deathSprite="explosion"
-		deathSound="none"
-		health="500"
-		damage="10"
-		color="0xFFFFFF"
-		deathColor="0xFFFFFF"
-		deathOnPlayerCollision="false"
-		invincible="false"/>
-	<enemy
-		name="BulletEnemy"
-		sprite="enemyBullet"
-		rotate="false"
-		deathSprite="explosion"
-		deathSound="none"
-		health="100"
-		damage="5"
-		color="0xFFFFFF"
-		deathColor="0xFFFFFF"
-		deathOnPlayerCollision="true"
-		invincible="true"/>
-=======
+
 	<!-- FORMAT: h{h}_d{d}_[c_][i_]{#}
 		h = health, d = damage, c = death on collision, i = invincible -->
 
@@ -168,5 +131,5 @@
 
 	<enemy	name="bullet_d40"	sprite="enemyBullet"	rotate="false"		deathSprite="explosion"	deathSound="exp#8"
 			health="1"			damage="5"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
->>>>>>> 5319f42de6c3e3c15271e778199155c730cfe4b2
+
 </enemies>

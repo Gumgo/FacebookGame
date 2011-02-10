@@ -58,7 +58,6 @@ package level
 		private var currentHealth:int;
 		private var currentShields:Number;
 		private var currentDamage:Number;
-		private var currentShotRate:Number;
 		private var statString:String;
 
 		override public function create():void
@@ -78,7 +77,6 @@ package level
 			currentHealth = Context.getPersistentState().getCurrentHealth();
 			currentShields = Context.getPersistentState().getCurrentShields();
 			currentDamage = Context.getPersistentState().getCurrentDamage();
-			currentShotRate = Context.getPersistentState().getCurrentShotRate();
 
 			enemyGroup = new FlxGroup();
 			enemyBulletGroup = new FlxGroup();
@@ -143,15 +141,12 @@ package level
 					var newHealth:int = Context.getPersistentState().getCurrentHealth();
 					var newShields:Number = Context.getPersistentState().getCurrentShields();
 					var newDamage:Number = Context.getPersistentState().getCurrentDamage();
-					var newShotRate:Number = Context.getPersistentState().getCurrentShotRate();
 					if (newHealth > currentHealth) {
-						statString = "Health increased by " + (newHealth - currentHealth);
+						statString = "Energy increased by " + Number(100.0 * (newHealth - currentHealth) / PersistentState.HEALTH_MIN).toFixed(0) + "%";
 					} else if (newShields > currentShields) {
-						statString = "Shields increased by " + Number((newShields - currentShields) * 100.0).toFixed(0) + "%";
+						statString = "Shields increased by " + Number(100.0 * (newShields - currentShields) / PersistentState.SHIELDS_MIN).toFixed(0) + "%";
 					} else if (newDamage > currentDamage) {
-						statString = "Damage increased by " + Number((newDamage - currentDamage) * 100.0).toFixed(0) + "%";
-					} else if (newShotRate > currentShotRate) {
-						statString = "Shot rate increased by " + Number((newShotRate - currentShotRate) * 100.0).toFixed(0) + "%";
+						statString = "Damage increased by " + Number(100.0 * (newDamage - currentDamage) / PersistentState.DAMAGE_MIN).toFixed(0) + "%";
 					} else {
 						statString = "";
 					}

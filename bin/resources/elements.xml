@@ -4,7 +4,7 @@
 	<element symbol="He"	name="Helium"			group="Noble Gases"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Li"	name="Lithium"			group="Alkali Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Be"	name="Beryllium"		group="Alkaline Earth Metals"	sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="B"		name="Boron"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="B"		name="Boron"			group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="C"		name="Carbon"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="N"		name="Nitrogen"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="O"		name="Oxygen"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
@@ -13,7 +13,7 @@
 	<element symbol="Na"	name="Sodium"			group="Alkali Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Mg"	name="Magnesium"		group="Alkaline Earth Metals"	sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Al"	name="Aluminum"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Si"	name="Silicon"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Si"	name="Silicon"			group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="P"		name="Phosphorus"		group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="S"		name="Sulfur"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Cl"	name="Chlorine"			group="Halogens"				sprite="blob"	color="0xFFFFFF"	desc=""/>
@@ -31,8 +31,8 @@
 	<element symbol="Cu"	name="Copper"			group="Transition Metals"		sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Zn"	name="Zinc"				group="Transition Metals"		sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Ga"	name="Gallium"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Ge"	name="Germanium"		group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="As"	name="Arsenic"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Ge"	name="Germanium"		group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="As"	name="Arsenic"			group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Se"	name="Selenium"			group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Br"	name="Bromine"			group="Halogens"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Kr"	name="Krypton"			group="Noble Gases"				sprite="blob"	color="0xFFFFFF"	desc=""/>
@@ -50,8 +50,8 @@
 	<element symbol="Cd"	name="Cadmium"			group="Transition Metals"		sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="In"	name="Indium"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Sn"	name="Tin"				group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Sb"	name="Antimony"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Te"	name="Tellurium"		group="Non-Metals"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Sb"	name="Antimony"			group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Te"	name="Tellurium"		group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="I"		name="Iodine"			group="Halogens"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Xe"	name="Xenon"			group="Noble Gases"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Cs"	name="Cesium"			group="Alkali Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
@@ -83,7 +83,7 @@
 	<element symbol="Tl"	name="Thallium"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Pb"	name="Lead"				group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Bi"	name="Bismuth"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
-	<element symbol="Po"	name="Polonium"			group="Other Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>
+	<element symbol="Po"	name="Polonium"			group="Metalloids"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="At"	name="Astatine"			group="Halogens"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Rn"	name="Radon"			group="Noble Gases"				sprite="blob"	color="0xFFFFFF"	desc=""/>
 	<element symbol="Fr"	name="Francium"			group="Alkali Metals"			sprite="blob"	color="0xFFFFFF"	desc=""/>

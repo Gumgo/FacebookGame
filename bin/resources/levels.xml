@@ -2,6 +2,14 @@
 <levels>
 	<level waveCount="10">
 		<firstHalf>
+			<wave name="Test"/>
+		</firstHalf>
+		<secondHalf boss="Test">
+			<wave name="Test"/>
+		</secondHalf>
+	</level>
+	<level waveCount="10">
+		<firstHalf>
 			<wave name="TestWave1"/>
 			<wave name="TestWave2"/>
 			<wave name="TestWave3"/>

@@ -24,7 +24,6 @@ package level
 		private var primaryWeapon:Weapon;
 		private var secondaryWeapon:Weapon;
 		private var damageMultiplier:Number;
-		private var shotRateMultiplier:Number;
 		private var shields:Number;
 
 		private var endTimer:int;
@@ -49,7 +48,6 @@ package level
 			currentHealth = maxHealth;
 
 			damageMultiplier = Context.getPersistentState().getCurrentDamage();
-			shotRateMultiplier = Context.getPersistentState().getCurrentShotRate();
 			shields = Context.getPersistentState().getCurrentShields();
 
 			super(FlxG.width / 2, FlxG.height / 2, Context.getResources().getSprite("player"));
@@ -214,11 +212,6 @@ package level
 		public function getDamageMultiplier():Number
 		{
 			return damageMultiplier;
-		}
-
-		public function getShotRateMultiplier():Number
-		{
-			return shotRateMultiplier;
 		}
 
 		public function getShields():Number

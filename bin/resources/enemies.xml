@@ -2,14 +2,10 @@
 <enemies>
 	<enemy
 		name="TestEnemy"
-<<<<<<< HEAD
-		sprite="enemy_2"
-=======
-		sprite="enemy4"
+		sprite="sprites/enemy_2"
 		rotate="true"
->>>>>>> 70f903dd0436a7ad5933da8c451f7c54983b292c
-		deathSprite="explosion"
-		deathSound="exp#8"
+		deathSprite="sprites/explosion"
+		deathSound="sounds/exp#8"
 		health="75"
 		damage="5"
 		color="0xFFFFFF"
@@ -18,14 +14,10 @@
 		invincible="false"/>
 	<enemy
 		name="HardEnemy"
-<<<<<<< HEAD
-		sprite="enemy_1"
-=======
-		sprite="enemy2"
+		sprite="sprites/enemy_1"
 		rotate="true"
->>>>>>> 70f903dd0436a7ad5933da8c451f7c54983b292c
-		deathSprite="explosion"
-		deathSound="exp#8"
+		deathSprite="sprites/explosion"
+		deathSound="sounds/exp#8"
 		health="500"
 		damage="10"
 		color="0xFFFFFF"
@@ -34,10 +26,10 @@
 		invincible="false"/>
 	<enemy
 		name="BulletEnemy"
-		sprite="enemyBullet"
+		sprite="sprites/enemyBullet"
 		rotate="false"
-		deathSprite="explosion"
-		deathSound="exp#8"
+		deathSprite="sprites/explosion"
+		deathSound="sounds/exp#8"
 		health="100"
 		damage="5"
 		color="0xFFFFFF"

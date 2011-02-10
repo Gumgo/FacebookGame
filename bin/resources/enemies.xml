@@ -2,12 +2,8 @@
 <enemies>
 	<enemy
 		name="TestEnemy"
-<<<<<<< HEAD
-		sprite="enemy_2"
-=======
 		sprite="enemy4"
 		rotate="true"
->>>>>>> 70f903dd0436a7ad5933da8c451f7c54983b292c
 		deathSprite="explosion"
 		deathSound="none"
 		health="75"
@@ -18,12 +14,8 @@
 		invincible="false"/>
 	<enemy
 		name="HardEnemy"
-<<<<<<< HEAD
-		sprite="enemy_1"
-=======
 		sprite="enemy2"
 		rotate="true"
->>>>>>> 70f903dd0436a7ad5933da8c451f7c54983b292c
 		deathSprite="explosion"
 		deathSound="none"
 		health="500"

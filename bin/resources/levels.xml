@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
-	<level waveCount="10">
+	<level fleetCount="30">
 		<firstHalf>
-			<wave name="Test"/>
+			<fleet name="EasyLinesCenter"/>
+			<fleet name="EasyLinesStaggeredSmall"/>
+			<fleet name="EasyLinesSides"/>
+			<fleet name="EasyDipFire"/>
+			<fleet name="EasyDoubleLinearL"/>
+			<fleet name="EasyDoubleLinearR"/>
 		</firstHalf>
 		<secondHalf boss="Test">
-			<wave name="Test"/>
+			<fleet name="EasyLinesCenter"/>
+			<fleet name="EasyLinesStaggeredSmall"/>
+			<fleet name="EasyLinesSides"/>
+			<fleet name="EasyZigZagCenter"/>
+			<fleet name="EasyZigZagStaggeredSmall"/>
+			<fleet name="EasyZigZagSides"/>
+			<fleet name="EasyDipFire"/>
+			<fleet name="EasyDoubleDipFire"/>
+			<fleet name="EasyDoubleLinearL"/>
+			<fleet name="EasyDoubleLinearR"/>
 		</secondHalf>
 	</level>
-	<level waveCount="10">
+
+	<level fleetCount="10">
 		<firstHalf>
-			<wave name="TestWave1"/>
-			<wave name="TestWave2"/>
-			<wave name="TestWave3"/>
-			<wave name="TestWave4"/>
-			<wave name="TestWave5"/>
-			<wave name="TestWave6"/>
-			<wave name="TestWave7"/>
+			<fleet name="TestWave1"/>
+			<fleet name="TestWave2"/>
+			<fleet name="TestWave3"/>
+			<fleet name="TestWave4"/>
+			<fleet name="TestWave5"/>
+			<fleet name="TestWave6"/>
+			<fleet name="TestWave7"/>
 		</firstHalf>
 		<secondHalf boss="TestWave6">
-			<wave name="TestWave1"/>
-			<wave name="TestWave2"/>
-			<wave name="TestWave3"/>
-			<wave name="TestWave4"/>
-			<wave name="TestWave5"/>
-			<wave name="TestWave6"/>
-			<wave name="TestWave7"/>
+			<fleet name="TestWave1"/>
+			<fleet name="TestWave2"/>
+			<fleet name="TestWave3"/>
+			<fleet name="TestWave4"/>
+			<fleet name="TestWave5"/>
+			<fleet name="TestWave6"/>
+			<fleet name="TestWave7"/>
 		</secondHalf>
 	</level>
 </levels>

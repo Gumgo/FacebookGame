@@ -10,6 +10,7 @@ package level.behaviors
 	public class TopSeekerBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var phase:int;
 		private var shotTimer:int;
 
@@ -26,6 +27,7 @@ package level.behaviors
 
 		override public function init(enemy:Enemy):void
 		{
+			bullet = getProperty("bullet");
 			phase = 0;
 			enemy.x = Math.random() * (FlxG.width - enemy.width);
 			enemy.y = -enemy.height;
@@ -51,7 +53,7 @@ package level.behaviors
 						dict["y"] = String(enemy.y + enemy.height / 2);
 						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 							null,
-							Context.getGameData().getEnemyDefinition("BulletEnemy"),
+							Context.getGameData().getEnemyDefinition(bullet),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					}
 				}

@@ -18,7 +18,7 @@ package level.weapons
 					(Context.getRecycler().getNew(DefaultBullet) as DefaultBullet).resetMe(player.x + player.width - 12, player.y);
 				}
 				side = !side;
-				timer = 5;
+				timer = 8;
 			}
 		}
 

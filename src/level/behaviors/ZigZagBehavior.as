@@ -11,6 +11,7 @@ package level.behaviors
 	public class ZigZagBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var speed:Number;
 		private var offset:Number;
 		private var time:int;
@@ -25,6 +26,7 @@ package level.behaviors
 		{
 			super.resetMeSuper(properties);		
 			if ( getProperty("shoots") == null) {
+				bullet = getProperty("bullet");
 				shoots = true;
 			} else {
 				shoots = getProperty("shoots") == "true" ? true : false;
@@ -52,7 +54,7 @@ package level.behaviors
 
 			++time;
 
-			if (Math.random() < 0.02) {
+			if (shoots && Math.random() < 0.02) {
 				var dict:Dictionary = new Dictionary();
 				dict["x"] = String(enemy.x + enemy.width / 2);
 				dict["y"] = String(enemy.y + enemy.height);
@@ -60,7 +62,7 @@ package level.behaviors
 				if (!shoots) {
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 					null,
-					Context.getGameData().getEnemyDefinition("BulletEnemy"),
+					Context.getGameData().getEnemyDefinition(bullet),
 					(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 				}
 			}

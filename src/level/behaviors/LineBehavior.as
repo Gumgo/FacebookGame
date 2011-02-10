@@ -11,6 +11,7 @@ package level.behaviors
 	public class LineBehavior extends Behavior 
 	{
 
+		private var bullet:String;
 		private var speed:Number;
 		private var shoots:Boolean;
 		
@@ -24,6 +25,7 @@ package level.behaviors
 			super.resetMeSuper(properties);
 			if (getProperty("shoots") == null) {
 				shoots = true;
+				bullet = getProperty("bullet");
 			} else {
 				shoots = getProperty("shoots") == "true" ? true : false;
 			}
@@ -53,7 +55,7 @@ package level.behaviors
 				dict["speed"] = String(speed + 2);
 				(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 					null,
-					Context.getGameData().getEnemyDefinition("BulletEnemy"),
+					Context.getGameData().getEnemyDefinition(bullet),
 					(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 			}
 			if (enemy.y > 0 && !enemy.onScreen()) {

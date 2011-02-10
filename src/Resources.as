@@ -30,7 +30,11 @@ package
 		[Embed(source = "../bin/resources/sprites/bomb.png")] private var bombBullet:Class;
 		[Embed(source = "../bin/resources/sprites/missile.png")] private var missileBullet:Class;
 
-		[Embed(source = "../bin/resources/test_item.png")] private var testItem:Class;
+		[Embed(source = "../bin/resources/sprites/health_item.png")] private var healthItem:Class;
+		[Embed(source = "../bin/resources/sprites/spread_item.png")] private var spreadItem:Class;
+		[Embed(source = "../bin/resources/sprites/laser_item.png")] private var laserItem:Class;
+		[Embed(source = "../bin/resources/sprites/missile_item.png")] private var missileItem:Class;
+		[Embed(source = "../bin/resources/sprites/bomb_item.png")] private var bombItem:Class;
 
 		[Embed(source = "../bin/resources/sprites/table_entry.png")] private var tableEntry:Class;
 		[Embed(source = "../bin/resources/sprites/banner.png")] private var banner1x128:Class;
@@ -82,7 +86,11 @@ package
 			sprites["laserBullet"] = laserBullet;
 			sprites["bombBullet"] = bombBullet;
 			sprites["missileBullet"] = missileBullet;
-			sprites["testItem"] = testItem;
+			sprites["healthItem"] = healthItem;
+			sprites["spreadItem"] = spreadItem;
+			sprites["laserItem"] = laserItem;
+			sprites["missileItem"] = missileItem;
+			sprites["bombItem"] = bombItem;
 			sprites["healthBar"] = healthBar;
 			sprites["healthBarLeft"] = healthBarLeft;
 			sprites["healthBarRight"] = healthBarRight;

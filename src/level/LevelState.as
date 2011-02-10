@@ -8,7 +8,6 @@ package level
 	import inventory.InventoryState;
 	import level.enemies.Enemy;
 	import level.enemies.LevelGenerator;
-	import level.enemies.Wave;
 	import level.Player;
 	import level.Item;
 	import org.flixel.data.FlxFade;

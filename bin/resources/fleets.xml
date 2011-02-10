@@ -18,7 +18,7 @@
 		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="48" speed="5" shoots="false"/>
 		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="592" speed="5" shoots="false"/>
 		<enemy name="h50_d5" behavior="LineBehavior" time="20" offset="112" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="20" offset="512" speed="5" shoots="false"/>
+		<enemy name="h50_d5" behavior="LineBehavior" time="20" offset="528" speed="5" shoots="false"/>
 		<enemy name="h50_d5" behavior="LineBehavior" time="40" offset="176" speed="5" shoots="false"/>
 		<enemy name="h50_d5" behavior="LineBehavior" time="40" offset="464" speed="5" shoots="false"/>
 	</fleet>
@@ -46,17 +46,30 @@
 	</fleet>
 
 	<fleet name="EasyDipFire">
-		<enemy name="h50_d5" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
+	</fleet>
+
+	<fleet name="EasyDoubleDipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="15" speed="0.05" bullet="bullet_d5" shots="1" />
 	</fleet>
 
 	<fleet name="EasyDoubleLinearL">
 		<enemy name="h50_d5" behavior="LinearBehavior" time="0" direction="55" speed="6" bullet="bullet_d5"/>
 		<enemy name="h50_d5" behavior="LinearBehavior" time="10" direction="55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="20" direction="55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="30" direction="55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="40" direction="55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="50" direction="55" speed="6" bullet="bullet_d5"/>
 	</fleet>
 
 	<fleet name="EasyDoubleLinearR">
 		<enemy name="h50_d5" behavior="LinearBehavior" time="0" direction="-55" speed="6" bullet="bullet_d5"/>
 		<enemy name="h50_d5" behavior="LinearBehavior" time="10" direction="-55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="20" direction="-55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="30" direction="-55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="40" direction="-55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5" behavior="LinearBehavior" time="50" direction="-55" speed="6" bullet="bullet_d5"/>
 	</fleet>
 
 </fleets>

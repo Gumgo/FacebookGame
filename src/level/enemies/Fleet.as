@@ -7,7 +7,7 @@ package level.enemies
 
 	public class Fleet 
 	{
-		private var parent:Wave;
+		private var parent:LevelGenerator;
 		private var enemies:Vector.<String>
 		private var behaviors:Vector.<String>
 		private var behaviorProperties:Vector.<Dictionary>
@@ -20,7 +20,7 @@ package level.enemies
 		{
 		}
 
-		public function resetMe(parent:Wave, definition:FleetDefinition):Fleet
+		public function resetMe(parent:LevelGenerator, definition:FleetDefinition):Fleet
 		{
 			this.parent = parent;
 			this.enemies = definition.getEnemies();
@@ -30,6 +30,11 @@ package level.enemies
 			remaining = enemies.length;
 			tick = 0;
 			return this;
+		}
+
+		public function getRemainingEnemies():int
+		{
+			return remaining;
 		}
 
 		public function update():void
@@ -53,9 +58,10 @@ package level.enemies
 		public function enemyFinished():void
 		{
 			--remaining;
+			parent.decEnemies();
 			if (remaining == 0) {
-				Context.getRecycler().recycle(this);
 				parent.fleetFinished(this);
+				Context.getRecycler().recycle(this);
 			}
 		}
 	}

@@ -16,7 +16,7 @@ package
 
 		private function doneLoading():void
 		{
-			FlxG.state = new LevelState();//temp
+			FlxG.state = new MenuState();
 		}
 
 	}

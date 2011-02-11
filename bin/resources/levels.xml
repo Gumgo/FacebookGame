@@ -22,25 +22,4 @@
 			<fleet name="EasyDoubleLinearR"/>
 		</secondHalf>
 	</level>
-
-	<level fleetCount="10">
-		<firstHalf>
-			<fleet name="TestWave1"/>
-			<fleet name="TestWave2"/>
-			<fleet name="TestWave3"/>
-			<fleet name="TestWave4"/>
-			<fleet name="TestWave5"/>
-			<fleet name="TestWave6"/>
-			<fleet name="TestWave7"/>
-		</firstHalf>
-		<secondHalf boss="TestWave6">
-			<fleet name="TestWave1"/>
-			<fleet name="TestWave2"/>
-			<fleet name="TestWave3"/>
-			<fleet name="TestWave4"/>
-			<fleet name="TestWave5"/>
-			<fleet name="TestWave6"/>
-			<fleet name="TestWave7"/>
-		</secondHalf>
-	</level>
 </levels>

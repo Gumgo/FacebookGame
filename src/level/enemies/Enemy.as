@@ -45,7 +45,7 @@ package level.enemies
 			color = 0xFFFFFF;
 			_animations.length = 0;
 			angle = 0;
-			if  (definition.getRotate()) {
+ 			if  (definition.getRotate()) {
 				loadRotatedGraphic(Context.getResources().getSprite(definition.getSprite()), 16, -1, false, true);
 				offset.x = offset.y = (width - (width / 1.5)) * 0.5;
 				width = height = width / 1.5;

@@ -21,8 +21,9 @@ package level.items
 
 		override public function collect():void
 		{
+			FlxG.play(Context.getResources().getSound("collect"));
 			(FlxG.state as LevelState).getPlayer().setSecondaryWeapon(new LaserWeapon());
-			(FlxG.state as LevelState).getLevelText().setText("Laser", 0x0000FF);
+			(FlxG.state as LevelState).getLevelText().setText("Laser", 0x0000FF, 30);
 			removeSelf();
 		}
 		

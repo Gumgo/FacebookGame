@@ -24,6 +24,10 @@ package level.enemies
 
 		private var endTimer:int;	// counts down once the level is beaten
 
+		private const FLEET_OVERLAP_TIME:int = 30;
+		private const FLEET_OVERLAP_RANDOM:int = 60;
+		private const FLEET_MIN_ENEMIES:int = 5;
+
 		public function LevelGenerator(level:int)
 		{
 			var levelDefinition:LevelDefinition = Context.getGameData().getLevelDefinition(level);
@@ -77,8 +81,8 @@ package level.enemies
 					--nextFleetTimer
 				}
 
-				if (enemyCount == 0 || (enemyCount < 5 && nextFleetTimer == 0)) {
-					nextFleetTimer = 90 + Math.random() * 60;
+				if (enemyCount == 0 || (enemyCount < FLEET_MIN_ENEMIES && nextFleetTimer == 0)) {
+					nextFleetTimer = FLEET_OVERLAP_TIME + Math.random() * FLEET_OVERLAP_RANDOM;
 					var nextFleet:Fleet = getNextFleet();
 					if (nextFleet == null) {
 						endTimer = -2;
@@ -138,6 +142,7 @@ package level.enemies
 					index = arrayLength - 1;
 				}
 			}
+			trace(index);
 
 			// back up the indices
 			prevFleet = array[index];

@@ -7,9 +7,9 @@ package
 		public static const ELEM_COLLECTED:int = 2;
 
 		public static const HEALTH_MIN:int = 100;
-		public static const HEALTH_MAX:int = 300;
+		public static const HEALTH_MAX:int = 400;
 		public static const SHIELDS_MIN:Number = 1.0;
-		public static const SHIELDS_MAX:Number = 2.0;
+		public static const SHIELDS_MAX:Number = 3.0;
 		public static const DAMAGE_MIN:Number = 1.0;
 		public static const DAMAGE_MAX:Number = 3.0;
 
@@ -18,6 +18,7 @@ package
 		private static var currentDamage:Number;
 
 		private var elements:Array;
+		private var collectedCount:int;
 
 		public function PersistentState() 
 		{
@@ -27,6 +28,7 @@ package
 
 		public function reset():void
 		{
+			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
 				elements[i] = ELEM_UNENCOUNTERED;
 			}
@@ -34,12 +36,22 @@ package
 
 		public function setElementState(element:int, state:int):void
 		{
-			elements[element-1] = state;
+			if (state == ELEM_COLLECTED && elements[element - 1] != ELEM_COLLECTED) {
+				++collectedCount;
+			} else if (state != ELEM_COLLECTED && elements[element - 1] == ELEM_COLLECTED) {
+				--collectedCount;
+			}
+			elements[element-  1] = state;
 		}
 
 		public function getElementState(element:int):int
 		{
-			return elements[element-1];
+			return elements[element - 1];
+		}
+
+		public function getCollectedElementCount():int
+		{
+			return collectedCount;
 		}
 
 		public function computeStats():void

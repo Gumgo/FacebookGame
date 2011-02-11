@@ -84,7 +84,7 @@ package level.behaviors
 						dict["speed"] = "12";
 						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 							null,
-							Context.getGameData().getEnemyDefinition("BulletEnemy"),
+							Context.getGameData().getEnemyDefinition(bullet),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					}
 				}

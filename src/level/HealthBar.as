@@ -32,10 +32,12 @@ package level
 
 			healthBarWidth = (FlxG.width - PADDING * 2 - healthBarLeft.width - healthBarRight.width) *
 				Context.getPersistentState().getCurrentHealth() / PersistentState.HEALTH_MAX;
+			// align to 2 pixels
+			healthBarWidth = (healthBarWidth + 1) & (~1);
 
 			matrix = new Matrix();
 			colorTf = new ColorTransform();
-			colorTf2 = new ColorTransform(1, 1, 1, 0.2);
+			colorTf2 = new ColorTransform(1, 1, 1, 0.5);
 			x = FlxG.width * 0.5;
 			updateHealth(1.0);
 		}

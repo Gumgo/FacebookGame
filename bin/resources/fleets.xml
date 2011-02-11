@@ -1,75 +1,471 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <fleets>
 
-	<fleet name="EasyLinesCenter">
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="288" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="352" speed="5" shoots="false"/>
+	<!-- LEVEL 1 -->
+
+	<fleet name="L1LinesCenter">
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="288" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="352" speed="5" shoots="false"/>
 	</fleet>
 
-	<fleet name="EasyLinesStaggeredSmall">
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="64" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="30" offset="192" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="320" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="30" offset="488" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="576" speed="5" shoots="false"/>
+	<fleet name="L1LinesStaggeredSmall">
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="64" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="30" offset="192" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="320" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="30" offset="488" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="576" speed="5" shoots="false"/>
 	</fleet>
 
-	<fleet name="EasyLinesSides">
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="48" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="0" offset="592" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="20" offset="112" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="20" offset="528" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="40" offset="176" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="LineBehavior" time="40" offset="464" speed="5" shoots="false"/>
+	<fleet name="L1LinesSides">
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="48" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="592" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="20" offset="112" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="20" offset="528" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="40" offset="176" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="40" offset="464" speed="5" shoots="false"/>
 	</fleet>
 
-	<fleet name="EasyZigZagCenter">
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="288" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="352" speed="5" shoots="false"/>
+	<fleet name="L1ZigZagCenter">
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="288" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="352" speed="5" shoots="false"/>
 	</fleet>
 
-	<fleet name="EasyZigZagStaggeredSmall">
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="64" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="30" offset="192" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="320" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="30" offset="488" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="576" speed="5" shoots="false"/>
+	<fleet name="L1ZigZagStaggeredSmall">
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="64" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="30" offset="192" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="320" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="30" offset="488" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="576" speed="5" shoots="false"/>
 	</fleet>
 
-	<fleet name="EasyZigZagSides">
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="48" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="0" offset="592" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="20" offset="112" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="20" offset="512" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="40" offset="176" speed="5" shoots="false"/>
-		<enemy name="h50_d5" behavior="ZigZagBehavior" time="40" offset="464" speed="5" shoots="false"/>
+	<fleet name="L1ZigZagSides">
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="48" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="592" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="20" offset="112" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="20" offset="512" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="40" offset="176" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="40" offset="464" speed="5" shoots="false"/>
 	</fleet>
 
-	<fleet name="EasyDipFire">
+	<fleet name="L1DipFire">
 		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
 	</fleet>
 
-	<fleet name="EasyDoubleDipFire">
+	<fleet name="L1DoubleDipFire">
 		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
 		<enemy name="h100_d10" behavior="DipFireBehavior" time="15" speed="0.05" bullet="bullet_d5" shots="1" />
 	</fleet>
 
-	<fleet name="EasyDoubleLinearL">
-		<enemy name="h50_d5" behavior="LinearBehavior" time="0" direction="55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="10" direction="55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="20" direction="55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="30" direction="55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="40" direction="55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="50" direction="55" speed="6" bullet="bullet_d5"/>
+	<fleet name="L1DoubleLinearL">
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="0" direction="55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="10" direction="55" speed="6" bullet="bullet_d5"/>
 	</fleet>
 
-	<fleet name="EasyDoubleLinearR">
-		<enemy name="h50_d5" behavior="LinearBehavior" time="0" direction="-55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="10" direction="-55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="20" direction="-55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="30" direction="-55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="40" direction="-55" speed="6" bullet="bullet_d5"/>
-		<enemy name="h50_d5" behavior="LinearBehavior" time="50" direction="-55" speed="6" bullet="bullet_d5"/>
+	<fleet name="L1DoubleLinearR">
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="0" direction="-55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="10" direction="-55" speed="6" bullet="bullet_d5"/>
+	</fleet>
+
+	<!-- LEVEL 2 -->
+
+	<fleet name="L2LinesCenter">
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="288" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="352" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2LinesStaggeredSmall">
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="64" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="30" offset="192" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="320" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="30" offset="488" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="576" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2LinesSides">
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="48" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="592" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="20" offset="112" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="20" offset="528" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="40" offset="176" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="40" offset="464" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2ZigZagCenter">
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="288" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="352" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2ZigZagStaggeredSmall">
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="64" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="30" offset="192" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="320" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="30" offset="488" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="576" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2ZigZagSides">
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="48" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="592" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="20" offset="112" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="20" offset="512" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="40" offset="176" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="40" offset="464" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2DipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d5" shots="3"/>
+	</fleet>
+
+	<fleet name="L2DoubleDipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d5" shots="3"/>
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="30" speed="0.1" bullet="bullet_d5" shots="3"/>
+	</fleet>
+
+	<fleet name="L2MoveDart">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="10"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-10"/>
+	</fleet>
+
+	<fleet name="L2MoveDartL">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="50"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="70"/>
+	</fleet>
+
+	<fleet name="L2MoveDartR">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-50"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-70"/>
+	</fleet>
+
+	<fleet name="L2TopSeeker">
+		<enemy name="h100_d10" behavior="TopSeekerBehavior" time="0" bullet="bullet_d5"/>
+	</fleet>
+
+	<!-- LEVEL 3 -->
+
+	<fleet name="L3TopSeeker">
+		<enemy name="h200_d20" behavior="TopSeekerBehavior" time="0" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L3DoubleDipFire">
+		<enemy name="h150_d10" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d10" shots="5"/>
+		<enemy name="h150_d10" behavior="DipFireBehavior" time="30" speed="0.1" bullet="bullet_d10" shots="5"/>
+	</fleet>
+
+	<fleet name="L3MoveDartBig">
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="60"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="40"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="20"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="0"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-20"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-40"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-60"/>
+	</fleet>
+
+	<fleet name="L3LoopL">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L3LoopR">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L3DoubleLoopL">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="left" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L3DoubleLoopR">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<!-- LEVEL 4 -->
+
+	<fleet name="L4ZigZagCenter">
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="288" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="352" speed="9" shoots="true" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4ZigZagStaggeredSmall">
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="64" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="30" offset="192" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="320" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="30" offset="488" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="576" speed="9" shoots="true" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4ZigZagSides">
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="48" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="592" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="20" offset="112" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="20" offset="512" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="40" offset="176" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="40" offset="464" speed="9" shoots="true" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4DoubleLoop">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4QuadLoopL">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="20" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="30" side="left" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4QuadLoopR">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="20" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="30" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4Bomb">
+		<enemy name="h400_d40" behavior="BombBehavior" time="0" bullet="bullet_d10"/>
+	</fleet>
+
+	<!-- LEVEL 5 -->
+
+	<fleet name="L5TopSeeker">
+		<enemy name="h200_d20" behavior="TopSeekerBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L5MoveDart">
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="10"/>
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="-10"/>
+	</fleet>
+
+	<fleet name="L5MoveDartLR">
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="60"/>
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="-60"/>
+	</fleet>
+
+	<fleet name="L5LinearArc">
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="0" direction="0" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="10" direction="20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="10" direction="-20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="20" direction="40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="20" direction="-40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="30" direction="60" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="30" direction="-60" speed="10" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5Bomb">
+		<enemy name="h400_d40" behavior="BombBehavior" time="0" bullet="bullet_d10"/>
+		<enemy name="h400_d40" behavior="BombBehavior" time="0" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5SlowLinearCircleCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="0" direction="90" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="10" direction="80" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="20" direction="70" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="30" direction="60" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="40" direction="50" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="50" direction="40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="60" direction="30" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="70" direction="20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="80" direction="10" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="90" direction="0" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="100" direction="350" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="110" direction="340" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="120" direction="330" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="130" direction="320" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="140" direction="310" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="150" direction="300" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="160" direction="290" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="170" direction="280" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="190" direction="260" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="200" direction="250" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="210" direction="240" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="220" direction="230" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="230" direction="220" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="240" direction="210" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="250" direction="200" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="260" direction="190" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="270" direction="180" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="280" direction="170" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="290" direction="160" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="300" direction="150" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="310" direction="140" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="320" direction="130" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="330" direction="120" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="340" direction="110" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="350" direction="100" speed="10" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5SlowLinearCircleCCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="260" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="250" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="240" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="230" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="220" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="210" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="200" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="190" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="180" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="170" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="160" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="150" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="140" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="130" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="120" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="110" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="100" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="90" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="80" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="70" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="60" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="50" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="30" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="10" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="0" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="350" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="340" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="330" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="320" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="310" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="300" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="290" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="280" speed="10" bullet="bullet_d10"/>
+	</fleet>
+
+	<!-- LEVEL 6 -->
+
+	<fleet name="L6TopSeeker">
+		<enemy name="h400_d40" behavior="TopSeekerBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L6TripleDipFire">
+		<enemy name="h200_d20" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d10" shots="4"/>
+		<enemy name="h200_d20" behavior="DipFireBehavior" time="30" speed="0.1" bullet="bullet_d10" shots="4"/>
+		<enemy name="h200_d20" behavior="DipFireBehavior" time="60" speed="0.1" bullet="bullet_d10" shots="4"/>
+	</fleet>
+
+	<fleet name="L5FastLinearCircleCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="0" direction="90" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="10" direction="80" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="20" direction="70" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="30" direction="60" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="40" direction="50" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="50" direction="40" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="60" direction="30" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="70" direction="20" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="80" direction="10" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="90" direction="0" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="100" direction="350" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="110" direction="340" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="120" direction="330" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="130" direction="320" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="140" direction="310" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="150" direction="300" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="160" direction="290" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="170" direction="280" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="190" direction="260" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="200" direction="250" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="210" direction="240" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="220" direction="230" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="230" direction="220" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="240" direction="210" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="250" direction="200" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="260" direction="190" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="270" direction="180" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="280" direction="170" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="290" direction="160" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="300" direction="150" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="310" direction="140" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="320" direction="130" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="330" direction="120" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="340" direction="110" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="350" direction="100" speed="15" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5FastLinearCircleCCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="260" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="250" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="240" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="230" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="220" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="210" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="200" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="190" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="180" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="170" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="160" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="150" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="140" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="130" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="120" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="110" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="100" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="90" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="80" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="70" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="60" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="50" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="40" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="30" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="20" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="10" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="0" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="350" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="340" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="330" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="320" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="310" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="300" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="290" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="280" speed="15" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L6ZigZagCenter">
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="288" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="352" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="224" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="416" speed="9" shoots="true" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L6ZigZagStaggeredSmall">
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="64" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="128" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="192" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="256" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="320" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="384" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="448" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="512" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="576" speed="9" shoots="true" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L6ZigZagSides">
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="48" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="592" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="112" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="512" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="40" offset="176" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="40" offset="464" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="60" offset="240" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="60" offset="400" speed="9" shoots="true" bullet="bullet_d20"/>
+	</fleet>
+
+	<!-- LEVEL 7 -->
+
+	<fleet name="L7Avoid">
+		<enemy name="h200_d20" behavior="AvoidBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<!-- LEVEL 8 -->
+
+	<fleet name="L8Avoid">
+		<enemy name="h400_d40" behavior="AvoidBehavior" time="0" bullet="bullet_d40"/>
+		<enemy name="h400_d40" behavior="AvoidBehavior" time="0" bullet="bullet_d40"/>
 	</fleet>
 
 </fleets>

@@ -107,19 +107,32 @@ package inventory
 			currentDescription = -1;
 			currentHover = -1;
 
-			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0);
+			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0); // unneeded
 			var colPercent:Number = Math.round(100.0 * collectedCount / 118.0);
+			var currentLevel:int = Math.floor(Context.getGameData().getLevelCount() * collectedCount / (118.0 + 1.0));
+			var elementsToAdvance:int = 0;
+			if (currentLevel < Context.getGameData().getLevelCount() - 1) {
+				while (Math.floor(Context.getGameData().getLevelCount() * (collectedCount + elementsToAdvance) / (118.0 + 1.0)) == currentLevel) {
+					++elementsToAdvance;
+				}
+			}
 
 			var title:FlxText = new FlxText(32 * 4, 32, 32 * 8, "Elements");
 			title.size = 40;
 			title.alignment = "center";
 
-			var stats:FlxText = new FlxText(32 * 4, 88, 32 * 8);
+			var stats:FlxText = new FlxText(32 * 4 - 16, 88, 32 * 9);
 			stats.size = 16;
 			stats.alignment = "center";
+			//stats.text =
+			//"Encountered: " + encounteredCount + " (" + encPercent +
+			//"%)\nCollected: " + collectedCount + " (" + colPercent + "%)";
 			stats.text =
-			"Encountered: " + encounteredCount + " (" + encPercent +
-			"%)\nCollected: " + collectedCount + " (" + colPercent + "%)";
+			"Collected: " + collectedCount + " (" + colPercent + "%)\n" +
+			"Level " + (currentLevel + 1);
+			if (elementsToAdvance != 0) {
+				stats.text += " (need " + elementsToAdvance + " to advance)";
+			}
 			defaultGroup.add(title);
 			defaultGroup.add(stats);
 

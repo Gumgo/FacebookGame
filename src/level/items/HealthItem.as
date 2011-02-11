@@ -20,8 +20,9 @@ package level.items
 
 		override public function collect():void
 		{
+			FlxG.play(Context.getResources().getSound("collect"));
 			(FlxG.state as LevelState).getPlayer().adjustHealth(20);
-			(FlxG.state as LevelState).getLevelText().setText("Energy", 0x00FF00);
+			(FlxG.state as LevelState).getLevelText().setText("Energy", 0x00FF00, 30);
 			removeSelf();
 		}
 		

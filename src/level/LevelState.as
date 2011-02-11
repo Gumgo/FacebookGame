@@ -33,6 +33,7 @@ package level
 		private var enemyBulletGroup:FlxGroup;
 		private var bulletGroup:FlxGroup;
 		private var itemGroup:FlxGroup;
+		private var explosionGroup:FlxGroup;
 		private var overlayGroup:FlxGroup;
 
 		private var endTimer:int;
@@ -81,6 +82,7 @@ package level
 			enemyBulletGroup = new FlxGroup();
 			bulletGroup = new FlxGroup();
 			itemGroup = new FlxGroup();
+			explosionGroup = new FlxGroup();
 			overlayGroup = new FlxGroup();
 
 			effectsSprite = new FlxSprite(0, 0, null);
@@ -324,6 +326,7 @@ package level
 			defaultGroup.add(enemyGroup);
 			defaultGroup.add(enemyBulletGroup);
 			defaultGroup.add(player);
+			defaultGroup.add(explosionGroup);
 			defaultGroup.add(bulletGroup);
 			defaultGroup.add(effectsSprite);
 			defaultGroup.add(overlayGroup);
@@ -335,7 +338,9 @@ package level
 			fadeIn.start(0xFF000000, 0.5);
 			defaultGroup.add(fadeIn);
 
-			levelGenerator = new LevelGenerator(0);
+			var collected:int = Context.getPersistentState().getCollectedElementCount();
+			var lvl:int = Math.floor(Context.getGameData().getLevelCount() * collected / (118.0 + 1.0));
+			levelGenerator = new LevelGenerator(lvl);
 			itemGenerator = new ItemGenerator();
 
 			endTimer = -1;
@@ -387,6 +392,11 @@ package level
 		public function getItemGroup():FlxGroup
 		{
 			return itemGroup;
+		}
+
+		public function getExplosionGroup():FlxGroup
+		{
+			return explosionGroup;
 		}
 
 		public function getOverlayGroup():FlxGroup

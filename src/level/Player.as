@@ -66,18 +66,20 @@ package level
 
 		override public function render():void
 		{
-			getScreenXY(point);
-			point.x -= (outline.width - width) * 0.5;
-			point.y -= (outline.height - height) * 0.5;
-			matrix.identity();
-			matrix.translate(point.x, point.y);
-			colorTf.alphaMultiplier =
-				(Context.getPersistentState().getCurrentShields() - PersistentState.SHIELDS_MIN) /
-				(PersistentState.SHIELDS_MAX - PersistentState.SHIELDS_MIN);
-			colorTf.redMultiplier = colorTf.greenMultiplier = 0;
-			colorTf.blueMultiplier = 1;
-			colorTf.alphaMultiplier *= 1 - 0.75 * ((Math.cos((time / 120.0) * 2.0 * Math.PI) + 1) * 0.5);
-			FlxG.buffer.draw(outline, matrix, colorTf, BlendMode.NORMAL);
+			if (!dead) {
+				getScreenXY(point);
+				point.x -= (outline.width - width) * 0.5;
+				point.y -= (outline.height - height) * 0.5;
+				matrix.identity();
+				matrix.translate(point.x, point.y);
+				colorTf.alphaMultiplier =
+					(Context.getPersistentState().getCurrentShields() - PersistentState.SHIELDS_MIN) /
+					(PersistentState.SHIELDS_MAX - PersistentState.SHIELDS_MIN);
+				colorTf.redMultiplier = colorTf.greenMultiplier = 0;
+				colorTf.blueMultiplier = 1;
+				colorTf.alphaMultiplier *= 1 - 0.75 * ((Math.cos((time / 120.0) * 2.0 * Math.PI) + 1) * 0.5);
+				FlxG.buffer.draw(outline, matrix, colorTf, BlendMode.NORMAL);
+			}
 			super.render();
 		}
 
@@ -190,6 +192,7 @@ package level
 			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 			play("die");
 			dead = true;
+			FlxG.play(Context.getResources().getSound("exp#8"));
 
 			endTimer = 120;
 		}

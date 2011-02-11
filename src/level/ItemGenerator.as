@@ -8,8 +8,8 @@ package level
 
 		public function randomSpawn(x:int, y:int):void
 		{
-			const ITEM_CHANCE:int = 8;		// percent chance of items appearing
-			const ELEMENT_CHANCE:int = 2;	// percent chance of elements appearing
+			const ITEM_CHANCE:Number = 7;		// percent chance of items appearing
+			const ELEMENT_CHANCE:Number = 4;	// percent chance of elements appearing
 
 			var rand:Number = Math.random() * 100.0;
 			if (rand < ITEM_CHANCE) {

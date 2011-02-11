@@ -26,10 +26,12 @@ package level.behaviors
 		{
 			super.resetMeSuper(properties);		
 			if ( getProperty("shoots") == null) {
-				bullet = getProperty("bullet");
 				shoots = true;
 			} else {
 				shoots = getProperty("shoots") == "true" ? true : false;
+			}
+			if (shoots) {
+				bullet = getProperty("bullet");
 			}
 			return this;
 		}

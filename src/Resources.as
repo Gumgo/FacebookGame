@@ -65,6 +65,10 @@ package
 		[Embed(source = "../bin/resources/sounds/exp7.mp3")] private var exp7:Class;
 		[Embed(source = "../bin/resources/sounds/exp8.mp3")] private var exp8:Class;
 
+		[Embed(source = "../bin/resources/sounds/gun1.mp3")] private var gun1:Class;
+
+		[Embed(source = "../bin/resources/sounds/collect.mp3")] private var collect:Class;
+
 		[Embed(source = "../bin/resources/music/menu.mp3")] private var menu:Class;
 
 		public static var BACKGROUND_COUNT:int = 3;
@@ -116,6 +120,8 @@ package
 			sounds["exp6"] = exp6;
 			sounds["exp7"] = exp7;
 			sounds["exp8"] = exp8;
+			sounds["gun1"] = gun1;
+			sounds["collect"] = collect;
 
 			sounds["menu"] = menu;
 		}

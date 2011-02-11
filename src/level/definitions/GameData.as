@@ -231,16 +231,16 @@ package level.definitions
 		{
 			var ret:EnemyDefinition = enemiesMap[name];
 			if (ret == null) {
-				trace("Invalid enemy " + name);
+				throw new Error("Invalid enemy " + name);
 			}
-			return ret;
+			return ret; 
 		}
 
 		public function getFleetDefinition(name:String):FleetDefinition
 		{
 			var ret:FleetDefinition = fleetsMap[name];
 			if (ret == null) {
-				trace("Invalid fleet " + name);
+				throw new Error("Invalid fleet " + name);
 			}
 			return ret;
 		}
@@ -248,15 +248,20 @@ package level.definitions
 		public function getLevelDefinition(level:int):LevelDefinition
 		{
 			if (level < 0 || level >= levels.length) {
-				trace("Invalid level " + level);
+				throw new Error("Invalid level " + level);
 			}
 			return levels[level];
+		}
+
+		public function getLevelCount():int
+		{
+			return levels.length;
 		}
 
 		public function getElementDefinition(number:int):ElementDefinition
 		{
 			if (number < 1 || number >= elements.length+1) {
-				trace("Invalid element " + number);
+				throw new Error("Invalid element " + number);
 			}
 			return elements[number-1];
 		}

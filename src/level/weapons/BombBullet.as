@@ -36,6 +36,7 @@ package level.weapons
 				y -= Math.sin(direction) * speed;
 				speed -= 0.5;
 				if (speed <= 0.0) {
+					FlxG.play(Context.getResources().getSound("exp#8"));
 					hit();
 					speed = 0.0;
 				}

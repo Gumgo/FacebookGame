@@ -1,46 +1,206 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
-	<level fleetCount="30">
+	<!-- 1 -->
+	<level fleetCount="50">
 		<firstHalf>
-			<fleet name="EasyLinesCenter"/>
-			<fleet name="EasyLinesStaggeredSmall"/>
-			<fleet name="EasyLinesSides"/>
-			<fleet name="EasyDipFire"/>
-			<fleet name="EasyDoubleLinearL"/>
-			<fleet name="EasyDoubleLinearR"/>
+			<fleet name="L1LinesCenter"/>
+			<fleet name="L1LinesStaggeredSmall"/>
+			<fleet name="L1LinesSides"/>
+			<fleet name="L1DipFire"/>
+			<fleet name="L1DoubleLinearL"/>
+			<fleet name="L1DoubleLinearR"/>
 		</firstHalf>
-		<secondHalf boss="Test">
-			<fleet name="EasyLinesCenter"/>
-			<fleet name="EasyLinesStaggeredSmall"/>
-			<fleet name="EasyLinesSides"/>
-			<fleet name="EasyZigZagCenter"/>
-			<fleet name="EasyZigZagStaggeredSmall"/>
-			<fleet name="EasyZigZagSides"/>
-			<fleet name="EasyDipFire"/>
-			<fleet name="EasyDoubleDipFire"/>
-			<fleet name="EasyDoubleLinearL"/>
-			<fleet name="EasyDoubleLinearR"/>
+		<secondHalf boss="L1Boss">
+			<fleet name="L1LinesCenter"/>
+			<fleet name="L1LinesStaggeredSmall"/>
+			<fleet name="L1LinesSides"/>
+			<fleet name="L1ZigZagCenter"/>
+			<fleet name="L1ZigZagStaggeredSmall"/>
+			<fleet name="L1ZigZagSides"/>
+			<fleet name="L1DipFire"/>
+			<fleet name="L1DoubleDipFire"/>
+			<fleet name="L1DoubleLinearL"/>
+			<fleet name="L1DoubleLinearR"/>
 		</secondHalf>
 	</level>
 
-	<level fleetCount="10">
+	<!-- 2 -->
+	<level fleetCount="60">
 		<firstHalf>
-			<fleet name="TestWave1"/>
-			<fleet name="TestWave2"/>
-			<fleet name="TestWave3"/>
-			<fleet name="TestWave4"/>
-			<fleet name="TestWave5"/>
-			<fleet name="TestWave6"/>
-			<fleet name="TestWave7"/>
+			<fleet name="L2LinesCenter"/>
+			<fleet name="L2LinesStaggeredSmall"/>
+			<fleet name="L2LinesSides"/>
+			<fleet name="L2ZigZagCenter"/>
+			<fleet name="L2ZigZagStaggeredSmall"/>
+			<fleet name="L2ZigZagSides"/>
+			<fleet name="L2DipFire"/>
+			<fleet name="L2DoubleDipFire"/>
+			<fleet name="L2MoveDart"/>
+			<fleet name="L2MoveDartL"/>
+			<fleet name="L2MoveDartR"/>
 		</firstHalf>
-		<secondHalf boss="TestWave6">
-			<fleet name="TestWave1"/>
-			<fleet name="TestWave2"/>
-			<fleet name="TestWave3"/>
-			<fleet name="TestWave4"/>
-			<fleet name="TestWave5"/>
-			<fleet name="TestWave6"/>
-			<fleet name="TestWave7"/>
+		<secondHalf boss="L2Boss">
+			<fleet name="L2LinesCenter"/>
+			<fleet name="L2LinesStaggeredSmall"/>
+			<fleet name="L2LinesSides"/>
+			<fleet name="L2ZigZagCenter"/>
+			<fleet name="L2ZigZagStaggeredSmall"/>
+			<fleet name="L2ZigZagSides"/>
+			<fleet name="L2DipFire"/>
+			<fleet name="L2DoubleDipFire"/>
+			<fleet name="L2MoveDart"/>
+			<fleet name="L2MoveDartL"/>
+			<fleet name="L2MoveDartR"/>
+			<fleet name="L2TopSeeker"/>
+			<fleet name="L1DoubleLinearL"/>
+			<fleet name="L1DoubleLinearR"/>
 		</secondHalf>
 	</level>
+
+	<!-- 3 -->
+	<level fleetCount="70">
+		<firstHalf>
+			<fleet name="L2ZigZagCenter"/>
+			<fleet name="L2ZigZagStaggeredSmall"/>
+			<fleet name="L2ZigZagSides"/>
+			<fleet name="L2DoubleDipFire"/>
+			<fleet name="L3TopSeeker"/>
+			<fleet name="L2MoveDart"/>
+			<fleet name="L2MoveDartL"/>
+			<fleet name="L2MoveDartR"/>
+			<fleet name="L3LoopL"/>
+			<fleet name="L3LoopR"/>
+		</firstHalf>
+		<secondHalf boss="L3Boss">
+			<fleet name="L2ZigZagCenter"/>
+			<fleet name="L2ZigZagStaggeredSmall"/>
+			<fleet name="L2ZigZagSides"/>
+			<fleet name="L3DoubleDipFire"/>
+			<fleet name="L3TopSeeker"/>
+			<fleet name="L2MoveDart"/>
+			<fleet name="L2MoveDartL"/>
+			<fleet name="L2MoveDartR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L3DoubleLoopL"/>
+			<fleet name="L3DoubleLoopR"/>
+		</secondHalf>
+	</level>
+
+	<!-- 4 -->
+	<level fleetCount="80">
+		<firstHalf>
+			<fleet name="L4ZigZagCenter"/>
+			<fleet name="L4ZigZagStaggeredSmall"/>
+			<fleet name="L4ZigZagSides"/>
+			<fleet name="L3TopSeeker"/>
+			<fleet name="L3DoubleLoopL"/>
+			<fleet name="L3DoubleLoopR"/>
+			<fleet name="L2MoveDart"/>
+			<fleet name="L2MoveDartL"/>
+			<fleet name="L2MoveDartR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L3DoubleDipFire"/>
+			<fleet name="L4DoubleLoop"/>
+		</firstHalf>
+		<secondHalf boss="L4Boss">
+			<fleet name="L4ZigZagCenter"/>
+			<fleet name="L4ZigZagStaggeredSmall"/>
+			<fleet name="L4ZigZagSides"/>
+			<fleet name="L3TopSeeker"/>
+			<fleet name="L4QuadLoopL"/>
+			<fleet name="L4QuadLoopR"/>
+			<fleet name="L2MoveDart"/>
+			<fleet name="L2MoveDartL"/>
+			<fleet name="L2MoveDartR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L3DoubleDipFire"/>
+			<fleet name="L4Bomb"/>
+		</secondHalf>
+	</level>
+
+	<!-- 5 -->
+	<level fleetCount="80">
+		<firstHalf>
+			<fleet name="L4ZigZagCenter"/>
+			<fleet name="L4ZigZagStaggeredSmall"/>
+			<fleet name="L4ZigZagSides"/>
+			<fleet name="L4QuadLoopL"/>
+			<fleet name="L4QuadLoopR"/>
+			<fleet name="L5MoveDart"/>
+			<fleet name="L5MoveDartLR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L3DoubleDipFire"/>
+			<fleet name="L4Bomb"/>
+			<fleet name="L5TopSeeker"/>
+			<fleet name="L5LinearArc"/>
+		</firstHalf>
+		<secondHalf boss="L5Boss">
+			<fleet name="L4ZigZagCenter"/>
+			<fleet name="L4ZigZagStaggeredSmall"/>
+			<fleet name="L4ZigZagSides"/>
+			<fleet name="L4QuadLoopL"/>
+			<fleet name="L4QuadLoopR"/>
+			<fleet name="L5MoveDart"/>
+			<fleet name="L5MoveDartLR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L3DoubleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L5TopSeeker"/>
+			<fleet name="L5LinearArc"/>
+			<fleet name="L5SlowLinearCircleCW"/>
+		</secondHalf>
+	</level>
+
+	<!-- 6 -->
+	<level fleetCount="0">
+		<firstHalf>
+			<fleet name="L4ZigZagCenter"/>
+			<fleet name="L4ZigZagStaggeredSmall"/>
+			<fleet name="L4ZigZagSides"/>
+			<fleet name="L6TopSeeker"/>
+			<fleet name="L4QuadLoopL"/>
+			<fleet name="L4QuadLoopR"/>
+			<fleet name="L5MoveDart"/>
+			<fleet name="L5MoveDartLR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L6TripleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L5LinearArc"/>
+			<fleet name="L5SlowLinearCircleCW"/>
+			<fleet name="L5SlowLinearCircleCCW"/>
+		</firstHalf>
+			<fleet name="L6ZigZagCenter"/>
+			<fleet name="L6ZigZagStaggeredSmall"/>
+			<fleet name="L6ZigZagSides"/>
+			<fleet name="L6TopSeeker"/>
+			<fleet name="L4QuadLoopL"/>
+			<fleet name="L4QuadLoopR"/>
+			<fleet name="L5MoveDart"/>
+			<fleet name="L5MoveDartLR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L6TripleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L5LinearArc"/>
+			<fleet name="L5FastLinearCircleCW"/>
+			<fleet name="L5FastLinearCircleCCW"/>
+		<secondHalf boss="L6Boss">
+		</secondHalf>
+	</level>
+
+	<!-- 7 -->
+	<level fleetCount="0">
+		<firstHalf>
+		</firstHalf>
+		<secondHalf boss="L7Boss">
+		</secondHalf>
+	</level>
+
+	<!-- 8 -->
+	<level fleetCount="0">
+		<firstHalf>
+		</firstHalf>
+		<secondHalf boss="L8Boss">
+		</secondHalf>
+	</level>
+
 </levels>

@@ -81,7 +81,7 @@ package level.enemies
 					--nextFleetTimer
 				}
 
-				if (enemyCount == 0 || (enemyCount < FLEET_MIN_ENEMIES && nextFleetTimer == 0)) {
+				if (enemyCount == 0 || (enemyCount < FLEET_MIN_ENEMIES && nextFleetTimer == 0 && !last)) {
 					nextFleetTimer = FLEET_OVERLAP_TIME + Math.random() * FLEET_OVERLAP_RANDOM;
 					var nextFleet:Fleet = getNextFleet();
 					if (nextFleet == null) {
@@ -142,7 +142,6 @@ package level.enemies
 					index = arrayLength - 1;
 				}
 			}
-			trace(index);
 
 			// back up the indices
 			prevFleet = array[index];

@@ -66,6 +66,10 @@
 		<enemy name="h50_d5_c" behavior="LinearBehavior" time="10" direction="-55" speed="6" bullet="bullet_d5"/>
 	</fleet>
 
+	<fleet name="L1Boss">
+		<enemy name="boss1" behavior="Boss1Behavior" time="60"/>
+	</fleet>
+
 	<!-- LEVEL 2 -->
 
 	<fleet name="L2LinesCenter">

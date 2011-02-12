@@ -42,4 +42,10 @@
 			health="1"			damage="20"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 	<enemy	name="bullet_d40"	sprite="enemyBullet"	rotate="false"		deathSprite="explosion"	deathSound="exp#8"
 			health="1"			damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
+	<enemy	name="bullet_fire"	sprite="fireBullet"		rotate="false"		deathSprite="explosion"	deathSound="exp#8"
+			health="1"			damage="5"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
+
+	<!-- bosses -->
+	<enemy name="boss1"			sprite="boss1"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
+			health="5000"		damage="20"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
 </enemies>

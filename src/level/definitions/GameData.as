@@ -34,6 +34,8 @@ package level.definitions
 		private var moveDartDummy:MoveDartBehavior;
 		private var loopDummy:LoopBehavior;
 
+		private var boss1Dummy:Boss1Behavior;
+
 		public function GameData()
 		{
 			enemiesMap = new Dictionary();

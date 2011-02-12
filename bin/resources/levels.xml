@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
 	<!-- 1 -->
-	<level fleetCount="50">
+	<level fleetCount="1"><!--50-->
 		<firstHalf>
 			<fleet name="L1LinesCenter"/>
 			<fleet name="L1LinesStaggeredSmall"/>

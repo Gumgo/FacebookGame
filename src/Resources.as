@@ -21,10 +21,16 @@ package
 		[Embed(source = "../bin/resources/sprites/enemy_4.png")] private var enemy4:Class;
 		[Embed(source = "../bin/resources/sprites/enemy_5.png")] private var enemy5:Class;
 
+		[Embed(source = "../bin/resources/sprites/Boss_1.png")] private var boss1:Class;
+		[Embed(source = "../bin/resources/sprites/Boss_2.png")] private var boss2:Class;
+		[Embed(source = "../bin/resources/sprites/Boss_3.png")] private var boss3:Class;
+		[Embed(source = "../bin/resources/sprites/Boss_4.png")] private var boss4:Class;
+
 		[Embed(source = "../bin/resources/sprites/explosion.png")] private var explosion:Class;
 
 		[Embed(source = "../bin/resources/sprites/default_bullet.png")] private var defaultBullet:Class;
 		[Embed(source = "../bin/resources/sprites/enemy_bullet.png")] private var enemyBullet:Class;
+		[Embed(source = "../bin/resources/sprites/firebullet1.png")] private var fireBullet:Class;
 		[Embed(source = "../bin/resources/sprites/blob.png")] private var blob:Class;
 		[Embed(source = "../bin/resources/sprites/laser_bullet.png")] private var laserBullet:Class;
 		[Embed(source = "../bin/resources/sprites/bomb.png")] private var bombBullet:Class;
@@ -83,9 +89,14 @@ package
 			sprites["enemy3"] = enemy3;
 			sprites["enemy4"] = enemy4;
 			sprites["enemy5"] = enemy5;
+			sprites["boss1"] = boss1;
+			sprites["boss2"] = boss1;
+			sprites["boss3"] = boss1;
+			sprites["boss4"] = boss1;
 			sprites["explosion"] = explosion;
 			sprites["defaultBullet"] = defaultBullet;
 			sprites["enemyBullet"] = enemyBullet;
+			sprites["fireBullet"] = fireBullet;
 			sprites["blob"] = blob;
 			sprites["laserBullet"] = laserBullet;
 			sprites["bombBullet"] = bombBullet;

@@ -14,11 +14,10 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2/11/2011'</value>
+      <value>'2/12/2011'</value>
     </define>
     <source-path append="true">
       <path-element>F:\Game Competition\Project\src</path-element>
-      <path-element>C:\Program Files (no install)\AdamAtomic-flixel-b9fe564</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <external-library-path append="true">

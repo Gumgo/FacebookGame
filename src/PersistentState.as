@@ -3,8 +3,7 @@ package
 	public class PersistentState 
 	{
 		public static const ELEM_UNENCOUNTERED:int = 0;
-		public static const ELEM_ENCOUNTERED:int = 1;
-		public static const ELEM_COLLECTED:int = 2;
+		public static const ELEM_COLLECTED:int = 1;
 
 		public static const HEALTH_MIN:int = 100;
 		public static const HEALTH_MAX:int = 400;
@@ -30,7 +29,9 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
+				//if (Math.random() >= 5.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
+				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
 		}
 

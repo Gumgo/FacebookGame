@@ -36,17 +36,17 @@ package level.weapons
 				y -= Math.sin(direction) * speed;
 				speed -= 0.5;
 				if (speed <= 0.0) {
-					FlxG.play(Context.getResources().getSound("exp#8"));
-					hit();
-					speed = 0.0;
+					super.hit();
 				}
 			} else {
 				damage = 0;
 			}
 
-			super.update();
-			if (exploding && finished && exists) {
-				super.hit();
+			if (exists) {
+				super.update();
+				if (exploding && finished) {
+					super.hit();
+				}
 			}
 		}
 

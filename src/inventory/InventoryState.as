@@ -60,7 +60,6 @@ package inventory
 
 		private var groupMode:Boolean;
 		private var group:String;
-		private var descRect:Rectangle;
 		private var descriptions:Dictionary;
 		private var groupText:FlxText;
 		private var descText:FlxText;
@@ -91,15 +90,11 @@ package inventory
 			colors["Actinides"]				= 0xff8000;
 			colors["Unknowns"]				= 0xffffff;
 
-			var encounteredCount:int = 0;
 			var collectedCount:int = 0;
 			for (var i:int = 1; i < ELEM_X.length; ++i) {
 				new InventoryElement(32 + ELEM_X[i] * 32, 32 + ELEM_Y[i] * 40, i);
 				var status:int = Context.getPersistentState().getElementState(i);
-				if (status == PersistentState.ELEM_ENCOUNTERED) {
-					++encounteredCount;
-				} else if (status == PersistentState.ELEM_COLLECTED) {
-					++encounteredCount;
+				if (status == PersistentState.ELEM_COLLECTED) {
 					++collectedCount;
 				}
 			}
@@ -107,7 +102,6 @@ package inventory
 			currentDescription = -1;
 			currentHover = -1;
 
-			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0); // unneeded
 			var colPercent:Number = Math.round(100.0 * collectedCount / 118.0);
 			var currentLevel:int = Math.floor(Context.getGameData().getLevelCount() * collectedCount / (118.0 + 1.0));
 			var elementsToAdvance:int = 0;
@@ -124,9 +118,6 @@ package inventory
 			var stats:FlxText = new FlxText(32 * 4 - 16, 88, 32 * 9);
 			stats.size = 16;
 			stats.alignment = "center";
-			//stats.text =
-			//"Encountered: " + encounteredCount + " (" + encPercent +
-			//"%)\nCollected: " + collectedCount + " (" + colPercent + "%)";
 			stats.text =
 			"Collected: " + collectedCount + " (" + colPercent + "%)\n" +
 			"Level " + (currentLevel + 1);
@@ -198,7 +189,6 @@ package inventory
 			12, 6, 0, 6,    12, 6, 1, 1,    12, 7, 0, 6,    18, 6, 1, 1);
 
 			groupMode = false;
-			descRect = new Rectangle(0, 0, FlxG.width, FlxG.height);
 
 			descriptions = new Dictionary();
 			descriptions["Non-Metals"]				= "Non-metals, unlike metals, are brittle, unmalleable, and poor electrical and heat conductors. At room temperature, these elements are either gases or solids. They share or gain their valence electrons easily in contrast to metals who easily lose their electrons.";
@@ -359,7 +349,9 @@ package inventory
 
 			if (groupMode) {
 				if (play.visible && play.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
-					play.color = 0x00FF00;
+					if (play.color != 0x00FF00) {
+						play.color = 0x00FF00;
+					}
 					if (FlxG.mouse.justPressed() && !clicked) {
 						play.visible = false;
 						back.visible = false;
@@ -382,10 +374,14 @@ package inventory
 						}
 					}
 				} else {
-					play.color = 0xFFFFFF;
+					if (play.color != 0xFFFFFF) {
+						play.color = 0xFFFFFF;
+					}
 				}
 				if (back.visible && back.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
-					back.color = 0x00FF00;
+					if (back.color != 0x00FF00) {
+						back.color = 0x00FF00;
+					}
 					if (FlxG.mouse.justPressed() && !clicked) {
 						descText.visible = false;
 						groupText.visible = false;
@@ -394,7 +390,9 @@ package inventory
 						groupMode = false;
 					}
 				} else {
-					back.color = 0xFFFFFF;
+					if (back.color != 0xFFFFFF) {
+						back.color = 0xFFFFFF;
+					}
 				}
 			}
 		}

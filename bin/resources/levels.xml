@@ -152,7 +152,7 @@
 	</level>
 
 	<!-- 6 -->
-	<level fleetCount="0">
+	<level fleetCount="80">
 		<firstHalf>
 			<fleet name="L4ZigZagCenter"/>
 			<fleet name="L4ZigZagStaggeredSmall"/>
@@ -169,6 +169,7 @@
 			<fleet name="L5SlowLinearCircleCW"/>
 			<fleet name="L5SlowLinearCircleCCW"/>
 		</firstHalf>
+		<secondHalf boss="L6Boss">
 			<fleet name="L6ZigZagCenter"/>
 			<fleet name="L6ZigZagStaggeredSmall"/>
 			<fleet name="L6ZigZagSides"/>
@@ -181,9 +182,8 @@
 			<fleet name="L6TripleDipFire"/>
 			<fleet name="L5Bomb"/>
 			<fleet name="L5LinearArc"/>
-			<fleet name="L5FastLinearCircleCW"/>
-			<fleet name="L5FastLinearCircleCCW"/>
-		<secondHalf boss="L6Boss">
+			<fleet name="L6FastLinearCircleCW"/>
+			<fleet name="L6FastLinearCircleCCW"/>
 		</secondHalf>
 	</level>
 

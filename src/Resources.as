@@ -32,6 +32,14 @@ package
 		[Embed(source = "../bin/resources/sprites/enemy_bullet.png")] private var enemyBullet:Class;
 		[Embed(source = "../bin/resources/sprites/firebullet1.png")] private var fireBullet:Class;
 		[Embed(source = "../bin/resources/sprites/blob.png")] private var blob:Class;
+		[Embed(source = "../bin/resources/sprites/item1.png")] private var radioactive:Class;
+		[Embed(source = "../bin/resources/sprites/item2.png")] private var nonmetal1:Class;
+		[Embed(source = "../bin/resources/sprites/item3.png")] private var metal4 :Class;
+		[Embed(source = "../bin/resources/sprites/item4.png")] private var nonmetal3:Class;
+		[Embed(source = "../bin/resources/sprites/item5.png")] private var metal1:Class;	
+		[Embed(source = "../bin/resources/sprites/item6.png")] private var nonmetal2:Class;
+		[Embed(source = "../bin/resources/sprites/item7.png")] private var metal3:Class;
+		[Embed(source = "../bin/resources/sprites/item8.png")] private var metal2:Class;
 		[Embed(source = "../bin/resources/sprites/laser_bullet.png")] private var laserBullet:Class;
 		[Embed(source = "../bin/resources/sprites/bomb.png")] private var bombBullet:Class;
 		[Embed(source = "../bin/resources/sprites/missile.png")] private var missileBullet:Class;
@@ -120,6 +128,14 @@ package
 			sprites["background2AnimMove"] = background2AnimMove;
 			sprites["background3Anim"] = background3Anim;
 			sprites["logo"] = logo;
+			sprites["metal1"] = metal1;
+			sprites["metal2"] = metal2;
+			sprites["metal3"] = metal3;
+			sprites["metal4"] = metal4;
+			sprites["nonmetal1"] = nonmetal1;
+			sprites["nonmetal2"] = nonmetal2;
+			sprites["nonmetal3"] = nonmetal3;
+			sprites["radioactive"] = radioactive;
 
 			sounds = new Dictionary();
 			sounds["beep"] = beep;

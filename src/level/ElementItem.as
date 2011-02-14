@@ -24,17 +24,16 @@ package level
 
 			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
 				(FlxG.state as LevelState).seeElement(number);
-				//Context.getPersistentState().setElementState(number, PersistentState.ELEM_ENCOUNTERED);
 			}
 			return this;
 		}
 
 		override public function collect():void
 		{
+			FlxG.play(Context.getResources().getSound("collect"));
 			(FlxG.state as LevelState).getLevelText().setText(
 				Context.getGameData().getElementDefinition(number).getName() + " (" + number + ") collected!", 0x00FF00, 60);
 			(FlxG.state as LevelState).collectElement(number);
-			//Context.getPersistentState().setElementState(number, PersistentState.ELEM_COLLECTED);
 			removeSelf();
 		}
 

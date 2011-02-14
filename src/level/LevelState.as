@@ -8,7 +8,6 @@ package level
 	import inventory.InventoryState;
 	import level.enemies.Enemy;
 	import level.enemies.LevelGenerator;
-	import level.enemies.Wave;
 	import level.Player;
 	import level.Item;
 	import org.flixel.data.FlxFade;
@@ -34,6 +33,7 @@ package level
 		private var enemyBulletGroup:FlxGroup;
 		private var bulletGroup:FlxGroup;
 		private var itemGroup:FlxGroup;
+		private var explosionGroup:FlxGroup;
 		private var overlayGroup:FlxGroup;
 
 		private var endTimer:int;
@@ -58,7 +58,6 @@ package level
 		private var currentHealth:int;
 		private var currentShields:Number;
 		private var currentDamage:Number;
-		private var currentShotRate:Number;
 		private var statString:String;
 
 		override public function create():void
@@ -78,12 +77,12 @@ package level
 			currentHealth = Context.getPersistentState().getCurrentHealth();
 			currentShields = Context.getPersistentState().getCurrentShields();
 			currentDamage = Context.getPersistentState().getCurrentDamage();
-			currentShotRate = Context.getPersistentState().getCurrentShotRate();
 
 			enemyGroup = new FlxGroup();
 			enemyBulletGroup = new FlxGroup();
 			bulletGroup = new FlxGroup();
 			itemGroup = new FlxGroup();
+			explosionGroup = new FlxGroup();
 			overlayGroup = new FlxGroup();
 
 			effectsSprite = new FlxSprite(0, 0, null);
@@ -143,15 +142,12 @@ package level
 					var newHealth:int = Context.getPersistentState().getCurrentHealth();
 					var newShields:Number = Context.getPersistentState().getCurrentShields();
 					var newDamage:Number = Context.getPersistentState().getCurrentDamage();
-					var newShotRate:Number = Context.getPersistentState().getCurrentShotRate();
 					if (newHealth > currentHealth) {
-						statString = "Health increased by " + (newHealth - currentHealth);
+						statString = "Energy increased by " + Number(100.0 * (newHealth - currentHealth) / PersistentState.HEALTH_MIN).toFixed(0) + "%";
 					} else if (newShields > currentShields) {
-						statString = "Shields increased by " + Number((newShields - currentShields) * 100.0).toFixed(0) + "%";
+						statString = "Shields increased by " + Number(100.0 * (newShields - currentShields) / PersistentState.SHIELDS_MIN).toFixed(0) + "%";
 					} else if (newDamage > currentDamage) {
-						statString = "Damage increased by " + Number((newDamage - currentDamage) * 100.0).toFixed(0) + "%";
-					} else if (newShotRate > currentShotRate) {
-						statString = "Shot rate increased by " + Number((newShotRate - currentShotRate) * 100.0).toFixed(0) + "%";
+						statString = "Damage increased by " + Number(100.0 * (newDamage - currentDamage) / PersistentState.DAMAGE_MIN).toFixed(0) + "%";
 					} else {
 						statString = "";
 					}
@@ -330,6 +326,7 @@ package level
 			defaultGroup.add(enemyGroup);
 			defaultGroup.add(enemyBulletGroup);
 			defaultGroup.add(player);
+			defaultGroup.add(explosionGroup);
 			defaultGroup.add(bulletGroup);
 			defaultGroup.add(effectsSprite);
 			defaultGroup.add(overlayGroup);
@@ -341,7 +338,9 @@ package level
 			fadeIn.start(0xFF000000, 0.5);
 			defaultGroup.add(fadeIn);
 
-			levelGenerator = new LevelGenerator(0);
+			var collected:int = Context.getPersistentState().getCollectedElementCount();
+			var lvl:int = Math.floor(Context.getGameData().getLevelCount() * collected / (118.0 + 1.0));
+			levelGenerator = new LevelGenerator(lvl);
 			itemGenerator = new ItemGenerator();
 
 			endTimer = -1;
@@ -393,6 +392,11 @@ package level
 		public function getItemGroup():FlxGroup
 		{
 			return itemGroup;
+		}
+
+		public function getExplosionGroup():FlxGroup
+		{
+			return explosionGroup;
 		}
 
 		public function getOverlayGroup():FlxGroup

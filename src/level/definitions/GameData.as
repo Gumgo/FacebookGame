@@ -7,20 +7,18 @@ package level.definitions
 	import flash.utils.Endian;
 	import level.behaviors.*;
 	import level.enemies.Enemy;
-	import level.enemies.Wave;
 
 	public class GameData
 	{
 		private var enemiesMap:Dictionary;
 		private var fleetsMap:Dictionary;
-		private var wavesMap:Dictionary;
 		private var levels:Vector.<LevelDefinition>;
 
 		private var elements:Vector.<ElementDefinition>;
 
 		private var callback:Function;
 		private var loaded:int;
-		private static const filesToLoad:int = 5;
+		private static const filesToLoad:int = 4;
 
 		// dummy variables: these must be here for each behavior
 		private var lineDummy:LineBehavior;
@@ -34,12 +32,12 @@ package level.definitions
 		private var topSeekerDummy:TopSeekerBehavior;
 		private var avoidDummy:AvoidBehavior;
 		private var moveDartDummy:MoveDartBehavior;
+		private var loopDummy:LoopBehavior;
 
 		public function GameData()
 		{
 			enemiesMap = new Dictionary();
 			fleetsMap = new Dictionary();
-			wavesMap = new Dictionary();
 			levels = new Vector.<LevelDefinition>();
 			elements = new Vector.<ElementDefinition>();
 			loaded = 0;
@@ -129,55 +127,22 @@ package level.definitions
 
 						var index:int = newFleet.addEnemy(enemy, behavior, time);
 
-						var xmlProperties:XMLList = xmlEnemy.children();
+						var xmlProperties:XMLList = xmlEnemy.attributes();
 						for each (var xmlProperty:XML in xmlProperties) {
-							if (xmlProperty.name() != "behaviorProperty") {
-								throw new Error("Unknown property " + xmlProperty.name());
+							if (xmlProperty.name() == "name" ||
+								xmlProperty.name() == "behavior" ||
+								xmlProperty.name() == "time") {
+								continue;
 							}
 
-							var key:String = xmlProperty.attribute("name").toString();
-							var value:String = xmlProperty.attribute("value").toString();
+							var key:String = xmlProperty.name();
+							var value:String = xmlProperty.toString();
 
 							newFleet.addBehaviorProperty(index, key, value);
 						}
 					}
 
 					fleetsMap[name] = newFleet;
-				}
-
-				testCallback();
-			}
-
-			var wavesLoader:URLLoader = new URLLoader();
-			wavesLoader.addEventListener(Event.COMPLETE, processWaves);
-			wavesLoader.load(new URLRequest("resources/waves.xml"));
-			function processWaves(e:Event):void
-			{
-				var xml:XML = new XML(e.target.data);
-
-				var xmlWaves:XMLList = xml.children();
-				for each (var xmlWave:XML in xmlWaves) {
-					if (xmlWave.name() != "wave") {
-						throw new Error("Unknown property " + xmlWave.name());
-					}
-
-					var name:String = xmlWave.attribute("name").toString();
-
-					var newWave:WaveDefinition = new WaveDefinition(name);
-
-					var xmlFleets:XMLList = xmlWave.children();
-					for each (var xmlFleet:XML in xmlFleets) {
-						if (xmlFleet.name() != "fleet") {
-							throw new Error("Unknown property " + xmlFleet.name());
-						}
-
-						var fleet:String = xmlFleet.attribute("name").toString();
-						var time:int = int(xmlFleet.attribute("time").toString());
-
-						newWave.addFleet(fleet, time);
-					}
-
-					wavesMap[name] = newWave;
 				}
 
 				testCallback();
@@ -196,36 +161,36 @@ package level.definitions
 						throw new Error("Unknown property " + xmlLevel.name());
 					}
 
-					var waveCount:int = int(xmlLevel.attribute("waveCount").toString());
-					var xmlWave:XML;
-					var wave:String;
+					var fleetCount:int = int(xmlLevel.attribute("fleetCount").toString());
+					var xmlFleet:XML;
+					var fleet:String;
 
 					var xmlFirstHalf:XML = xmlLevel.firstHalf[0];
-					var xmlFirstHalfWaves:XMLList = xmlFirstHalf.children();
-					var firstHalfWaves:Vector.<String> = new Vector.<String>();
-					for each (xmlWave in xmlFirstHalfWaves) {
-						if (xmlWave.name() != "wave") {
-							throw new Error("Unknown property " + xmlWave.name());
+					var xmlFirstHalfFleets:XMLList = xmlFirstHalf.children();
+					var firstHalfFleets:Vector.<String> = new Vector.<String>();
+					for each (xmlFleet in xmlFirstHalfFleets) {
+						if (xmlFleet.name() != "fleet") {
+							throw new Error("Unknown property " + xmlFleet.name());
 						}
 
-						wave = xmlWave.attribute("name").toString();
-						firstHalfWaves.push(wave);
+						fleet = xmlFleet.attribute("name").toString();
+						firstHalfFleets.push(fleet);
 					}
 
 					var xmlSecondHalf:XML = xmlLevel.secondHalf[0];
 					var boss:String = xmlSecondHalf.attribute("boss").toString();
-					var xmlSecondHalfWaves:XMLList = xmlSecondHalf.children();
-					var secondHalfWaves:Vector.<String> = new Vector.<String>();
-					for each (xmlWave in xmlSecondHalfWaves) {
-						if (xmlWave.name() != "wave") {
-							throw new Error("Unknown property " + xmlWave.name());
+					var xmlSecondHalfFleets:XMLList = xmlSecondHalf.children();
+					var secondHalfFleets:Vector.<String> = new Vector.<String>();
+					for each (xmlFleet in xmlSecondHalfFleets) {
+						if (xmlFleet.name() != "fleet") {
+							throw new Error("Unknown property " + xmlFleet.name());
 						}
 
-						wave = xmlWave.attribute("name").toString();
-						secondHalfWaves.push(wave);
+						fleet = xmlFleet.attribute("name").toString();
+						secondHalfFleets.push(fleet);
 					}
 
-					var newLevel:LevelDefinition = new LevelDefinition(waveCount, firstHalfWaves, secondHalfWaves, boss);
+					var newLevel:LevelDefinition = new LevelDefinition(fleetCount, firstHalfFleets, secondHalfFleets, boss);
 					levels.push(newLevel);
 				}
 
@@ -266,25 +231,16 @@ package level.definitions
 		{
 			var ret:EnemyDefinition = enemiesMap[name];
 			if (ret == null) {
-				trace("Invalid enemy " + name);
+				throw new Error("Invalid enemy " + name);
 			}
-			return ret;
+			return ret; 
 		}
 
 		public function getFleetDefinition(name:String):FleetDefinition
 		{
 			var ret:FleetDefinition = fleetsMap[name];
 			if (ret == null) {
-				trace("Invalid fleet " + name);
-			}
-			return ret;
-		}
-
-		public function getWaveDefinition(name:String):WaveDefinition
-		{
-			var ret:WaveDefinition = wavesMap[name];
-			if (ret == null) {
-				trace("Invalid wave " + name);
+				throw new Error("Invalid fleet " + name);
 			}
 			return ret;
 		}
@@ -292,15 +248,20 @@ package level.definitions
 		public function getLevelDefinition(level:int):LevelDefinition
 		{
 			if (level < 0 || level >= levels.length) {
-				trace("Invalid level " + level);
+				throw new Error("Invalid level " + level);
 			}
 			return levels[level];
+		}
+
+		public function getLevelCount():int
+		{
+			return levels.length;
 		}
 
 		public function getElementDefinition(number:int):ElementDefinition
 		{
 			if (number < 1 || number >= elements.length+1) {
-				trace("Invalid element " + number);
+				throw new Error("Invalid element " + number);
 			}
 			return elements[number-1];
 		}

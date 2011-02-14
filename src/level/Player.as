@@ -24,7 +24,6 @@ package level
 		private var primaryWeapon:Weapon;
 		private var secondaryWeapon:Weapon;
 		private var damageMultiplier:Number;
-		private var shotRateMultiplier:Number;
 		private var shields:Number;
 
 		private var endTimer:int;
@@ -49,7 +48,6 @@ package level
 			currentHealth = maxHealth;
 
 			damageMultiplier = Context.getPersistentState().getCurrentDamage();
-			shotRateMultiplier = Context.getPersistentState().getCurrentShotRate();
 			shields = Context.getPersistentState().getCurrentShields();
 
 			super(FlxG.width / 2, FlxG.height / 2, Context.getResources().getSprite("player"));
@@ -62,24 +60,26 @@ package level
 
 			primaryWeapon = new DefaultWeapon();
 
-			// TEMPORARY
-			secondaryWeapon = new SpreadWeapon();
+			// FOR TESTING:
+			//secondaryWeapon = new SpreadWeapon();
 		}
 
 		override public function render():void
 		{
-			getScreenXY(point);
-			point.x -= (outline.width - width) * 0.5;
-			point.y -= (outline.height - height) * 0.5;
-			matrix.identity();
-			matrix.translate(point.x, point.y);
-			colorTf.alphaMultiplier =
-				(Context.getPersistentState().getCurrentShields() - PersistentState.SHIELDS_MIN) /
-				(PersistentState.SHIELDS_MAX - PersistentState.SHIELDS_MIN);
-			colorTf.redMultiplier = colorTf.greenMultiplier = 0;
-			colorTf.blueMultiplier = 1;
-			colorTf.alphaMultiplier *= 1 - 0.75 * ((Math.cos((time / 120.0) * 2.0 * Math.PI) + 1) * 0.5);
-			FlxG.buffer.draw(outline, matrix, colorTf, BlendMode.NORMAL);
+			if (!dead) {
+				getScreenXY(point);
+				point.x -= (outline.width - width) * 0.5;
+				point.y -= (outline.height - height) * 0.5;
+				matrix.identity();
+				matrix.translate(point.x, point.y);
+				colorTf.alphaMultiplier =
+					(Context.getPersistentState().getCurrentShields() - PersistentState.SHIELDS_MIN) /
+					(PersistentState.SHIELDS_MAX - PersistentState.SHIELDS_MIN);
+				colorTf.redMultiplier = colorTf.greenMultiplier = 0;
+				colorTf.blueMultiplier = 1;
+				colorTf.alphaMultiplier *= 1 - 0.75 * ((Math.cos((time / 120.0) * 2.0 * Math.PI) + 1) * 0.5);
+				FlxG.buffer.draw(outline, matrix, colorTf, BlendMode.NORMAL);
+			}
 			super.render();
 		}
 
@@ -193,6 +193,7 @@ package level
 			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 			play("die");
 			dead = true;
+			FlxG.play(Context.getResources().getSound("exp#8"));
 
 			endTimer = 120;
 		}
@@ -215,11 +216,6 @@ package level
 		public function getDamageMultiplier():Number
 		{
 			return damageMultiplier;
-		}
-
-		public function getShotRateMultiplier():Number
-		{
-			return shotRateMultiplier;
 		}
 
 		public function getShields():Number

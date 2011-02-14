@@ -45,7 +45,7 @@ package level.enemies
 			color = 0xFFFFFF;
 			_animations.length = 0;
 			angle = 0;
-			if (definition.getRotate()) {
+ 			if  (definition.getRotate()) {
 				loadRotatedGraphic(Context.getResources().getSprite(definition.getSprite()), 16, -1, false, true);
 				offset.x = offset.y = (width - (width / 1.5)) * 0.5;
 				width = height = width / 1.5;
@@ -109,6 +109,13 @@ package level.enemies
 					player.adjustHealth( -damage);
 				}
 				damageTimer = 10;
+
+				if (!bullet) {
+					// create an explosion
+					var avgX:Number = (x + width * 0.5 + player.x + player.width * 0.5) * 0.5;
+					var avgY:Number = (y + height * 0.5 + player.y + player.height * 0.5) * 0.5;
+					(Context.getRecycler().getNew(Explosion) as Explosion).resetMe(avgX, avgY);
+				}
 			}
 		}
 
@@ -135,8 +142,10 @@ package level.enemies
 
 		public function onDie():void
 		{
-			x += width / 2;
-			y += height / 2;
+			x += width * 0.5;
+			y += height * 0.5;
+
+			offset.x = offset.y = 0;
 
 			loadGraphic(deathSprite, true);
 			var frames:Array = new Array();
@@ -147,11 +156,11 @@ package level.enemies
 			play("die", true);
 			color = deathColor;
 
-			x -= width / 2;
-			y -= height / 2;
+			x -= width * 0.5;
+			y -= height * 0.5;
 
 			if (!bullet) {
-				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + frameWidth / 2, y + frameHeight / 2);
+				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width * 0.5, y + height * 0.5);
 			}
 
 			FlxG.play(deathSound);

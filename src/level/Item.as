@@ -18,8 +18,8 @@ package level
 			this.x = x;
 			this.y = y;
 			loadGraphic(Context.getResources().getSprite(image));
-			x -= width / 2;
-			y -= height / 2;
+			this.x -= width * 0.5;
+			this.y -= height * 0.5;
 			speed = 3;
 
 			Recycler.addToGroup((FlxG.state as LevelState).getItemGroup(), this);

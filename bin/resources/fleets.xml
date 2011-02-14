@@ -1,1019 +1,471 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <fleets>
-	<fleet name="MoveDartCenter">
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="0"/></enemy>
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-15"/></enemy>
-	</fleet>
-
-	<fleet name="MoveDartLeft">
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="45"/></enemy>
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="75"/></enemy>
-	</fleet>
-
-	<fleet name="MoveDartRight">
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-45"/></enemy>
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-60"/></enemy>
-		<enemy name="TestEnemy" behavior="MoveDartBehavior" time="0"><behaviorProperty name="direction" value="-75"/></enemy>
-	</fleet>
-
-	<fleet name="Avoid">
-		<enemy name="HardEnemy" behavior="AvoidBehavior" time="0"/>
-	</fleet>
-
-	<fleet name="TopSeeker">
-		<enemy name="HardEnemy" behavior="TopSeekerBehavior" time="0"/>
-	</fleet>
-
-	<fleet name="Bomb">
-		<enemy name="HardEnemy" behavior="BombBehavior" time="0"/>
-	</fleet>
-
-	<fleet name="SingleDipFire">
-		<enemy name="HardEnemy" behavior="DipFireBehavior" time="0"><behaviorProperty name="speed" value="0.1"/></enemy>
-	</fleet>
-
-	<fleet name="DoubleArc">
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="0"><behaviorProperty name="direction" value="0"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="20"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="-20"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="40"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="-40"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="60"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="-60"/><behaviorProperty name="speed" value="10"/></enemy>
-	</fleet>
-
-	<fleet name="SlowCircle">
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="90"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="80"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="70"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="40"><behaviorProperty name="direction" value="60"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="50"><behaviorProperty name="direction" value="50"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="60"><behaviorProperty name="direction" value="40"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="70"><behaviorProperty name="direction" value="30"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="80"><behaviorProperty name="direction" value="20"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="90"><behaviorProperty name="direction" value="10"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="100"><behaviorProperty name="direction" value="0"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="110"><behaviorProperty name="direction" value="350"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="120"><behaviorProperty name="direction" value="340"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="130"><behaviorProperty name="direction" value="330"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="140"><behaviorProperty name="direction" value="320"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="150"><behaviorProperty name="direction" value="310"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="160"><behaviorProperty name="direction" value="300"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="170"><behaviorProperty name="direction" value="290"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="180"><behaviorProperty name="direction" value="280"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="190"><behaviorProperty name="direction" value="270"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="200"><behaviorProperty name="direction" value="260"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="210"><behaviorProperty name="direction" value="250"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="220"><behaviorProperty name="direction" value="240"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="230"><behaviorProperty name="direction" value="230"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="240"><behaviorProperty name="direction" value="220"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="250"><behaviorProperty name="direction" value="210"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="260"><behaviorProperty name="direction" value="200"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="270"><behaviorProperty name="direction" value="190"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="280"><behaviorProperty name="direction" value="180"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="290"><behaviorProperty name="direction" value="170"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="300"><behaviorProperty name="direction" value="160"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="310"><behaviorProperty name="direction" value="150"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="320"><behaviorProperty name="direction" value="140"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="330"><behaviorProperty name="direction" value="130"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="340"><behaviorProperty name="direction" value="120"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="350"><behaviorProperty name="direction" value="110"/><behaviorProperty name="speed" value="10"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="360"><behaviorProperty name="direction" value="100"/><behaviorProperty name="speed" value="10"/></enemy>
-	</fleet>
-
-	<fleet name="FastCircle">
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="05"><behaviorProperty name="direction" value="90"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="10"><behaviorProperty name="direction" value="80"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="15"><behaviorProperty name="direction" value="70"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="20"><behaviorProperty name="direction" value="60"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="25"><behaviorProperty name="direction" value="50"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="30"><behaviorProperty name="direction" value="40"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="35"><behaviorProperty name="direction" value="30"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="40"><behaviorProperty name="direction" value="20"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="45"><behaviorProperty name="direction" value="10"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="50"><behaviorProperty name="direction" value="0"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="55"><behaviorProperty name="direction" value="350"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="60"><behaviorProperty name="direction" value="340"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="65"><behaviorProperty name="direction" value="330"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="70"><behaviorProperty name="direction" value="320"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="75"><behaviorProperty name="direction" value="310"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="80"><behaviorProperty name="direction" value="300"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="85"><behaviorProperty name="direction" value="290"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="90"><behaviorProperty name="direction" value="280"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="95"><behaviorProperty name="direction" value="270"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="100"><behaviorProperty name="direction" value="260"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="105"><behaviorProperty name="direction" value="250"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="110"><behaviorProperty name="direction" value="240"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="115"><behaviorProperty name="direction" value="230"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="120"><behaviorProperty name="direction" value="220"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="125"><behaviorProperty name="direction" value="210"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="130"><behaviorProperty name="direction" value="200"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="135"><behaviorProperty name="direction" value="190"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="140"><behaviorProperty name="direction" value="180"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="145"><behaviorProperty name="direction" value="170"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="150"><behaviorProperty name="direction" value="160"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="155"><behaviorProperty name="direction" value="150"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="160"><behaviorProperty name="direction" value="140"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="165"><behaviorProperty name="direction" value="130"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="170"><behaviorProperty name="direction" value="120"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="175"><behaviorProperty name="direction" value="110"/><behaviorProperty name="speed" value="15"/></enemy>
-		<enemy name="TestEnemy" behavior="LinearBehavior" time="180"><behaviorProperty name="direction" value="100"/><behaviorProperty name="speed" value="15"/></enemy>
-	</fleet>
-
-	<fleet name="LinesSides">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="48"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="592"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="112"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="464"/></enemy>
-	</fleet>
-
-	<fleet name="LinesCenter">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="352"/></enemy>
-	</fleet>
-
-	<!-- Left mini side V formation-->
-	<fleet name="LinesVLeft">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="144"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="192"/></enemy>
-	</fleet>
-
-	<!--Center mini V formation-->
-	<fleet name="LinesVCenter">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-	</fleet>
-
-	<!-- Right mini side V formation-->
-	<fleet name="LinesVRight">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
-	</fleet>
-
-	<!-- left side line formation-->
-	<fleet name="LinesLeft">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="60"/></enemy>
-	</fleet>
-
-	<!--8 right side line formation-->
-	<fleet name="LinesRight">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="580"/></enemy>
-	</fleet>
-
-	<!-- middle line formation-->
-	<fleet name="LinesMiddle">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="90"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="150"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="180"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="210"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="240"><behaviorProperty name="offset" value="324"/></enemy>
-	</fleet>
-
-	<!-- V-shape formation-->
-	<fleet name="LinesV">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- diagonal formation starting right side of screen-->
-	<fleet name="LinesRightDiag">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="10"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="180"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="200"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="220"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="240"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-
-	<!-- diagonal formation starting left side of screen-->
-	<fleet name="LinesLeftDiag">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="608"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="180"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="200"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="220"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="240"><behaviorProperty name="offset" value="32"/></enemy>
-	</fleet>
-
-	<!-- lots of enemies horizontal zig fleet-->
-	<fleet name="LinesStaggered">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="160"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="352"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="480"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- fewer enemies horizontal fleet-->
-	<fleet name="LinesStaggeredSmall">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="64"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="192"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="488"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="576"/></enemy>
-	</fleet>
-
-	<fleet name="SlowLinesSides">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="48"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="592"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="112"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<fleet name="SlowLinesCenter">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="288"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="352"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- Left mini side V formation-->
-	<fleet name="SlowLinesVLeft">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="96"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="144"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="192"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!--Center mini V formation-->
-	<fleet name="SlowLinesVCenter">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- Right mini side V formation-->
-	<fleet name="SlowLinesVRight">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="544"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="496"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="448"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- left side line formation-->
-	<fleet name="SlowLinesLeft">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!--8 right side line formation-->
-	<fleet name="SlowLinesRight">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- middle line formation-->
-	<fleet name="SlowLinesMiddle">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="90"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="150"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="180"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="210"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="240"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- V-shape formation-->
-	<fleet name="SlowLinesV">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="128"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="80"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="560"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- diagonal formation starting right side of screen-->
-	<fleet name="SlowLinesRightDiag">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="80"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="128"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="10"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="180"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="200"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="220"><behaviorProperty name="offset" value="560"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="240"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-
-	<!-- diagonal formation starting left side of screen-->
-	<fleet name="SlowLinesLeftDiag">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="20"><behaviorProperty name="offset" value="560"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="40"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="60"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="80"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="100"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="120"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="140"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="160"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="180"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="200"><behaviorProperty name="offset" value="128"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="220"><behaviorProperty name="offset" value="80"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="240"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- lots of enemies horizontal zig fleet-->
-	<fleet name="SlowLinesStaggered">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="96"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="160"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="288"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="352"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="480"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="544"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- fewer enemies horizontal fleet-->
-	<fleet name="SlowLinesStaggeredSmall">
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="64"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="192"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="30"><behaviorProperty name="offset" value="488"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="LineBehavior" time="0"><behaviorProperty name="offset" value="576"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<fleet name="ZigZagSides">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="48"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="592"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="112"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="464"/></enemy>
-	</fleet>
-
-	<fleet name="ZigZagCenter">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="352"/></enemy>
-	</fleet>
-
-	<!-- Left mini side V formation-->
-	<fleet name="ZigZagVLeft">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="144"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="192"/></enemy>
-	</fleet>
-
-	<!--Center mini V formation-->
-	<fleet name="ZigZagVCenter">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-	</fleet>
-
-	<!-- Right mini side V formation-->
-	<fleet name="ZigZagVRight">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
-	</fleet>
-
-	<!-- left side line formation-->
-	<fleet name="ZigZagLeft">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="60"/></enemy>
-	</fleet>
-
-	<!--8 right side line formation-->
-	<fleet name="ZigZagRight">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="580"/></enemy>
-	</fleet>
-
-	<!-- middle line formation-->
-	<fleet name="ZigZagMiddle">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="90"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="150"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="180"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="210"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="240"><behaviorProperty name="offset" value="324"/></enemy>
-	</fleet>
-
-	<!-- V-shape formation-->
-	<fleet name="ZigZagV">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- diagonal formation starting right side of screen-->
-	<fleet name="ZigZagRightDiag">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="10"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="180"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="200"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="220"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="240"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-
-	<!-- diagonal formation starting left side of screen-->
-	<fleet name="ZigZagLeftDiag">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="608"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="180"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="200"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="220"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="240"><behaviorProperty name="offset" value="32"/></enemy>
-	</fleet>
-
-	<!-- lots of enemies horizontal zig fleet-->
-	<fleet name="ZigZagStaggered">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="160"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="352"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="480"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- fewer enemies horizontal fleet-->
-	<fleet name="ZigZagStaggeredSmall">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="64"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="192"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="488"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="576"/></enemy>
-	</fleet>
-
-	<fleet name="SlowZigZagSides">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="48"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="592"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="112"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<fleet name="SlowZigZagCenter">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="288"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="352"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- Left mini side V formation-->
-	<fleet name="SlowZigZagVLeft">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="96"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="144"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="192"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!--Center mini V formation-->
-	<fleet name="SlowZigZagVCenter">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- Right mini side V formation-->
-	<fleet name="SlowZigZagVRight">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="544"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="496"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="448"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- left side line formation-->
-	<fleet name="SlowZigZagLeft">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="68"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="60"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!--8 right side line formation-->
-	<fleet name="SlowZigZagRight">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="572"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="580"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- middle line formation-->
-	<fleet name="SlowZigZagMiddle">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="90"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="150"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="180"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="210"><behaviorProperty name="offset" value="316"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="240"><behaviorProperty name="offset" value="324"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- V-shape formation-->
-	<fleet name="SlowZigZagV">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="128"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="80"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="560"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- diagonal formation starting right side of screen-->
-	<fleet name="SlowZigZagRightDiag">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="80"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="128"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="10"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="180"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="200"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="220"><behaviorProperty name="offset" value="560"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="240"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-
-	<!-- diagonal formation starting left side of screen-->
-	<fleet name="SlowZigZagLeftDiag">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="20"><behaviorProperty name="offset" value="560"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="40"><behaviorProperty name="offset" value="512"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="60"><behaviorProperty name="offset" value="464"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="80"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="100"><behaviorProperty name="offset" value="368"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="120"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="140"><behaviorProperty name="offset" value="272"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="160"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="180"><behaviorProperty name="offset" value="176"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="200"><behaviorProperty name="offset" value="128"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="220"><behaviorProperty name="offset" value="80"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="240"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- lots of enemies horizontal zig fleet-->
-	<fleet name="SlowZigZagStaggered">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="32"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="96"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="160"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="224"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="288"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="352"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="416"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="480"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="544"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="608"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<!-- fewer enemies horizontal fleet-->
-	<fleet name="SlowZigZagStaggeredSmall">
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="64"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="192"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="320"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="30"><behaviorProperty name="offset" value="488"/><behaviorProperty name="speed" value="5"/></enemy>
-		<enemy name="TestEnemy" behavior="ZigZagBehavior" time="0"><behaviorProperty name="offset" value="576"/><behaviorProperty name="speed" value="5"/></enemy>
-	</fleet>
-
-	<fleet name="RandomSides">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="48"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="592"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="112"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="464"/></enemy>
-	</fleet>
-
-	<fleet name="RandomCenter">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="352"/></enemy>
-	</fleet>
-
-	<!-- Left mini side V formation-->
-	<fleet name="RandomVLeft">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="144"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="192"/></enemy>
-	</fleet>
-
-	<!--Center mini V formation-->
-	<fleet name="RandomVCenter">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-	</fleet>
-
-	<!-- Right mini side V formation-->
-	<fleet name="RandomVRight">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
-	</fleet>
-
-	<!-- left side line formation-->
-	<fleet name="RandomLeft">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="80"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="100"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="140"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="160"><behaviorProperty name="offset" value="60"/></enemy>
-	</fleet>
-
-	<!--8 right side line formation-->
-	<fleet name="RandomRight">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="80"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="100"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="140"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="160"><behaviorProperty name="offset" value="580"/></enemy>
-	</fleet>
-
-	<!-- middle line formation-->
-	<fleet name="RandomMiddle">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="90"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="150"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="180"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="210"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="240"><behaviorProperty name="offset" value="324"/></enemy>
-	</fleet>
-
-	<!-- V-shape formation-->
-	<fleet name="RandomV">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="80"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="80"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="100"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="100"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- diagonal formation starting right side of screen-->
-	<fleet name="RandomRightDiag">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="80"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="10"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="140"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="160"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="180"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="200"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="220"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="240"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-
-	<!-- diagonal formation starting left side of screen-->
-	<fleet name="RandomLeftDiag">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="608"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="20"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="40"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="80"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="100"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="140"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="160"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="180"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="200"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="220"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="240"><behaviorProperty name="offset" value="32"/></enemy>
-	</fleet>
-
-	<!-- lots of enemies horizontal zig fleet-->
-	<fleet name="RandomStaggered">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="160"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="352"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="480"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- fewer enemies horizontal fleet-->
-	<fleet name="RandomStaggeredSmall">
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="64"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="192"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="30"><behaviorProperty name="offset" value="488"/></enemy>
-		<enemy name="TestEnemy" behavior="RandomBehavior" time="0"><behaviorProperty name="offset" value="576"/></enemy>
-	</fleet>
-
-	<fleet name="MagneticSides">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="48"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="592"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="112"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="464"/></enemy>
-	</fleet>
-
-	<fleet name="MagneticCenter">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="352"/></enemy>
-	</fleet>
-
-	<!-- Left mini side V formation-->
-	<fleet name="MagneticVLeft">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="144"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="192"/></enemy>
-	</fleet>
-
-	<!--Center mini V formation-->
-	<fleet name="MagneticVCenter">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-	</fleet>
-
-	<!-- Right mini side V formation-->
-	<fleet name="MagneticVRight">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="496"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="448"/></enemy>
-	</fleet>
-
-	<!-- left side line formation-->
-	<fleet name="MagneticLeft">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="100"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="60"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="140"><behaviorProperty name="offset" value="68"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="160"><behaviorProperty name="offset" value="60"/></enemy>
-	</fleet>
-
-	<!--8 right side line formation-->
-	<fleet name="MagneticRight">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="100"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="580"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="140"><behaviorProperty name="offset" value="572"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="160"><behaviorProperty name="offset" value="580"/></enemy>
-	</fleet>
-
-	<!-- middle line formation-->
-	<fleet name="MagneticMiddle">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="90"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="150"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="180"><behaviorProperty name="offset" value="324"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="210"><behaviorProperty name="offset" value="316"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="240"><behaviorProperty name="offset" value="324"/></enemy>
-	</fleet>
-
-	<!-- V-shape formation-->
-	<fleet name="MagneticV">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="100"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="100"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- diagonal formation starting right side of screen-->
-	<fleet name="MagneticRightDiag">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="10"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="140"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="160"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="180"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="200"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="220"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="240"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-
-	<!-- diagonal formation starting left side of screen-->
-	<fleet name="MagneticLeftDiag">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="608"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="20"><behaviorProperty name="offset" value="560"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="40"><behaviorProperty name="offset" value="512"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="60"><behaviorProperty name="offset" value="464"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="80"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="100"><behaviorProperty name="offset" value="368"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="120"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="140"><behaviorProperty name="offset" value="272"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="160"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="180"><behaviorProperty name="offset" value="176"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="200"><behaviorProperty name="offset" value="128"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="220"><behaviorProperty name="offset" value="80"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="240"><behaviorProperty name="offset" value="32"/></enemy>
-	</fleet>
-
-	<!-- lots of enemies horizontal zig fleet-->
-	<fleet name="MagneticStaggered">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="32"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="96"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="160"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="224"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="288"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="352"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="416"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="480"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="544"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="608"/></enemy>
-	</fleet>
-
-	<!-- fewer enemies horizontal fleet-->
-	<fleet name="MagneticStaggeredSmall">
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="64"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="192"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="320"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="30"><behaviorProperty name="offset" value="488"/></enemy>
-		<enemy name="TestEnemy" behavior="MagneticBehavior" time="0"><behaviorProperty name="offset" value="576"/></enemy>
+
+	<!-- LEVEL 1 -->
+
+	<fleet name="L1LinesCenter">
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="288" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="352" speed="5" shoots="false"/>
+	</fleet>
+
+	<fleet name="L1LinesStaggeredSmall">
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="64" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="30" offset="192" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="320" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="30" offset="488" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="576" speed="5" shoots="false"/>
+	</fleet>
+
+	<fleet name="L1LinesSides">
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="48" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="0" offset="592" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="20" offset="112" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="20" offset="528" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="40" offset="176" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="LineBehavior" time="40" offset="464" speed="5" shoots="false"/>
+	</fleet>
+
+	<fleet name="L1ZigZagCenter">
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="288" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="352" speed="5" shoots="false"/>
+	</fleet>
+
+	<fleet name="L1ZigZagStaggeredSmall">
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="64" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="30" offset="192" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="320" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="30" offset="488" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="576" speed="5" shoots="false"/>
+	</fleet>
+
+	<fleet name="L1ZigZagSides">
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="48" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="0" offset="592" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="20" offset="112" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="20" offset="512" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="40" offset="176" speed="5" shoots="false"/>
+		<enemy name="h50_d5_c" behavior="ZigZagBehavior" time="40" offset="464" speed="5" shoots="false"/>
+	</fleet>
+
+	<fleet name="L1DipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
+	</fleet>
+
+	<fleet name="L1DoubleDipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.05" bullet="bullet_d5" shots="1" />
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="15" speed="0.05" bullet="bullet_d5" shots="1" />
+	</fleet>
+
+	<fleet name="L1DoubleLinearL">
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="0" direction="55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="10" direction="55" speed="6" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L1DoubleLinearR">
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="0" direction="-55" speed="6" bullet="bullet_d5"/>
+		<enemy name="h50_d5_c" behavior="LinearBehavior" time="10" direction="-55" speed="6" bullet="bullet_d5"/>
+	</fleet>
+
+	<!-- LEVEL 2 -->
+
+	<fleet name="L2LinesCenter">
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="288" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="352" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2LinesStaggeredSmall">
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="64" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="30" offset="192" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="320" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="30" offset="488" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="576" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2LinesSides">
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="48" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="0" offset="592" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="20" offset="112" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="20" offset="528" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="40" offset="176" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="LineBehavior" time="40" offset="464" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2ZigZagCenter">
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="288" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="352" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2ZigZagStaggeredSmall">
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="64" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="30" offset="192" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="320" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="30" offset="488" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="576" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2ZigZagSides">
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="48" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="0" offset="592" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="20" offset="112" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="20" offset="512" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="40" offset="176" speed="7" shoots="true" bullet="bullet_d5"/>
+		<enemy name="h100_d10_c" behavior="ZigZagBehavior" time="40" offset="464" speed="7" shoots="true" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L2DipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d5" shots="3"/>
+	</fleet>
+
+	<fleet name="L2DoubleDipFire">
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d5" shots="3"/>
+		<enemy name="h100_d10" behavior="DipFireBehavior" time="30" speed="0.1" bullet="bullet_d5" shots="3"/>
+	</fleet>
+
+	<fleet name="L2MoveDart">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="10"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-10"/>
+	</fleet>
+
+	<fleet name="L2MoveDartL">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="50"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="70"/>
+	</fleet>
+
+	<fleet name="L2MoveDartR">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-50"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-70"/>
+	</fleet>
+
+	<fleet name="L2TopSeeker">
+		<enemy name="h100_d10" behavior="TopSeekerBehavior" time="0" bullet="bullet_d5"/>
+	</fleet>
+
+	<!-- LEVEL 3 -->
+
+	<fleet name="L3TopSeeker">
+		<enemy name="h200_d20" behavior="TopSeekerBehavior" time="0" bullet="bullet_d5"/>
+	</fleet>
+
+	<fleet name="L3DoubleDipFire">
+		<enemy name="h150_d10" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d10" shots="5"/>
+		<enemy name="h150_d10" behavior="DipFireBehavior" time="30" speed="0.1" bullet="bullet_d10" shots="5"/>
+	</fleet>
+
+	<fleet name="L3MoveDartBig">
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="60"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="40"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="20"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="0"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-20"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-40"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-60"/>
+	</fleet>
+
+	<fleet name="L3LoopL">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L3LoopR">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L3DoubleLoopL">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="left" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L3DoubleLoopR">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<!-- LEVEL 4 -->
+
+	<fleet name="L4ZigZagCenter">
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="288" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="352" speed="9" shoots="true" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4ZigZagStaggeredSmall">
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="64" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="30" offset="192" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="320" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="30" offset="488" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="576" speed="9" shoots="true" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4ZigZagSides">
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="48" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="0" offset="592" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="20" offset="112" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="20" offset="512" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="40" offset="176" speed="9" shoots="true" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="ZigZagBehavior" time="40" offset="464" speed="9" shoots="true" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4DoubleLoop">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4QuadLoopL">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="20" side="left" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="30" side="left" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4QuadLoopR">
+		<enemy name="h150_d10" behavior="LoopBehavior" time="0" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="10" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="20" side="right" y="200" bullet="bullet_d10"/>
+		<enemy name="h150_d10" behavior="LoopBehavior" time="30" side="right" y="200" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L4Bomb">
+		<enemy name="h400_d40" behavior="BombBehavior" time="0" bullet="bullet_d10"/>
+	</fleet>
+
+	<!-- LEVEL 5 -->
+
+	<fleet name="L5TopSeeker">
+		<enemy name="h200_d20" behavior="TopSeekerBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L5MoveDart">
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="10"/>
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="-10"/>
+	</fleet>
+
+	<fleet name="L5MoveDartLR">
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="60"/>
+		<enemy name="h150_d10_c" behavior="MoveDartBehavior" time="0" direction="-60"/>
+	</fleet>
+
+	<fleet name="L5LinearArc">
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="0" direction="0" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="10" direction="20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="10" direction="-20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="20" direction="40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="20" direction="-40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="30" direction="60" speed="10" bullet="bullet_d10"/>
+		<enemy name="h100_d10_c" behavior="LinearBehavior" time="30" direction="-60" speed="10" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5Bomb">
+		<enemy name="h400_d40" behavior="BombBehavior" time="0" bullet="bullet_d10"/>
+		<enemy name="h400_d40" behavior="BombBehavior" time="0" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5SlowLinearCircleCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="0" direction="90" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="10" direction="80" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="20" direction="70" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="30" direction="60" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="40" direction="50" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="50" direction="40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="60" direction="30" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="70" direction="20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="80" direction="10" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="90" direction="0" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="100" direction="350" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="110" direction="340" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="120" direction="330" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="130" direction="320" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="140" direction="310" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="150" direction="300" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="160" direction="290" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="170" direction="280" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="190" direction="260" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="200" direction="250" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="210" direction="240" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="220" direction="230" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="230" direction="220" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="240" direction="210" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="250" direction="200" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="260" direction="190" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="270" direction="180" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="280" direction="170" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="290" direction="160" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="300" direction="150" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="310" direction="140" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="320" direction="130" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="330" direction="120" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="340" direction="110" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="350" direction="100" speed="10" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5SlowLinearCircleCCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="260" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="250" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="240" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="230" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="220" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="210" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="200" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="190" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="180" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="170" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="160" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="150" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="140" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="130" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="120" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="110" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="100" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="90" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="80" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="70" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="60" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="50" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="40" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="30" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="20" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="10" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="0" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="350" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="340" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="330" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="320" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="310" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="300" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="290" speed="10" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="280" speed="10" bullet="bullet_d10"/>
+	</fleet>
+
+	<!-- LEVEL 6 -->
+
+	<fleet name="L6TopSeeker">
+		<enemy name="h400_d40" behavior="TopSeekerBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L6TripleDipFire">
+		<enemy name="h200_d20" behavior="DipFireBehavior" time="0" speed="0.1" bullet="bullet_d10" shots="4"/>
+		<enemy name="h200_d20" behavior="DipFireBehavior" time="30" speed="0.1" bullet="bullet_d10" shots="4"/>
+		<enemy name="h200_d20" behavior="DipFireBehavior" time="60" speed="0.1" bullet="bullet_d10" shots="4"/>
+	</fleet>
+
+	<fleet name="L5FastLinearCircleCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="0" direction="90" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="10" direction="80" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="20" direction="70" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="30" direction="60" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="40" direction="50" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="50" direction="40" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="60" direction="30" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="70" direction="20" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="80" direction="10" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="90" direction="0" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="100" direction="350" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="110" direction="340" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="120" direction="330" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="130" direction="320" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="140" direction="310" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="150" direction="300" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="160" direction="290" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="170" direction="280" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="190" direction="260" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="200" direction="250" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="210" direction="240" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="220" direction="230" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="230" direction="220" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="240" direction="210" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="250" direction="200" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="260" direction="190" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="270" direction="180" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="280" direction="170" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="290" direction="160" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="300" direction="150" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="310" direction="140" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="320" direction="130" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="330" direction="120" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="340" direction="110" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="350" direction="100" speed="15" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L5FastLinearCircleCCW">
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="270" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="260" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="250" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="240" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="230" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="220" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="210" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="200" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="190" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="180" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="170" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="160" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="150" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="140" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="130" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="120" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="110" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="100" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="90" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="80" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="70" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="60" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="50" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="40" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="30" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="20" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="10" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="0" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="350" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="340" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="330" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="320" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="310" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="300" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="290" speed="15" bullet="bullet_d10"/>
+		<enemy name="h150_d10_c" behavior="LinearBehavior" time="180" direction="280" speed="15" bullet="bullet_d10"/>
+	</fleet>
+
+	<fleet name="L6ZigZagCenter">
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="288" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="352" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="224" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="416" speed="9" shoots="true" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L6ZigZagStaggeredSmall">
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="64" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="128" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="192" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="256" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="320" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="384" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="448" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="30" offset="512" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="576" speed="9" shoots="true" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L6ZigZagSides">
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="48" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="0" offset="592" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="112" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="20" offset="512" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="40" offset="176" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="40" offset="464" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="60" offset="240" speed="9" shoots="true" bullet="bullet_d20"/>
+		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="60" offset="400" speed="9" shoots="true" bullet="bullet_d20"/>
+	</fleet>
+
+	<!-- LEVEL 7 -->
+
+	<fleet name="L7Avoid">
+		<enemy name="h200_d20" behavior="AvoidBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<!-- LEVEL 8 -->
+
+	<fleet name="L8Avoid">
+		<enemy name="h400_d40" behavior="AvoidBehavior" time="0" bullet="bullet_d40"/>
+		<enemy name="h400_d40" behavior="AvoidBehavior" time="0" bullet="bullet_d40"/>
 	</fleet>
 
 </fleets>

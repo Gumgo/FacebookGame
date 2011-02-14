@@ -18,6 +18,7 @@
     <class path="C:\Program Files (no install)\AdamAtomic-flixel-b9fe564" />
     <class path="..\AdamAtomic-flixel-b9fe564" />
     <class path="..\..\..\..\Flex" />
+    <class path="..\..\..\..\AdamAtomic-flixel-b9fe564" />
   </classpaths>
   <!-- Build options -->
   <build>

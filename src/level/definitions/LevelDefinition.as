@@ -7,32 +7,32 @@ package level.definitions
 	public class LevelDefinition 
 	{
 
-		private var waveCount:int;
-		private var firstHalfWaves:Vector.<String>;
-		private var secondHalfWaves:Vector.<String>;
+		private var fleetCount:int;
+		private var firstHalfFleets:Vector.<String>;
+		private var secondHalfFleets:Vector.<String>;
 		private var boss:String;
 
-		public function LevelDefinition(waveCount:int, firstHalfWaves:Vector.<String>, secondHalfWaves:Vector.<String>, boss:String)
+		public function LevelDefinition(fleetCount:int, firstHalfFleets:Vector.<String>, secondHalfFleets:Vector.<String>, boss:String)
 		{
-			this.waveCount = waveCount;
-			this.firstHalfWaves = firstHalfWaves;
-			this.secondHalfWaves = secondHalfWaves;
+			this.fleetCount = fleetCount;
+			this.firstHalfFleets = firstHalfFleets;
+			this.secondHalfFleets = secondHalfFleets;
 			this.boss = boss;
 		}
 
-		public function getWaveCount():int
+		public function getFleetCount():int
 		{
-			return waveCount;
+			return fleetCount;
 		}
 
-		public function getFirstHalfWaves():Vector.<String>
+		public function getFirstHalfFleets():Vector.<String>
 		{
-			return firstHalfWaves;
+			return firstHalfFleets;
 		}
 
-		public function getSecondHalfWaves():Vector.<String>
+		public function getSecondHalfFleets():Vector.<String>
 		{
-			return secondHalfWaves;
+			return secondHalfFleets;
 		}
 
 		public function getBoss():String

@@ -9,9 +9,9 @@ package level
 
 		public function LevelText() 
 		{
-			super(0, 32, FlxG.width);
+			super(0, 64, FlxG.width);
 			alignment = "center";
-			size = 16;
+			size = 20;
 			fade = 0;
 		}
 

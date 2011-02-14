@@ -79,16 +79,17 @@ package inventory
 
 			FlxG.mouse.show();
 			colors = new Dictionary();
-			colors["Non-Metal"]				= 0x80ff80;
-			colors["Other Metal"]			= 0x8080ff;
-			colors["Alkali Metal"]			= 0xff8080;
-			colors["Alkali Earth Metal"]	= 0xffff80;
-			colors["Transition Metal"]		= 0xff80ff;
-			colors["Noble Gas"]				= 0x80ff00;
-			colors["Halogen"]				= 0x80ffff;
-			colors["Lanthanide"]			= 0x0080ff;
-			colors["Actinide"]				= 0xff8000;
-			colors["Unknown"]				= 0xffffff;
+			colors["Non-Metals"]			= 0x80ff80;
+			colors["Other Metals"]			= 0x8080ff;
+			colors["Metalloids"]			= 0xff0080;
+			colors["Alkali Metals"]			= 0xff8080;
+			colors["Alkaline Earth Metals"]	= 0xffff80;
+			colors["Transition Metals"]		= 0xff80ff;
+			colors["Noble Gases"]			= 0x80ff00;
+			colors["Halogens"]				= 0x80ffff;
+			colors["Lanthanides"]			= 0x0080ff;
+			colors["Actinides"]				= 0xff8000;
+			colors["Unknowns"]				= 0xffffff;
 
 			var encounteredCount:int = 0;
 			var collectedCount:int = 0;
@@ -106,19 +107,32 @@ package inventory
 			currentDescription = -1;
 			currentHover = -1;
 
-			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0);
+			var encPercent:Number = Math.round(100.0 * encounteredCount / 118.0); // unneeded
 			var colPercent:Number = Math.round(100.0 * collectedCount / 118.0);
+			var currentLevel:int = Math.floor(Context.getGameData().getLevelCount() * collectedCount / (118.0 + 1.0));
+			var elementsToAdvance:int = 0;
+			if (currentLevel < Context.getGameData().getLevelCount() - 1) {
+				while (Math.floor(Context.getGameData().getLevelCount() * (collectedCount + elementsToAdvance) / (118.0 + 1.0)) == currentLevel) {
+					++elementsToAdvance;
+				}
+			}
 
 			var title:FlxText = new FlxText(32 * 4, 32, 32 * 8, "Elements");
 			title.size = 40;
 			title.alignment = "center";
 
-			var stats:FlxText = new FlxText(32 * 4, 88, 32 * 8);
+			var stats:FlxText = new FlxText(32 * 4 - 16, 88, 32 * 9);
 			stats.size = 16;
 			stats.alignment = "center";
+			//stats.text =
+			//"Encountered: " + encounteredCount + " (" + encPercent +
+			//"%)\nCollected: " + collectedCount + " (" + colPercent + "%)";
 			stats.text =
-			"Encountered: " + encounteredCount + " (" + encPercent +
-			"%)\nCollected: " + collectedCount + " (" + colPercent + "%)";
+			"Collected: " + collectedCount + " (" + colPercent + "%)\n" +
+			"Level " + (currentLevel + 1);
+			if (elementsToAdvance != 0) {
+				stats.text += " (need " + elementsToAdvance + " to advance)";
+			}
 			defaultGroup.add(title);
 			defaultGroup.add(stats);
 
@@ -151,57 +165,59 @@ package inventory
 			fade.start();
 
 			borderLines = new Dictionary();
-			borderLines["Non-Metal"]			= new Array(
+			borderLines["Non-Metals"]				= new Array(
 			0, 0, 0, 1,     0, 0, 1, 1,     0, 1, 0, 1,     1, 0, 1, 1,
-			12, 1, 0, 4,    12, 1, 1, 1,    12, 2, 0, 1,    13, 2, 1, 1,
-			13, 3, 0, 1,    14, 3, 1, 1,    14, 4, 0, 1,    15, 4, 1, 1,
-			15, 5, 0, 1,    16, 1, 1, 4);
-			borderLines["Other Metal"]			= new Array(
-			12, 2, 0, 1,    13, 2, 1, 1,    13, 3, 0, 1,    14, 3, 1, 1,
-			14, 4, 0, 1,    15, 4, 1, 1,    15, 5, 0, 1,    16, 5, 1, 1,
-			12, 2, 1, 4,    12, 6, 0, 4);
-			borderLines["Alkali Metal"]			= new Array(
+			13, 1, 0, 3,    13, 1, 1, 1,    13, 2, 0, 1,    14, 2, 1, 1,
+			14, 3, 0, 1,    15, 3, 1, 1,    15, 4, 0, 1,    16, 1, 1, 3);
+			borderLines["Other Metals"]				= new Array(
+			12, 2, 0, 1,    13, 2, 1, 2,    13, 4, 0, 1,    14, 4, 1, 1,
+			14, 5, 0, 1,    15, 5, 1, 1,    12, 2, 1, 4,    12, 6, 0, 3);
+			borderLines["Metalloids"]				= new Array(
+			12, 1, 0, 1,    13, 1, 1, 1,    13, 2, 0, 1,    14, 2, 1, 1,
+			14, 3, 0, 1,    15, 3, 1, 1,    15, 4, 0, 1,    16, 4, 1, 2,
+			12, 2, 0, 1,    13, 2, 1, 2,    13, 4, 0, 1,    14, 4, 1, 1,
+			14, 5, 0, 1,    15, 5, 1, 1,    12, 1, 1, 1,    15, 6, 0, 1);
+			borderLines["Alkali Metals"]			= new Array(
 			0, 1, 0, 1,     0, 1, 1, 6,     1, 1, 1, 6,     0, 7, 0, 1);
-			borderLines["Alkali Earth Metal"]	= new Array(
+			borderLines["Alkaline Earth Metals"]	= new Array(
 			1, 1, 0, 1,     1, 1, 1, 6,     2, 1, 1, 6,     1, 7, 0, 1);
-			borderLines["Transition Metal"]		= new Array(
+			borderLines["Transition Metals"]		= new Array(
 			2, 3, 0, 10,    2, 3, 1, 2,     2, 5, 0, 1,     3, 5, 1, 2,
 			3, 7, 0, 9,     12, 3, 1, 4);
-			borderLines["Noble Gas"]			= new Array(
+			borderLines["Noble Gases"]				= new Array(
 			17, 0, 0, 1,    17, 0, 1, 6,    17, 6, 0, 1,    18, 0, 1, 6);
-			borderLines["Halogen"]				= new Array(
+			borderLines["Halogens"]					= new Array(
 			16, 1, 0, 1,    16, 1, 1, 5,    16, 6, 0, 1,    17, 1, 1, 5);
-			borderLines["Lanthanide"]			= new Array(
+			borderLines["Lanthanides"]				= new Array(
 			2, 5, 0, 1,     2, 5, 1, 1,     2, 6, 0, 1,     3, 5, 1, 1,
 			2, 8, 0, 14,    2, 8, 1, 1,     2, 9, 0, 14,    16, 8, 1, 1);
-			borderLines["Actinide"]				= new Array(
+			borderLines["Actinides"]				= new Array(
 			2, 6, 0, 1,     2, 6, 1, 1,     2, 7, 0, 1,     3, 6, 1, 1,
 			2, 9, 0, 14,    2, 9, 1, 1,     2, 10, 0, 14,   16, 9, 1, 1);
-			borderLines["Unknown"]				= new Array(
+			borderLines["Unknowns"]					= new Array(
 			12, 6, 0, 6,    12, 6, 1, 1,    12, 7, 0, 6,    18, 6, 1, 1);
 
-			flash = new FlxFadeIn();
-			defaultGroup.add(flash);
 			groupMode = false;
 			descRect = new Rectangle(0, 0, FlxG.width, FlxG.height);
 
 			descriptions = new Dictionary();
-			descriptions["Non-Metal"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Other Metal"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Alkali Metal"]		= "Filler description filler description filler description filler description filler description.";
-			descriptions["Alkali Earth Metal"]	= "Filler description filler description filler description filler description filler description.";
-			descriptions["Transition Metal"]	= "Filler description filler description filler description filler description filler description.";
-			descriptions["Noble Gas"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Halogen"]				= "Filler description filler description filler description filler description filler description.";
-			descriptions["Lanthanide"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Actinide"]			= "Filler description filler description filler description filler description filler description.";
-			descriptions["Unknown"]				= "Filler description filler description filler description filler description filler description.";
+			descriptions["Non-Metals"]				= "Non-metals, unlike metals, are brittle, unmalleable, and poor electrical and heat conductors. At room temperature, these elements are either gases or solids. They share or gain their valence electrons easily in contrast to metals who easily lose their electrons.";
+			descriptions["Other Metals"]			= "Unlike transition metals, these seven elements only have valence electrons in their outermost shell. These elements are opaque, solid, and are relatively dense. Like all metals, transition metals are malleable, ductile, and good electrical and heat conductors.";
+			descriptions["Metalloids"]				= "Metalloids are elements with both metal and non-metal characteristics. These elements border the stair-step line which divides metals from non-metals. Some metalloids are semiconductors, which makes these particular elements useful in building computers.";
+			descriptions["Alkali Metals"]			= "Alkali metals are highly reactive elements and do not naturally occur in their pure form. These metals are very reactive because they only have one valence electron. If exposed to water, these elements will explode.";
+			descriptions["Alkaline Earth Metals"]	= "Alkaline earth metals are highly reactive elements and do not naturally occur in their pure form. These metals are very reactive because they only have two valence electrons. Their name comes from their oxides, which are alkaline (basic) when combined with water.";
+			descriptions["Transition Metals"]		= "Transitional metals differ from the other elemental groups because their valence electrons exist in more than one shell. Generally, these elements have high boiling and melting points. Like all metals, these elements are malleable, ductile, and good electrical and heat conductors.";
+			descriptions["Noble Gases"]				= "Noble gases are elements with very low reactivity. This low level of reactivity is due to these elements having the maximum number of electrons in their outer shell. All of these elements are gases at room temperature.";
+			descriptions["Halogens"]				= "Halogens are highly reactive nonmetallic elements and do not naturally occur in their pure form. These elements all have seven valence electrons in their outer shell. At room temperature, halogens occur in all three forms of matter: gas, liquid, and solid.";
+			descriptions["Lanthanides"]				= "Lanthanides are also categorized as rare earth metals. These elements are called Lanthanides because they are all very similar to the first element in the group, Lanthanum. These metals are used in the production of sunglasses because they deflect infrared and ultraviolet rays.";
+			descriptions["Actinides"]				= "Actinides are also categorized as rare earth metals. All of these elements are radioactive, but only five of these elements have been found in nature. The others are synthetic elements created in particle accelerators or nuclear reactors.";
+			descriptions["Unknowns"]				= "These six elements have been given temporary Latin names until they are fully reported and authenticated. All of these elements have been synthetically observed, but in very small numbers and unstable forms.";
 			groupText = new FlxText(0, FlxG.height / 4, FlxG.width);
 			groupText.visible = false;
 			groupText.size = 32;
 			groupText.alignment = "center";
 			defaultGroup.add(groupText);
-			descText = new FlxText( 32, FlxG.height / 2, FlxG.width);
+			descText = new FlxText(32, FlxG.height / 2, FlxG.width - 64);
 			descText.size = 16;
 			defaultGroup.add(descText);
 			play = new FlxText(FlxG.width - 64 - 80, FlxG.height - 96, 80, "Play");
@@ -213,6 +229,9 @@ package inventory
 			back.visible = false;
 			defaultGroup.add(play);
 			defaultGroup.add(back);
+
+			flash = new FlxFadeIn();
+			defaultGroup.add(flash);
 		}
 
 		public function groupColor(group:String):uint

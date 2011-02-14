@@ -6,128 +6,148 @@ package level.enemies
 
 	public class LevelGenerator 
 	{
-		private var half1Waves:Vector.<String>;	// the waves to appear before the miniboss
-		private var half2Waves:Vector.<String>;	// the waves to appear after the miniboss
-		private var waveCount:int;				// the number of waves to appear before/after miniboss
-		private var boss:String;				// the boss wave
+		private var half1Fleets:Vector.<String>;	// the fleets to appear before the miniboss
+		private var half2Fleets:Vector.<String>;	// the fleets to appear after the miniboss
+		private var fleetCount:int;					// the number of fleets to appear before/after miniboss
+		private var boss:String;					// the boss fleet
 
-		private var currentWaveCount:int;	// the current number of waves that have appeared
-		private var half:Boolean;			// true if the miniboss has been passed
-		private var last:Boolean;			// true if this is the last wave
+		private var currentFleetCount:int;	// the current number of fleets that have appeared
+		private var half:Boolean;			// true if the level halfway point has been passed
+		private var last:Boolean;			// true if this is the last fleet
 
-		private var prevWave1:int;	// the previous wave
-		private var prevWave2:int;	// the wave before the previous wave
+		private var prevFleet:String;	// the previous fleet
 
-		private var currentWave:Wave;	// the currently active wave
+		private var currentFleets:Vector.<Fleet>;	// vector of current fleets
+		private var nextFleetTimer:int;				// time until next fleet
+
+		private var enemyCount:int;	// current enemy count
 
 		private var endTimer:int;	// counts down once the level is beaten
+
+		private const FLEET_OVERLAP_TIME:int = 30;
+		private const FLEET_OVERLAP_RANDOM:int = 60;
+		private const FLEET_MIN_ENEMIES:int = 5;
 
 		public function LevelGenerator(level:int)
 		{
 			var levelDefinition:LevelDefinition = Context.getGameData().getLevelDefinition(level);
 
-			half1Waves = levelDefinition.getFirstHalfWaves();
-			half2Waves = levelDefinition.getSecondHalfWaves();
-			waveCount = levelDefinition.getWaveCount();
+			half1Fleets = levelDefinition.getFirstHalfFleets();
+			half2Fleets = levelDefinition.getSecondHalfFleets();
+			fleetCount = levelDefinition.getFleetCount();
 			boss = levelDefinition.getBoss();
 
-			currentWaveCount = 0;
+			currentFleetCount = 0;
 			half = false;
 			last = false;
-			prevWave1 = -1;
-			prevWave2 = -1;
+			prevFleet = "";
 
-			currentWave = null;
+			enemyCount = 0;
+
+			endTimer = -10;
+
+			currentFleets = new Vector.<Fleet>();
 		}
 
 		public function start():void
 		{
-			currentWave = getNextWave();
-			currentWave.start();
+			endTimer = -1;
 		}
 
-		/**
-		 * Starts the next wave.
-		 */
-		public function waveFinished():void
+		public function decEnemies():void {
+			--enemyCount;
+		}
+
+		public function fleetFinished(fleet:Fleet):void
 		{
-			currentWave = getNextWave();
-			if (currentWave == null) {
-				endTimer = 120;
-			} else {
-				currentWave.start();
+			var index:int = currentFleets.indexOf(fleet, 0);
+			if (index >= 0) {
+				currentFleets[index] = currentFleets[currentFleets.length - 1];
+				currentFleets.pop();
 			}
 		}
 
 		/**
-		 * Called each tick; propogates the update to the current wave
+		 * Called each tick; propogates the update to the current fleets
 		 */
 		public function update():void
 		{
-			if (currentWave != null) {
-				currentWave.update();
-			} else {
-				if (endTimer > 0) {
-					--endTimer;
-				} else if (endTimer == 0) {
-					// don't end until ALL enemies and items are gone - we don't want you dying but completing the level
-					if ((FlxG.state as LevelState).getEnemyBulletGroup().countLiving() <= 0 &&
-						(FlxG.state as LevelState).getEnemyGroup().countLiving() <= 0 &&
-						(FlxG.state as LevelState).getItemGroup().countLiving() <= 0) {
-						(FlxG.state as LevelState).levelFinished();
-						endTimer = -1;
+			if (endTimer == -1) {
+				for (var i:int = 0; i < currentFleets.length; ++i) {
+					currentFleets[i].update();
+				}
+
+				if (nextFleetTimer > 0) {
+					--nextFleetTimer
+				}
+
+				if (enemyCount == 0 || (enemyCount < FLEET_MIN_ENEMIES && nextFleetTimer == 0)) {
+					nextFleetTimer = FLEET_OVERLAP_TIME + Math.random() * FLEET_OVERLAP_RANDOM;
+					var nextFleet:Fleet = getNextFleet();
+					if (nextFleet == null) {
+						endTimer = -2;
+					} else {
+						currentFleets.push(nextFleet);
+						enemyCount += nextFleet.getRemainingEnemies();
 					}
+				}
+			} else if (endTimer == -2) {
+				if ((FlxG.state as LevelState).getEnemyGroup().countLiving() <= 0) {
+					endTimer = 120;
+				}
+			} else if (endTimer > 0) {
+				--endTimer;
+			} else if (endTimer == 0) {
+				// don't end until ALL enemies and items are gone - we don't want you dying but completing the level
+				if ((FlxG.state as LevelState).getEnemyBulletGroup().countLiving() <= 0 &&
+					(FlxG.state as LevelState).getEnemyGroup().countLiving() <= 0 &&
+					(FlxG.state as LevelState).getItemGroup().countLiving() <= 0) {
+					(FlxG.state as LevelState).levelFinished();
+					endTimer = -10;
 				}
 			}
 		}
 		
 		/**
-		 * @return the next wave, or null if we're done.
+		 * @return the next fleet, or null if we're done.
 		 */
-		private function getNextWave():Wave
+		private function getNextFleet():Fleet
 		{
 			if (last) {
 				return null;
 			}
 
-			if (currentWaveCount == waveCount) {
-				currentWaveCount = 0;
-				prevWave1 = -1;
-				prevWave2 = -1;
+			if (currentFleetCount == fleetCount) {
+				currentFleetCount = 0;
+				prevFleet = "";
 				if (!half) {
 					half = true;
 				} else {
 					last = true;
 					if (boss != null) {
-						return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(boss));
+						return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(boss));
 					} // else continue on
 				}
 			}
 
-			++currentWaveCount;
-			var index:int;
-			var arrayLength:int = half ? half2Waves.length : half1Waves.length;
+			++currentFleetCount;
+			var arrayLength:int = half ? half2Fleets.length : half1Fleets.length;
+			var array:Vector.<String> = half ? half2Fleets : half1Fleets;
 
-			if (prevWave1 != -1 && prevWave1 == prevWave2) {
-				// make sure we don't get 3 of the same wave in a row
-				// generate an index ranging from [0,n-1)
+			var index:int = Math.floor(Math.random() * arrayLength);
+			if (array[index] == prevFleet) {
+				var indexToSkip:int = index;
 				index = Math.floor(Math.random() * (arrayLength - 1));
-				// if the index falls on the one we don't want, select the last one instead
-				if (index == prevWave1)
+				if (index == indexToSkip) {
 					index = arrayLength - 1;
-			} else {
-				index = Math.floor(Math.random() * arrayLength);
+				}
 			}
-			
-			// back up the indices
-			prevWave2 = prevWave1;
-			prevWave1 = index;
+			trace(index);
 
-			if (!half) {
-				return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(half1Waves[index]));
-			} else {
-				return (Context.getRecycler().getNew(Wave) as Wave).resetMe(this, Context.getGameData().getWaveDefinition(half2Waves[index]));
-			}
+			// back up the indices
+			prevFleet = array[index];
+
+			return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(array[index]));
 		}
 	}
 

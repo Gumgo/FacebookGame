@@ -8,7 +8,7 @@ package
 	{
 		public function Game():void
 		{
-			super(640, 680, InitState, 1);
+			super(640, 480, InitState, 1);
 		}
 	}
 

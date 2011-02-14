@@ -20,6 +20,7 @@ package level.weapons
 			// center the bullet
 			this.x -= width / 2;
 			this.y -= height / 2;
+			FlxG.play(Context.getResources().getSound("gun1"), 0.25);
 			return this;
 		}
 

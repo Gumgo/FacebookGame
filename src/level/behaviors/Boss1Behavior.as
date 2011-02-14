@@ -186,7 +186,7 @@ package level.behaviors
 					var dict:Dictionary = new Dictionary();
 					dict["x"] = String(enemy.x + enemy.width * 0.5 - 24);
 					dict["y"] = String(enemy.y + enemy.height);
-					dict["speed"] = String(8);
+					dict["speed"] = "8";
 					var xVec:Number = player.x + player.width * 0.5 - (enemy.x + enemy.width * 0.5 - 24);
 					var yVec:Number = player.y + player.height * 0.5 - (enemy.y + enemy.height);
 					if (xVec == 0 && yVec == 0) {
@@ -200,7 +200,7 @@ package level.behaviors
 					dict = new Dictionary();
 					dict["x"] = String(enemy.x + enemy.width * 0.5 + 24);
 					dict["y"] = String(enemy.y + enemy.height);
-					dict["speed"] = String(8);
+					dict["speed"] = "8";
 					xVec = player.x + player.width * 0.5 - (enemy.x + enemy.width * 0.5 + 24);
 					yVec = player.y + player.height * 0.5 - (enemy.y + enemy.height);
 					if (xVec == 0 && yVec == 0) {

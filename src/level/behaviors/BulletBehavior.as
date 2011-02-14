@@ -30,8 +30,8 @@ package level.behaviors
 		{
 			enemy.x = Number(getProperty("x"));
 			enemy.y = Number(getProperty("y"));
-			enemy.x -= enemy.width / 2;
-			enemy.y -= enemy.height / 2;
+			enemy.x -= enemy.width * 0.5;
+			enemy.y -= enemy.height * 0.5;
 
 			if (getProperty("speed") == null) {
 				speed = 6;

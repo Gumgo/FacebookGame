@@ -19,6 +19,8 @@ package
 		private var elements:Array;
 		private var collectedCount:int;
 
+		private var userId:String;
+
 		public function PersistentState() 
 		{
 			elements = new Array();
@@ -29,9 +31,9 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				//if (Math.random() >= 4.5 / 8.0)
+				if (Math.random() >= 5.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
-				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
+				else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
 		}
 
@@ -145,6 +147,22 @@ package
 					++written;
 				}
 			}
+		}
+
+		public function setUserId(uid:String):void
+		{
+			userId = uid;
+		}
+
+		public function getUserId():String
+		{
+			return userId;
+		}
+
+		public function getUserVerification():String
+		{
+			const SALT:String = "vk8n4aop25ef8hx3c60h";
+			return MD5.encrypt(userId + SALT);
 		}
 
 	}

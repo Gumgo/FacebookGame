@@ -152,7 +152,7 @@
 	</level>
 
 	<!-- 6 -->
-	<level fleetCount="80">
+	<level fleetCount="3">
 		<firstHalf>
 			<fleet name="L4ZigZagCenter"/>
 			<fleet name="L4ZigZagStaggeredSmall"/>

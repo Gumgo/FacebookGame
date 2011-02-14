@@ -125,7 +125,7 @@ package level.enemies
 				} else {
 					last = true;
 					if (boss != null) {
-						return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(boss));
+						return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(boss), true);
 					} // else continue on
 				}
 			}

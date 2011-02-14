@@ -37,6 +37,8 @@ package
 		[Embed(source = "../bin/resources/sprites/spark.png")] private var spark:Class;
 		[Embed(source = "../bin/resources/sprites/bolt.png")] private var bolt:Class;
 		[Embed(source = "../bin/resources/sprites/shield.png")] private var shieldBullet:Class;
+		[Embed(source = "../bin/resources/sprites/laser.png")] private var laser:Class;
+		[Embed(source = "../bin/resources/sprites/mine.png")] private var mineBullet:Class;
 		[Embed(source = "../bin/resources/sprites/blob.png")] private var blob:Class;
 		[Embed(source = "../bin/resources/sprites/item1.png")] private var radioactive:Class;
 		[Embed(source = "../bin/resources/sprites/item2.png")] private var nonmetal1:Class;
@@ -118,6 +120,8 @@ package
 			sprites["fireBullet"] = fireBullet;
 			sprites["shieldBullet"] = shieldBullet;
 			sprites["spark"] = spark;
+			sprites["laser"] = laser;
+			sprites["mineBullet"] = mineBullet;
 			sprites["blob"] = blob;
 			sprites["laserBullet"] = laserBullet;
 			sprites["bombBullet"] = bombBullet;

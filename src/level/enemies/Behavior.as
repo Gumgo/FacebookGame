@@ -27,6 +27,11 @@ package level.enemies
 			throw new Error("update was not overridden in a class derived from Behavior");
 		}
 
+		// optional - triggered when enemy dies
+		public function die(enemy:Enemy):void
+		{
+		}
+
 		/**
 		 * Used to access properties in derived classes.
 		 * @param	key the property name.

@@ -73,7 +73,8 @@ package level
 			var bgNum:int = Math.floor(Math.random() * Resources.BACKGROUND_COUNT) + 1;
 			//TODO: Finish other moving backgrounds
 			//var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "AnimMove");
-			var BackgroundDef:Class = Context.getResources().getSprite("background2AnimMove");
+			var bgstr:String = Math.random() < 0.5?"background2AnimMove":"background3AnimMove";
+			var BackgroundDef:Class = Context.getResources().getSprite(bgstr);
 			background = new BackgroundDef() as MovieClip;
 			background.scaleX = 2.0;
 			background.scaleY = 2.0;

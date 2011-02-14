@@ -65,6 +65,7 @@ package
 		[Embed(source = "../bin/resources/backgrounds/background2.swf")] private var background2Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background3.swf")] private var background3Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background2moving.swf")] private var background2AnimMove:Class;
+		[Embed(source = "../bin/resources/backgrounds/background3moving.swf")] private var background3AnimMove:Class;
 
 		[Embed(source = "../bin/resources/sprites/healthbar.png")] private var healthBar:Class;
 		[Embed(source = "../bin/resources/sprites/healthbar_left.png")] private var healthBarLeft:Class;
@@ -139,6 +140,7 @@ package
 			sprites["background2Anim"] = background2Anim;
 			sprites["background2AnimMove"] = background2AnimMove;
 			sprites["background3Anim"] = background3Anim;
+			sprites["background3AnimMove"] = background3AnimMove;
 			sprites["logo"] = logo;
 			sprites["metal1"] = metal1;
 			sprites["metal2"] = metal2;

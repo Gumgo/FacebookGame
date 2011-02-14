@@ -28,13 +28,14 @@ package level.enemies
 
 		private var done:Boolean;
 		private var bullet:Boolean;
+		private var drops:Boolean;
 
 		public function Enemy()
 		{
 			super();
 		}
 
-		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false):Enemy
+		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false, drops:Boolean = true):Enemy
 		{
 			exists = true;
 			this.parent = parent;
@@ -45,6 +46,7 @@ package level.enemies
 			color = 0xFFFFFF;
 			_animations.length = 0;
 			angle = 0;
+			visible = true;
  			if  (definition.getRotate()) {
 				loadRotatedGraphic(Context.getResources().getSprite(definition.getSprite()), 16, -1, false, true);
 				offset.x = offset.y = (width - (width / 1.5)) * 0.5;
@@ -54,6 +56,7 @@ package level.enemies
 			}
 
 			this.bullet = bullet;
+			this.drops = drops;
 
 			deathSprite = Context.getResources().getSprite(definition.getDeathSprite());
 			deathSound = Context.getResources().getSound(definition.getDeathSound());
@@ -142,6 +145,8 @@ package level.enemies
 
 		public function onDie():void
 		{
+			visible = true;
+
 			x += width * 0.5;
 			y += height * 0.5;
 
@@ -159,7 +164,7 @@ package level.enemies
 			x -= width * 0.5;
 			y -= height * 0.5;
 
-			if (!bullet) {
+			if (!bullet && drops) {
 				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width * 0.5, y + height * 0.5);
 			}
 
@@ -197,6 +202,11 @@ package level.enemies
 		public function isFinished():Boolean
 		{
 			return done;
+		}
+
+		public function getBehavior():Behavior
+		{
+			return behavior;
 		}
 
 	}

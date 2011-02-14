@@ -37,7 +37,7 @@ package level
 
 			matrix = new Matrix();
 			colorTf = new ColorTransform();
-			colorTf2 = new ColorTransform(1, 1, 1, 0.5);
+			colorTf2 = new ColorTransform(1, 1, 1, 0.25);
 			x = FlxG.width * 0.5;
 			updateHealth(1.0);
 		}

@@ -4,7 +4,7 @@ package
 	[SWF(width = "640", height = "480", backgroundColor = "#000000")]
 	[Frame(factoryClass = "Preloader")]	
 
-	public class Game extends FlxGame 
+	public class Game extends FlxGame
 	{
 		public function Game():void
 		{

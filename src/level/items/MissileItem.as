@@ -23,7 +23,7 @@ package level.items
 		{
 			FlxG.play(Context.getResources().getSound("collect"));
 			(FlxG.state as LevelState).getPlayer().setSecondaryWeapon(new MissileWeapon());
-			(FlxG.state as LevelState).getLevelText().setText("Missile", 0x0000FF, 30);
+			(FlxG.state as LevelState).getLevelText().setText("Missile", 0x0000FF, 180);
 			removeSelf();
 		}
 		

@@ -18,7 +18,7 @@ package level
 		override public function update():void
 		{
 			if (fade == 0 && alpha > 0.0) {
-				alpha -= 0.025;
+				alpha -= 0.0125;
 				if (alpha < 0.0) {
 					alpha = 0.0;
 				}

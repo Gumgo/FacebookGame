@@ -32,7 +32,7 @@ package level.behaviors
 		override public function init(enemy:Enemy):void
 		{
 			bullet = getProperty("bullet");
-			enemy.y = -enemy.width;
+			enemy.y = -enemy.height;
 			enemy.x = Math.random() * (FlxG.width - enemy.width);
 			shotTimer = 0;
 			xVel = 0;

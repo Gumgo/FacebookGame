@@ -95,6 +95,7 @@ package level.weapons
 				addAnimation("ex", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 				play("ex", true);
 				exploding = true;
+				FlxG.play(Context.getResources().getSound("exp#8"));
 				x -= width / 2;
 				y -= height / 2;
 			}

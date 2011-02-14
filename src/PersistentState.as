@@ -31,9 +31,9 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				if (Math.random() >= 5.5 / 8.0)
+				//if (Math.random() >= 5.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
-				else { elements[i] = ELEM_COLLECTED;++collectedCount;}
+				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
 		}
 

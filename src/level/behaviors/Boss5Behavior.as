@@ -7,7 +7,7 @@ package level.behaviors
 	import level.Player;
 	import org.flixel.FlxG;
 
-	public class Boss1Behavior extends Behavior 
+	public class Boss5Behavior extends Behavior 
 	{
 
 		private var phase:int;
@@ -16,21 +16,21 @@ package level.behaviors
 		private var attack:int;
 		private const ARRIVE:int = -2;
 		private const THINKING:int = -1;
-		private const ATTACK_SWEEP_DOWN:int = 0;
-		private const ATTACK_BOMBARD_BULLETS:int = 1;
+		private const ATTACK_CREATE_SHIELDS:int = 0;
+		private const ATTACK_SHOOT:int = 1;
 		private const ATTACK_COUNT:int = 2;
 
 		private const Y_TOP:Number = 64;
-		private var tarX:Number;
-		private var speedY:Number;
 		private var timer:int;
 
-		public function Boss1Behavior()
+		private var tarX:Number;
+
+		public function Boss5Behavior()
 		{
 			super();
 		}
 
-		public function resetMe(properties:Dictionary):Boss1Behavior
+		public function resetMe(properties:Dictionary):Boss5Behavior
 		{
 			super.resetMeSuper(properties);
 			return this;
@@ -65,11 +65,11 @@ package level.behaviors
 			case THINKING:
 				think(enemy, player);
 				break;
-			case ATTACK_SWEEP_DOWN:
-				sweepDown(enemy, player);
+			case ATTACK_CREATE_SHIELDS:
+				createShields(enemy, player);
 				break;
-			case ATTACK_BOMBARD_BULLETS:
-				bombardBullets(enemy, player);
+			case ATTACK_SHOOT:
+				shoot(enemy, player);
 				break;
 			}
 		}
@@ -143,40 +143,30 @@ package level.behaviors
 			}
 		}
 
-		private function sweepDown(enemy:Enemy, player:Player):void
+		private function createShields(enemy:Enemy, player:Player):void
 		{
 			if (phase == 0) {
-				speedY = -4;
+				tarX = Math.random() * (FlxG.width - enemy.width * 0.5) + enemy.width * 0.5;
 				phase = 1;
-			} else if (phase == 1) {
-				enemy.y += speedY;
-				speedY += 0.5;
-				if (speedY >= 0.0) {
-					phase = 2;
+			} else if (phase < 5) {
+				if (slideToX(enemy, tarX, 0.1, 10)) {
+					++phase;
+					tarX = Math.random() * (FlxG.width - enemy.width * 0.5) + enemy.width * 0.5;
+					var dict:Dictionary = new Dictionary();
+					dict["x"] = String(enemy.x + enemy.width * 0.5);
+					dict["y"] = String(enemy.y + enemy.height);
+					dict["speed"] = String(0.5);
+					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
+						null,
+						Context.getGameData().getEnemyDefinition("bullet_shield"),
+						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), false, false);
 				}
-			} else if (phase == 2) {
-				enemy.y += speedY;
-				speedY += 2.0;
-				if (speedY > 16) {
-					speedY = 16;
-				}
-				if (enemy.y + enemy.height >= FlxG.height) {
-					enemy.y = FlxG.height - enemy.height;
-					phase = 3;
-					timer = 30;
-				}
-			} else if (phase == 3) {
-				if (timer > 0) {
-					--timer;
-				} else {
-					if (slideToY(enemy, Y_TOP, 0.1, 16)) {
-						phase = PHASE_DONE;
-					}
-				}
+			} else if (phase == 5) {
+				phase = PHASE_DONE;
 			}
 		}
 
-		private function bombardBullets(enemy:Enemy, player:Player):void
+		private function shoot(enemy:Enemy, player:Player):void
 		{
 			if (phase == 0) {
 				timer = 0;
@@ -195,7 +185,7 @@ package level.behaviors
 					dict["dir"] = String(Math.atan2( -yVec, xVec) * 180.0 / Math.PI);
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("bullet_fire"),
+						Context.getGameData().getEnemyDefinition("bullet_fire3"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					dict = new Dictionary();
 					dict["x"] = String(enemy.x + enemy.width * 0.5 + 24);
@@ -209,17 +199,15 @@ package level.behaviors
 					dict["dir"] = String(Math.atan2( -yVec, xVec) * 180.0 / Math.PI);
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("bullet_fire"),
+						Context.getGameData().getEnemyDefinition("bullet_fire3"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 
 				}
 				++timer;
-				if (timer == 15) {
+				if (timer == 30) {
 					phase = PHASE_DONE;
 				}
 			}
 		}
-
 	}
-
 }

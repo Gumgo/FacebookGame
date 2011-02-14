@@ -29,7 +29,7 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				//if (Math.random() >= 5.5 / 8.0)
+				//if (Math.random() >= 4.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
 				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
@@ -107,6 +107,44 @@ package
 		public function getCurrentDamage():Number
 		{
 			return currentDamage;
+		}
+
+		private static const encode:String =
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+		public function getEncodedElements():String
+		{
+			var out:String = "";
+			var written:int = 0;
+			while (written < 118) {
+				var val:int = 0;
+				for (var i:int = 0; i < 6; ++i) {
+					if (written + 1 <= 118 && getElementState(written + 1) == ELEM_COLLECTED) {
+						val |= (1 << i);
+					}
+					++written;
+				}
+				out += encode.charAt(val);
+			}
+
+			return out;
+		}
+
+		public function setEncodedElements(encoded:String):void
+		{
+			var written:int = 0;
+			for (var i:int = 0; i < encoded.length; ++i) {
+				var val:int = encode.indexOf(encoded.charAt(i));
+				for (var t:int = 0; t < 6; ++t) {
+					if (written < 118) {
+						if ((val & (1 << t)) != 0) {
+							setElementState(written + 1, ELEM_COLLECTED);
+						} else {
+							setElementState(written + 1, ELEM_UNENCOUNTERED);
+						}
+					}
+					++written;
+				}
+			}
 		}
 
 	}

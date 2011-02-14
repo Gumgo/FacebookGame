@@ -167,7 +167,7 @@ package level
 				var ratio1:Number = Number(prevHealth) / Number(maxHealth);
 				var ratio2:Number = Number(currentHealth) / Number(maxHealth);
 				if (ratio1 > 0.15 && ratio2 <= 0.15) {
-					(FlxG.state as LevelState).getLevelText().setText("Warning: health is low", 0xFF0000, 180);
+					(FlxG.state as LevelState).getLevelText().setText("Warning: energy is low", 0xFF0000, 180);
 				}
 			}
 

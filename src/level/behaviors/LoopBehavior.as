@@ -78,6 +78,7 @@ package level.behaviors
 
 			if (mirror) {
 				xCtr = FlxG.width - xCtr;
+				enemy.angle = -enemy.angle;
 			}
 			enemy.x = xCtr - enemy.width * 0.5;
 			enemy.y = yCtr - enemy.health * 0.5;

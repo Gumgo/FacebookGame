@@ -17,6 +17,7 @@ package level
 			exists = true;
 			this.x = x;
 			this.y = y;
+			color = 0xFFFFFF;
 			loadGraphic(Context.getResources().getSprite(image));
 			this.x -= width * 0.5;
 			this.y -= height * 0.5;

@@ -1,5 +1,6 @@
 package menu
 {
+	import controls.Controls;
 	import inventory.InventoryState;
 	import org.flixel.*;
 	import flash.display.MovieClip;
@@ -46,7 +47,7 @@ package menu
 			add(menu_options);
 			
 			// Help state
-			help = new FlxText(0, FlxG.height - 60, FlxG.width, "Press s To Enter Help Options");
+			help = new FlxText(0, FlxG.height - 60, FlxG.width, "Press c To Enter Controls");
 			help.setFormat (null, 14, 0xFFFFFFFF, "center");
 			help.alpha = 0.0;
 			add(help);
@@ -77,11 +78,19 @@ package menu
 						FlxG.state = new InventoryState();
 					});
 					defaultGroup.add(fadeOut);
-				}  /*else if ( FlxG.keys.justPressed("x")) {
-					//FlxG.state = new FlxState();
-				}  else {
-					//FlxG.state = new FlxState();
-				}*/
+				}  
+				if (FlxG.keys.justPressed("C"))
+				{
+					timer = -1;
+					var fadeOut:FlxFade = new FlxFade();
+					fadeOut.start(0xFF000000, 1, function():void
+					{
+						parent.removeChild(background);
+						FlxG.state = new Controls();
+					});
+					defaultGroup.add(fadeOut);
+				}
+					
 			}
 
 			if (timer > 0) {

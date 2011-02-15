@@ -36,7 +36,7 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				if (Math.random() >= 4.5 / 8.0)
+				if (Math.random() >= 3.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
 				else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
@@ -49,7 +49,7 @@ package
 			} else if (state != ELEM_COLLECTED && elements[element - 1] == ELEM_COLLECTED) {
 				--collectedCount;
 			}
-			elements[element-  1] = state;
+			elements[element - 1] = state;
 		}
 
 		public function getElementState(element:int):int

@@ -2,6 +2,7 @@ package level
 {
 	import flash.display.BitmapData;
 	import flash.display.BitmapDataChannel;
+	import flash.events.Event;
 	import flash.geom.ColorTransform;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;

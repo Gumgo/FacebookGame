@@ -94,6 +94,7 @@ package
 
 		[Embed(source = "../bin/resources/music/menu.mp3")] private var menu:Class;
 
+		[Embed(source = "../bin/resources/sprites/control_screen.png")] private var controls:Class;
 		public static var BACKGROUND_COUNT:int = 3;
 
 		public function Resources()
@@ -154,6 +155,7 @@ package
 			sprites["nonmetal2"] = nonmetal2;
 			sprites["nonmetal3"] = nonmetal3;
 			sprites["radioactive"] = radioactive;
+			sprites["controls"] = controls;
 
 			sounds = new Dictionary();
 			sounds["beep"] = beep;

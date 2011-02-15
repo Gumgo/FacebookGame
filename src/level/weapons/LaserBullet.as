@@ -7,7 +7,7 @@ package level.weapons
 	public class LaserBullet extends PlayerBullet
 	{
 
-		private static const DAMAGE:int = 100;
+		private static const DAMAGE:int = 75;
 
 		public function LaserBullet()
 		{
@@ -19,8 +19,8 @@ package level.weapons
 			super.resetMeSuper("laser", DAMAGE * (FlxG.state as LevelState).getPlayer().getDamageMultiplier(),
 				x, y, Context.getResources().getSprite("laserBullet"));
 			// center the bullet
-			this.x -= width / 2;
-			this.y -= height / 2;
+			this.x -= width * 0.5;
+			this.y -= height * 0.5;
 			color = 0xFFFF00;
 			return this;
 		}

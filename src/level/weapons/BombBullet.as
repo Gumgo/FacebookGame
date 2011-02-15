@@ -10,7 +10,7 @@ package level.weapons
 		private var speed:Number;
 		private var exploding:Boolean;
 
-		private static const DAMAGE:int = 300;
+		private static const DAMAGE:int = 130;
 
 		public function BombBullet()
 		{

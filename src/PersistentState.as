@@ -14,7 +14,7 @@ package
 		public static const HEALTH_MAX:int = 400;
 		public static const SHIELDS_MIN:Number = 1.0;
 		public static const SHIELDS_MAX:Number = 3.0;
-		public static const DAMAGE_MIN:Number = 1.0;
+		public static const DAMAGE_MIN:Number = 0.5;
 		public static const DAMAGE_MAX:Number = 3.0;
 
 		private static var currentHealth:int;
@@ -36,9 +36,9 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				//if (Math.random() >= 5.5 / 8.0)
+				if (Math.random() >= 4.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
-				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
+				else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
 		}
 

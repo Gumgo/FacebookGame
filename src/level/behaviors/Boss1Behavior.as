@@ -157,8 +157,8 @@ package level.behaviors
 			} else if (phase == 2) {
 				enemy.y += speedY;
 				speedY += 2.0;
-				if (speedY > 16) {
-					speedY = 16;
+				if (speedY > 12) {
+					speedY = 12;
 				}
 				if (enemy.y + enemy.height >= FlxG.height) {
 					enemy.y = FlxG.height - enemy.height;

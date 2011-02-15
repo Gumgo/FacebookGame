@@ -66,6 +66,16 @@
 		<enemy name="h50_d5_c" behavior="LinearBehavior" time="10" direction="-55" speed="6" bullet="bullet_d5"/>
 	</fleet>
 
+	<fleet name="L1MoveDartL">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="10"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="50"/>
+	</fleet>
+
+	<fleet name="L1MoveDartR">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-10"/>
+		<enemy name="h100_d10_c" behavior="MoveDartBehavior" time="0" direction="-50"/>
+	</fleet>
+
 	<fleet name="L1Boss">
 		<enemy name="boss1" behavior="Boss1Behavior" time="60"/>
 	</fleet>
@@ -126,16 +136,19 @@
 	</fleet>
 
 	<fleet name="L2MoveDart">
-		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="10"/>
-		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-10"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="20"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="0"/>
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-20"/>
 	</fleet>
 
 	<fleet name="L2MoveDartL">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="30"/>
 		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="50"/>
 		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="70"/>
 	</fleet>
 
 	<fleet name="L2MoveDartR">
+		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-30"/>
 		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-50"/>
 		<enemy name="h50_d5_c" behavior="MoveDartBehavior" time="0" direction="-70"/>
 	</fleet>

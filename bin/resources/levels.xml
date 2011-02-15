@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <levels>
 	<!-- 1 -->
-	<level fleetCount="50">
+	<level fleetCount="40">
 		<firstHalf>
 			<fleet name="L1LinesCenter"/>
 			<fleet name="L1LinesStaggeredSmall"/>
@@ -9,11 +9,10 @@
 			<fleet name="L1DipFire"/>
 			<fleet name="L1DoubleLinearL"/>
 			<fleet name="L1DoubleLinearR"/>
+			<fleet name="L1MoveDartL"/>
+			<fleet name="L1MoveDartR"/>
 		</firstHalf>
 		<secondHalf boss="L1Boss">
-			<fleet name="L1LinesCenter"/>
-			<fleet name="L1LinesStaggeredSmall"/>
-			<fleet name="L1LinesSides"/>
 			<fleet name="L1ZigZagCenter"/>
 			<fleet name="L1ZigZagStaggeredSmall"/>
 			<fleet name="L1ZigZagSides"/>
@@ -21,11 +20,13 @@
 			<fleet name="L1DoubleDipFire"/>
 			<fleet name="L1DoubleLinearL"/>
 			<fleet name="L1DoubleLinearR"/>
+			<fleet name="L1MoveDartL"/>
+			<fleet name="L1MoveDartR"/>
 		</secondHalf>
 	</level>
 
 	<!-- 2 -->
-	<level fleetCount="60">
+	<level fleetCount="50">
 		<firstHalf>
 			<fleet name="L2LinesCenter"/>
 			<fleet name="L2LinesStaggeredSmall"/>
@@ -58,7 +59,7 @@
 	</level>
 
 	<!-- 3 -->
-	<level fleetCount="70">
+	<level fleetCount="60">
 		<firstHalf>
 			<fleet name="L2ZigZagCenter"/>
 			<fleet name="L2ZigZagStaggeredSmall"/>
@@ -87,7 +88,7 @@
 	</level>
 
 	<!-- 4 -->
-	<level fleetCount="80">
+	<level fleetCount="70">
 		<firstHalf>
 			<fleet name="L4ZigZagCenter"/>
 			<fleet name="L4ZigZagStaggeredSmall"/>

@@ -169,6 +169,16 @@ package level.behaviors
 				}
 			}
 		}
+
+		override public function die(enemy:Enemy):void
+		{
+			var seekers:Array = (FlxG.state as LevelState).getEnemyGroup().members;
+			for (var i:int = 0; i < seekers.length; ++i) {
+				if (seekers[i] != null && (seekers[i] as Enemy).getBehavior() is SeekBehavior) {
+					(seekers[i] as Enemy).onDie();
+				}
+			}
+		}
 	}
 
 }

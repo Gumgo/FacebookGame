@@ -14,7 +14,7 @@ package level.weapons
 		private var target:Enemy;
 		private var exploding:Boolean;
 
-		private static const DAMAGE:int = 200;
+		private static const DAMAGE:int = 150;
 
 		public function MissileBullet()
 		{

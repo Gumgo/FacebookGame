@@ -66,6 +66,7 @@ package
 		[Embed(source = "../bin/resources/backgrounds/background1.swf")] private var background1Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background2.swf")] private var background2Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background3.swf")] private var background3Anim:Class;
+		[Embed(source = "../bin/resources/backgrounds/background1moving.swf")] private var background1AnimMove:Class;
 		[Embed(source = "../bin/resources/backgrounds/background2moving.swf")] private var background2AnimMove:Class;
 		[Embed(source = "../bin/resources/backgrounds/background3moving.swf")] private var background3AnimMove:Class;
 
@@ -141,6 +142,7 @@ package
 			sprites["border"] = border;
 			sprites["background1"] = background1Anim;
 			sprites["background1Anim"] = background1Anim;
+			sprites["background1AnimMove"] = background1AnimMove;
 			sprites["background2Anim"] = background2Anim;
 			sprites["background2AnimMove"] = background2AnimMove;
 			sprites["background3Anim"] = background3Anim;

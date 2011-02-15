@@ -1,5 +1,10 @@
 package  
 {
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestMethod;
+	import flash.net.URLVariables;
 	public class PersistentState 
 	{
 		public static const ELEM_UNENCOUNTERED:int = 0;
@@ -133,6 +138,10 @@ package
 
 		public function setEncodedElements(encoded:String):void
 		{
+			if (encoded == null) {
+				return;
+			}
+
 			var written:int = 0;
 			for (var i:int = 0; i < encoded.length; ++i) {
 				var val:int = encode.indexOf(encoded.charAt(i));
@@ -163,6 +172,33 @@ package
 		{
 			const SALT:String = "vk8n4aop25ef8hx3c60h";
 			return MD5.encrypt(userId + SALT);
+		}
+
+		public function getEncodedElementsVerification():String
+		{
+			const SALT:String = "6f32wfbm32o0ey3bwqlt";
+			return MD5.encrypt(getEncodedElements() + SALT);
+		}
+
+		public function save():void
+		{
+			if (userId == null) {
+				return;
+			}
+
+			const URL:String = "http://students.washington.edu/jclement/nucleos/writesave.php"
+			var request:URLRequest = new URLRequest(URL);
+			request.method = URLRequestMethod.POST;
+			var variables:URLVariables = new URLVariables();
+			variables.uid = getUserId();
+			variables.uidverify = getUserVerification();
+			variables.ss = getEncodedElements();
+			variables.ssverify = getEncodedElementsVerification();
+			request.data = variables;
+
+			var loader:URLLoader = new URLLoader(request);
+			loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+			loader.load(request);
 		}
 
 	}

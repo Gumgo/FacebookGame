@@ -124,6 +124,7 @@ package level
 				if (pauseRet.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 					if (pauseRet.color != 0x00FF00) {
 						pauseRet.color = 0x00FF00;
+						FlxG.play(Context.getResources().getSound("beep"), 0.1);
 					}
 					if (!pauseExiting && FlxG.mouse.justPressed()) {
 						pauseExiting = true;
@@ -134,6 +135,7 @@ package level
 							FlxG.state = new InventoryState();
 						});
 						pauseGroup.add(fadeOut);
+						FlxG.play(Context.getResources().getSound("click"));
 					}
 				} else {
 					if (pauseRet.color != 0xFFFFFF) {

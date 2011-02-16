@@ -90,8 +90,6 @@ package
 		[Embed(source = "../bin/resources/sprites/plus.png")] private var plus:Class;
 		[Embed(source = "../bin/resources/sprites/minus.png")] private var minus:Class;
 
-		[Embed(source = "../bin/resources/sprites/control_screen.png")] private var controls:Class;
-
 		// SOUNDS:
 		private var sounds:Dictionary;
 		[Embed(source = "../bin/resources/sounds/beep.mp3")] private var beep:Class;
@@ -108,6 +106,11 @@ package
 		[Embed(source = "../bin/resources/sounds/gun1.mp3")] private var gun1:Class;
 
 		[Embed(source = "../bin/resources/sounds/collect.mp3")] private var collect:Class;
+		[Embed(source = "../bin/resources/sounds/boss_bullet.mp3")] private var bossBullet:Class;
+		[Embed(source = "../bin/resources/sounds/click.mp3")] private var click:Class;
+		[Embed(source = "../bin/resources/sounds/scan.mp3")] private var scan:Class;
+		[Embed(source = "../bin/resources/sounds/laserbeam.mp3")] private var laserBeam:Class;
+		[Embed(source = "../bin/resources/sounds/laserbeamshort.mp3")] private var laserBeamShort:Class;
 
 		[Embed(source = "../bin/resources/music/menu.mp3")] private var menu:Class;
 
@@ -186,8 +189,6 @@ package
 			sprites["plus"] = plus;
 			sprites["minus"] = minus;
 
-			sprites["controls"] = controls;
-
 			sounds = new Dictionary();
 			sounds["beep"] = beep;
 			sounds["exp1"] = exp1;
@@ -202,6 +203,12 @@ package
 			sounds["collect"] = collect;
 
 			sounds["menu"] = menu;
+
+			sounds["bossBullet"] = bossBullet;
+			sounds["click"] = click;
+			sounds["scan"] = scan;
+			sounds["laserBeam"] = laserBeam;
+			sounds["laserBeamShort"] = laserBeamShort;
 		}
 
 		public function getSprite(name:String):Class

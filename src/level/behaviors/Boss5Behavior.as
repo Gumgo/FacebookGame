@@ -11,6 +11,7 @@ package level.behaviors
 	import level.LevelState;
 	import level.Player;
 	import org.flixel.FlxG;
+	import org.flixel.FlxSound;
 	
 	public class Boss5Behavior extends Behavior 
 	{
@@ -42,6 +43,8 @@ package level.behaviors
 		private var matrix:Matrix;
 		private var colorTf:ColorTransform;
 		private var point:Point;
+
+		private var zeroInSound:FlxSound;
 
 		public function Boss5Behavior()
 		{
@@ -288,6 +291,8 @@ package level.behaviors
 							null,
 							Context.getGameData().getEnemyDefinition("bullet_d20"),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
+
+						FlxG.play(Context.getResources().getSound("exp#8"), 1);
 					}
 				}
 			} else if (phase == 3) {
@@ -325,6 +330,7 @@ package level.behaviors
 						Context.getGameData().getEnemyDefinition("bullet_fire2"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 
+					FlxG.play(Context.getResources().getSound("bossBullet"), 0.25);
 				}
 				++timer;
 				if (timer == 15) {
@@ -347,6 +353,7 @@ package level.behaviors
 				}
 				timer = 45;
 				phase = 1;
+				zeroInSound = FlxG.play(Context.getResources().getSound("scan"), 0.25);
 			} else if (phase == 1) {
 				var shape:Shape = new Shape();
 				var green:uint = 0xFF * (timer / 45.0);
@@ -370,6 +377,9 @@ package level.behaviors
 				if (timer == 0) {
 					phase = 2;
 					timer = 10;
+					zeroInSound.stop();
+					zeroInSound = null;
+					FlxG.play(Context.getResources().getSound("exp#8"));
 				}
 			} else if (phase == 2) {
 				var boltShape:Shape = new Shape();
@@ -423,6 +433,8 @@ package level.behaviors
 						null,
 						Context.getGameData().getEnemyDefinition("bullet_fire2"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
+
+					FlxG.play(Context.getResources().getSound("bossBullet"), 0.25);
 				}
 				timer += 3;
 				if (timer == 120) {
@@ -453,6 +465,7 @@ package level.behaviors
 							Context.getGameData().getEnemyDefinition("bullet_fire2"),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					}
+					FlxG.play(Context.getResources().getSound("bossBullet"), 0.25);
 				} else {
 					++timer;
 				}

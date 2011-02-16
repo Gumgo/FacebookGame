@@ -1,6 +1,5 @@
 package menu
 {
-	import controls.Controls;
 	import help.HelpState;
 	import inventory.InventoryState;
 	import org.flixel.*;

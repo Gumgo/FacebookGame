@@ -164,7 +164,9 @@ package help
 					scrolling = 1;
 				}
 				destination = 0;
-			} else if (scrolling == 1) {
+			}
+
+			if (scrolling == 1) {
 				transition += 0.025;
 				if (transition >= 1) {
 					++currentGroup;
@@ -186,15 +188,17 @@ package help
 				(groups[currentGroup] as FlxGroup).update();
 			}
 
-			if (!fading) {
+			if (!fading && transition == 0) {
 				if (currentGroup == 0) {
 					if (controlsNext.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 						if (controlsNext.color != 0x00FF00) {
 							controlsNext.color = 0x00FF00;
+							FlxG.play(Context.getResources().getSound("beep"), 0.1);
 						}
 						if (FlxG.mouse.justPressed()) {
 							destination = NEXT;
 							controlsNext.color = 0xFFFFFF;
+							FlxG.play(Context.getResources().getSound("click"));
 						}
 					} else if (controlsNext.color != 0xFFFFFF) {
 						controlsNext.color = 0xFFFFFF;
@@ -202,6 +206,7 @@ package help
 					if (controlsPrev.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 						if (controlsPrev.color != 0x00FF00) {
 							controlsPrev.color = 0x00FF00;
+							FlxG.play(Context.getResources().getSound("beep"), 0.1);
 						}
 						if (FlxG.mouse.justPressed()) {
 							var fadeOut:FlxFade = new FlxFade();
@@ -213,6 +218,7 @@ package help
 							defaultGroup.add(fadeOut);
 							controlsPrev.color = 0xFFFFFF;
 							fading = true;
+							FlxG.play(Context.getResources().getSound("click"));
 						}
 					} else if (controlsPrev.color != 0xFFFFFF) {
 						controlsPrev.color = 0xFFFFFF;
@@ -221,10 +227,12 @@ package help
 					if (itemsPrev.overlapsPoint(FlxG.mouse.x - FlxG.width * 2, FlxG.mouse.y)) {
 						if (itemsPrev.color != 0x00FF00) {
 							itemsPrev.color = 0x00FF00;
+							FlxG.play(Context.getResources().getSound("beep"), 0.1);
 						}
 						if (FlxG.mouse.justPressed()) {
 							destination = PREV;
 							itemsPrev.color = 0xFFFFFF;
+							FlxG.play(Context.getResources().getSound("click"));
 						}
 					} else if (itemsPrev.color != 0xFFFFFF) {
 						itemsPrev.color = 0xFFFFFF;

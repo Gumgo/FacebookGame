@@ -10,8 +10,8 @@ package
 		public static const ELEM_UNENCOUNTERED:int = 0;
 		public static const ELEM_COLLECTED:int = 1;
 
-		public static const HEALTH_MIN:int = 1000;
-		public static const HEALTH_MAX:int = 4000;
+		public static const HEALTH_MIN:int = 100;
+		public static const HEALTH_MAX:int = 400;
 		public static const SHIELDS_MIN:Number = 1.0;
 		public static const SHIELDS_MAX:Number = 3.0;
 		public static const DAMAGE_MIN:Number = 0.5;
@@ -216,7 +216,7 @@ package
 			variables.verify = getVerification();
 			request.data = variables;
 			request.contentType = "application/x-www-form-urlencoded";
-			
+
 			var loader:URLLoader = new URLLoader(request);
 			loader.dataFormat = URLLoaderDataFormat.VARIABLES;
 			loader.load(request);

@@ -18,6 +18,7 @@ package level.enemies
 
 		private var deathSprite:Class;
 		private var deathSound:Class;
+		private var hitSound:Class;
 		private var deathColor:uint;
 		private var enemyHealth:int;
 		private var damage:int;
@@ -62,6 +63,7 @@ package level.enemies
 
 			deathSprite = Context.getResources().getSprite(definition.getDeathSprite());
 			deathSound = Context.getResources().getSound(definition.getDeathSound());
+			hitSound = Context.getResources().getSound("exp#8");
 			deathColor = definition.getDeathColor();
 			enemyHealth = definition.getHealth();
 			color = definition.getColor();
@@ -137,6 +139,7 @@ package level.enemies
 			if (!invincible) {
 				if (enemyHealth > 0) {
 					bullet.hit();
+					FlxG.play(hitSound, 0.8);
 					enemyHealth -= bullet.getDamage();
 					if (enemyHealth <= 0) {
 						onDie();

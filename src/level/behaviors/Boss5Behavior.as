@@ -218,14 +218,14 @@ package level.behaviors
 			} else if (phase == 1) {
 				enemy.y += speedY;
 				speedY += 0.5;
-				slideToX(enemy, player.x + player.width * 0.5, 0.1, 6);
+				slideToX(enemy, player.x + player.width * 0.5, 0.1, 3);
 				if (speedY >= 0.0) {
 					phase = 2;
 				}
 			} else if (phase == 2) {
 				enemy.y += speedY;
 				speedY += 2.0;
-				slideToX(enemy, player.x + player.width * 0.5, 0.1, 6);
+				slideToX(enemy, player.x + player.width * 0.5, 0.1, 3);
 				if (speedY > 16) {
 					speedY = 16;
 				}

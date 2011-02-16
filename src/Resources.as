@@ -27,6 +27,7 @@ package
 		[Embed(source = "../bin/resources/sprites/Boss_4.png")] private var boss4:Class;
 
 		[Embed(source = "../bin/resources/sprites/explosion.png")] private var explosion:Class;
+		[Embed(source = "../bin/resources/sprites/explosion_big.png")] private var explosionBig:Class;
 
 		[Embed(source = "../bin/resources/sprites/default_bullet.png")] private var defaultBullet:Class;
 		[Embed(source = "../bin/resources/sprites/enemy_bullet1.png")] private var enemyBullet1:Class;
@@ -76,6 +77,21 @@ package
 		[Embed(source = "../bin/resources/sprites/healthbar_top.png")] private var healthBarTop:Class;
 		[Embed(source = "../bin/resources/sprites/healthbar_bottom.png")] private var healthBarBottom:Class;
 
+		[Embed(source = "../bin/resources/sprites/next.png")] private var next:Class;
+		[Embed(source = "../bin/resources/sprites/prev.png")] private var prev:Class;
+
+		[Embed(source = "../bin/resources/sprites/arrow_up.png")] private var arrowUp:Class;
+		[Embed(source = "../bin/resources/sprites/arrow_down.png")] private var arrowDown:Class;
+		[Embed(source = "../bin/resources/sprites/arrow_left.png")] private var arrowLeft:Class;
+		[Embed(source = "../bin/resources/sprites/arrow_right.png")] private var arrowRight:Class;
+		[Embed(source = "../bin/resources/sprites/space.png")] private var space:Class;
+		[Embed(source = "../bin/resources/sprites/escape.png")] private var esc:Class;
+		[Embed(source = "../bin/resources/sprites/zero.png")] private var zero:Class;
+		[Embed(source = "../bin/resources/sprites/plus.png")] private var plus:Class;
+		[Embed(source = "../bin/resources/sprites/minus.png")] private var minus:Class;
+
+		[Embed(source = "../bin/resources/sprites/control_screen.png")] private var controls:Class;
+
 		// SOUNDS:
 		private var sounds:Dictionary;
 		[Embed(source = "../bin/resources/sounds/beep.mp3")] private var beep:Class;
@@ -95,7 +111,6 @@ package
 
 		[Embed(source = "../bin/resources/music/menu.mp3")] private var menu:Class;
 
-		[Embed(source = "../bin/resources/sprites/control_screen.png")] private var controls:Class;
 		public static var BACKGROUND_COUNT:int = 3;
 
 		public function Resources()
@@ -113,6 +128,7 @@ package
 			sprites["boss3"] = boss3;
 			sprites["boss4"] = boss4;
 			sprites["explosion"] = explosion;
+			sprites["explosionBig"] = explosionBig;
 			sprites["defaultBullet"] = defaultBullet;
 			sprites["enemyBullet1"] = enemyBullet1;
 			sprites["enemyBullet2"] = enemyBullet2;
@@ -157,6 +173,19 @@ package
 			sprites["nonmetal2"] = nonmetal2;
 			sprites["nonmetal3"] = nonmetal3;
 			sprites["radioactive"] = radioactive;
+
+			sprites["next"] = next;
+			sprites["prev"] = prev;
+			sprites["arrowUp"] = arrowUp;
+			sprites["arrowDown"] = arrowDown;
+			sprites["arrowLeft"] = arrowLeft;
+			sprites["arrowRight"] = arrowRight;
+			sprites["space"] = space;
+			sprites["esc"] = esc;
+			sprites["zero"] = zero;
+			sprites["plus"] = plus;
+			sprites["minus"] = minus;
+
 			sprites["controls"] = controls;
 
 			sounds = new Dictionary();

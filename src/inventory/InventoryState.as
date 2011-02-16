@@ -9,6 +9,7 @@ package inventory
 	import flash.geom.ColorTransform;
 	import flash.utils.Dictionary;
 	import level.LevelState;
+	import help.HelpState;
 	import org.flixel.FlxGroup;
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxState;
@@ -39,10 +40,21 @@ package inventory
 		5, 5, 5, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 		6, 6, 6, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6);
 
+		private var stats:FlxText;
+
 		private var colors:Dictionary;
 		private var descriptionBanner:FlxSprite;
 		private var descriptionText:FlxText;
 		private var descriptionTextRight:FlxText;
+
+		private var helpText:FlxText;
+		private var canClick:Boolean;
+		private var resetText:FlxText;
+		private var resetDisplay:Boolean;
+
+		private var resetWarning:FlxText;
+		private var resetYes:FlxText;
+		private var resetNo:FlxText;
 
 		private var currentDescription:int;
 		private var currentHover:int;
@@ -66,17 +78,10 @@ package inventory
 		private var play:FlxText;
 		private var back:FlxText;
 
-		override public function create():void 
-		{
-			var bgNum:int = Math.floor(Math.random() * Resources.BACKGROUND_COUNT) + 1;
-			var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "Anim");
-			background = new BackgroundDef() as MovieClip;
-			background.scaleX = 2.0;
-			background.scaleY = 2.0;
-			parent.addChildAt(background, 0);
-			bgColor = 0;
+		private var elementVec:Vector.<InventoryElement>;
 
-			FlxG.mouse.show();
+		private function resetElements():void
+		{
 			colors = new Dictionary();
 			colors["Non-Metals"]			= 0x80ff80;
 			colors["Other Metals"]			= 0x8080ff;
@@ -90,17 +95,27 @@ package inventory
 			colors["Actinides"]				= 0xff8000;
 			colors["Unknowns"]				= 0xffffff;
 
-			var collectedCount:int = 0;
-			for (var i:int = 1; i < ELEM_X.length; ++i) {
-				new InventoryElement(32 + ELEM_X[i] * 32, 32 + ELEM_Y[i] * 40, i);
-				var status:int = Context.getPersistentState().getElementState(i);
-				if (status == PersistentState.ELEM_COLLECTED) {
-					++collectedCount;
+			var collectedCount:int;
+			if (elementVec == null) {
+				elementVec = new Vector.<InventoryElement>();
+				collectedCount = 0;
+				for (var i:int = 1; i < ELEM_X.length; ++i) {
+					elementVec.push(new InventoryElement(32 + ELEM_X[i] * 32, 32 + ELEM_Y[i] * 40, i));
+					var status:int = Context.getPersistentState().getElementState(i);
+					if (status == PersistentState.ELEM_COLLECTED) {
+						++collectedCount;
+					}
+				}
+			} else {
+				collectedCount = 0;
+				for (i = 1; i < ELEM_X.length; ++i) {
+					elementVec[i - 1].refresh();
+					status = Context.getPersistentState().getElementState(i);
+					if (status == PersistentState.ELEM_COLLECTED) {
+						++collectedCount;
+					}
 				}
 			}
-
-			currentDescription = -1;
-			currentHover = -1;
 
 			var colPercent:Number = Math.round(100.0 * collectedCount / 118.0);
 			var currentLevel:int = Math.floor(Context.getGameData().getLevelCount() * collectedCount / (118.0 + 1.0));
@@ -111,21 +126,54 @@ package inventory
 				}
 			}
 
-			var title:FlxText = new FlxText(32 * 4, 32, 32 * 8, "Elements");
-			title.size = 40;
-			title.alignment = "center";
-
-			var stats:FlxText = new FlxText(32 * 4 - 16, 88, 32 * 9);
-			stats.size = 16;
-			stats.alignment = "center";
 			stats.text =
 			"Collected: " + collectedCount + " (" + colPercent + "%)\n" +
 			"Level " + (currentLevel + 1);
 			if (elementsToAdvance != 0) {
 				stats.text += " (need " + elementsToAdvance + " to advance)";
 			}
+		}
+
+		override public function create():void 
+		{
+			var bgNum:int = Math.floor(Math.random() * Resources.BACKGROUND_COUNT) + 1;
+			var BackgroundDef:Class = Context.getResources().getSprite("background" + bgNum + "Anim");
+			background = new BackgroundDef() as MovieClip;
+			background.scaleX = 2.0;
+			background.scaleY = 2.0;
+			parent.addChildAt(background, 0);
+			bgColor = 0;
+
+			FlxG.mouse.show();
+
+			currentDescription = -1;
+			currentHover = -1;
+
+			var title:FlxText = new FlxText(32 * 4, 32, 32 * 8, "Elements");
+			title.size = 40;
+			title.alignment = "center";
+
+			stats = new FlxText(32 * 4 - 16, 88, 32 * 9);
+			stats.size = 16;
+			stats.alignment = "center";
+
+			resetElements();
+
 			defaultGroup.add(title);
 			defaultGroup.add(stats);
+
+			helpText = new FlxText(FlxG.width - 32 - 32, 0, 32, "?");
+			helpText.size = 32;
+			helpText.alignment = "center";
+			helpText.y = FlxG.height - 40 * 2 - helpText.height * 0.5;
+			defaultGroup.add(helpText);
+			canClick = true;
+
+			resetText = new FlxText(32, 0, 32, "X");
+			resetText.size = 32;
+			resetText.alignment = "center";
+			resetText.y = FlxG.height - 40 * 2 - resetText.height * 0.5;
+			defaultGroup.add(resetText);
 
 			descriptionBanner = new FlxSprite(FlxG.width * 0.5, 0, Context.getResources().getSprite("banner1x128"));
 			descriptionBanner.scale.x = FlxG.width;
@@ -220,6 +268,22 @@ package inventory
 			defaultGroup.add(play);
 			defaultGroup.add(back);
 
+			resetDisplay = false;
+			resetWarning = new FlxText(0, FlxG.height / 4, FlxG.width, "Would you like to erase your saved game?\nWarning: this is irreversible.");
+			resetWarning.visible = false;
+			resetWarning.size = 20;
+			resetWarning.alignment = "center";
+			defaultGroup.add(resetWarning);
+			resetYes = new FlxText(FlxG.width - 64 - 80, FlxG.height - 96, 80, "Yes");
+			resetYes.size = 24;
+			resetYes.alignment = "right";
+			resetNo = new FlxText(64, FlxG.height - 96, 80, "No");
+			resetNo.size = 24;
+			resetYes.visible = false;
+			resetNo.visible = false;
+			defaultGroup.add(resetYes);
+			defaultGroup.add(resetNo);
+
 			flash = new FlxFadeIn();
 			defaultGroup.add(flash);
 		}
@@ -296,7 +360,7 @@ package inventory
 			var clicked:Boolean = false;
 
 			// draw the groups
-			if (currentHover > 0 || groupMode) {
+			if (!resetDisplay && (currentHover > 0 || groupMode)) {
 				var lineArray:Array;
 				if (groupMode) {
 					lineArray = borderLines[group];
@@ -320,7 +384,7 @@ package inventory
 				}
 
 				if (!groupMode) {
-					if (FlxG.mouse.justPressed()) {
+					if (FlxG.mouse.justPressed() && canClick) {
 						flash.start(0x80FFFFFF, 0.25, null, true);
 						groupMode = true;
 						group = Context.getGameData().getElementDefinition(currentHover).getGroup();
@@ -340,11 +404,84 @@ package inventory
 				}
 			}
 
+			if (!resetDisplay && !groupMode && helpText.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
+				if (helpText.color != 0x00FF00) {
+					helpText.color = 0x00FF00;
+				}
+				if (FlxG.mouse.justPressed() && canClick) {
+					var fadeOut:FlxFade = new FlxFade()
+					fadeOut.start(0xFF000000, 0.5, function():void
+					{
+						parent.removeChild(background);
+						FlxG.state = new HelpState();
+					});
+					defaultGroup.add(fadeOut);
+					canClick = false;
+				}
+			} else if (helpText.color != 0xFFFFFF) {
+				helpText.color = 0xFFFFFF;
+			}
+
+			if (!resetDisplay && !groupMode && resetText.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
+				if (resetText.color != 0xFF0000) {
+					resetText.color = 0xFF0000;
+				}
+				if (FlxG.mouse.justPressed() && canClick) {
+					resetDisplay = true;
+					resetWarning.visible = true;
+					resetYes.visible = true;
+					resetNo.visible = true;
+				}
+			} else if (resetText.color != 0xFFFFFF) {
+				resetText.color = 0xFFFFFF;
+			}
+
 			effectsSprite.pixels = effectsSprite.pixels;
 
 
 			if (!groupMode && currentDescription != lastDescription && currentDescription != -1) {
 				FlxG.play(Context.getResources().getSound("beep"), 0.1);
+			}
+
+			if (resetDisplay) {
+				shape = new Shape();
+				shape.graphics.beginFill(0, 0.8);
+				shape.graphics.drawRect(0, 0, FlxG.width, FlxG.height);
+				effectsSprite.pixels.draw(shape);
+
+				if (resetNo.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
+					if (resetNo.color != 0xFF0000) {
+						resetNo.color = 0xFF0000;
+					}
+					if (FlxG.mouse.justPressed()) {
+						resetDisplay = false;
+						resetWarning.visible = false;
+						resetYes.visible = false;
+						resetNo.visible = false;
+					}
+				} else {
+					if (resetNo.color != 0xFFFFFF) {
+						resetNo.color = 0xFFFFFF;
+					}
+				}
+				if (resetYes.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
+					if (resetYes.color != 0x00FF00) {
+						resetYes.color = 0x00FF00;
+					}
+					if (FlxG.mouse.justPressed()) {
+						Context.getPersistentState().reset();
+						Context.getPersistentState().save();
+						resetElements();
+						resetDisplay = false;
+						resetWarning.visible = false;
+						resetYes.visible = false;
+						resetNo.visible = false;
+					}
+				} else {
+					if (resetYes.color != 0xFFFFFF) {
+						resetYes.color = 0xFFFFFF;
+					}
+				}
 			}
 
 			if (groupMode) {
@@ -355,7 +492,7 @@ package inventory
 					if (FlxG.mouse.justPressed() && !clicked) {
 						play.visible = false;
 						back.visible = false;
-						var fadeOut:FlxFade = new FlxFade()
+						fadeOut = new FlxFade()
 						fadeOut.start(0xFF000000, 1, startLevel);
 						defaultGroup.add(fadeOut);
 						function startLevel():void

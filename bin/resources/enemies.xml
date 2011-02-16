@@ -47,9 +47,9 @@
 	<enemy	name="bullet_fire2"	sprite="fireBullet"		rotate="false"		deathSprite="explosion"	deathSound="exp#8"
 			health="1"			damage="15"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 	<enemy	name="bullet_fire3"	sprite="fireBullet"		rotate="false"		deathSprite="explosion"	deathSound="exp#8"
-			health="1"			damage="50"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
+			health="1"			damage="25"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 	<enemy	name="bullet_fire4"	sprite="fireBullet"		rotate="false"		deathSprite="explosion"	deathSound="exp#8"
-			health="1"			damage="60"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
+			health="1"			damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="true"/>
 	<enemy	name="bullet_seek"	sprite="spark"			rotate="false"		deathSprite="explosion"	deathSound="exp#8"
 			health="1000"		damage="30"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 	<enemy	name="bullet_shield"	sprite="shieldBullet"	rotate="false"	deathSprite="explosion"	deathSound="exp#8"
@@ -60,20 +60,20 @@
 			health="1"			damage="30"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="true"	invincible="false"/>
 
 	<!-- bosses -->
-	<enemy name="boss1"			sprite="boss1"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="5000"		damage="15"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss2"			sprite="boss2"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="8000"		damage="30"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss3"			sprite="boss1"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="15000"		damage="30"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss4"			sprite="boss3"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="5500"		damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss5"			sprite="boss1"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="10000"		damage="80"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss6"			sprite="boss4"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="22500"		damage="80"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss7"			sprite="boss3"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="15000"		damage="80"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
-	<enemy name="boss8"			sprite="boss4"			rotate="false"		deathSprite="explosion" deathSound="exp#8"
-			health="25000"		damage="80"				color="0xFFFFFF"	deathColor="0xFFFFFF"	deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss1"			sprite="boss1"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="5000"		damage="15"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss2"			sprite="boss2"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="8000"		damage="30"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss3"			sprite="boss1"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="15000"		damage="30"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss4"			sprite="boss3"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="5500"		damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss5"			sprite="boss1"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="18000"		damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss6"			sprite="boss4"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="13000"		damage="40"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss7"			sprite="boss3"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="15000"		damage="50"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
+	<enemy name="boss8"			sprite="boss4"			rotate="false"		deathSprite="explosionBig"	deathSound="exp#8"
+			health="25000"		damage="50"				color="0xFFFFFF"	deathColor="0xFFFFFF"		deathOnPlayerCollision="false"	invincible="false"/>
 </enemies>

@@ -168,7 +168,7 @@ package level.enemies
 			y -= height * 0.5;
 
 			if (!bullet && drops) {
-				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width * 0.5, y + height * 0.5, boss);
+				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width * 0.5, y + height * 0.5, boss, !boss);
 			}
 
 			FlxG.play(deathSound);
@@ -227,6 +227,15 @@ package level.enemies
 		public function setInvincible(inv:Boolean):void
 		{
 			invincible = inv;
+		}
+
+		public function getFleetId():int
+		{
+			if (parent == null) {
+				return -1;
+			} else {
+				return parent.getId();
+			}
 		}
 
 	}

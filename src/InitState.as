@@ -1,7 +1,6 @@
 package  
 {
 
-	import level.LevelState;
 	import menu.MenuState;
 	import org.flixel.FlxState;
 	import org.flixel.FlxG;
@@ -14,9 +13,15 @@ package
 		{
 			var vars:Object = Object(LoaderInfo(loaderInfo).parameters);
 			var uid:String = vars.user_id;
-			var savestring:String = vars.savestring;
+			var saveString:String = vars.savestring;
+			var newUser:String = vars.newUser;
 			Context.getPersistentState().setUserId(uid);
-			Context.getPersistentState().setEncodedElements(savestring);
+			Context.getPersistentState().setEncodedElements(saveString);
+			if (newUser == null || newUser == "true") {
+				Context.getPersistentState().setNewUser(true);
+			} else {
+				Context.getPersistentState().setNewUser(false);
+			}
 			Context.getGameData().load(doneLoading);
 		}
 

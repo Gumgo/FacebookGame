@@ -73,13 +73,13 @@ package level.behaviors
 							(Context.getRecycler().getNew(OrbitBehavior) as OrbitBehavior).resetMe(dict), false, false);
 					}
 
-					if (timer % 60 == 0) {
+					if (timer % 80 == 0) {
 						dict = new Dictionary();
 						dict["x"] = String(enemy.x + enemy.width * 0.5);
 						dict["y"] = String(enemy.y + enemy.height * 0.5);
 						var player:Player = (FlxG.state as LevelState).getPlayer();
 						var xVec:Number = player.x + player.width * 0.5 - (enemy.x + enemy.width * 0.5);
-						var yVec:Number = player.y + player.height * 0.5 - (enemy.y + enemy.height * 0.5);
+						var yVec:Number = player.y + player.height * 0.5 - (enemy.y + enemy.height);
 						if (xVec == 0 && yVec == 0) {
 							yVec = 1;
 						}
@@ -87,7 +87,7 @@ package level.behaviors
 						dict["speed"] = "12";
 						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 							null,
-							Context.getGameData().getEnemyDefinition("bullet_fire4"),
+							Context.getGameData().getEnemyDefinition("bullet_fire3"),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), false, false);
 					}
 

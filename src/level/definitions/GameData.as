@@ -33,6 +33,7 @@ package level.definitions
 		private var avoidDummy:AvoidBehavior;
 		private var moveDartDummy:MoveDartBehavior;
 		private var loopDummy:LoopBehavior;
+		private var followDummy:FollowBehavior;
 
 		private var boss1Dummy:Boss1Behavior;
 		private var boss2Dummy:Boss2Behavior;

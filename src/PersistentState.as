@@ -21,10 +21,14 @@ package
 		private static var currentShields:Number;
 		private static var currentDamage:Number;
 
+		private static var score:int;
+
 		private var elements:Array;
 		private var collectedCount:int;
 
 		private var userId:String;
+
+		private var newUser:Boolean;
 
 		public function PersistentState() 
 		{
@@ -36,10 +40,12 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				if (Math.random() >= 3.5 / 8.0)
+				//if (Math.random() >= 7.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
-				else { elements[i] = ELEM_COLLECTED;++collectedCount;}
+				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
+
+			score = 0;
 		}
 
 		public function setElementState(element:int, state:int):void
@@ -116,6 +122,16 @@ package
 			return currentDamage;
 		}
 
+		public function incScore(amount:int):void
+		{
+			score += amount;
+		}
+
+		public function getScore():int
+		{
+			return score;
+		}
+
 		private static const encode:String =
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 		public function getEncodedElements():String
@@ -168,16 +184,20 @@ package
 			return userId;
 		}
 
-		public function getUserVerification():String
+		public function setNewUser(nu:Boolean):void
 		{
-			const SALT:String = "vk8n4aop25ef8hx3c60h";
-			return MD5.encrypt(userId + SALT);
+			newUser = nu;
 		}
 
-		public function getEncodedElementsVerification():String
+		public function isNewUser():Boolean
 		{
-			const SALT:String = "6f32wfbm32o0ey3bwqlt";
-			return MD5.encrypt(getEncodedElements() + SALT);
+			return newUser;
+		}
+
+		public function getVerification():String
+		{
+			const SALT:String = "vk8n4aop25ef8hx3c60h";
+			return MD5.encrypt(getUserId() + getEncodedElements() + getScore() + SALT);
 		}
 
 		public function save():void
@@ -191,9 +211,9 @@ package
 			request.method = URLRequestMethod.POST;
 			var variables:URLVariables = new URLVariables();
 			variables.uid = getUserId();
-			variables.uidverify = getUserVerification();
 			variables.ss = getEncodedElements();
-			variables.ssverify = getEncodedElementsVerification();
+			variables.score = String(getScore());
+			variables.verify = getVerification();
 			request.data = variables;
 
 			var loader:URLLoader = new URLLoader(request);

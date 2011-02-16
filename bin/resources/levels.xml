@@ -120,7 +120,7 @@
 	</level>
 
 	<!-- 5 -->
-	<level fleetCount="80">
+	<level fleetCount="70">
 		<firstHalf>
 			<fleet name="L4ZigZagCenter"/>
 			<fleet name="L4ZigZagStaggeredSmall"/>
@@ -153,7 +153,7 @@
 	</level>
 
 	<!-- 6 -->
-	<level fleetCount="80">
+	<level fleetCount="70">
 		<firstHalf>
 			<fleet name="L4ZigZagCenter"/>
 			<fleet name="L4ZigZagStaggeredSmall"/>
@@ -167,7 +167,6 @@
 			<fleet name="L6TripleDipFire"/>
 			<fleet name="L5Bomb"/>
 			<fleet name="L5LinearArc"/>
-			<fleet name="L5SlowLinearCircleCW"/>
 			<fleet name="L5SlowLinearCircleCCW"/>
 		</firstHalf>
 		<secondHalf boss="L6Boss">
@@ -183,24 +182,85 @@
 			<fleet name="L6TripleDipFire"/>
 			<fleet name="L5Bomb"/>
 			<fleet name="L5LinearArc"/>
-			<fleet name="L6FastLinearCircleCW"/>
-			<fleet name="L6FastLinearCircleCCW"/>
+			<fleet name="L5SlowLinearCircleCW"/>
+			<fleet name="L5SlowLinearCircleCCW"/>
 		</secondHalf>
 	</level>
 
 	<!-- 7 -->
-	<level fleetCount="0">
+	<level fleetCount="80">
 		<firstHalf>
+			<fleet name="L6ZigZagCenter"/>
+			<fleet name="L6ZigZagStaggeredSmall"/>
+			<fleet name="L6ZigZagSides"/>
+			<fleet name="L6TopSeeker"/>
+			<fleet name="L7QuadLoopL"/>
+			<fleet name="L7QuadLoopR"/>
+			<fleet name="L7MoveDart"/>
+			<fleet name="L7MoveDartLR"/>
+			<fleet name="L3MoveDartBig"/>
+			<fleet name="L6TripleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L5LinearArc"/>
+			<fleet name="L5SlowLinearCircleCW"/>
+			<fleet name="L5SlowLinearCircleCCW"/>
 		</firstHalf>
 		<secondHalf boss="L7Boss">
+			<fleet name="L6ZigZagCenter"/>
+			<fleet name="L6ZigZagStaggeredSmall"/>
+			<fleet name="L6ZigZagSides"/>
+			<fleet name="L6TopSeeker"/>
+			<fleet name="L7QuadLoopL"/>
+			<fleet name="L7QuadLoopR"/>
+			<fleet name="L7MoveDart"/>
+			<fleet name="L7MoveDartLR"/>
+			<fleet name="L7MoveDartBig"/>
+			<fleet name="L6TripleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L5LinearArc"/>
+			<fleet name="L5SlowLinearCircleCW"/>
+			<fleet name="L5SlowLinearCircleCCW"/>
+			<fleet name="L7Follow"/>
 		</secondHalf>
 	</level>
 
 	<!-- 8 -->
-	<level fleetCount="0">
+	<level fleetCount="80">
 		<firstHalf>
+			<fleet name="L6ZigZagCenter"/>
+			<fleet name="L6ZigZagStaggeredSmall"/>
+			<fleet name="L6ZigZagSides"/>
+			<fleet name="L6TopSeeker"/>
+			<fleet name="L7QuadLoopL"/>
+			<fleet name="L7QuadLoopR"/>
+			<fleet name="L7MoveDart"/>
+			<fleet name="L7MoveDartLR"/>
+			<fleet name="L7MoveDartBig"/>
+			<fleet name="L6TripleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L8LinearArc"/>
+			<fleet name="L5SlowLinearCircleCW"/>
+			<fleet name="L5SlowLinearCircleCCW"/>
+			<fleet name="L7Follow"/>
+			<fleet name="L8Avoid"/>
 		</firstHalf>
 		<secondHalf boss="L8Boss">
+			<fleet name="L6ZigZagCenter"/>
+			<fleet name="L6ZigZagStaggeredSmall"/>
+			<fleet name="L6ZigZagSides"/>
+			<fleet name="L6TopSeeker"/>
+			<fleet name="L7QuadLoopL"/>
+			<fleet name="L7QuadLoopR"/>
+			<fleet name="L7MoveDart"/>
+			<fleet name="L7MoveDartLR"/>
+			<fleet name="L7MoveDartBig"/>
+			<fleet name="L6TripleDipFire"/>
+			<fleet name="L5Bomb"/>
+			<fleet name="L5LinearArc"/>
+			<fleet name="L8FastLinearCircleCW"/>
+			<fleet name="L8FastLinearCircleCCW"/>
+			<fleet name="L7Follow"/>
+			<fleet name="L8Avoid"/>
 		</secondHalf>
 	</level>
 

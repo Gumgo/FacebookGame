@@ -24,6 +24,8 @@ package level.enemies
 
 		private var endTimer:int;	// counts down once the level is beaten
 
+		private var fleetCounter:int;	// the total fleet count
+
 		private const FLEET_OVERLAP_TIME:int = 30;
 		private const FLEET_OVERLAP_RANDOM:int = 60;
 		private const FLEET_MIN_ENEMIES:int = 5;
@@ -52,6 +54,7 @@ package level.enemies
 		public function start():void
 		{
 			endTimer = -1;
+			fleetCounter = 0;
 		}
 
 		public function decEnemies():void {
@@ -125,7 +128,8 @@ package level.enemies
 				} else {
 					last = true;
 					if (boss != null) {
-						return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(boss), true);
+						return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(boss), fleetCounter, true);
+						++fleetCounter;
 					} // else continue on
 				}
 			}
@@ -146,7 +150,8 @@ package level.enemies
 			// back up the indices
 			prevFleet = array[index];
 
-			return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(array[index]));
+			return (Context.getRecycler().getNew(Fleet) as Fleet).resetMe(this, Context.getGameData().getFleetDefinition(array[index]), fleetCounter);
+			++fleetCounter;
 		}
 	}
 

@@ -16,18 +16,20 @@ package level.enemies
 
 		private var remaining:int;
 		private var tick:int;
+		private var fleetId:int;
 
 		public function Fleet()
 		{
 		}
 
-		public function resetMe(parent:LevelGenerator, definition:FleetDefinition, boss:Boolean = false):Fleet
+		public function resetMe(parent:LevelGenerator, definition:FleetDefinition, fleetId:int, boss:Boolean = false):Fleet
 		{
 			this.parent = parent;
 			this.enemies = definition.getEnemies();
 			this.behaviors = definition.getBehaviors();
 			this.behaviorProperties = definition.getBehaviorProperties();
 			this.times = definition.getTimes();
+			this.fleetId = fleetId;
 			this.boss = boss;
 			remaining = enemies.length;
 			tick = 0;
@@ -66,6 +68,11 @@ package level.enemies
 				parent.fleetFinished(this);
 				Context.getRecycler().recycle(this);
 			}
+		}
+
+		public function getId():int
+		{
+			return fleetId;
 		}
 	}
 }

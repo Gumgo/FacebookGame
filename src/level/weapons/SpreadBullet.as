@@ -18,7 +18,7 @@ package level.weapons
 
 		private var points:Vector.<Number>;
 
-		private static const DAMAGE:int = 25;
+		private static const DAMAGE:int = 50;
 
 		public function SpreadBullet()
 		{
@@ -29,8 +29,8 @@ package level.weapons
 		{
 			super.resetMeSuper("spread", DAMAGE * (FlxG.state as LevelState).getPlayer().getDamageMultiplier(),
 				x, y, Context.getResources().getSprite("blob"));
-			this.x -= width / 2;
-			this.y -= height / 2;
+			this.x -= width * 0.5;
+			this.y -= height * 0.5;
 			turnDir = Math.random() >= 0.5;
 			direction = dir;
 			blend = BlendMode.DARKEN;

@@ -25,6 +25,11 @@ package level.behaviors
 		public function resetMe(properties:Dictionary):ZigZagBehavior
 		{
 			super.resetMeSuper(properties);		
+			return this;
+		}
+
+		override public function init(enemy:Enemy):void
+		{
 			if ( getProperty("shoots") == null) {
 				shoots = true;
 			} else {
@@ -33,11 +38,7 @@ package level.behaviors
 			if (shoots) {
 				bullet = getProperty("bullet");
 			}
-			return this;
-		}
 
-		override public function init(enemy:Enemy):void
-		{
 			enemy.y = -enemy.height;
 			offset = Number(getProperty("offset")) - enemy.width * 0.5;
 			time = 0;

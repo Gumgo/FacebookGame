@@ -68,11 +68,6 @@ package level
 
 		private var tick:int;
 		private var lvl:int;
-		
-		override public function LevelState(level:int):void
-		{
-			lvl = level;
-		}
 
 		
 		override public function create():void
@@ -405,7 +400,7 @@ package level
 			defaultGroup.add(fadeIn);
 
 			var collected:int = Context.getPersistentState().getCollectedElementCount();
-			//var lvl:int = Math.floor(Context.getGameData().getLevelCount() * collected / (118.0 + 1.0));
+			var lvl:int = Math.floor(Context.getGameData().getLevelCount() * collected / (118.0 + 1.0));
 			levelGenerator = new LevelGenerator(lvl);
 			itemGenerator = new ItemGenerator();
 

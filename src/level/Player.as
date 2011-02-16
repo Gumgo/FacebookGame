@@ -209,7 +209,7 @@ package level
 		public function onDie():void
 		{
 			angle = 0;
-			loadGraphic(Context.getResources().getSprite("explosion"), true);
+			loadGraphic(Context.getResources().getSprite("explosionBig"), true);
 			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 			play("die");
 			dead = true;

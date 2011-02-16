@@ -1,5 +1,7 @@
 package menu
 {
+	import controls.Controls;
+	import help.HelpState;
 	import inventory.InventoryState;
 	import org.flixel.*;
 	import flash.display.MovieClip;
@@ -10,11 +12,7 @@ package menu
 		private var background:MovieClip;
 		private var timer:int;
 		private var instructions:FlxText;
-		private var menu_options:FlxText;
-		private var help:FlxText;
 		private var fadeIn:FlxFadeIn;
-		private var testButton:FlxButton;
-		private var testSprite:FlxSprite;
 
 		override public function create():void
 		{
@@ -29,30 +27,12 @@ package menu
 			background.scaleY = 2.0;
 			parent.addChildAt(background, 0);
 			bgColor = 0;
-			
-			//var title:FlxText;
-			//title = new FlxText(0, 16, FlxG.width, "NUCLEOS");
-			//title.setFormat (null, 24, 0xFFFFFFFF, "center");
-			//add(title);
- 
-			instructions = new FlxText(0, FlxG.height - 88, FlxG.width, "Press Space To Play");
-			instructions.setFormat (null, 14, 0xFFFFFFFF, "center");
+
+			instructions = new FlxText(0, FlxG.height * 0.75, FlxG.width, "Press space to play");
+			instructions.setFormat(null, 20, 0xFFFFFFFF, "center");
 			instructions.alpha = 0.0;
 			add(instructions);
-			
-			
-			// other menu options, like music, controls
-			menu_options = new FlxText(0, FlxG.height - 74, FlxG.width, "Press x To Enter Menu Options");
-			menu_options.setFormat (null, 14, 0xFFFFFFFF, "center");
-			menu_options.alpha = 0.0;
-			add(menu_options);
-			
-			// Help state
-			help = new FlxText(0, FlxG.height - 60, FlxG.width, "Press s To Enter Help Options");
-			help.setFormat (null, 14, 0xFFFFFFFF, "center");
-			help.alpha = 0.0;
-			add(help);
-			
+
 			timer = -20;
 			fadeIn = new FlxFadeIn();
 			fadeIn.start(0xFF000000, 3, function():void
@@ -65,18 +45,25 @@ package menu
 
 			FlxG.playMusic(Context.getResources().getSound("menu"));
 		}
-		
+
 		override public function update():void
 		{
 			if (instructions.alpha == 1.0) {
-				if (FlxG.keys.justPressed("SPACE") && timer == 0)
-				{
-					xToInventoryState();
-				}  /*else if ( FlxG.keys.justPressed("x")) {
-					//FlxG.state = new FlxState();
-				}  else {
-					//FlxG.state = new FlxState();
-				}*/
+				if (FlxG.keys.justPressed("SPACE") && timer == 0) {
+					timer = -1;
+					var fadeOut:FlxFade = new FlxFade();
+					fadeOut.start(0xFF000000, 1, function():void
+					{
+						parent.removeChild(background);
+						if (Context.getPersistentState().isNewUser()) {
+							Context.getPersistentState().setNewUser(false);
+							FlxG.state = new HelpState();
+						} else {
+							FlxG.state = new InventoryState();
+						}
+					});
+					defaultGroup.add(fadeOut);
+				}
 			}
 
 			if (timer > 0) {
@@ -84,29 +71,15 @@ package menu
 			} else if (timer > -10) {
 				if (instructions.alpha < 1.0) {
 					instructions.alpha += 0.05;
-					menu_options.alpha += 0.05;
-					help.alpha += 0.05;
 					if (instructions.alpha > 1.0) {
 						instructions.alpha = 1.0;
-						menu_options.alpha = 1.0;
-						help.alpha = 1.0;
 					}
 				}
 			}
 
 			super.update();
 		}
-
-		private function xToInventoryState():void {
-			timer = -1;
-			var fadeOut:FlxFade = new FlxFade();
-			fadeOut.start(0xFF000000, 1, function():void
-			{
-				parent.removeChild(background);
-				FlxG.state = new InventoryState();
-			});
-			defaultGroup.add(fadeOut);
-		}
+ 
  
 		public function MenuState()
 		{

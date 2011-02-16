@@ -8,18 +8,20 @@ package level
 	{
 
 		private var number:int;
+		private var applyEffect:Boolean;
 
 		public function ElementItem()
 		{
 			super();
 		}
 
-		public function resetMe(x:int, y:int, number:int):ElementItem
+		public function resetMe(x:int, y:int, number:int, applyEffect:Boolean):ElementItem
 		{
 			var def:ElementDefinition = Context.getGameData().getElementDefinition(number);
 			this.resetMeSuper(x, y, def.getSprite());
 			color = def.getColor();
 			this.number = number;
+			this.applyEffect = applyEffect;
 			speed = 2;
 
 			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
@@ -34,6 +36,11 @@ package level
 			(FlxG.state as LevelState).getLevelText().setText(
 				Context.getGameData().getElementDefinition(number).getName() + " (" + number + ") collected!", 0x00FF00, 180);
 			(FlxG.state as LevelState).collectElement(number);
+
+			if (applyEffect) {
+				//...
+			}
+
 			removeSelf();
 		}
 

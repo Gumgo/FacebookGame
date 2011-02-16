@@ -8,12 +8,13 @@ package inventory
 	public class InventoryElement extends FlxSprite 
 	{
 		private var number:int;
+		private var symbolLabel:FlxText;
 		
 		public function InventoryElement(X:Number, Y:Number, number:int) 
 		{
 			super(X, Y, Context.getResources().getSprite("tableEntry"));
 			var def:ElementDefinition = Context.getGameData().getElementDefinition(number);
-			var symbolLabel:FlxText = new FlxText(X, Y + height / 2, width, number + "\n" + def.getSymbol());
+			symbolLabel = new FlxText(X, Y + height / 2, width, number + "\n" + def.getSymbol());
 
 			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
 				symbolLabel.text = "?";
@@ -33,6 +34,25 @@ package inventory
 
 			FlxG.state.defaultGroup.add(this);
 			FlxG.state.defaultGroup.add(symbolLabel);
+		}
+
+		public function refresh():void
+		{
+			var def:ElementDefinition = Context.getGameData().getElementDefinition(number);
+			symbolLabel.text = number + "\n" + def.getSymbol();
+			symbolLabel.y = y + height / 2
+
+			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_UNENCOUNTERED) {
+				symbolLabel.text = "?";
+			}
+
+			if (Context.getPersistentState().getElementState(number) == PersistentState.ELEM_COLLECTED) {
+				color = (FlxG.state as InventoryState).groupColor(def.getGroup());
+			} else {
+				color = 0x808080;
+			}
+
+			symbolLabel.y -= symbolLabel.height / 2;
 		}
 
 		override public function update():void

@@ -17,8 +17,8 @@ package level.behaviors
 
 		private var xVel:Number;
 		private var yVel:Number;
-		private const MAX_VEL:Number = 6;
-		private const ACCEL:Number = 0.8;
+		private const MAX_VEL:Number = 3;
+		private const ACCEL:Number = 0.4;
 
 		private var attack:int;
 		private var timer:int;

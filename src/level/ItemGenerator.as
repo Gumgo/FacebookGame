@@ -16,7 +16,7 @@ package level
 		private var nextElementTick:int;
 
 		private const NOWEAPON_SPACING:int = 5 * 60;
-		private const WEAPON_SPACING:int = 60 * 60;
+		private const WEAPON_SPACING:int = 35 * 60;
 		private const POWERUP_SPACING:int = 40 * 60;
 		private const ELEMENT_SPACING:int = 15 * 60
 
@@ -24,6 +24,7 @@ package level
 		private const UNENCOUNTERED_WEIGHT:Number = 3.0;
 		private const COLLECTED_WEIGHT:Number = 1.0;
 		private var totalWeight:Number;
+		private var totalNewWeight:Number;
 
 		public function ItemGenerator()
 		{
@@ -33,16 +34,18 @@ package level
 
 			var elements:Vector.<int> = Context.getLevelElements();
 			totalWeight = 0;
+			totalNewWeight = 0;
 			for (var i:int = 0; i < elements.length; ++i) {
 				if (Context.getPersistentState().getElementState(elements[i]) == PersistentState.ELEM_COLLECTED) {
 					totalWeight += COLLECTED_WEIGHT;
 				} else {
 					totalWeight += UNENCOUNTERED_WEIGHT;
+					totalNewWeight += UNENCOUNTERED_WEIGHT;
 				}
 			}
 		}
 
-		public function randomSpawn(x:int, y:int, guaranteeElement:Boolean = false):void
+		public function randomSpawn(x:int, y:int, guaranteeElement:Boolean = false, applyEffect:Boolean = true):void
 		{
 			var tick:int = (FlxG.state as LevelState).getTick();
 			if (tick > nextWeaponTick && !guaranteeElement) {
@@ -82,19 +85,28 @@ package level
 			} else if (tick > nextElementTick || guaranteeElement) {
 				var elements:Vector.<int> = Context.getLevelElements();
 				// spawn a random (weighted) element
-				var randElem:Number = Math.random() * totalWeight;
-				var totalSoFar:Number = 0;
-				for (var i:int = 0; i < elements.length; ++i) {
-					if (Context.getPersistentState().getElementState(elements[i]) == PersistentState.ELEM_COLLECTED) {
-						totalSoFar += COLLECTED_WEIGHT;
-					} else {
-						totalSoFar += UNENCOUNTERED_WEIGHT;
+				var randElem:Number = Math.random() * (guaranteeElement ? totalNewWeight : totalWeight);
+				if (!guaranteeElement || totalNewWeight > 0) {
+					var totalSoFar:Number = 0;
+					for (var i:int = 0; i < elements.length; ++i) {
+						if (Context.getPersistentState().getElementState(elements[i]) == PersistentState.ELEM_COLLECTED) {
+							if (!guaranteeElement) {
+								totalSoFar += COLLECTED_WEIGHT;
+							}
+						} else {
+							totalSoFar += UNENCOUNTERED_WEIGHT;
+						}
+						if (randElem < totalSoFar) {
+							(Context.getRecycler().getNew(ElementItem) as ElementItem).resetMe(x, y, elements[i], applyEffect);
+							nextElementTick = tick + ELEMENT_SPACING * (1.0 + Math.random() * 0.5);
+							return;
+						}
 					}
-					if (randElem < totalSoFar) {
-						(Context.getRecycler().getNew(ElementItem) as ElementItem).resetMe(x, y, elements[i]);
-						nextElementTick = tick + ELEMENT_SPACING * (1.0 + Math.random() * 0.5);
-						return;
-					}
+				} else {
+					// no new ones left; just pick a random element
+					index = Math.floor(Math.random() * elements.length);
+					(Context.getRecycler().getNew(ElementItem) as ElementItem).resetMe(x, y, elements[index], applyEffect);
+					nextElementTick = tick + ELEMENT_SPACING * (1.0 + Math.random() * 0.5);
 				}
 			}
 		}

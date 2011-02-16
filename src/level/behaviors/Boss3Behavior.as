@@ -21,14 +21,12 @@ package level.behaviors
 		private var attack:int;
 		private const ARRIVE:int = -2;
 		private const THINKING:int = -1;
-		private const ATTACK_CREATE_SPARKS:int = 0;
-		private const ATTACK_SWEEP_DOWN:int = 1;
-		private const ATTACK_SWEEP_CIRCLE:int = 2;
-		private const ATTACK_BOMBARD_BULLETS:int = 3;
-		private const ATTACK_ZERO_IN:int = 4;
-		private const ATTACK_SPRAY_BULLETS:int = 5;
-		private const ATTACK_BURST_BULLETS:int = 6;
-		private const ATTACK_COUNT:int = 7;
+		private const ATTACK_SWEEP_DOWN:int = 0;
+		private const ATTACK_SWEEP_CIRCLE:int = 1;
+		private const ATTACK_BOMBARD_BULLETS:int = 2;
+		private const ATTACK_ZERO_IN:int = 3;
+		private const ATTACK_SPRAY_BULLETS:int = 4;
+		private const ATTACK_COUNT:int = 5;
 
 		private const Y_TOP:Number = 64;
 		private const X_PAD:Number = 96;
@@ -87,9 +85,6 @@ package level.behaviors
 			case THINKING:
 				think(enemy, player);
 				break;
-			case ATTACK_CREATE_SPARKS:
-				createSparks(enemy, player);
-				break;
 			case ATTACK_SWEEP_DOWN:
 				sweepDown(enemy, player);
 				break;
@@ -104,9 +99,6 @@ package level.behaviors
 				break;
 			case ATTACK_SPRAY_BULLETS:
 				sprayBullets(enemy, player);
-				break;
-			case ATTACK_BURST_BULLETS:
-				burstBullets(enemy, player);
 				break;
 			}
 		}
@@ -180,36 +172,6 @@ package level.behaviors
 			}
 		}
 
-		private function createSparks(enemy:Enemy, player:Player):void
-		{
-			var bullets:Array = (FlxG.state as LevelState).getEnemyGroup().members;
-			for (var i:int = 0; i < bullets.length; ++i) {
-				if (bullets[i] != null) {
-					var bullet:Enemy = bullets[i] as Enemy;
-					if (bullet.getBehavior() is SeekBehavior) {
-						phase = PHASE_DONE;
-						return;
-					}
-				}
-			}
-			var dict:Dictionary = new Dictionary();
-			dict["x"] = String(enemy.x + enemy.width / 2 - 24);
-			dict["y"] = String(enemy.y + enemy.height);
-			(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
-				null,
-				Context.getGameData().getEnemyDefinition("bullet_seek"),
-				(Context.getRecycler().getNew(SeekBehavior) as SeekBehavior).resetMe(dict), false, false);
-			dict = new Dictionary();
-			dict["x"] = String(enemy.x + enemy.width / 2 + 24);
-			dict["y"] = String(enemy.y + enemy.height);
-			(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
-				null,
-				Context.getGameData().getEnemyDefinition("bullet_seek"),
-				(Context.getRecycler().getNew(SeekBehavior) as SeekBehavior).resetMe(dict), false, false);
-
-			phase = PHASE_DONE;
-		}
-
 		private function sweepDown(enemy:Enemy, player:Player):void
 		{
 			if (phase == 0) {
@@ -218,14 +180,12 @@ package level.behaviors
 			} else if (phase == 1) {
 				enemy.y += speedY;
 				speedY += 0.5;
-				slideToX(enemy, player.x + player.width * 0.5, 0.1, 6);
 				if (speedY >= 0.0) {
 					phase = 2;
 				}
 			} else if (phase == 2) {
 				enemy.y += speedY;
 				speedY += 2.0;
-				slideToX(enemy, player.x + player.width * 0.5, 0.1, 6);
 				if (speedY > 16) {
 					speedY = 16;
 				}
@@ -268,7 +228,6 @@ package level.behaviors
 				var yRad:Number = FlxG.height * 0.5 - Y_TOP;
 				xPos *= xRad;
 				yPos *= yRad;
-				var oldRot:Number = rot;
 				rot += 0.01;
 				if (rot >= 1) {
 					phase = 3;
@@ -276,20 +235,6 @@ package level.behaviors
 				}
 				enemy.x = FlxG.width * 0.5 + xPos - enemy.width * 0.5;
 				enemy.y = FlxG.height * 0.5 + yPos - enemy.height * 0.5;
-
-				if (oldRot < 0.5 && rot >= 0.5) {
-					for (var i:int = -1; i <= 1; ++i) {
-						var dict:Dictionary = new Dictionary();
-						dict["x"] = String(FlxG.width * 0.5);
-						dict["y"] = String(FlxG.height * 0.5 + yRad - enemy.height * 0.5);
-						dict["speed"] = String(12);
-						dict["dir"] = String(90 + i * 30);
-						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
-							null,
-							Context.getGameData().getEnemyDefinition("bullet_d20"),
-							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
-					}
-				}
 			} else if (phase == 3) {
 				enemy.x += speedX;
 				speedX += 0.5;
@@ -310,19 +255,17 @@ package level.behaviors
 					dict["x"] = String(enemy.x + enemy.width / 2 - 24);
 					dict["y"] = String(enemy.y + enemy.height);
 					dict["speed"] = String(12);
-					dict["dir"] = String( -90 + 20 * (timer / 5 - 1));
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("bullet_fire2"),
+						Context.getGameData().getEnemyDefinition("bullet_fire"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 					dict = new Dictionary();
 					dict["x"] = String(enemy.x + enemy.width / 2 + 24);
 					dict["y"] = String(enemy.y + enemy.height);
 					dict["speed"] = String(12);
-					dict["dir"] = String( -90 - 20 * (timer / 5 - 1));
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("bullet_fire2"),
+						Context.getGameData().getEnemyDefinition("bullet_fire"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 
 				}
@@ -348,22 +291,20 @@ package level.behaviors
 				timer = 45;
 				phase = 1;
 			} else if (phase == 1) {
+				var ang1:Number = rot + timer;
+				var ang2:Number = rot - timer;
+				var effects:BitmapData = (FlxG.state as LevelState).getEffects();
 				var shape:Shape = new Shape();
 				var green:uint = 0xFF * (timer / 45.0);
 				shape.graphics.lineStyle(2.0, 0xFF0000 | green << 8, 0.9);
-				for (var i:int = -1; i <= 1; ++i) {
-					var ang1:Number = rot + i * 45 + timer * 0.5;
-					var ang2:Number = rot + i * 45 - timer * 0.5;
-					var effects:BitmapData = (FlxG.state as LevelState).getEffects();
-					for (var t:int = 0; t < 2; ++t) {
-						var ang:Number = (t == 0) ? ang1 : ang2;
-						var xDir:Number = Math.cos(ang * Math.PI / 180.0);
-						var yDir:Number = Math.sin(ang * Math.PI / 180.0);
-						var xTo:Number = xCtr + xDir * (FlxG.width + FlxG.height);
-						var yTo:Number = yCtr + yDir * (FlxG.width + FlxG.height);
-						shape.graphics.moveTo(xCtr, yCtr);
-						shape.graphics.lineTo(xTo, yTo);
-					}
+				for (var i:int = 0; i < 2; ++i) {
+					var ang:Number = (i == 0) ? ang1 : ang2;
+					var xDir:Number = Math.cos(ang * Math.PI / 180.0);
+					var yDir:Number = Math.sin(ang * Math.PI / 180.0);
+					var xTo:Number = xCtr + xDir * (FlxG.width + FlxG.height);
+					var yTo:Number = yCtr + yDir * (FlxG.width + FlxG.height);
+					shape.graphics.moveTo(xCtr, yCtr);
+					shape.graphics.lineTo(xTo, yTo);
 				}
 				effects.draw(shape);
 				--timer;
@@ -373,26 +314,24 @@ package level.behaviors
 				}
 			} else if (phase == 2) {
 				var boltShape:Shape = new Shape();
+				boltShape.graphics.beginBitmapFill(boltPixels);
+				boltShape.graphics.drawRect(0, 0, boltPixels.width, FlxG.width + FlxG.height);
 				colorTf.redMultiplier = colorTf.greenMultiplier = 1.0;
 				colorTf.blueMultiplier = 0.0;
 				colorTf.alphaMultiplier = timer / 10.0;
-				for (i = -1; i <= 1; ++i) {
-					boltShape.graphics.beginBitmapFill(boltPixels);
-					boltShape.graphics.drawRect(0, 0, boltPixels.width, FlxG.width + FlxG.height);
-					matrix.identity();
-					matrix.translate( -boltPixels.width * 0.5, 0);
-					matrix.rotate( -Math.PI * 0.5 + (rot + i * 45) * Math.PI / 180.0);
-					matrix.translate(xCtr, yCtr);
-					(FlxG.state as LevelState).getEffects().draw(boltShape, matrix, colorTf);
+				matrix.identity();
+				matrix.translate( -boltPixels.width * 0.5, 0);
+				matrix.rotate( -Math.PI * 0.5 + rot * Math.PI / 180.0);
+				matrix.translate(xCtr, yCtr);
+				(FlxG.state as LevelState).getEffects().draw(boltShape, matrix, colorTf);
 
-					if (timer == 10) {
-						matrix.invert();
-						point.x = player.x + player.width * 0.5;
-						point.y = player.y + player.height * 0.5;
-						point = matrix.transformPoint(point);
-						if (point.y >= -32 && point.x >= 0.0 && point.x < boltPixels.width + 32) {
-							player.adjustHealth( -40);
-						}
+				if (timer == 10) {
+					matrix.invert();
+					point.x = player.x + player.width * 0.5;
+					point.y = player.y + player.height * 0.5;
+					point = matrix.transformPoint(point);
+					if (point.y >= -32 && point.x >= 0.0 && point.x < boltPixels.width + 32) {
+						player.adjustHealth( -20);
 					}
 				}
 
@@ -421,43 +360,11 @@ package level.behaviors
 					dict["dir"] = String(270.0 - 60.0 + 120.0 * (timer / 120.0));
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						null,
-						Context.getGameData().getEnemyDefinition("bullet_fire2"),
+						Context.getGameData().getEnemyDefinition("bullet_fire"),
 						(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
 				}
 				timer += 3;
 				if (timer == 120) {
-					phase = PHASE_DONE;
-				}
-			}
-		}
-
-		private function burstBullets(enemy:Enemy, player:Player):void
-		{
-			if (phase == 0) {
-				if (slideToX(enemy, enemy.width * 0.5, 0.1, 12)) {
-					phase = 1;
-					timer = 15;
-				}
-			} else if (phase == 1) {
-				enemy.x += 6;
-				if (timer == 15) {
-					timer = 0;
-					for (var i:int = -1; i <= 1; ++i) {
-						var dict:Dictionary = new Dictionary();
-						dict["x"] = String(enemy.x + enemy.width * 0.5);
-						dict["y"] = String(enemy.y + enemy.height);
-						dict["speed"] = String(12);
-						dict["dir"] = String(-90 + i * 2);
-						(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
-							null,
-							Context.getGameData().getEnemyDefinition("bullet_fire2"),
-							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
-					}
-				} else {
-					++timer;
-				}
-				if (enemy.x >= FlxG.width - enemy.width * 0.5) {
-					enemy.x = FlxG.width - enemy.width * 0.5;
 					phase = PHASE_DONE;
 				}
 			}

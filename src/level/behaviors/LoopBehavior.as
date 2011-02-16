@@ -19,6 +19,7 @@ package level.behaviors
 		private var dir:Number;
 		private var shoot:int;
 		private var shootTimer:int;
+		private var dropMine:Boolean;
 
 		public function LoopBehavior()
 		{
@@ -34,6 +35,9 @@ package level.behaviors
 		override public function init(enemy:Enemy):void
 		{
 			bullet = getProperty("bullet");
+			if (getProperty("mine") != null) {
+				dropMine = getProperty("mine") == "true" ? true : false;
+			}
 
 			shoot = -1;
 			dir = 5;
@@ -101,6 +105,19 @@ package level.behaviors
 					--shoot;
 				} else {
 					--shootTimer;
+				}
+			}
+
+			if (dropMine && xCtr >= FlxG.width * 0.1 && xCtr < FlxG.width * 0.9) {
+				if (Math.random() < 0.002) {
+					dict = new Dictionary();
+					dict["x"] = String(enemy.x + enemy.width * 0.5);
+					dict["y"] = String(enemy.y + enemy.height * 0.5);
+					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
+						null,
+						Context.getGameData().getEnemyDefinition("bullet_mine"),
+						(Context.getRecycler().getNew(MineBehavior) as MineBehavior).resetMe(dict), false, false);
+					dropMine = false;
 				}
 			}
 

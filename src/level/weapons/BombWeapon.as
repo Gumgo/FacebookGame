@@ -11,7 +11,7 @@ package level.weapons
 		override public function shoot(player:Player):void
 		{
 			if (timer == 0) {
-				timer = 5;
+				timer = 3;
 				(Context.getRecycler().getNew(BombBullet) as BombBullet).resetMe(player.x + player.width / 2, player.y + player.height / 2);
 			}
 		}

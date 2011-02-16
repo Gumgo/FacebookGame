@@ -71,6 +71,9 @@ package level
 				point.x -= (outline.width - width) * 0.5;
 				point.y -= (outline.height - height) * 0.5;
 				matrix.identity();
+				matrix.translate( -outline.width * 0.5, -outline.height * 0.5);
+				matrix.rotate(angle * Math.PI / 180.0);
+				matrix.translate( outline.width * 0.5, outline.height * 0.5);
 				matrix.translate(point.x, point.y);
 				colorTf.alphaMultiplier =
 					(Context.getPersistentState().getCurrentShields() - PersistentState.SHIELDS_MIN) /
@@ -99,12 +102,16 @@ package level
 					secondaryWeapon.update();
 				}
 
+				var tilt:int = 0;
+
 				if (FlxG.keys.LEFT) {
 					x -= 8;
+					--tilt;
 				}
 				
 				if (FlxG.keys.RIGHT) {
 					x += 8;
+					++tilt;
 				}
 				if (FlxG.keys.UP) {
 					y -= 8;
@@ -117,6 +124,18 @@ package level
 					if (secondaryWeapon != null) {
 						secondaryWeapon.shoot(this);
 					}
+				}
+
+				if (tilt == 0) {
+					if (angle > 0) {
+						angle = Math.max(0, angle - 2);
+					} else if (angle < 0) {
+						angle = Math.min(0, angle + 2);
+					}
+				} else if (tilt == 1) {
+					angle = Math.min(6, angle + 2);
+				} else if (tilt == -1) {
+					angle = Math.max( -6, angle - 2);
 				}
 
 				if (x < 0) {
@@ -189,6 +208,7 @@ package level
 
 		public function onDie():void
 		{
+			angle = 0;
 			loadGraphic(Context.getResources().getSprite("explosion"), true);
 			addAnimation("die", [0, 1, 2, 3, 4, 5, 6, 7], 30, false);
 			play("die");

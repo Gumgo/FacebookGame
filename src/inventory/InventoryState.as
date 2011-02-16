@@ -44,6 +44,7 @@ package inventory
 		private var descriptionText:FlxText;
 		private var descriptionTextRight:FlxText;
 
+
 		private var currentDescription:int;
 		private var currentHover:int;
 
@@ -60,9 +61,14 @@ package inventory
 
 		private var groupMode:Boolean;
 		private var group:String;
+		private var groupNum:Dictionary;
+		private var groupDifficulty:Dictionary;
 		private var descriptions:Dictionary;
+		private var groupBonus:Dictionary;
 		private var groupText:FlxText;
 		private var descText:FlxText;
+		private var difficultyText:FlxText;
+		private var bonusText:FlxText;
 		private var play:FlxText;
 		private var back:FlxText;
 
@@ -90,6 +96,45 @@ package inventory
 			colors["Actinides"]				= 0xff8000;
 			colors["Unknowns"]				= 0xffffff;
 
+			groupNum = new Dictionary;
+			groupNum["Non-Metals"]				= 1;
+			groupNum["Other Metals"]			= 2;
+			groupNum["Metalloids"]				= 3;
+			groupNum["Alkali Metals"]			= 4;
+			groupNum["Alkaline Earth Metals"]	= 5;
+			groupNum["Transition Metals"]		= 1;
+			groupNum["Noble Gases"]				= 1;
+			groupNum["Halogens"]				= 1;
+			groupNum["Lanthanides"]			 	= 1;
+			groupNum["Actinides"]				= 1;
+			groupNum["Unknowns"]				= 1;
+			
+			groupDifficulty = new Dictionary;
+			groupDifficulty["Non-Metals"]				= "1 (easy)";
+			groupDifficulty["Other Metals"]				= "2 (mild)";
+			groupDifficulty["Metalloids"]				= "3 (hard)";
+			groupDifficulty["Alkali Metals"]			= "4 (brutal)";
+			groupDifficulty["Alkaline Earth Metals"]	= "5 (insane)";
+			groupDifficulty["Transition Metals"]		= "UNKNOWN";
+			groupDifficulty["Noble Gases"]				= "UNKNOWN";
+			groupDifficulty["Halogens"]					= "UNKNOWN";
+			groupDifficulty["Lanthanides"]			 	= "UNKNOWN";
+			groupDifficulty["Actinides"]				= "UNKNOWN";
+			groupDifficulty["Unknowns"]					= "UNKNOWN";		
+
+			groupBonus = new Dictionary;
+			groupBonus["Non-Metals"]			= "Increased Health";
+			groupBonus["Other Metals"]			= "Increased Shields";
+			groupBonus["Metalloids"]			= "Increased Health";
+			groupBonus["Alkali Metals"]			= "Increased Damage";
+			groupBonus["Alkaline Earth Metals"]	= "Increased Damage";
+			groupBonus["Transition Metals"]		= "Increased Shields";
+			groupBonus["Noble Gases"]			= "Increased Health";
+			groupBonus["Halogens"]				= "Increased Damage";
+			groupBonus["Lanthanides"]			= "Increased Health";
+			groupBonus["Actinides"]				= "Increased Damage";
+			groupBonus["Unknowns"]				= "UNKNOWN";	
+			
 			var collectedCount:int = 0;
 			for (var i:int = 1; i < ELEM_X.length; ++i) {
 				new InventoryElement(32 + ELEM_X[i] * 32, 32 + ELEM_Y[i] * 40, i);
@@ -119,11 +164,11 @@ package inventory
 			stats.size = 16;
 			stats.alignment = "center";
 			stats.text =
-			"Collected: " + collectedCount + " (" + colPercent + "%)\n" +
+			"Collected: " + collectedCount + " (" + colPercent + "%)\n";/* +
 			"Level " + (currentLevel + 1);
 			if (elementsToAdvance != 0) {
 				stats.text += " (need " + elementsToAdvance + " to advance)";
-			}
+			}*/
 			defaultGroup.add(title);
 			defaultGroup.add(stats);
 
@@ -191,10 +236,10 @@ package inventory
 			groupMode = false;
 
 			descriptions = new Dictionary();
-			descriptions["Non-Metals"]				= "Non-metals, unlike metals, are brittle, unmalleable, and poor electrical and heat conductors. At room temperature, these elements are either gases or solids. They share or gain their valence electrons easily in contrast to metals who easily lose their electrons.";
-			descriptions["Other Metals"]			= "Unlike transition metals, these seven elements only have valence electrons in their outermost shell. These elements are opaque, solid, and are relatively dense. Like all metals, transition metals are malleable, ductile, and good electrical and heat conductors.";
-			descriptions["Metalloids"]				= "Metalloids are elements with both metal and non-metal characteristics. These elements border the stair-step line which divides metals from non-metals. Some metalloids are semiconductors, which makes these particular elements useful in building computers.";
-			descriptions["Alkali Metals"]			= "Alkali metals are highly reactive elements and do not naturally occur in their pure form. These metals are very reactive because they only have one valence electron. If exposed to water, these elements will explode.";
+			descriptions["Non-Metals"]				= "Non-metals are poor electrical and heat conductors, and are all either gas or solid at room temperature.";
+			descriptions["Other Metals"]			= "These elements are opaque, solid, and relatively dense.  Like all metals, transition metals are good conductors of electricity and heat.";
+			descriptions["Metalloids"]				= "Metalloids have both metal and non-metal characteristics.  These elements border the stair-step line which divides metals from non-metals.";
+			descriptions["Alkali Metals"]			= "Alkali metals are highly reactive elements and do not naturally occur in their pure form. These metals are highly reactive, and will explode if exposed to water.";
 			descriptions["Alkaline Earth Metals"]	= "Alkaline earth metals are highly reactive elements and do not naturally occur in their pure form. These metals are very reactive because they only have two valence electrons. Their name comes from their oxides, which are alkaline (basic) when combined with water.";
 			descriptions["Transition Metals"]		= "Transitional metals differ from the other elemental groups because their valence electrons exist in more than one shell. Generally, these elements have high boiling and melting points. Like all metals, these elements are malleable, ductile, and good electrical and heat conductors.";
 			descriptions["Noble Gases"]				= "Noble gases are elements with very low reactivity. This low level of reactivity is due to these elements having the maximum number of electrons in their outer shell. All of these elements are gases at room temperature.";
@@ -210,6 +255,16 @@ package inventory
 			descText = new FlxText(32, FlxG.height / 2, FlxG.width - 64);
 			descText.size = 16;
 			defaultGroup.add(descText);
+			difficultyText = new FlxText(0, FlxG.height / 4 + 42, FlxG.width);
+			difficultyText.size = 12;
+			difficultyText.alignment = "center";
+			difficultyText.color = 0xAAAAAAAA;
+			defaultGroup.add(difficultyText);
+			bonusText = new FlxText(0, FlxG.height / 4 + 58, FlxG.width);
+			bonusText.size = 12;
+			bonusText.alignment = "center";
+			bonusText.color = 0xAAAAAAAA;			
+			defaultGroup.add(bonusText);
 			play = new FlxText(FlxG.width - 64 - 80, FlxG.height - 96, 80, "Play");
 			play.size = 24;
 			play.alignment = "right";
@@ -325,9 +380,13 @@ package inventory
 						groupMode = true;
 						group = Context.getGameData().getElementDefinition(currentHover).getGroup();
 						descText.text = descriptions[group];
+						difficultyText.text = "Difficulty: " + groupDifficulty[group];
+						bonusText.text = "Collection bonus: " + groupBonus[group];
 						groupText.text = group;
 						descText.visible = true;
 						groupText.visible = true;
+						bonusText.visible = true;
+						difficultyText.visible = true;
 						play.visible = true;
 						back.visible = true;
 						clicked = true;
@@ -369,8 +428,10 @@ package inventory
 									elemVec.push(i);
 								}
 							}
-
-							FlxG.state = new LevelState();
+							
+							
+			
+							FlxG.state = new LevelState(groupNum[group]);
 						}
 					}
 				} else {
@@ -385,6 +446,8 @@ package inventory
 					if (FlxG.mouse.justPressed() && !clicked) {
 						descText.visible = false;
 						groupText.visible = false;
+						bonusText.visible = false;
+						difficultyText.visible = false;
 						play.visible = false;
 						back.visible = false;
 						groupMode = false;

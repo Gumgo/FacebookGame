@@ -475,10 +475,18 @@
 		<enemy name="h200_d20_c" behavior="ZigZagBehavior" time="60" offset="400" speed="9" shoots="true" bullet="bullet_d20"/>
 	</fleet>
 
+	<fleet name="L6Boss">
+		<enemy name="boss8" behavior="Boss8Behavior" time="60"/>
+	</fleet>
+
 	<!-- LEVEL 7 -->
 
 	<fleet name="L7Avoid">
 		<enemy name="h200_d20" behavior="AvoidBehavior" time="0" bullet="bullet_d20"/>
+	</fleet>
+
+	<fleet name="L7Boss">
+		<enemy name="boss7" behavior="Boss7Behavior" time="60"/>
 	</fleet>
 
 	<!-- LEVEL 8 -->
@@ -486,6 +494,10 @@
 	<fleet name="L8Avoid">
 		<enemy name="h400_d40" behavior="AvoidBehavior" time="0" bullet="bullet_d40"/>
 		<enemy name="h400_d40" behavior="AvoidBehavior" time="0" bullet="bullet_d40"/>
+	</fleet>
+
+	<fleet name="L8Boss">
+		<enemy name="boss8" behavior="Boss8Behavior" time="60"/>
 	</fleet>
 
 </fleets>

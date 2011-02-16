@@ -12,6 +12,7 @@ package level.enemies
 		private var behaviors:Vector.<String>
 		private var behaviorProperties:Vector.<Dictionary>
 		private var times:Vector.<int>;
+		private var boss:Boolean;
 
 		private var remaining:int;
 		private var tick:int;
@@ -20,13 +21,14 @@ package level.enemies
 		{
 		}
 
-		public function resetMe(parent:LevelGenerator, definition:FleetDefinition):Fleet
+		public function resetMe(parent:LevelGenerator, definition:FleetDefinition, boss:Boolean = false):Fleet
 		{
 			this.parent = parent;
 			this.enemies = definition.getEnemies();
 			this.behaviors = definition.getBehaviors();
 			this.behaviorProperties = definition.getBehaviorProperties();
 			this.times = definition.getTimes();
+			this.boss = boss;
 			remaining = enemies.length;
 			tick = 0;
 			return this;
@@ -45,7 +47,8 @@ package level.enemies
 					(Context.getRecycler().getNew(Enemy) as Enemy).resetMe(
 						this,
 						Context.getGameData().getEnemyDefinition(enemies[i]),
-						(Context.getRecycler().getNew(Definition) as Definition).resetMe(behaviorProperties[i]));
+						(Context.getRecycler().getNew(Definition) as Definition).resetMe(behaviorProperties[i]),
+						false, true, boss);
 				}
 			}
 

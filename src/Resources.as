@@ -37,6 +37,8 @@ package
 		[Embed(source = "../bin/resources/sprites/spark.png")] private var spark:Class;
 		[Embed(source = "../bin/resources/sprites/bolt.png")] private var bolt:Class;
 		[Embed(source = "../bin/resources/sprites/shield.png")] private var shieldBullet:Class;
+		[Embed(source = "../bin/resources/sprites/laser.png")] private var laser:Class;
+		[Embed(source = "../bin/resources/sprites/mine.png")] private var mineBullet:Class;
 		[Embed(source = "../bin/resources/sprites/blob.png")] private var blob:Class;
 		[Embed(source = "../bin/resources/sprites/item1.png")] private var radioactive:Class;
 		[Embed(source = "../bin/resources/sprites/item2.png")] private var nonmetal1:Class;
@@ -64,6 +66,7 @@ package
 		[Embed(source = "../bin/resources/backgrounds/background1.swf")] private var background1Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background2.swf")] private var background2Anim:Class;
 		[Embed(source = "../bin/resources/backgrounds/background3.swf")] private var background3Anim:Class;
+		[Embed(source = "../bin/resources/backgrounds/background1moving.swf")] private var background1AnimMove:Class;
 		[Embed(source = "../bin/resources/backgrounds/background2moving.swf")] private var background2AnimMove:Class;
 		[Embed(source = "../bin/resources/backgrounds/background3moving.swf")] private var background3AnimMove:Class;
 
@@ -118,6 +121,8 @@ package
 			sprites["fireBullet"] = fireBullet;
 			sprites["shieldBullet"] = shieldBullet;
 			sprites["spark"] = spark;
+			sprites["laser"] = laser;
+			sprites["mineBullet"] = mineBullet;
 			sprites["blob"] = blob;
 			sprites["laserBullet"] = laserBullet;
 			sprites["bombBullet"] = bombBullet;
@@ -137,6 +142,7 @@ package
 			sprites["border"] = border;
 			sprites["background1"] = background1Anim;
 			sprites["background1Anim"] = background1Anim;
+			sprites["background1AnimMove"] = background1AnimMove;
 			sprites["background2Anim"] = background2Anim;
 			sprites["background2AnimMove"] = background2AnimMove;
 			sprites["background3Anim"] = background3Anim;

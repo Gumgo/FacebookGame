@@ -5,6 +5,7 @@ package
 
 	public class Context 
 	{
+		public static var bgFrameRateHack:Boolean = false;
 
 		private static var gameData:GameData = new GameData();
 		private static var resources:Resources = new Resources();

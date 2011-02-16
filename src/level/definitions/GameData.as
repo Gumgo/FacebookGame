@@ -39,6 +39,9 @@ package level.definitions
 		private var boss3Dummy:Boss3Behavior;
 		private var boss4Dummy:Boss4Behavior;
 		private var boss5Dummy:Boss5Behavior;
+		private var boss6Dummy:Boss6Behavior;
+		private var boss7Dummy:Boss7Behavior;
+		private var boss8Dummy:Boss8Behavior;
 
 		public function GameData()
 		{
@@ -222,9 +225,10 @@ package level.definitions
 					var group:String = xmlElement.attribute("group").toString();
 					var sprite:String = xmlElement.attribute("sprite").toString();
 					var color:uint = uint(xmlElement.attribute("color").toString());
+					var flags:String = xmlElement.attribute("flags").toString();
 					var description:String = xmlElement.attribute("desc").toString();
 
-					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, sprite, color, description);
+					var newElement:ElementDefinition = new ElementDefinition(number, symbol, name, group, sprite, color, flags, description);
 					elements.push(newElement);
 				}
 

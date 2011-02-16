@@ -1,5 +1,10 @@
 package  
 {
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestMethod;
+	import flash.net.URLVariables;
 	public class PersistentState 
 	{
 		public static const ELEM_UNENCOUNTERED:int = 0;
@@ -19,6 +24,8 @@ package
 		private var elements:Array;
 		private var collectedCount:int;
 
+		private var userId:String;
+
 		public function PersistentState() 
 		{
 			elements = new Array();
@@ -29,7 +36,7 @@ package
 		{
 			collectedCount = 0;
 			for (var i:int = 0; i < 118; ++i) {
-				//if (Math.random() >= 4.5 / 8.0)
+				//if (Math.random() >= 5.5 / 8.0)
 				elements[i] = ELEM_UNENCOUNTERED;
 				//else { elements[i] = ELEM_COLLECTED;++collectedCount;}
 			}
@@ -131,6 +138,10 @@ package
 
 		public function setEncodedElements(encoded:String):void
 		{
+			if (encoded == null) {
+				return;
+			}
+
 			var written:int = 0;
 			for (var i:int = 0; i < encoded.length; ++i) {
 				var val:int = encode.indexOf(encoded.charAt(i));
@@ -145,6 +156,49 @@ package
 					++written;
 				}
 			}
+		}
+
+		public function setUserId(uid:String):void
+		{
+			userId = uid;
+		}
+
+		public function getUserId():String
+		{
+			return userId;
+		}
+
+		public function getUserVerification():String
+		{
+			const SALT:String = "vk8n4aop25ef8hx3c60h";
+			return MD5.encrypt(userId + SALT);
+		}
+
+		public function getEncodedElementsVerification():String
+		{
+			const SALT:String = "6f32wfbm32o0ey3bwqlt";
+			return MD5.encrypt(getEncodedElements() + SALT);
+		}
+
+		public function save():void
+		{
+			if (userId == null) {
+				return;
+			}
+
+			const URL:String = "http://students.washington.edu/jclement/nucleos/writesave.php"
+			var request:URLRequest = new URLRequest(URL);
+			request.method = URLRequestMethod.POST;
+			var variables:URLVariables = new URLVariables();
+			variables.uid = getUserId();
+			variables.uidverify = getUserVerification();
+			variables.ss = getEncodedElements();
+			variables.ssverify = getEncodedElementsVerification();
+			request.data = variables;
+
+			var loader:URLLoader = new URLLoader(request);
+			loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+			loader.load(request);
 		}
 
 	}

@@ -29,13 +29,14 @@ package level.enemies
 		private var done:Boolean;
 		private var bullet:Boolean;
 		private var drops:Boolean;
+		private var boss:Boolean;
 
 		public function Enemy()
 		{
 			super();
 		}
 
-		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false, drops:Boolean = true):Enemy
+		public function resetMe(parent:Fleet, definition:EnemyDefinition, behavior:Behavior, bullet:Boolean = false, drops:Boolean = true, boss:Boolean = false):Enemy
 		{
 			exists = true;
 			this.parent = parent;
@@ -57,6 +58,7 @@ package level.enemies
 
 			this.bullet = bullet;
 			this.drops = drops;
+			this.boss = boss;
 
 			deathSprite = Context.getResources().getSprite(definition.getDeathSprite());
 			deathSound = Context.getResources().getSound(definition.getDeathSound());
@@ -107,7 +109,7 @@ package level.enemies
 
 		public function damagePlayer(player:Player):void
 		{
-			if (damageTimer == 0) {
+			if (damageTimer == 0 && damage > 0) {
 				if (enemyHealth > 0) {
 					player.adjustHealth( -damage);
 				}
@@ -146,6 +148,7 @@ package level.enemies
 		public function onDie():void
 		{
 			visible = true;
+			enemyHealth = 0;
 
 			x += width * 0.5;
 			y += height * 0.5;
@@ -165,10 +168,12 @@ package level.enemies
 			y -= height * 0.5;
 
 			if (!bullet && drops) {
-				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width * 0.5, y + height * 0.5);
+				(FlxG.state as LevelState).getItemGenerator().randomSpawn(x + width * 0.5, y + height * 0.5, boss);
 			}
 
 			FlxG.play(deathSound);
+
+			behavior.die(this);
 
 			enemyFinished();
 		}
@@ -207,6 +212,21 @@ package level.enemies
 		public function getBehavior():Behavior
 		{
 			return behavior;
+		}
+
+		public function getDamage():int
+		{
+			return damage;
+		}
+
+		public function setDamage(dmg:int):void
+		{
+			damage = dmg;
+		}
+
+		public function setInvincible(inv:Boolean):void
+		{
+			invincible = inv;
 		}
 
 	}

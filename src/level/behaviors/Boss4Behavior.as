@@ -132,6 +132,8 @@ package level.behaviors
 							null,
 							Context.getGameData().getEnemyDefinition("bullet_fire2"),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
+
+						FlxG.play(Context.getResources().getSound("bossBullet"), 0.25);
 					}
 					--timer;
 					if (timer == 0) {

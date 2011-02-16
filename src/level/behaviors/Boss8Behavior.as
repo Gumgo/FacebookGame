@@ -174,6 +174,8 @@ package level.behaviors
 							null,
 							Context.getGameData().getEnemyDefinition("bullet_fire3"),
 							(Context.getRecycler().getNew(BulletBehavior) as BulletBehavior).resetMe(dict), true);
+
+						FlxG.play(Context.getResources().getSound("bossBullet"), 0.25);
 					}
 					--timer;
 					if (timer == 0) {
@@ -185,6 +187,7 @@ package level.behaviors
 				if (phase == 0) {
 					phase = 1;
 					timer = 0;
+					FlxG.play(Context.getResources().getSound("laserBeamShort"), 0.25);
 				} else if (phase == 1) {
 					// laser "grows"
 					drawLaser(enemy, Number(timer) / LASER_GROW_SHRINK_TIME);

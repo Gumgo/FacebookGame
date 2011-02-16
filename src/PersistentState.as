@@ -215,6 +215,7 @@ package
 			variables.score = String(getScore());
 			variables.verify = getVerification();
 			request.data = variables;
+			request.contentType = "application/x-www-form-urlencoded";
 
 			var loader:URLLoader = new URLLoader(request);
 			loader.dataFormat = URLLoaderDataFormat.VARIABLES;

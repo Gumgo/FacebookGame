@@ -353,7 +353,7 @@ package inventory
 
 			super.update();
 
-			if (groupMode) {
+			if (groupMode || resetDisplay) {
 				describe( -1, false, false);
 			}
 
@@ -395,6 +395,7 @@ package inventory
 						play.visible = true;
 						back.visible = true;
 						clicked = true;
+						FlxG.play(Context.getResources().getSound("click"));
 					}
 				} else {
 					var shape:Shape = new Shape();
@@ -407,6 +408,7 @@ package inventory
 			if (!resetDisplay && !groupMode && helpText.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 				if (helpText.color != 0x00FF00) {
 					helpText.color = 0x00FF00;
+					FlxG.play(Context.getResources().getSound("beep"), 0.1);
 				}
 				if (FlxG.mouse.justPressed() && canClick) {
 					var fadeOut:FlxFade = new FlxFade()
@@ -417,6 +419,7 @@ package inventory
 					});
 					defaultGroup.add(fadeOut);
 					canClick = false;
+					FlxG.play(Context.getResources().getSound("click"));
 				}
 			} else if (helpText.color != 0xFFFFFF) {
 				helpText.color = 0xFFFFFF;
@@ -425,12 +428,14 @@ package inventory
 			if (!resetDisplay && !groupMode && resetText.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 				if (resetText.color != 0xFF0000) {
 					resetText.color = 0xFF0000;
+					FlxG.play(Context.getResources().getSound("beep"), 0.1);
 				}
 				if (FlxG.mouse.justPressed() && canClick) {
 					resetDisplay = true;
 					resetWarning.visible = true;
 					resetYes.visible = true;
 					resetNo.visible = true;
+					FlxG.play(Context.getResources().getSound("click"));
 				}
 			} else if (resetText.color != 0xFFFFFF) {
 				resetText.color = 0xFFFFFF;
@@ -439,7 +444,7 @@ package inventory
 			effectsSprite.pixels = effectsSprite.pixels;
 
 
-			if (!groupMode && currentDescription != lastDescription && currentDescription != -1) {
+			if (!groupMode && !resetDisplay && currentDescription != lastDescription && currentDescription != -1) {
 				FlxG.play(Context.getResources().getSound("beep"), 0.1);
 			}
 
@@ -452,12 +457,14 @@ package inventory
 				if (resetNo.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 					if (resetNo.color != 0xFF0000) {
 						resetNo.color = 0xFF0000;
+						FlxG.play(Context.getResources().getSound("beep"), 0.1);
 					}
 					if (FlxG.mouse.justPressed()) {
 						resetDisplay = false;
 						resetWarning.visible = false;
 						resetYes.visible = false;
 						resetNo.visible = false;
+						FlxG.play(Context.getResources().getSound("click"));
 					}
 				} else {
 					if (resetNo.color != 0xFFFFFF) {
@@ -467,6 +474,7 @@ package inventory
 				if (resetYes.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 					if (resetYes.color != 0x00FF00) {
 						resetYes.color = 0x00FF00;
+						FlxG.play(Context.getResources().getSound("beep"), 0.1);
 					}
 					if (FlxG.mouse.justPressed()) {
 						Context.getPersistentState().reset();
@@ -476,6 +484,7 @@ package inventory
 						resetWarning.visible = false;
 						resetYes.visible = false;
 						resetNo.visible = false;
+						FlxG.play(Context.getResources().getSound("click"));
 					}
 				} else {
 					if (resetYes.color != 0xFFFFFF) {
@@ -488,6 +497,7 @@ package inventory
 				if (play.visible && play.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 					if (play.color != 0x00FF00) {
 						play.color = 0x00FF00;
+						FlxG.play(Context.getResources().getSound("beep"), 0.1);
 					}
 					if (FlxG.mouse.justPressed() && !clicked) {
 						play.visible = false;
@@ -509,6 +519,7 @@ package inventory
 
 							FlxG.state = new LevelState();
 						}
+						FlxG.play(Context.getResources().getSound("click"));
 					}
 				} else {
 					if (play.color != 0xFFFFFF) {
@@ -518,6 +529,7 @@ package inventory
 				if (back.visible && back.overlapsPoint(FlxG.mouse.x, FlxG.mouse.y)) {
 					if (back.color != 0x00FF00) {
 						back.color = 0x00FF00;
+						FlxG.play(Context.getResources().getSound("beep"), 0.1);
 					}
 					if (FlxG.mouse.justPressed() && !clicked) {
 						descText.visible = false;
@@ -525,6 +537,7 @@ package inventory
 						play.visible = false;
 						back.visible = false;
 						groupMode = false;
+						FlxG.play(Context.getResources().getSound("click"));
 					}
 				} else {
 					if (back.color != 0xFFFFFF) {

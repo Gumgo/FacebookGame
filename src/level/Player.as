@@ -37,6 +37,27 @@ package level
 		private var colorTf:ColorTransform;
 		private var time:int;
 
+		private var toxicity:int;
+		private static const TOXIC_TIME:int = 8 * 60;
+		private static const TOXIC_RATE:int = 48;
+
+		private var speedTimer:int;
+		private var speedModify:int;
+		private static const SPEEDUP_TIME:int = 10 * 60;
+		private static const SPEEDDOWN_TIME:int = 6 * 60;
+
+		private var shieldTimer:int;
+		private var shieldModify:int;
+		private static const SHIELDUP_TIME:int = 10 * 60;
+		private static const SHIELDDOWN_TIME:int = 6 * 60;
+
+		private var fireTimer:int;
+		private static const FIRE_TIME:int = 10 * 60;
+		private static const FIRE_INC:Number = 1.25;
+
+		private var invulnerableTimer:int;
+		private static const INVULNERABLE_TIME:int = 4 * 60 + 30;
+
 		public function Player() 
 		{
 			outline = FlxG.addBitmap(Context.getResources().getSprite("playerOutline"));
@@ -62,6 +83,14 @@ package level
 
 			// FOR TESTING:
 			//secondaryWeapon = new SpreadWeapon();
+
+			toxicity = 0;
+			speedTimer = 0;
+			speedModify = 0;
+			shieldTimer = 0;
+			shieldModify = 0;
+			fireTimer = 0;
+			invulnerableTimer = 0;
 		}
 
 		override public function render():void
@@ -104,20 +133,29 @@ package level
 
 				var tilt:int = 0;
 
+				var speed:int = 8;
+				if (speedTimer > 0) {
+					if (speedModify == -1) {
+						speed = 6;
+					} else if (speedModify == 1) {
+						speed = 10;
+					}
+				}
+
 				if (FlxG.keys.LEFT) {
-					x -= 8;
+					x -= speed;
 					--tilt;
 				}
 				
 				if (FlxG.keys.RIGHT) {
-					x += 8;
+					x += speed;
 					++tilt;
 				}
 				if (FlxG.keys.UP) {
-					y -= 8;
+					y -= speed;
 				}
 				if (FlxG.keys.DOWN) {
-					y += 8;
+					y += speed;
 				}
 				if (FlxG.keys.SPACE) {
 					primaryWeapon.shoot(this);
@@ -153,6 +191,30 @@ package level
 				if (y > FlxG.height - height) {
 					y = FlxG.height - height;
 				}
+
+				if (toxicity > 0) {
+					if (toxicity % TOXIC_RATE == 0) {
+						adjustHealth( -1);
+					}
+					--toxicity;
+				}
+
+				if (speedTimer > 0) {
+					--speedTimer;
+				}
+
+				if (shieldTimer > 0) {
+					--shieldTimer;
+				}
+
+				if (fireTimer > 0) {
+					--fireTimer;
+				}
+
+				if (invulnerableTimer > 0) {
+					--invulnerableTimer;
+				}
+
 			} else {
 				if (endTimer > 0) {
 					--endTimer;
@@ -160,6 +222,12 @@ package level
 					(FlxG.state as LevelState).levelFailed();
 					endTimer = -1;
 				}
+			}
+
+			if (!dead && toxicity > 0 && color != 0xC0FFC0) {
+				color = 0xC0FFC0;
+			} else if (color != 0xFFFFFF) {
+				color = 0xFFFFFF;
 			}
 
 			super.update();
@@ -183,7 +251,15 @@ package level
 				// green screen flash
 			} else if (amount < 0) {
 				// red screen flash
-				currentHealth -= int(Math.ceil( -amount / shields));
+				var adjShield:Number = shields;
+				if (shieldTimer > 0) {
+					if (shieldModify == 1) {
+						adjShield *= 1.5;
+					} else if (shieldModify == -1) {
+						adjShield /= 1.5;
+					}
+				}
+				currentHealth -= int(Math.ceil( -amount / adjShield));
 				var ratio1:Number = Number(prevHealth) / Number(maxHealth);
 				var ratio2:Number = Number(currentHealth) / Number(maxHealth);
 				if (ratio1 > 0.15 && ratio2 <= 0.15) {
@@ -246,6 +322,59 @@ package level
 		public function getShields():Number
 		{
 			return shields;
+		}
+
+		public function toxify():void
+		{
+			toxicity = TOXIC_TIME;
+		}
+
+		public function speedUp():void
+		{
+			speedModify = 1;
+			speedTimer = SPEEDUP_TIME;
+		}
+
+		public function speedDown():void
+		{
+			speedModify = -1;
+			speedTimer = SPEEDDOWN_TIME;
+		}
+
+		public function shieldUp():void
+		{
+			shieldModify = 1;
+			shieldTimer = SHIELDUP_TIME;
+		}
+
+		public function shieldDown():void
+		{
+			shieldModify = -1;
+			shieldTimer = SHIELDDOWN_TIME;
+		}
+
+		public function fastFire():void
+		{
+			fireTimer = FIRE_TIME;
+		}
+
+		public function getFireRate(originalRate:int):int
+		{
+			if (fireTimer == 0) {
+				return originalRate;
+			} else {
+				return originalRate / FIRE_INC;
+			}
+		}
+
+		public function invulnerable():void
+		{
+			invulnerableTimer = INVULNERABLE_TIME;
+		}
+
+		public function isInvulnerable():Boolean
+		{
+			return invulnerableTimer > 0;
 		}
 
 	}

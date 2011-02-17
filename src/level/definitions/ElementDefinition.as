@@ -56,7 +56,7 @@ package level.definitions
 		public function containsFlag(flag:String):Boolean
 		{
 			for (var i:int = 0; i < flags.length; ++i) {
-				if (flags.charCodeAt(i) == flags.charCodeAt(0)) {
+				if (flags.charCodeAt(i) == flag.charCodeAt(0)) {
 					return true;
 				}
 			}

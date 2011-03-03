@@ -223,8 +223,10 @@ package level
 				}
 			}
 
-			if (!dead && toxicity > 0 && color != 0xC0FFC0) {
-				color = 0xC0FFC0;
+			if (!dead && toxicity > 0)
+				if (color != 0xC0FFC0) {
+					color = 0xC0FFC0;
+				}
 			} else if (color != 0xFFFFFF) {
 				color = 0xFFFFFF;
 			}

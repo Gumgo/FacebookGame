@@ -156,13 +156,15 @@ package level
 				}
 				super.update();
 
-				if (!player.dead && !player.isInvulnerable()) {
-					FlxU.overlap(player, enemyGroup, playerEnemyOverlap);
-					FlxU.overlap(player, enemyBulletGroup, playerEnemyOverlap);
-					function playerEnemyOverlap(player:FlxObject, enemy:FlxObject):void
-					{
-						(player as Player).onHit(enemy as Enemy);
-						(enemy as Enemy).onHitPlayer();
+				if (!player.dead) {
+					if (!player.isInvulnerable()) {
+						FlxU.overlap(player, enemyGroup, playerEnemyOverlap);
+						FlxU.overlap(player, enemyBulletGroup, playerEnemyOverlap);
+						function playerEnemyOverlap(player:FlxObject, enemy:FlxObject):void
+						{
+							(player as Player).onHit(enemy as Enemy);
+							(enemy as Enemy).onHitPlayer();
+						}
 					}
 
 					FlxU.overlap(player, itemGroup, playerItemOverlap);

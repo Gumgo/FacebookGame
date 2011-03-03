@@ -75,8 +75,7 @@ package level
 			}
 
 			FlxG.play(Context.getResources().getSound("collect"));
-			(FlxG.state as LevelState).getLevelText().setText(
-				Context.getGameData().getElementDefinition(number).getName() + " (" + number + ") collected!", 0x00FF00, 180);
+			(FlxG.state as LevelState).getLevelText().setText(text, 0x00FF00, 180);
 			(FlxG.state as LevelState).collectElement(number);
 
 			removeSelf();

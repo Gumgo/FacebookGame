@@ -67,7 +67,9 @@ package level
 		private var statString:String;
 
 		private var tick:int;
+		private var lvl:int;
 
+		
 		override public function create():void
 		{
 			FlxG.mouse.hide();

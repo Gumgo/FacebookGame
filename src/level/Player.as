@@ -146,6 +146,7 @@ package level
 					x -= speed;
 					--tilt;
 				}
+				
 				if (FlxG.keys.RIGHT) {
 					x += speed;
 					++tilt;
